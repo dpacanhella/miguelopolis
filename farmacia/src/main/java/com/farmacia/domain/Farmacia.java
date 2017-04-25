@@ -13,13 +13,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "FARMACIA_PLANTAO")
+@Table(name = "farmacia_plantao")
 public class Farmacia {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "FARM_CODIGO")
-    private Long id;
+    private Integer id;
     
     @Column(name = "FARM_RAZAO")
     private String razao;
