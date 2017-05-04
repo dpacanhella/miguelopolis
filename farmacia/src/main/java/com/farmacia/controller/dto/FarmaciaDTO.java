@@ -17,5 +17,5 @@ public class FarmaciaDTO {
     private String telefone;
     private String endereco;
     private String imagem;
-    private char plantao;
+    private Boolean plantao;
 }

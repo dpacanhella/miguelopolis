@@ -14,10 +14,37 @@ public class FarmaciaServiceImpl implements FarmaciaService {
 
     @Autowired
     private FarmaciaRepository farmaciaRepository;
-    
+
     @Override
     public List<Farmacia> getAll() {
-        return farmaciaRepository.findAll();
-    }
+        List<Farmacia> farmacias = farmaciaRepository.findAll();
 
+        Farmacia proxima = null;
+
+        Farmacia farmaciaPlantao = farmaciaRepository.findByPlantao(true);
+
+        farmaciaPlantao.setPlantao(false);
+
+        proxima = farmaciaRepository.findById(farmaciaPlantao.getId() + 1);
+
+        if (proxima != null) {
+            proxima.setPlantao(true);
+            farmaciaRepository.save(proxima);
+        } else if (farmaciaPlantao.getId() + 1 > 10) {
+
+            for (Farmacia farmacia : farmacias) {
+                farmacia.setPlantao(false);
+                farmaciaRepository.save(farmacia);
+            }
+
+            farmaciaPlantao = farmaciaRepository.findById(1);
+
+            farmaciaPlantao.setPlantao(true);
+            farmaciaRepository.save(farmaciaPlantao);
+        }
+
+        List<Farmacia> novasFarmacias = farmaciaRepository.findAll();
+
+        return novasFarmacias;
+    }
 }

@@ -37,5 +37,5 @@ public class Farmacia {
     private String imagem;
     
     @Column(name = "FARM_PLANTAO")
-    private char plantao;
+    private Boolean plantao;
 }
