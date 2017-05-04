@@ -16,7 +16,7 @@ public class FarmaciaServiceImpl implements FarmaciaService {
     private FarmaciaRepository farmaciaRepository;
 
     @Override
-    public List<Farmacia> getAll() {
+    public List<Farmacia> updateAll() {
         List<Farmacia> farmacias = farmaciaRepository.findAll();
 
         Farmacia proxima = null;
@@ -45,6 +45,12 @@ public class FarmaciaServiceImpl implements FarmaciaService {
 
         List<Farmacia> novasFarmacias = farmaciaRepository.findAll();
 
+        return novasFarmacias;
+    }
+
+    @Override
+    public List<Farmacia> getAll() {
+        List<Farmacia> novasFarmacias = farmaciaRepository.findAll();
         return novasFarmacias;
     }
 }

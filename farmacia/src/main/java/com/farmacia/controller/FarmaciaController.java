@@ -27,7 +27,13 @@ public class FarmaciaController {
     @Autowired
     private FarmaciaMapper farmaciaMapper;
 
-    @GetMapping
+    @Scheduled(cron="0 2 0 ? * SAT")
+    public List<FarmaciaDTO> setFarmacias() {
+        List<Farmacia> entity = farmaciaService.updateAll();
+        return farmaciaMapper.toListDTO(entity);
+    }
+    
+    @GetMapping("/listAll")
     @Scheduled(cron="0 2 0 ? * SAT")
     public List<FarmaciaDTO> getAll() {
         List<Farmacia> entity = farmaciaService.getAll();
