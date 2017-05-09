@@ -34,7 +34,6 @@ public class FarmaciaController {
     }
     
     @GetMapping("/listAll")
-    @Scheduled(cron="0 2 0 ? * SAT")
     public List<FarmaciaDTO> getAll() {
         List<Farmacia> entity = farmaciaService.getAll();
         return farmaciaMapper.toListDTO(entity);
