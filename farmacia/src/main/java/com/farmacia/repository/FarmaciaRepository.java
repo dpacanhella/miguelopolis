@@ -10,6 +10,6 @@ public interface FarmaciaRepository extends JpaRepository<Farmacia, Long> {
 
     Farmacia findByPlantao(boolean b);
 
-    Farmacia findById(int i);
+    Farmacia findById(Integer id);
 
 }

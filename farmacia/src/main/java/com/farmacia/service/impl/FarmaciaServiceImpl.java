@@ -53,4 +53,9 @@ public class FarmaciaServiceImpl implements FarmaciaService {
         List<Farmacia> novasFarmacias = farmaciaRepository.findAll();
         return novasFarmacias;
     }
+
+    @Override
+    public Farmacia getById(Integer id) {
+        return farmaciaRepository.findById(id);
+    }
 }

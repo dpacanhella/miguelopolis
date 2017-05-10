@@ -3,6 +3,11 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+
+    def STRING = "String"
+    def API_URL = "API_URL"
+    def CLIENT_SECRET = "CLIENT_SECRET"
+
     defaultConfig {
         applicationId "redspark.io.miguelopolis"
         minSdkVersion 16
@@ -10,6 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField STRING, API_URL, '"http://45.55.209.136:8080/"'
     }
     buildTypes {
         release {
@@ -34,7 +40,7 @@ dependencies {
 
     compile 'org.projectlombok:lombok:1.12.6'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:converter-jackson:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
 
     // Progress
     compile 'com.github.rahatarmanahmed:circularprogressview:2.5.0'

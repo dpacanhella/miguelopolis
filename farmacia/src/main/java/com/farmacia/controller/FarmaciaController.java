@@ -7,6 +7,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,16 +28,23 @@ public class FarmaciaController {
     @Autowired
     private FarmaciaMapper farmaciaMapper;
 
-    @Scheduled(cron="0 2 0 ? * SAT")
+    @Scheduled(cron = "0 2 0 ? * SAT")
+    // @Scheduled(fixedRate = 2000)
     public List<FarmaciaDTO> setFarmacias() {
         List<Farmacia> entity = farmaciaService.updateAll();
         return farmaciaMapper.toListDTO(entity);
     }
-    
-    @GetMapping("/listAll")
+
+    @GetMapping
     public List<FarmaciaDTO> getAll() {
         List<Farmacia> entity = farmaciaService.getAll();
         return farmaciaMapper.toListDTO(entity);
+    }
+
+    @GetMapping("/{id}")
+    public FarmaciaDTO getById(@PathVariable Integer id) {
+        Farmacia entity = farmaciaService.getById(id);
+        return farmaciaMapper.toDTO(entity);
     }
 
 }

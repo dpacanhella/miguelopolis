@@ -11,7 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class FarmaciaDTO {
     
-    private Long id;
+    private Integer id;
     private String razao;
     private String nomeProprietario;
     private String telefone;

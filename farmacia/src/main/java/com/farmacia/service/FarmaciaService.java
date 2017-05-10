@@ -10,5 +10,6 @@ public interface FarmaciaService {
 
     List<Farmacia> getAll();
 
+    Farmacia getById(Integer id);
 
 }
