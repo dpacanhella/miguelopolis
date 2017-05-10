@@ -2,7 +2,7 @@ package redspark.io.miguelopolis.data.api;
 
 import java.util.List;
 
-import redspark.io.miguelopolis.enums.data.Farmacia;
+import redspark.io.miguelopolis.data.model.Farmacia;
 import retrofit2.Call;
 import retrofit2.http.GET;
 

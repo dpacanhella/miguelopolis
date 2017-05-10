@@ -13,13 +13,20 @@ public class WebServiceClient {
 
     private OkHttpClient httpClient;
 
-    public WebServiceClient build() {
+    public WebServiceClient() {
+        httpClient = new OkHttpClient.Builder()
+                .build();
+    }
+
+    public WebService build() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BuildConfig.API_URL)
                 .client(httpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        return retrofit.create(WebServiceClient.class);
+        return retrofit.create(WebService.class);
     }
+
+
 }

@@ -1,7 +1,4 @@
-package redspark.io.miguelopolis.enums.data;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+package redspark.io.miguelopolis.data.model;
 
 import lombok.Data;
 
@@ -14,6 +11,6 @@ public class Farmacia {
     private Long id;
 
     private String razao;
-    
+
     private String nomeProprietario;
 }
