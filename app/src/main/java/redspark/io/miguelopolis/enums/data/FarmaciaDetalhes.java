@@ -1,4 +1,4 @@
-package redspark.io.miguelopolis.models.restfull.enums.data;
+package redspark.io.miguelopolis.enums.data;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;

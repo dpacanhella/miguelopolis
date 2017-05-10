@@ -1,4 +1,4 @@
-package redspark.io.miguelopolis.models.restfull.enums;
+package redspark.io.miguelopolis.enums;
 
 /**
  * Created by infra on 09/05/17.
