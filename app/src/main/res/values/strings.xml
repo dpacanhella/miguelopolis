@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Farmácias Miguelópolis</string>
+    <string name="frag_farmacia_toolbar_title">Cadastro de matriculados</string>
 </resources>
