@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Farmácias Miguelópolis</string>
+    <string name="app_name">Plantões farmácias Miguelópolis</string>
     <string name="frag_farmacia_toolbar_title">Cadastro de matriculados</string>
     <string name="getAll_farmacias_error">Erro ao obter lista de farmácias</string>
     <string name="label_ok">Ok</string>

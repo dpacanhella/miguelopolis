@@ -53,6 +53,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
         }
 
         public void populate(Farmacia farmacia) {
+
             txtName.setText(farmacia.getRazao());
         }
     }
