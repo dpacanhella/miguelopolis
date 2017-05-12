@@ -18,7 +18,7 @@ public class FarmaciaBO {
         farmaciaDAO = new FarmaciaDao();
     }
 
-//    public void getAll(){
-//        return farmaciaDAO.getAll();
-//    }
+    public void getAll(){
+        return farmaciaDAO.getAll();
+    }
 }
