@@ -14,9 +14,7 @@ import butterknife.Bind;
 import redspark.io.miguelopolis.adapter.FarmaciasAdapter;
 import redspark.io.miguelopolis.data.business.BusinessException;
 import redspark.io.miguelopolis.data.business.farmacia.FarmaciaBO;
-import redspark.io.miguelopolis.data.model.CellObjetct;
 import redspark.io.miguelopolis.data.model.Farmacia;
-import redspark.io.miguelopolis.data.model.MoviesAdapter;
 import redspark.io.miguelopolis.util.task.AppAsyncTask;
 import redspark.io.miguelopolis.util.task.AsyncTaskExecutor;
 import redspark.io.miguelopolis.util.task.AsyncTaskResult;
@@ -29,9 +27,6 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
 
     private List<Farmacia> mFarmaciaList;
-    private List<CellObjetct<Farmacia>> mCellObjects;
-    private MoviesAdapter mAdapter;
-
 
     private RecyclerView recyclerFarmacias;
     private FarmaciasAdapter farmaciaAdapter;
@@ -47,14 +42,9 @@ public class MainActivity extends AppCompatActivity {
         this.taskExecutor = new AsyncTaskExecutor();
         this.farmaciaBO = new FarmaciaBO();
 
-//        setupToolbar();
-
         recyclerFarmacias = (RecyclerView) findViewById(R.id.main_recycler_farmacias);
 
         showFarmacias();
-//        setupRecyclerView();
-//        setupSwipeRefresh();
-
     }
 
     private void showFarmacias() {
@@ -83,61 +73,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-//    private void setupSwipeRefresh() {
-//        mSwipeRefresh.setColorSchemeResources(R.color.sesc_primary);
-//        mSwipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-//            @Override
-//            public void onRefresh() {
-//                getPendingMatriculation();
-//            }
-//        });
-//    }
-
-//    private void getPendingMatriculation() {
-//        if(ConnectionUtils.isConnected(getApplicationContext())){
-//    new FarmaciaDao().getAll(new IServiceResponse<List<Farmacia>>() {
-//        @Override
-//        public void onSuccess(List<Farmacia> data) {
-//
-//            mSwipeRefresh.setRefreshing(false);
-//
-//            mAdapter = new MoviesAdapter(mFarmaciaList);
-//            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-//            recycleView.setLayoutManager(mLayoutManager);
-//            recycleView.setItemAnimator(new DefaultItemAnimator());
-//            recycleView.setAdapter(mAdapter);
-//
-//            //interando a lista com as informações
-//            mFarmaciaList = data;
-//            mAdapter.notifyDataSetChanged();
-//
-//            mRecyclerView.setVisibility(View.VISIBLE);
-//        }
-//
-//
-//        @Override
-//        public void onError(String error) {
-//            mSwipeRefresh.setRefreshing(false);
-//            Log.i("ERROR: ", "NÃO FOI POSSÍVEL TRADUZIR MAINACTIVITY");
-//        }
-//    });
-//        }
-//    }
-
-    private void setupRecyclerView() {
-
-        LinearLayoutManager manager = new LinearLayoutManager(getApplicationContext());
-        manager.setOrientation(LinearLayoutManager.VERTICAL);
-        mRecyclerView.setLayoutManager(manager);
-    }
-
-    private void setupToolbar() {
-        ActionBar actionBar = ((AppCompatActivity) getApplicationContext()).getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setTitle(R.string.frag_farmacia_toolbar_title);
-            actionBar.setDisplayHomeAsUpEnabled(false);
-        }
     }
 }

@@ -14,6 +14,8 @@ public class Farmacia {
 
     private String nomeProprietario;
 
+    private Boolean plantao;
+
     public Long getId() {
         return id;
     }
@@ -37,4 +39,5 @@ public class Farmacia {
     public void setNomeProprietario(String nomeProprietario) {
         this.nomeProprietario = nomeProprietario;
     }
+
 }
