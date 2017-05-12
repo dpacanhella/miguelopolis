@@ -1,9 +1,10 @@
 package redspark.io.miguelopolis.data.business.farmacia;
 
-import java.io.IOException;
 import java.util.List;
 
-import redspark.io.miguelopolis.data.dao.FarmaciaDao;
+import redspark.io.miguelopolis.data.business.BusinessException;
+import redspark.io.miguelopolis.data.dao.DaoException;
+import redspark.io.miguelopolis.data.dao.Farmacia.FarmaciaDao;
 import redspark.io.miguelopolis.data.model.Farmacia;
 
 /**
@@ -18,7 +19,11 @@ public class FarmaciaBO {
         farmaciaDAO = new FarmaciaDao();
     }
 
-    public void getAll(){
-        return farmaciaDAO.getAll();
+    public List<Farmacia> getAll() throws BusinessException {
+        try {
+            return farmaciaDAO.getAll();
+        } catch (DaoException e) {
+            throw new BusinessException(e.getCode(), e.getMessage());
+        }
     }
 }

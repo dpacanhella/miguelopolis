@@ -1,9 +1,9 @@
-package br.com.mychesys.droid.util.task;
+package redspark.io.miguelopolis.util.task;
 
-import br.com.mychesys.droid.business.BusinessException;
+import redspark.io.miguelopolis.data.business.BusinessException;
 
 /**
- * Created by Marcelo Alves.
+ * Created by Ricardo Cardoso.
  */
 public class AsyncTaskResult<T> {
 

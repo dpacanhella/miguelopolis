@@ -1,4 +1,4 @@
-package redspark.io.miguelopolis.data.model;
+package redspark.io.miguelopolis.util;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

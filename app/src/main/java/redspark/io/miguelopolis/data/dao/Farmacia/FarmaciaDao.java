@@ -1,11 +1,15 @@
-package redspark.io.miguelopolis.data.dao;
+package redspark.io.miguelopolis.data.dao.Farmacia;
 
+import java.io.IOException;
 import java.util.List;
 
 import redspark.io.miguelopolis.data.api.WebService;
 import redspark.io.miguelopolis.data.api.WebServiceClient;
+import redspark.io.miguelopolis.data.dao.DaoException;
 import redspark.io.miguelopolis.data.model.Farmacia;
 import retrofit2.Call;
+import retrofit2.Response;
+
 
 /**
  * Created by infra on 10/05/17.
@@ -20,8 +24,17 @@ public class FarmaciaDao {
     }
 
 
-    public void getAll()  {
+    public List<Farmacia> getAll() throws DaoException {
+        try {
             Call<List<Farmacia>> call = wsClient.getAll();
-
+            Response<List<Farmacia>> response = call.execute();
+            if (response.isSuccessful()) {
+                return response.body();
+            } else {
+                throw new DaoException(response.code(), response.message());
+            }
+        } catch (IOException e) {
+            throw new DaoException(DaoException.API_CALL_ERROR, e.getMessage());
+        }
     }
 }

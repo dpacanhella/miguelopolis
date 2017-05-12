@@ -1,7 +1,7 @@
-package br.com.mychesys.droid.util.task;
+package redspark.io.miguelopolis.util.task;
 
 /**
- * Created by Marcelo Alves.
+ * Created by Ricardo Cardoso.
  */
 public interface AppAsyncTask<T> {
     AsyncTaskResult<T> onStart();

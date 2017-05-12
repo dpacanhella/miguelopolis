@@ -13,4 +13,28 @@ public class Farmacia {
     private String razao;
 
     private String nomeProprietario;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getRazao() {
+        return razao;
+    }
+
+    public void setRazao(String razao) {
+        this.razao = razao;
+    }
+
+    public String getNomeProprietario() {
+        return nomeProprietario;
+    }
+
+    public void setNomeProprietario(String nomeProprietario) {
+        this.nomeProprietario = nomeProprietario;
+    }
 }

@@ -6,9 +6,10 @@
     android:orientation="vertical"
     tools:context="redspark.io.miguelopolis.MainActivity">
 
-    <FrameLayout
-        android:id="@id/farmacia_container_fragment"
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_recycler_farmacias"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

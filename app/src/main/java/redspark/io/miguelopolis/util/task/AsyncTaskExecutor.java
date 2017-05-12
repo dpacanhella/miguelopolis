@@ -1,10 +1,10 @@
-package br.com.mychesys.droid.util.task;
+package redspark.io.miguelopolis.util.task;
 
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
 /**
- * Created by Marcelo Alves.
+ * Created by Ricardo Cardoso.
  */
 public class AsyncTaskExecutor {
 
