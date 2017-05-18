@@ -2,6 +2,7 @@ package redspark.io.miguelopolis.adapter;
 
 import android.media.Image;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,11 @@ import android.widget.TextView;
 import java.util.List;
 
 import redspark.io.miguelopolis.R;
+import redspark.io.miguelopolis.data.business.BusinessException;
+import redspark.io.miguelopolis.data.business.farmacia.FarmaciaBO;
+import redspark.io.miguelopolis.data.dao.Farmacia.FarmaciaDao;
 import redspark.io.miguelopolis.data.model.Farmacia;
+import redspark.io.miguelopolis.data.model.FarmaciaDetalhes;
 
 /**
  * Created by ricardocardoso on 11/05/17.
@@ -20,6 +25,8 @@ import redspark.io.miguelopolis.data.model.Farmacia;
 public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.ViewHolder> {
 
     List<Farmacia> farmaciaList;
+
+    private FarmaciaBO farmaciaBO;
 
     public FarmaciasAdapter(List<Farmacia> doctorList) {
         this.farmaciaList = doctorList;
@@ -34,8 +41,24 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.populate(farmaciaList.get(position));
+
+        holder.txtName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    farmaciaBO = new FarmaciaBO();
+                    FarmaciaDetalhes farmacia = farmaciaBO.getById(position + 1);
+                    //aqui pega a posicao + 1 mas não acha meu serviço
+                    final String msg = "Item clicado: " + farmacia.getNomeProprietario();
+                    Log.i("Farmácia", msg);
+                } catch (BusinessException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
     }
 
     @Override

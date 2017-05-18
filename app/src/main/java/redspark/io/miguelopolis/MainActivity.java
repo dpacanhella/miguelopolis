@@ -7,6 +7,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.RelativeLayout;
 
 import java.util.List;
 
@@ -43,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         this.farmaciaBO = new FarmaciaBO();
 
         recyclerFarmacias = (RecyclerView) findViewById(R.id.main_recycler_farmacias);
-
         showFarmacias();
     }
 

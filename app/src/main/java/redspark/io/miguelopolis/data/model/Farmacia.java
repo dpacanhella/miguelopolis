@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class Farmacia {
 
-    private Long id;
+    private int id;
 
     private String razao;
 
@@ -16,11 +16,11 @@ public class Farmacia {
 
     private Boolean plantao;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

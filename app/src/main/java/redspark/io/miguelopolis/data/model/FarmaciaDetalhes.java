@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class FarmaciaDetalhes {
 
-    private Long id;
+    private int id;
 
     private String razao;
 
