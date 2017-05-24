@@ -1,5 +1,6 @@
 package redspark.io.miguelopolis;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
@@ -13,6 +14,7 @@ import android.widget.RelativeLayout;
 import java.util.List;
 
 import butterknife.Bind;
+import lombok.core.Main;
 import redspark.io.miguelopolis.adapter.FarmaciasAdapter;
 import redspark.io.miguelopolis.data.business.BusinessException;
 import redspark.io.miguelopolis.data.business.farmacia.FarmaciaBO;
@@ -46,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerFarmacias = (RecyclerView) findViewById(R.id.main_recycler_farmacias);
         showFarmacias();
+
+//        startActivity(new Intent(MainActivity.this, DetalhesActivity.class));
     }
 
     private void showFarmacias() {

@@ -1,5 +1,6 @@
 package redspark.io.miguelopolis.adapter;
 
+import android.content.Intent;
 import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -7,16 +8,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.List;
 
+import lombok.core.Main;
+import redspark.io.miguelopolis.DetalhesActivity;
+import redspark.io.miguelopolis.MainActivity;
 import redspark.io.miguelopolis.R;
 import redspark.io.miguelopolis.data.business.BusinessException;
 import redspark.io.miguelopolis.data.business.farmacia.FarmaciaBO;
 import redspark.io.miguelopolis.data.dao.Farmacia.FarmaciaDao;
 import redspark.io.miguelopolis.data.model.Farmacia;
 import redspark.io.miguelopolis.data.model.FarmaciaDetalhes;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by ricardocardoso on 11/05/17.
@@ -28,8 +37,15 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
 
     private FarmaciaBO farmaciaBO;
 
+    private MainActivity mainActivity;
+
     public FarmaciasAdapter(List<Farmacia> doctorList) {
         this.farmaciaList = doctorList;
+    }
+
+    public FarmaciasAdapter(List<Farmacia> doctorList, MainActivity main) {
+        this.farmaciaList = doctorList;
+        this.mainActivity = main;
     }
 
     @Override
@@ -41,24 +57,51 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.populate(farmaciaList.get(position));
 
-        holder.txtName.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
                 try {
                     farmaciaBO = new FarmaciaBO();
-                    FarmaciaDetalhes farmacia = farmaciaBO.getById(position + 1);
+
+                    Callback callback = new Callback() {
+                        @Override
+                        public void onResponse(Call call, Response response) {
+                            Log.i("info", "sucesso");
+                            FarmaciaDetalhes farm = (FarmaciaDetalhes) response.body();
+
+                            showDetalhes(farm);
+
+//                            AQUI QUERO JOGAR PARA UM OUTRO LAYOUT
+
+
+                        }
+
+                        @Override
+                        public void onFailure(Call call, Throwable t) {
+                            Log.i("info", "erro");
+                        }
+                    };
+
+
+                    FarmaciaDetalhes farmacia = farmaciaBO.getById(position + 1, callback);
                     //aqui pega a posicao + 1 mas não acha meu serviço
-                    final String msg = "Item clicado: " + farmacia.getNomeProprietario();
-                    Log.i("Farmácia", msg);
+
                 } catch (BusinessException e) {
                     e.printStackTrace();
                 }
 
             }
         });
+    }
+
+    private void showDetalhes(FarmaciaDetalhes farm) {
+        Intent intent = new Intent(mainActivity, DetalhesActivity.class);
+        //serializar
+//        intent.putExtra("farmacia", (Serializable) farm);
+        mainActivity.startActivity(intent);
     }
 
     @Override

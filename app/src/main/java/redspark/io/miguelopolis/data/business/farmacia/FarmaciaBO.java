@@ -7,6 +7,7 @@ import redspark.io.miguelopolis.data.dao.DaoException;
 import redspark.io.miguelopolis.data.dao.Farmacia.FarmaciaDao;
 import redspark.io.miguelopolis.data.model.Farmacia;
 import redspark.io.miguelopolis.data.model.FarmaciaDetalhes;
+import retrofit2.Callback;
 
 /**
  * Created by infra on 10/05/17.
@@ -28,12 +29,15 @@ public class FarmaciaBO {
         }
     }
 
-    public FarmaciaDetalhes getById(int id) throws BusinessException {
+    public FarmaciaDetalhes getById(int id, Callback callback) throws BusinessException {
         try {
-            return farmaciaDAO.getById(id);
+            farmaciaDAO.getById(id, callback);
         }catch (DaoException e){
             throw new BusinessException(e.getCode(), e.getMessage());
 
         }
+
+        FarmaciaDetalhes farm = new FarmaciaDetalhes();
+        return farm;
     }
 }
