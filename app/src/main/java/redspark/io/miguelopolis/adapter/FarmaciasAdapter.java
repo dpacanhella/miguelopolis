@@ -1,5 +1,6 @@
 package redspark.io.miguelopolis.adapter;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
 import android.support.v7.widget.RecyclerView;
@@ -37,15 +38,8 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
 
     private FarmaciaBO farmaciaBO;
 
-    private MainActivity mainActivity;
-
     public FarmaciasAdapter(List<Farmacia> doctorList) {
         this.farmaciaList = doctorList;
-    }
-
-    public FarmaciasAdapter(List<Farmacia> doctorList, MainActivity main) {
-        this.farmaciaList = doctorList;
-        this.mainActivity = main;
     }
 
     @Override
@@ -64,6 +58,8 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
             @Override
             public void onClick(final View v) {
                 try {
+
+
                     farmaciaBO = new FarmaciaBO();
 
                     Callback callback = new Callback() {
@@ -72,7 +68,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
                             Log.i("info", "sucesso");
                             FarmaciaDetalhes farm = (FarmaciaDetalhes) response.body();
 
-                            showDetalhes(farm);
+                            showDetalhes(holder.itemView.getContext(), farm);
 
 //                            AQUI QUERO JOGAR PARA UM OUTRO LAYOUT
 
@@ -97,11 +93,11 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
         });
     }
 
-    private void showDetalhes(FarmaciaDetalhes farm) {
-        Intent intent = new Intent(mainActivity, DetalhesActivity.class);
+    private void showDetalhes(Context c, FarmaciaDetalhes farm) {
+        Intent intent = new Intent(c, DetalhesActivity.class);
         //serializar
 //        intent.putExtra("farmacia", (Serializable) farm);
-        mainActivity.startActivity(intent);
+        c.startActivity(intent);
     }
 
     @Override
@@ -122,7 +118,6 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
             txtName = (TextView) itemView.findViewById(R.id.item_farmacia_text_name);
             txtNomeProprietario = (TextView) itemView.findViewById(R.id.item_farmacia_text_nomeProprietario);
             image = (ImageView) itemView.findViewById(R.id.item_image_view);
-
         }
 
         public void populate(Farmacia farmacia) {
