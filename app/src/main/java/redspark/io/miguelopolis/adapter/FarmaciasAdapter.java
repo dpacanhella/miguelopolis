@@ -96,7 +96,12 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
     private void showDetalhes(Context c, FarmaciaDetalhes farm) {
         Intent intent = new Intent(c, DetalhesActivity.class);
         //serializar
-//        intent.putExtra("farmacia", (Serializable) farm);
+        intent.putExtra("endereco", farm.getEndereco());
+        intent.putExtra("nomeProprietario", farm.getNomeProprietario());
+        intent.putExtra("razao", farm.getRazao());
+        intent.putExtra("telefone", farm.getTelefone());
+        intent.putExtra("imagem", farm.getImagem());
+
         c.startActivity(intent);
     }
 

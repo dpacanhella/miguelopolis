@@ -25,10 +25,10 @@ import redspark.io.miguelopolis.util.task.AsyncTaskResult;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Bind(R.id.farmacia_swipe_refresh)
-    SwipeRefreshLayout mSwipeRefresh;
-    @Bind(R.id.farmacia_recycler_view)
-    RecyclerView mRecyclerView;
+//    @Bind(R.id.farmacia_swipe_refresh)
+//    SwipeRefreshLayout mSwipeRefresh;
+//    @Bind(R.id.farmacia_recycler_view)
+//    RecyclerView mRecyclerView;
 
     private List<Farmacia> mFarmaciaList;
 
@@ -47,6 +47,28 @@ public class MainActivity extends AppCompatActivity {
         this.farmaciaBO = new FarmaciaBO();
 
         recyclerFarmacias = (RecyclerView) findViewById(R.id.main_recycler_farmacias);
+        recyclerFarmacias.setHasFixedSize(true);
+
+//        recyclerFarmacias.setOnScrollListener(new RecyclerView.OnScrollListener() {
+//            @Override
+//            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+//                super.onScrollStateChanged(recyclerView, newState);
+//            }
+//
+//            @Override
+//            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+//                super.onScrolled(recyclerView, dx, dy);
+//
+//                LinearLayoutManager lm = (LinearLayoutManager) recyclerFarmacias.getLayoutManager();
+//                FarmaciasAdapter adapter = (FarmaciasAdapter) recyclerView.getAdapter();
+//
+//            }
+//        });
+
+
+        LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerFarmacias.setLayoutManager(llm);
         showFarmacias();
 
 //        startActivity(new Intent(MainActivity.this, DetalhesActivity.class));
