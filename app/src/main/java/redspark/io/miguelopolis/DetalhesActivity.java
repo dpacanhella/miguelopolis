@@ -72,6 +72,8 @@ public class DetalhesActivity extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.imagem);
 
 
+
+
         txtNomeProprietario.setText(nomeProprietario.toString());
         String lblTelefone = "Telefone: ";
         String lblEndereco = "Endereço: ";
