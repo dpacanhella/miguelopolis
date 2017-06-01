@@ -13,6 +13,15 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize" />
 
+    <com.github.rahatarmanahmed.cpv.CircularProgressView
+        android:id="@+id/progress_bar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        app:cpv_animAutostart="true"
+        app:cpv_color="@color/sesc_primary"
+        app:cpv_indeterminate="true" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,15 +30,6 @@
         android:paddingLeft="16dp"
         android:paddingTop="20dp"
         android:weightSum="1">
-
-        <com.github.rahatarmanahmed.cpv.CircularProgressView
-            android:id="@+id/progress_bar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_centerInParent="true"
-            app:cpv_animAutostart="true"
-            app:cpv_color="@color/sesc_primary"
-            app:cpv_indeterminate="true" />
 
         <TextView
             android:id="@+id/razao"
@@ -46,7 +46,7 @@
             android:id="@+id/proprietario"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="5dp"
             android:textColor="#000000"
             android:paddingRight="16dp"
             android:textSize="14sp"
@@ -66,10 +66,10 @@
             android:id="@+id/endereco"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:textColor="#000000"
             android:paddingRight="16dp"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/telefone"
@@ -78,11 +78,38 @@
             android:layout_marginTop="10dp"
             android:textColor="#000000"
             android:paddingRight="16dp"
-            android:textSize="20sp" />
-
+            android:textSize="16sp" />
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:background="?attr/colorPrimary"
+        android:layout_height="wrap_content"
+        android:id="@+id/rodape"
+        android:padding="10dip">
 
+        <TextView
+            android:id="@+id/texto2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:text="Powered by Diego Pacanhella"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="2017"
+            android:paddingRight="16dp"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
 
 </RelativeLayout>

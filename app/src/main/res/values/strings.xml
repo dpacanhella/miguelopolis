@@ -4,4 +4,7 @@
     <string name="getAll_farmacias_error">Erro ao obter lista de farmácias</string>
     <string name="label_ok">Ok</string>
     <string name="dialog_title_error">Erro</string>
+    <string name="endereco">Endereço: </string>
+    <string name="telefone">Telefone: </string>
+
 </resources>

@@ -64,16 +64,6 @@ public class DetalhesActivity extends AppCompatActivity {
         Serializable nomeProprietario = getIntent().getSerializableExtra("nomeProprietario");
         Serializable razao = getIntent().getSerializableExtra("razao");
         Serializable telefone = getIntent().getSerializableExtra("telefone");
-        Serializable imagem = getIntent().getSerializableExtra("imagem");
-        uiHandler = new Handler();
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mProgressBar.setVisibility(View.GONE);
-            }
-        }, 2500);
-
 
         txtNomeProprietario = (TextView) findViewById(R.id.proprietario);
         txtEndereco = (TextView) findViewById(R.id.endereco);
@@ -83,14 +73,21 @@ public class DetalhesActivity extends AppCompatActivity {
 
 
         txtNomeProprietario.setText(nomeProprietario.toString());
-        txtEndereco.setText(endereco.toString());
+        String lblTelefone = "Telefone: ";
+        String lblEndereco = "Endereço: ";
+        txtEndereco.setText(lblEndereco + endereco.toString());
         txtRazao.setText(razao.toString());
-        txtTelefone.setText(telefone.toString());
-
-
-
+        txtTelefone.setText(lblTelefone + telefone.toString());
 
         imageView.setImageResource(R.mipmap.certo);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mProgressBar.setVisibility(View.GONE);
+            }
+        }, 2500);
+
 
 
 
