@@ -4,28 +4,32 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1583c6">
+    android:background="#ddd">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_below="@+id/tb_main"
+        android:paddingLeft="16dp"
+        android:paddingTop="20dp"
+        android:weightSum="1">
 
-        <Button
-            android:id="@+id/BotaoVoltar"
-            android:layout_width="250px"
-            android:layout_height="wrap_content"
-            android:text="Voltar"
-            android:textSize="18px"
-            android:layout_marginTop="35dp"/>
-
-        <TextView
-            android:id="@+id/proprietario"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textColor="#000000"
-            android:textSize="20sp"/>
+        <com.github.rahatarmanahmed.cpv.CircularProgressView
+            android:id="@+id/progress_bar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            app:cpv_animAutostart="true"
+            app:cpv_color="@color/sesc_primary"
+            app:cpv_indeterminate="true" />
 
         <TextView
             android:id="@+id/razao"
@@ -33,7 +37,30 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textColor="#000000"
-            android:textSize="20sp"/>
+            android:paddingRight="16dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/proprietario"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="#000000"
+            android:paddingRight="16dp"
+            android:textSize="14sp"
+            android:textAlignment="center"/>
+
+
+        <ImageView
+            android:id="@+id/imagem"
+            android:layout_width="318dp"
+            android:layout_height="154dp"
+            android:paddingRight="16dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:layout_weight="0.32" />
 
         <TextView
             android:id="@+id/endereco"
@@ -41,7 +68,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textColor="#000000"
-            android:textSize="20sp"/>
+            android:paddingRight="16dp"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/telefone"
@@ -49,23 +77,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textColor="#000000"
-            android:textSize="20sp"/>
+            android:paddingRight="16dp"
+            android:textSize="20sp" />
 
-        <ImageView
-            android:id="@+id/imagem"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:scaleType="fitXY"/>
 
     </LinearLayout>
 
-    <com.github.rahatarmanahmed.cpv.CircularProgressView
-        android:id="@+id/progress_bar"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_centerInParent="true"
-        app:cpv_animAutostart="true"
-        app:cpv_color="@color/sesc_primary"
-        app:cpv_indeterminate="true" />
+
 
 </RelativeLayout>

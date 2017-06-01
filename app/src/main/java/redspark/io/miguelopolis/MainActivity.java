@@ -8,6 +8,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.RelativeLayout;
 
@@ -37,11 +38,19 @@ public class MainActivity extends AppCompatActivity {
 
     private AsyncTaskExecutor taskExecutor;
     private FarmaciaBO farmaciaBO;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mToolbar = (Toolbar) findViewById(R.id.tb_main);
+        mToolbar.setTitle("     Migue Farmácias");
+        mToolbar.setSubtitle("       Próximos plantões");
+        mToolbar.setLogo(R.drawable.ic_launcher);
+        setSupportActionBar(mToolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         this.taskExecutor = new AsyncTaskExecutor();
         this.farmaciaBO = new FarmaciaBO();

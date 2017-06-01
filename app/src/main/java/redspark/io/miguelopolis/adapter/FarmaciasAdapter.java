@@ -2,6 +2,7 @@ package redspark.io.miguelopolis.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -132,6 +133,9 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
 
             if(farmacia.getPlantao()){
                 image.setImageResource(R.mipmap.certo);
+                //Retirar imagem e alterar cor de fundo, cor do texto, tamanho e borda
+//                txtName.setTextSize(19);
+//                itemView.setBackgroundColor(Color.parseColor("#000000"));
             }else{
                 image.setImageResource(R.mipmap.errado);
             }
