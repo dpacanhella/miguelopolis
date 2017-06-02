@@ -16,6 +16,8 @@ public class Farmacia {
 
     private String telefone;
 
+    private String endereco;
+
     private Boolean plantao;
 
     public int getId() {
@@ -32,6 +34,14 @@ public class Farmacia {
 
     public void setRazao(String razao) {
         this.razao = razao;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
     }
 
     public String getNomeProprietario() {
