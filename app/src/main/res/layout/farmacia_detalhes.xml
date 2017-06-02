@@ -55,12 +55,13 @@
 
         <ImageView
             android:id="@+id/imagem"
-            android:layout_width="318dp"
+            android:layout_width="344dp"
             android:layout_height="154dp"
             android:paddingRight="16dp"
             android:layout_marginTop="10dp"
             android:scaleType="fitXY"
-            android:layout_weight="0.32" />
+            android:layout_weight="0.48"
+            android:adjustViewBounds="true"/>
 
         <TextView
             android:id="@+id/endereco"
