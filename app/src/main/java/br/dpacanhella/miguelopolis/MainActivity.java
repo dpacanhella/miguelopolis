@@ -51,29 +51,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerFarmacias = (RecyclerView) findViewById(R.id.main_recycler_farmacias);
         recyclerFarmacias.setHasFixedSize(true);
 
-//        recyclerFarmacias.setOnScrollListener(new RecyclerView.OnScrollListener() {
-//            @Override
-//            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-//                super.onScrollStateChanged(recyclerView, newState);
-//            }
-//
-//            @Override
-//            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-//                super.onScrolled(recyclerView, dx, dy);
-//
-//                LinearLayoutManager lm = (LinearLayoutManager) recyclerFarmacias.getLayoutManager();
-//                FarmaciasAdapter adapter = (FarmaciasAdapter) recyclerView.getAdapter();
-//
-//            }
-//        });
-
 
         LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerFarmacias.setLayoutManager(llm);
         showFarmacias();
-
-//        startActivity(new Intent(MainActivity.this, DetalhesActivity.class));
     }
 
     private void showFarmacias() {
@@ -90,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFinish(AsyncTaskResult<List<Farmacia>> result) {
                 if (result.error() == null) {
-                    farmaciaAdapter = new FarmaciasAdapter(result.response());
+                    farmaciaAdapter = new FarmaciasAdapter(result.response(), null);
                     recyclerFarmacias.setLayoutManager(new LinearLayoutManager(MainActivity.this));
                     recyclerFarmacias.setAdapter(farmaciaAdapter);
                 } else {

@@ -30,11 +30,14 @@ import retrofit2.Response;
 public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.ViewHolder> {
 
     List<Farmacia> farmaciaList;
+    private FarmaciaListenner listener;
+    private Farmacia farmacia = null;
 
     private FarmaciaBO farmaciaBO;
 
-    public FarmaciasAdapter(List<Farmacia> doctorList) {
+    public FarmaciasAdapter(List<Farmacia> doctorList, FarmaciaListenner listener) {
         this.farmaciaList = doctorList;
+        this.listener = listener;
     }
 
     @Override
@@ -53,6 +56,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
             @Override
             public void onClick(final View v) {
                 try {
+                    farmacia = farmaciaList.get(position);
 
 
                     farmaciaBO = new FarmaciaBO();
@@ -76,8 +80,8 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
                         }
                     };
 
-
-                    FarmaciaDetalhes farmacia = farmaciaBO.getById(position + 1, callback);
+                    int id = farmacia.getId();
+                    FarmaciaDetalhes farmacia = farmaciaBO.getById(id, callback);
                     //aqui pega a posicao + 1 mas não acha meu serviço
 
                 } catch (BusinessException e) {
@@ -113,6 +117,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
         private Boolean plantao;
         private ImageView image;
 
+
         public ViewHolder(View itemView) {
             super(itemView);
 
@@ -141,4 +146,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
         }
     }
 
+    public interface FarmaciaListenner {
+        public void onItemListSelected(Farmacia farmacia);
+    }
 }
