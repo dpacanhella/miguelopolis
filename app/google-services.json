@@ -1,38 +1,32 @@
 {
   "project_info": {
-    "project_number": "242873437701",
-    "firebase_url": "https://farma-migue.firebaseio.com",
-    "project_id": "farma-migue",
-    "storage_bucket": "farma-migue.appspot.com"
+    "project_number": "790387489098",
+    "project_id": "firebase-farma-migue"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:242873437701:android:8405f03262b9540e",
+        "mobilesdk_app_id": "1:790387489098:android:c4aa4a454c6f2d79",
         "android_client_info": {
-          "package_name": "diego.farma.migue"
+          "package_name": "br.dpacanhella.miguelopolis"
         }
       },
       "oauth_client": [
         {
-          "client_id": "242873437701-ieun9s2455q2f2iolrg8qkqrc4tkrasj.apps.googleusercontent.com",
-          "client_type": 3
-        },
-        {
-          "client_id": "242873437701-c8ne7hpa481ss0rse0bn54dash1grjhn.apps.googleusercontent.com",
+          "client_id": "790387489098-pdk3mql8t0g1ja4qicpdfdcr5hg8tq5r.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAy60oU9xd4YSyjnhPh4xilkZ8LxmcGwzg"
+          "current_key": "AIzaSyDSw4Yr5J4JX7JBXRMISn_gf9HN2K6dd2U"
         }
       ],
       "services": {
         "analytics_service": {
           "status": 2,
           "analytics_property": {
-            "tracking_id": "UA-100401477-1"
+            "tracking_id": "UA-100401477-2"
           }
         },
         "appinvite_service": {
@@ -40,7 +34,7 @@
           "other_platform_oauth_client": []
         },
         "ads_service": {
-          "status": 2
+          "status": 1
         }
       }
     }
