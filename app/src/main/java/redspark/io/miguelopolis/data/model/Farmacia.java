@@ -14,6 +14,8 @@ public class Farmacia {
 
     private String nomeProprietario;
 
+    private String telefone;
+
     private Boolean plantao;
 
     public int getId() {
@@ -34,6 +36,14 @@ public class Farmacia {
 
     public String getNomeProprietario() {
         return nomeProprietario;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String razao) {
+        this.telefone = telefone;
     }
 
     public void setNomeProprietario(String nomeProprietario) {

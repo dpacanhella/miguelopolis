@@ -115,6 +115,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
 
         private TextView txtName;
         private TextView txtNomeProprietario;
+        private TextView txtTelefone;
         private Boolean plantao;
         private ImageView image;
 
@@ -124,20 +125,24 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
             txtName = (TextView) itemView.findViewById(R.id.item_farmacia_text_name);
             txtNomeProprietario = (TextView) itemView.findViewById(R.id.item_farmacia_text_nomeProprietario);
             image = (ImageView) itemView.findViewById(R.id.item_image_view);
+            txtTelefone = (TextView) itemView.findViewById(R.id.item_farmacia_text_telefone);
         }
 
         public void populate(Farmacia farmacia) {
 
             txtName.setText(farmacia.getRazao());
             txtNomeProprietario.setText(farmacia.getNomeProprietario());
+            String lblTelefone = "Telefone: (16) ";
+            txtTelefone.setText(lblTelefone + farmacia.getTelefone());
 
             if(farmacia.getPlantao()){
-                image.setImageResource(R.mipmap.certo);
+//                image.setImageResource(R.mipmap.certo);
                 //Retirar imagem e alterar cor de fundo, cor do texto, tamanho e borda
 //                txtName.setTextSize(19);
-//                itemView.setBackgroundColor(Color.parseColor("#000000"));
+                itemView.setBackgroundColor(Color.parseColor("#ffffff"));
             }else{
-                image.setImageResource(R.mipmap.errado);
+//                image.setImageResource(R.mipmap.errado);
+                itemView.setBackgroundColor(Color.parseColor("#c4c4c4"));
             }
         }
     }
