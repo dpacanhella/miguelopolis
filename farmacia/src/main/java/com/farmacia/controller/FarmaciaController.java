@@ -28,7 +28,7 @@ public class FarmaciaController {
     @Autowired
     private FarmaciaMapper farmaciaMapper;
 
-    @Scheduled(cron = "0 2 0 ? * SAT")
+    @Scheduled(cron = "0 2 3 ? * SAT")
     // @Scheduled(fixedRate = 2000)
     public List<FarmaciaDTO> setFarmacias() {
         List<Farmacia> entity = farmaciaService.updateAll();

@@ -50,7 +50,9 @@ public class FarmaciaServiceImpl implements FarmaciaService {
 
     @Override
     public List<Farmacia> getAll() {
-        List<Farmacia> novasFarmacias = farmaciaRepository.findAll();
+        
+        List<Farmacia> novasFarmacias = farmaciaRepository.findAllByOrderByPlantaoDescRazaoAsc();
+        
         return novasFarmacias;
     }
 
