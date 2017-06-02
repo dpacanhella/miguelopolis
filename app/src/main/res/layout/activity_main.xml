@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ddd"
-    tools:context="redspark.io.miguelopolis.MainActivity">
+    tools:context="br.dpacanhella.miguelopolis.br.io.miguelopolis.MainActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/tb_main"
@@ -23,35 +23,5 @@
         android:layout_below="@+id/tb_main"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_alignParentBottom="true"
-        android:gravity="center_vertical"
-        android:background="?attr/colorPrimary"
-        android:layout_height="wrap_content"
-        android:id="@+id/rodape"
-        android:padding="10dip">
-
-        <TextView
-            android:id="@+id/texto2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:paddingLeft="10dp"
-            android:text="Powered by Diego Pacanhella"
-            android:textColor="#FFFFFF" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="right"
-            android:text="2017"
-            android:paddingRight="16dp"
-            android:textColor="#FFFFFF" />
-
-    </LinearLayout>
 
 </RelativeLayout>
