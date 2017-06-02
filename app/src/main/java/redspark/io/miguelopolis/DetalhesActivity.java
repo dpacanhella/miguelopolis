@@ -52,8 +52,6 @@ public class DetalhesActivity extends AppCompatActivity {
     Button botaoLigar;
     private Toolbar mToolbar;
 
-    private Bitmap bitmap;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);// Add THIS LINE
@@ -90,19 +88,6 @@ public class DetalhesActivity extends AppCompatActivity {
         txtTelefone.setText(lblTelefone + telefone.toString());
         
         loadImageFromURL(imagem.toString());
-
-
-//        imageView.setImageBitmap(bitmap);
-
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                mProgressBar.setVisibility(View.GONE);
-//            }
-//        }, 2500);
-
-
-
 
         botaoLigar.setOnClickListener(new View.OnClickListener() {
             @Override
