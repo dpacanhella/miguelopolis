@@ -14,6 +14,6 @@ public interface FarmaciaRepository extends JpaRepository<Farmacia, Long> {
 
     Farmacia findById(Integer id);
 
-    List<Farmacia> findAllByOrderByPlantaoDescRazaoAsc();
+    List<Farmacia> findAllByOrderByPlantaoDescIdAsc();
 
 }

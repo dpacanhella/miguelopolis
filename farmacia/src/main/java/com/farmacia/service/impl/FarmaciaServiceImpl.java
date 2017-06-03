@@ -30,7 +30,7 @@ public class FarmaciaServiceImpl implements FarmaciaService {
         if (proxima != null) {
             proxima.setPlantao(true);
             farmaciaRepository.save(proxima);
-        } else if (farmaciaPlantao.getId() + 1 > 9) {
+        } else if (farmaciaPlantao.getId() + 1 > 10) {
 
             for (Farmacia farmacia : farmacias) {
                 farmacia.setPlantao(false);
@@ -51,7 +51,7 @@ public class FarmaciaServiceImpl implements FarmaciaService {
     @Override
     public List<Farmacia> getAll() {
         
-        List<Farmacia> novasFarmacias = farmaciaRepository.findAllByOrderByPlantaoDescRazaoAsc();
+        List<Farmacia> novasFarmacias = farmaciaRepository.findAllByOrderByPlantaoDescIdAsc();
         
         return novasFarmacias;
     }
