@@ -33,6 +33,7 @@ public class DetalhesActivity extends AppCompatActivity {
     TextView txtRazao;
     TextView txtTelefone;
     TextView txtObservacao;
+    TextView lblObservacao;
     ImageView imageView;
     Button botaoLigar;
     private Toolbar mToolbar;
@@ -64,6 +65,7 @@ public class DetalhesActivity extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.imagem);
         botaoLigar = (Button) findViewById(R.id.btnCall);
         txtObservacao = (TextView) findViewById(R.id.observacao);
+        lblObservacao = (TextView) findViewById(R.id.lblObservacao);
 
 
         txtNomeProprietario.setText(nomeProprietario.toString());
@@ -77,6 +79,7 @@ public class DetalhesActivity extends AppCompatActivity {
             txtObservacao.setText("- O plantão da Morifarma é realizado na Drograria Total - Centro");
         } else {
             txtObservacao.setVisibility(View.GONE);
+            lblObservacao.setVisibility(View.GONE);
         }
 
         loadImageFromURL(imagem.toString());
