@@ -32,6 +32,7 @@ public class DetalhesActivity extends AppCompatActivity {
     TextView txtEndereco;
     TextView txtRazao;
     TextView txtTelefone;
+    TextView txtObservacao;
     ImageView imageView;
     Button botaoLigar;
     private Toolbar mToolbar;
@@ -62,6 +63,7 @@ public class DetalhesActivity extends AppCompatActivity {
         txtTelefone = (TextView) findViewById(R.id.telefone);
         imageView = (ImageView) findViewById(R.id.imagem);
         botaoLigar = (Button) findViewById(R.id.btnCall);
+        txtObservacao = (TextView) findViewById(R.id.observacao);
 
 
         txtNomeProprietario.setText(nomeProprietario.toString());
@@ -70,7 +72,13 @@ public class DetalhesActivity extends AppCompatActivity {
         txtEndereco.setText(lblEndereco + endereco.toString());
         txtRazao.setText(razao.toString());
         txtTelefone.setText(lblTelefone + telefone.toString());
-        
+
+        if (telefone.equals("3835 5555")) {
+            txtObservacao.setText("- O plantão da Morifarma é realizado na Drograria Total - Centro");
+        } else {
+            txtObservacao.setVisibility(View.GONE);
+        }
+
         loadImageFromURL(imagem.toString());
 
         botaoLigar.setOnClickListener(new View.OnClickListener() {
@@ -80,8 +88,8 @@ public class DetalhesActivity extends AppCompatActivity {
                 String telefoneLigar = "tel:" + telefone.toString();
                 intent.setData(Uri.parse(telefoneLigar));
                 startActivity(intent);
-        }
-    });
+            }
+        });
 
     }
 
