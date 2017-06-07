@@ -11,6 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.Tracker;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -24,6 +26,9 @@ import butterknife.ButterKnife;
  */
 
 public class DetalhesActivity extends AppCompatActivity {
+
+    public static GoogleAnalytics analytics;
+    public static Tracker tracker;
 
     @Bind(R.id.progress_bar)
     CircularProgressView mProgressBar;
@@ -42,6 +47,14 @@ public class DetalhesActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);// Add THIS LINE
         setContentView(R.layout.farmacia_detalhes);
+
+        analytics = GoogleAnalytics.getInstance(this);
+        analytics.setLocalDispatchPeriod(1800);
+
+        tracker = analytics.newTracker("UA-100401477-2");
+        tracker.enableExceptionReporting(true);
+        tracker.enableAdvertisingIdCollection(true);
+        tracker.enableAutoActivityTracking(true);
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
         mToolbar.setTitle("     Farma Migue");
