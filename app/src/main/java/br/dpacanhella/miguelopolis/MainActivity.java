@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
+import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
@@ -20,6 +22,7 @@ import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskResult;
+import butterknife.Bind;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,18 +52,11 @@ public class MainActivity extends AppCompatActivity {
         tracker.enableAdvertisingIdCollection(true);
         tracker.enableAutoActivityTracking(true);
 
-        //Adicionando evento ao abrir a tela
-//        t = ((MyApplication)this.getApplication()).getTracker(MyApplication.TrackerName.APP_TRACKER);
-//        t.setScreenName("Home");
-//        t.send(new HitBuilders.ScreenViewBuilder().build());
-
-
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
         mToolbar.setTitle("     Farma Migue");
         mToolbar.setSubtitle("       Plantão da semana");
         mToolbar.setLogo(R.drawable.ic_launcher);
         setSupportActionBar(mToolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         this.taskExecutor = new AsyncTaskExecutor();
         this.farmaciaBO = new FarmaciaBO();

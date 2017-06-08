@@ -15,7 +15,14 @@
         android:background="?attr/colorPrimary"
         />
 
-
+    <com.github.rahatarmanahmed.cpv.CircularProgressView
+        android:id="@+id/progress_bar_init"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        app:cpv_animAutostart="true"
+        app:cpv_color="@color/sesc_primary"
+        app:cpv_indeterminate="true" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/main_recycler_farmacias"
