@@ -64,9 +64,6 @@ public class MainActivity extends AppCompatActivity {
         tracker.enableAdvertisingIdCollection(true);
         tracker.enableAutoActivityTracking(true);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setHomeButtonEnabled(true);
-
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
                 .withHeaderBackground(R.drawable.header)
@@ -112,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
         mToolbar.setSubtitle("       Plantão da semana");
         mToolbar.setLogo(R.drawable.ic_launcher);
         setSupportActionBar(mToolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         this.taskExecutor = new AsyncTaskExecutor();
         this.farmaciaBO = new FarmaciaBO();
