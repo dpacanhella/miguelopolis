@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 .withActivity(this)
                 .withHeaderBackground(R.drawable.header)
                 .addProfiles(
-                        new ProfileDrawerItem().withName("Mike Penz").withEmail("dpacanhella@gmail.com").withIcon(getResources().getDrawable(R.drawable.profile))
+                        new ProfileDrawerItem().withName("Miguelópolis").withEmail("dpacanhella@gmail.com").withIcon(getResources().getDrawable(R.drawable.profile))
                 ).withOnAccountHeaderListener(new OnAccountHeaderListener() {
                     @Override
                     public boolean onProfileChanged(View view, IProfile profile, boolean current) {
@@ -83,10 +83,9 @@ public class MainActivity extends AppCompatActivity {
         new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(mToolbar)
+                .withTranslucentStatusBar(false)
                 .withActionBarDrawerToggle(true)
                 .withActionBarDrawerToggleAnimated(true)
-                .withTranslucentStatusBar(false)
-                .withActionBarDrawerToggle(false)
                 .withAccountHeader(headerResult)
                 .addDrawerItems(
                         farmacias,
