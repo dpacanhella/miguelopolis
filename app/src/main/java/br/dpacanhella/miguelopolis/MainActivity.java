@@ -1,5 +1,6 @@
 package br.dpacanhella.miguelopolis;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -37,6 +38,7 @@ import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskResult;
 import butterknife.Bind;
+import lombok.core.Main;
 
 import static com.mikepenz.materialdrawer.AccountHeader.*;
 
@@ -69,6 +71,13 @@ public class MainActivity extends AppCompatActivity {
         tracker.enableAdvertisingIdCollection(true);
         tracker.enableAutoActivityTracking(true);
 
+        mToolbar = (Toolbar) findViewById(R.id.tb_main);
+        mToolbar.setTitle("     Farma Migue");
+        mToolbar.setSubtitle("       Plantão da semana");
+        mToolbar.setLogo(R.drawable.ic_launcher);
+
+        setSupportActionBar(mToolbar);
+
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
                 .withHeaderBackground(R.drawable.header2)
@@ -89,8 +98,6 @@ public class MainActivity extends AppCompatActivity {
                 .withActivity(this)
                 .withToolbar(mToolbar)
                 .withTranslucentStatusBar(false)
-                .withActionBarDrawerToggle(true)
-                .withActionBarDrawerToggleAnimated(true)
                 .withAccountHeader(headerResult)
                 .addDrawerItems(
                         farmacias,
@@ -102,19 +109,26 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         System.out.println(drawerItem);
+
+                        Intent intent = null;
+
+                        if (drawerItem != null){
+                            if(drawerItem.getIdentifier() == 123){
+                                intent = new Intent(MainActivity.this, MainActivity.class);
+                            }else if(drawerItem.getIdentifier() == 454){
+                                intent = new Intent(MainActivity.this, OnibusActivity.class);
+                            }
+                        }
+
+                        if (intent != null) {
+                            MainActivity.this.startActivity(intent);
+                        }
+
                         return false;
                     }
                 })
                 .build();
 
-
-
-        mToolbar = (Toolbar) findViewById(R.id.tb_main);
-        mToolbar.setTitle("     Farma Migue");
-        mToolbar.setSubtitle("       Plantão da semana");
-        mToolbar.setLogo(R.drawable.ic_launcher);
-
-        setSupportActionBar(mToolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(false);

@@ -29,6 +29,7 @@ public class DetalhesActivity extends AppCompatActivity {
 
     public static GoogleAnalytics analytics;
     public static Tracker tracker;
+    private Toolbar mToolbar;
 
     @Bind(R.id.progress_bar)
     CircularProgressView mProgressBar;
@@ -41,7 +42,7 @@ public class DetalhesActivity extends AppCompatActivity {
     TextView lblObservacao;
     ImageView imageView;
     Button botaoLigar;
-    private Toolbar mToolbar;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
