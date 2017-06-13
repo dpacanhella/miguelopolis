@@ -1,11 +1,13 @@
 package br.dpacanhella.miguelopolis;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
@@ -52,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     private AsyncTaskExecutor taskExecutor;
     private FarmaciaBO farmaciaBO;
     private Toolbar mToolbar;
+    private Drawer result = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,13 +69,11 @@ public class MainActivity extends AppCompatActivity {
         tracker.enableAdvertisingIdCollection(true);
         tracker.enableAutoActivityTracking(true);
 
-<<<<<<< HEAD
-=======
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
-                .withHeaderBackground(R.drawable.header)
+                .withHeaderBackground(R.drawable.header2)
                 .addProfiles(
-                        new ProfileDrawerItem().withName("Miguelópolis").withEmail("dpacanhella@gmail.com").withIcon(getResources().getDrawable(R.drawable.profile))
+                        new ProfileDrawerItem().withName("Guia Miguelópolis").withEmail("dpacanhella@gmail.com").withIcon(getResources().getDrawable(R.mipmap.icon_medicamentos))
                 ).withOnAccountHeaderListener(new OnAccountHeaderListener() {
                     @Override
                     public boolean onProfileChanged(View view, IProfile profile, boolean current) {
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         PrimaryDrawerItem farmacias = new PrimaryDrawerItem().withName("Plantão/Farmácias").withIdentifier(123);
         SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454);
 
-        new DrawerBuilder()
+        result = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(mToolbar)
                 .withTranslucentStatusBar(false)
@@ -107,12 +108,16 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
 
->>>>>>> 0bd59282d0d07f4469569228a1091d0a260ccd5a
+
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
         mToolbar.setTitle("     Farma Migue");
         mToolbar.setSubtitle("       Plantão da semana");
         mToolbar.setLogo(R.drawable.ic_launcher);
+
         setSupportActionBar(mToolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(false);
 
         this.taskExecutor = new AsyncTaskExecutor();
         this.farmaciaBO = new FarmaciaBO();
