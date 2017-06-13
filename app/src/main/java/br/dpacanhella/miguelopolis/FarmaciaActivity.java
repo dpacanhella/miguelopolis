@@ -83,14 +83,15 @@ public class FarmaciaActivity extends AppCompatActivity {
                     }
                 }).build();
 
-        PrimaryDrawerItem home = new PrimaryDrawerItem().withName("Home").withIdentifier(1).withSelectable(false);
-        SecondaryDrawerItem farmacias = new SecondaryDrawerItem().withName("Plantão/Farmácias").withIdentifier(123).withSelectable(true);
-        SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454).withSelectable(false);
+        PrimaryDrawerItem home = new PrimaryDrawerItem().withName("Home").withIdentifier(1);
+        SecondaryDrawerItem farmacias = new SecondaryDrawerItem().withName("Plantão/Farmácias").withIdentifier(123);
+        SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454);
 
 
         result = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(mToolbar)
+                .withSelectedItem(123)
                 .withTranslucentStatusBar(false)
                 .withActionBarDrawerToggle(true)
                 .withActionBarDrawerToggleAnimated(true)

@@ -65,13 +65,14 @@ public class OnibusActivity extends AppCompatActivity {
                 }).build();
 
 
-        PrimaryDrawerItem home = new PrimaryDrawerItem().withName("Home").withIdentifier(1).withSelectable(false);
-        SecondaryDrawerItem farmacias = new SecondaryDrawerItem().withName("Plantão/Farmácias").withIdentifier(123).withSelectable(false);
-        SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454).withSelectable(true);
+        PrimaryDrawerItem home = new PrimaryDrawerItem().withName("Home").withIdentifier(1);
+        SecondaryDrawerItem farmacias = new SecondaryDrawerItem().withName("Plantão/Farmácias").withIdentifier(123);
+        SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454);
 
         result = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(mToolbar)
+                .withSelectedItem(454)
                 .withTranslucentStatusBar(false)
                 .withActionBarDrawerToggle(true)
                 .withActionBarDrawerToggleAnimated(true)
