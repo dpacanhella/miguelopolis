@@ -1,22 +1,17 @@
 package br.dpacanhella.miguelopolis;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
+import android.view.Gravity;
 import android.view.View;
 
-import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
-import com.mikepenz.fontawesome_typeface_library.FontAwesome;
-import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -37,12 +32,10 @@ import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskResult;
-import butterknife.Bind;
-import lombok.core.Main;
 
 import static com.mikepenz.materialdrawer.AccountHeader.*;
 
-public class MainActivity extends AppCompatActivity {
+public class FarmaciaActivity extends AppCompatActivity {
 
 
     public static GoogleAnalytics analytics;
@@ -90,16 +83,22 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }).build();
 
+        PrimaryDrawerItem home = new PrimaryDrawerItem().withName("Home").withIdentifier(1).withSelectable(false);
+        SecondaryDrawerItem farmacias = new SecondaryDrawerItem().withName("Plantão/Farmácias").withIdentifier(123).withSelectable(true);
+        SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454).withSelectable(false);
 
-        PrimaryDrawerItem farmacias = new PrimaryDrawerItem().withName("Plantão/Farmácias").withIdentifier(123);
-        SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454);
 
         result = new DrawerBuilder()
                 .withActivity(this)
                 .withToolbar(mToolbar)
                 .withTranslucentStatusBar(false)
+                .withActionBarDrawerToggle(true)
+                .withActionBarDrawerToggleAnimated(true)
+                .withDrawerGravity(Gravity.START)
                 .withAccountHeader(headerResult)
                 .addDrawerItems(
+                        home,
+                        new DividerDrawerItem(),
                         farmacias,
                         new DividerDrawerItem(),
                         horariosOnibus
@@ -114,14 +113,16 @@ public class MainActivity extends AppCompatActivity {
 
                         if (drawerItem != null){
                             if(drawerItem.getIdentifier() == 123){
-                                intent = new Intent(MainActivity.this, MainActivity.class);
+                                intent = new Intent(FarmaciaActivity.this, FarmaciaActivity.class);
                             }else if(drawerItem.getIdentifier() == 454){
-                                intent = new Intent(MainActivity.this, OnibusActivity.class);
+                                intent = new Intent(FarmaciaActivity.this, OnibusActivity.class);
+                            }else if(drawerItem.getIdentifier() == 1){
+                                intent = new Intent(FarmaciaActivity.this, HomeActivity.class);
                             }
                         }
 
                         if (intent != null) {
-                            MainActivity.this.startActivity(intent);
+                            FarmaciaActivity.this.startActivity(intent);
                         }
 
                         return false;
@@ -129,9 +130,8 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .build();
 
+        result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(false);
 
         this.taskExecutor = new AsyncTaskExecutor();
         this.farmaciaBO = new FarmaciaBO();
@@ -161,10 +161,10 @@ public class MainActivity extends AppCompatActivity {
             public void onFinish(AsyncTaskResult<List<Farmacia>> result) {
                 if (result.error() == null) {
                     farmaciaAdapter = new FarmaciasAdapter(result.response(), null);
-                    recyclerFarmacias.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+                    recyclerFarmacias.setLayoutManager(new LinearLayoutManager(FarmaciaActivity.this));
                     recyclerFarmacias.setAdapter(farmaciaAdapter);
                 } else {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.DialogTheme);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(FarmaciaActivity.this, R.style.DialogTheme);
                     builder.setTitle(R.string.dialog_title_error)
                             .setMessage(R.string.getAll_farmacias_error)
                             .setPositiveButton(R.string.label_ok, null);

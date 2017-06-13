@@ -26,8 +26,7 @@ import butterknife.ButterKnife;
  * Created by infra on 13/06/17.
  */
 
-public class OnibusActivity extends AppCompatActivity {
-
+public class HomeActivity extends AppCompatActivity {
     public static GoogleAnalytics analytics;
     public static Tracker tracker;
     private Toolbar mToolbar;
@@ -36,7 +35,7 @@ public class OnibusActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);// Add THIS LINE
-        setContentView(R.layout.onibus_horarios);
+        setContentView(R.layout.home);
 
         analytics = GoogleAnalytics.getInstance(this);
         analytics.setLocalDispatchPeriod(1800);
@@ -47,9 +46,9 @@ public class OnibusActivity extends AppCompatActivity {
         tracker.enableAutoActivityTracking(true);
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
-        mToolbar.setTitle("     São Bento");
-        mToolbar.setSubtitle("       Horários");
-        mToolbar.setLogo(R.drawable.bus_icon);
+        mToolbar.setTitle("     Home");
+        mToolbar.setSubtitle("       Guia Miguelópolis");
+        mToolbar.setLogo(R.drawable.home);
         setSupportActionBar(mToolbar);
 
         AccountHeader headerResult = new AccountHeaderBuilder()
@@ -65,9 +64,9 @@ public class OnibusActivity extends AppCompatActivity {
                 }).build();
 
 
-        PrimaryDrawerItem home = new PrimaryDrawerItem().withName("Home").withIdentifier(1).withSelectable(false);
+        PrimaryDrawerItem home = new PrimaryDrawerItem().withName("Home").withIdentifier(1).withSelectable(true);
         SecondaryDrawerItem farmacias = new SecondaryDrawerItem().withName("Plantão/Farmácias").withIdentifier(123).withSelectable(false);
-        SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454).withSelectable(true);
+        SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454).withSelectable(false);
 
         result = new DrawerBuilder()
                 .withActivity(this)
@@ -94,23 +93,22 @@ public class OnibusActivity extends AppCompatActivity {
 
                         if (drawerItem != null){
                             if(drawerItem.getIdentifier() == 123){
-                                intent = new Intent(OnibusActivity.this, FarmaciaActivity.class);
+                                intent = new Intent(HomeActivity.this, FarmaciaActivity.class);
                             }else if(drawerItem.getIdentifier() == 454){
-                                intent = new Intent(OnibusActivity.this, OnibusActivity.class);
+                                intent = new Intent(HomeActivity.this, OnibusActivity.class);
                             }else if(drawerItem.getIdentifier() == 1){
-                                intent = new Intent(OnibusActivity.this, HomeActivity.class);
+                                intent = new Intent(HomeActivity.this, HomeActivity.class);
                             }
                         }
 
                         if (intent != null) {
-                            OnibusActivity.this.startActivity(intent);
+                            HomeActivity.this.startActivity(intent);
                         }
 
                         return false;
                     }
                 })
                 .build();
-
 
         ButterKnife.bind(this);
 

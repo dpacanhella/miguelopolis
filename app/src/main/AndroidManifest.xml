@@ -36,7 +36,7 @@
         </receiver>
         <service android:name="com.google.android.gms.analytics.CampaignTrackingService" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,11 +44,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".DetalhesActivity"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".FarmaciaActivity"
             />
         <activity android:name=".OnibusActivity"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".HomeActivity"
             />
+        <activity android:name=".FarmaciaActivity"
+        android:parentActivityName=".HomeActivity"
+        />
     </application>
 
 </manifest>
