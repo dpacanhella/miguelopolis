@@ -47,7 +47,7 @@ public class HomeActivity extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
         mToolbar.setTitle("     Home");
-        mToolbar.setSubtitle("       Guia Miguelópolis");
+        mToolbar.setSubtitle("     Guia Miguelópolis");
         mToolbar.setLogo(R.drawable.home);
         setSupportActionBar(mToolbar);
 

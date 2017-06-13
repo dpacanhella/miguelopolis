@@ -47,8 +47,8 @@ public class OnibusActivity extends AppCompatActivity {
         tracker.enableAutoActivityTracking(true);
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
-        mToolbar.setTitle("     São Bento");
-        mToolbar.setSubtitle("       Horários");
+        mToolbar.setTitle("     Ônibus");
+        mToolbar.setSubtitle("      Horários");
         mToolbar.setLogo(R.drawable.bus_icon);
         setSupportActionBar(mToolbar);
 
