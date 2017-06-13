@@ -12,6 +12,18 @@ import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
+import com.mikepenz.fontawesome_typeface_library.FontAwesome;
+import com.mikepenz.google_material_typeface_library.GoogleMaterial;
+import com.mikepenz.materialdrawer.AccountHeader;
+import com.mikepenz.materialdrawer.AccountHeaderBuilder;
+import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.DrawerBuilder;
+import com.mikepenz.materialdrawer.model.DividerDrawerItem;
+import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
+import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 import java.util.List;
 
@@ -23,6 +35,8 @@ import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskResult;
 import butterknife.Bind;
+
+import static com.mikepenz.materialdrawer.AccountHeader.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,6 +66,49 @@ public class MainActivity extends AppCompatActivity {
         tracker.enableAdvertisingIdCollection(true);
         tracker.enableAutoActivityTracking(true);
 
+<<<<<<< HEAD
+=======
+        AccountHeader headerResult = new AccountHeaderBuilder()
+                .withActivity(this)
+                .withHeaderBackground(R.drawable.header)
+                .addProfiles(
+                        new ProfileDrawerItem().withName("Mike Penz").withEmail("dpacanhella@gmail.com").withIcon(getResources().getDrawable(R.drawable.profile))
+                ).withOnAccountHeaderListener(new OnAccountHeaderListener() {
+                    @Override
+                    public boolean onProfileChanged(View view, IProfile profile, boolean current) {
+                        return true;
+                    }
+                }).build();
+
+
+        PrimaryDrawerItem farmacias = new PrimaryDrawerItem().withName("Plantão/Farmácias").withIdentifier(123);
+        SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454);
+
+        new DrawerBuilder()
+                .withActivity(this)
+                .withToolbar(mToolbar)
+                .withActionBarDrawerToggle(true)
+                .withActionBarDrawerToggleAnimated(true)
+                .withTranslucentStatusBar(false)
+                .withActionBarDrawerToggle(false)
+                .withAccountHeader(headerResult)
+                .addDrawerItems(
+                        farmacias,
+                        new DividerDrawerItem(),
+                        horariosOnibus
+
+                )
+                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+                    @Override
+                    public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+                        System.out.println(drawerItem);
+                        return false;
+                    }
+                })
+                .build();
+
+
+>>>>>>> 0bd59282d0d07f4469569228a1091d0a260ccd5a
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
         mToolbar.setTitle("     Farma Migue");
         mToolbar.setSubtitle("       Plantão da semana");
