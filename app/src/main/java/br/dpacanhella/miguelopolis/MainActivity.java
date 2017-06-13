@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
@@ -33,6 +34,7 @@ import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskResult;
+import butterknife.Bind;
 
 import static com.mikepenz.materialdrawer.AccountHeader.*;
 
@@ -64,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
         tracker.enableAdvertisingIdCollection(true);
         tracker.enableAutoActivityTracking(true);
 
+<<<<<<< HEAD
+=======
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
                 .withHeaderBackground(R.drawable.header)
@@ -103,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
 
+>>>>>>> 0bd59282d0d07f4469569228a1091d0a260ccd5a
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
         mToolbar.setTitle("     Farma Migue");
         mToolbar.setSubtitle("       Plantão da semana");

@@ -3,7 +3,9 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:paddingLeft="16dp"
-    android:paddingTop="10dp">
+    android:paddingTop="10dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground">
 
         <TextView
             android:id="@+id/item_farmacia_text_name"
