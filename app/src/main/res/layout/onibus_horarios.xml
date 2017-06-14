@@ -31,9 +31,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="(Corre as sábados, domingos e feriados)"
+        android:text="(Corre aos sábados, domingos e feriados)"
         android:textAlignment="center"
-        android:textColor="@color/common_signin_btn_dark_text_disabled"
+        android:textColor="#515151"
         android:textSize="12sp"
         android:textStyle="bold" />
 
@@ -60,9 +60,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="(Corre as sábados, domingos e feriados)"
+        android:text="(Corre aos sábados, domingos e feriados)"
         android:textAlignment="center"
-        android:textColor="@color/common_signin_btn_dark_text_disabled"
+        android:textColor="#515151"
         android:textSize="12sp"
         android:textStyle="bold" />
 
