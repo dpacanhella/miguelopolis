@@ -64,9 +64,9 @@ public class OnibusActivity extends AppCompatActivity {
                 }).build();
 
 
-        PrimaryDrawerItem home = new PrimaryDrawerItem().withName("Home").withIdentifier(1);
-        SecondaryDrawerItem farmacias = new SecondaryDrawerItem().withName("Plantão/Farmácias").withIdentifier(123);
-        SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454);
+        PrimaryDrawerItem home = new PrimaryDrawerItem().withName("Home").withIdentifier(1).withIcon(R.drawable.home);
+        SecondaryDrawerItem farmacias = new SecondaryDrawerItem().withName("Plantão/Farmácias").withIdentifier(123).withIcon(R.drawable.ic_launcher);
+        SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454).withIcon(R.drawable.bus_icon);
 
         result = new DrawerBuilder()
                 .withActivity(this)
