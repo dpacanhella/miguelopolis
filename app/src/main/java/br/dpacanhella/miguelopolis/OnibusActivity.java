@@ -48,7 +48,7 @@ public class OnibusActivity extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
         mToolbar.setTitle("     Ônibus");
-        mToolbar.setSubtitle("      Horários");
+        mToolbar.setSubtitle("       Horários");
         mToolbar.setLogo(R.drawable.bus_icon);
         setSupportActionBar(mToolbar);
 

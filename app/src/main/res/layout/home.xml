@@ -25,10 +25,54 @@
         android:paddingTop="20dp"
         android:weightSum="1">
 
-    <TextView
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Funcionalidades"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="0.22">
+
+            <Button
+                android:id="@+id/btnFarmacias"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_gravity="left"
+                android:background="@drawable/icon-farmacias"
+                android:text="Plantão/Farmácias"
+                android:textStyle="bold"
+                android:layout_alignTop="@+id/btnHorariosOnibus"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"></Button>
+
+            <Button
+                android:id="@+id/btnHorariosOnibus"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:background="@drawable/button"
+                android:text="Horários de ônibus"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"></Button>
+
+        </RelativeLayout>
+
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="50dp"
         android:paddingRight="16dp"
         android:text="Novidades"
         android:textColor="#000000"
@@ -63,15 +107,7 @@
             android:textSize="18sp"
             android:text=" - Serão incluídos, bares/restaurantes, lanchonetes, disk-gás, chaveiros entre outros. "/>
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:paddingRight="16dp"
-            android:text="Sugestões: dpacanhella@gmail.com"
-            android:textColor="#000000"
-            android:textSize="18sp" />
-
     </LinearLayout>
+
 </LinearLayout>
+
