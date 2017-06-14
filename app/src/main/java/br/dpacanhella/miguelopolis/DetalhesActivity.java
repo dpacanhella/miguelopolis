@@ -58,8 +58,7 @@ public class DetalhesActivity extends AppCompatActivity {
         tracker.enableAutoActivityTracking(true);
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
-        mToolbar.setTitle("     Farma Migue");
-        mToolbar.setSubtitle("       Detalhes");
+        mToolbar.setTitle("  Detalhes");
         mToolbar.setLogo(R.drawable.ic_launcher);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

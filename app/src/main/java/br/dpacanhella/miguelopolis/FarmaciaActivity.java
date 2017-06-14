@@ -65,15 +65,14 @@ public class FarmaciaActivity extends AppCompatActivity {
         tracker.enableAutoActivityTracking(true);
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
-        mToolbar.setTitle("     Farma Migue");
-        mToolbar.setSubtitle("      Plantão da semana");
+        mToolbar.setTitle("  Plantão da semana");
         mToolbar.setLogo(R.drawable.ic_launcher);
 
         setSupportActionBar(mToolbar);
 
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
-                .withHeaderBackground(R.drawable.header2)
+                .withHeaderBackground(R.drawable.header4)
                 .addProfiles(
                         new ProfileDrawerItem().withName("Guia Miguelópolis").withEmail("dpacanhella@gmail.com").withIcon(getResources().getDrawable(R.mipmap.icon_medicamentos))
                 ).withOnAccountHeaderListener(new OnAccountHeaderListener() {

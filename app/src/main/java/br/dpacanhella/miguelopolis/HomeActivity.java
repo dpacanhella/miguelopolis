@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
@@ -31,6 +32,8 @@ public class HomeActivity extends AppCompatActivity {
     public static Tracker tracker;
     private Toolbar mToolbar;
     private Drawer result = null;
+    Button botaoFarmacia;
+    Button botaoOnibus;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,14 +49,13 @@ public class HomeActivity extends AppCompatActivity {
         tracker.enableAutoActivityTracking(true);
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
-        mToolbar.setTitle("     Home");
-        mToolbar.setSubtitle("      Guia Miguelópolis");
+        mToolbar.setTitle("  Home");
         mToolbar.setLogo(R.drawable.home);
         setSupportActionBar(mToolbar);
 
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
-                .withHeaderBackground(R.drawable.header2)
+                .withHeaderBackground(R.drawable.header4)
                 .addProfiles(
                         new ProfileDrawerItem().withName("Guia Miguelópolis").withEmail("dpacanhella@gmail.com").withIcon(getResources().getDrawable(R.mipmap.icon_medicamentos))
                 ).withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
@@ -114,5 +116,33 @@ public class HomeActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
+        botaoFarmacia = (Button) findViewById(R.id.btnFarmacias);
+        botaoOnibus = (Button) findViewById(R.id.btnHorariosOnibus);
+
+        botaoFarmacia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = null;
+
+                intent = new Intent(HomeActivity.this, FarmaciaActivity.class);
+
+                if(intent != null){
+                    HomeActivity.this.startActivity(intent);
+                }
+            }
+        });
+
+        botaoOnibus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = null;
+
+                intent = new Intent(HomeActivity.this, OnibusActivity.class);
+
+                if(intent != null){
+                    HomeActivity.this.startActivity(intent);
+                }
+            }
+        });
     }
 }

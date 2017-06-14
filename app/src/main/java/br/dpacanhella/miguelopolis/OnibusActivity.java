@@ -47,14 +47,13 @@ public class OnibusActivity extends AppCompatActivity {
         tracker.enableAutoActivityTracking(true);
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
-        mToolbar.setTitle("     Ônibus");
-        mToolbar.setSubtitle("       Horários");
+        mToolbar.setTitle("  Horários");
         mToolbar.setLogo(R.drawable.bus_icon);
         setSupportActionBar(mToolbar);
 
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
-                .withHeaderBackground(R.drawable.header2)
+                .withHeaderBackground(R.drawable.header4)
                 .addProfiles(
                         new ProfileDrawerItem().withName("Guia Miguelópolis").withEmail("dpacanhella@gmail.com").withIcon(getResources().getDrawable(R.mipmap.icon_medicamentos))
                 ).withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
