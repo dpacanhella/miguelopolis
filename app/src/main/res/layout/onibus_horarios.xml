@@ -31,7 +31,65 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="(Corre aos sábados, domingos e feriados)"
+        android:text="(Segunda à sábado)"
+        android:textAlignment="center"
+        android:textColor="#515151"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="06:00  -  07:00  -  08:30  -  10:30  -  12:00  -  14:00  -  15:00  -  16:00  -  18:00  -  20:00. Escolas: 06:00  -  18:00"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Ituverava - Miguelópolis"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="(Segunda à sábado)"
+        android:textAlignment="center"
+        android:textColor="#515151"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="06:00  -  07:00  -  08:30  -  10:30  -  12:00  -  13:10  -  15:00  -  17:00  -  19:00  -  21:30. Escolas: 13:00  -  22:40"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Miguelópolis - Ituverava"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="(Domingos e feriados)"
         android:textAlignment="center"
         android:textColor="#515151"
         android:textSize="12sp"
@@ -60,7 +118,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="(Corre aos sábados, domingos e feriados)"
+        android:text="(Domingos e feriados)"
         android:textAlignment="center"
         android:textColor="#515151"
         android:textSize="12sp"
@@ -80,46 +138,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Miguelópolis - Ituverava"
-        android:textAlignment="center"
-        android:textColor="#000"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:text="*05:00  -  06:00  -  07:00  -  08:30  -  10:00  -  12:00  -  14:00  -  16:00  -  18:00  -  20:00"
-        android:textAlignment="center"
-        android:textColor="#000"
-        android:textSize="16sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Ituverava - Miguelópolis"
-        android:textAlignment="center"
-        android:textColor="#000"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:text="06:00  -  07:00''*  -  08:30  -  10:30  -  12:00  -  13:30  -  15:00  -  17:00  -  19:00  -  21:30 - ROD: 16:40"
-        android:textAlignment="center"
-        android:textColor="#000"
-        android:textSize="16sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:text="Miguelópolis - Guaíra"
         android:textAlignment="center"
         android:textColor="#000"
@@ -131,7 +149,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="09:25  -  11:30  -  17:30"
+        android:text="11:15  -  11:30  -  18:00"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="16sp" />
@@ -151,7 +169,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="06:40  -  14:40  -  16:40"
+        android:text="05:20  -  14:40  -  17:00"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="16sp" />
@@ -191,7 +209,27 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="06:30  -  15:30  -  17:30"
+        android:text="06:00  -  17:50 (São Bento)"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Uberaba - Miguelópolis"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="08:45  -  15:30 (São Bento)"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="16sp" />
@@ -211,7 +249,27 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="*05:30  -  06:40  -  07:05  -  08:00  -  08:35  -  10:05  -  11:00''  -  12:05  -  13:50  -  16:30  -  18:35  -  19:30  -  21:40  S Direto: 07:05  -  10:05  -  12:05.  Direto: 08:35"
+        android:text="05:30  -  06:40  -  07:05  -  08:10  -  11:00  -  13:35  -  16:30  -  18:35  -  19:30  -  22:25"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Ribeirão Preto - Ituverava"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="05:20  -  06:50  -  09:00 -  10:30  -  12:00  -  13:30  -  15:15  -  16:10  -  18:00  -  21:00"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="16sp" />
@@ -231,7 +289,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="06:50  -  07:55  -  10:55  -  13:10*  -  14:20  -  16:00  -  17:50  -  21:00"
+        android:text="06:50  -  07:55  -  10:55  -  13:10  -  14:20  -  16:00  -  17:50  -  21:00"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="16sp" />
@@ -294,16 +352,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="(*) Não corre aos domingos. "
-        android:layout_gravity="left"
-        android:textColor="#000"
-        android:textSize="16sp" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:text="('') Não corre aos sábados. "
+        android:text="Horários sujeitos à alterações"
         android:layout_gravity="left"
         android:textColor="#000"
         android:textSize="16sp" />
@@ -334,7 +383,79 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="Ituverava: (16) 3729-3162"
+        android:text="Ituverava: (16) 3729-2563"
+        android:layout_gravity="left"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Franca: (16) 3723-9300"
+        android:layout_gravity="left"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Igarapava: (16) 3172-2049"
+        android:layout_gravity="left"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Uberaba: (34) 3336-1458"
+        android:layout_gravity="left"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Ribeirão Preto: (16) 3512-9849"
+        android:layout_gravity="left"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Guaíra: (17) 3332-0477"
+        android:layout_gravity="left"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Barretos: (17) 3322-2044"
+        android:layout_gravity="left"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="São Joaquim da Barra: (16) 3728-5422"
+        android:layout_gravity="left"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="SJ. Rio Preto: (17) 3233-8683"
         android:layout_gravity="left"
         android:textColor="#000"
         android:textSize="16sp" />
