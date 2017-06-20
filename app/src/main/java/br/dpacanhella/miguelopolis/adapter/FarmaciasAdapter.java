@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
 
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
@@ -117,7 +119,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
         private TextView txtNomeProprietario;
         private TextView txtTelefone;
         private ImageView image;
-
+        private TextView txtHorario;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -126,6 +128,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
             txtNomeProprietario = (TextView) itemView.findViewById(R.id.item_farmacia_text_nomeProprietario);
             image = (ImageView) itemView.findViewById(R.id.item_image_view);
             txtTelefone = (TextView) itemView.findViewById(R.id.item_farmacia_text_telefone);
+            txtHorario = (TextView) itemView.findViewById(R.id.item_farmacia_text_horario);
         }
 
         public void populate(Farmacia farmacia) {
@@ -138,6 +141,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
             if(farmacia.getPlantao()){
                 itemView.setBackgroundColor(Color.parseColor("#ffffff"));
                 txtName.setTextColor(Color.parseColor("#ff0000"));
+                txtHorario.setText("Aberto das 08h00 às 22h00");
             }else{
                 itemView.setBackgroundColor(Color.parseColor("#c4c4c4"));
             }

@@ -1,5 +1,7 @@
 package com.farmacia.controller.dto;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,4 +20,5 @@ public class FarmaciaDTO {
     private String endereco;
     private String imagem;
     private Boolean plantao;
+    private List<PromocaoDTO> promocoes;
 }

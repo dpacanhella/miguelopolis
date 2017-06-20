@@ -1,13 +1,20 @@
 package br.dpacanhella.miguelopolis;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
@@ -18,6 +25,9 @@ import com.squareup.picasso.Picasso;
 
 import java.io.Serializable;
 
+import br.dpacanhella.miguelopolis.adapter.FarmaciasAdapter;
+import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
+import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -26,6 +36,13 @@ import butterknife.ButterKnife;
  */
 
 public class DetalhesActivity extends AppCompatActivity {
+
+    TabHost tabHos;
+    private RecyclerView recyclerPromocoes;
+    private FarmaciasAdapter farmaciaAdapter;
+
+    private AsyncTaskExecutor taskExecutor;
+    private FarmaciaBO farmaciaBO;
 
     public static GoogleAnalytics analytics;
     public static Tracker tracker;
@@ -43,7 +60,6 @@ public class DetalhesActivity extends AppCompatActivity {
     ImageView imageView;
     Button botaoLigar;
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);// Add THIS LINE
@@ -58,7 +74,7 @@ public class DetalhesActivity extends AppCompatActivity {
         tracker.enableAutoActivityTracking(true);
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
-        mToolbar.setTitle("  Detalhes");
+        mToolbar.setTitle("  Farmácia");
         mToolbar.setLogo(R.drawable.ic_launcher);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -107,6 +123,38 @@ public class DetalhesActivity extends AppCompatActivity {
             }
         });
 
+        TabHost host = (TabHost) findViewById(R.id.tabHost);
+        host.setup();
+
+        //TAB DETALHES
+        TabHost.TabSpec spec = host.newTabSpec("Detalhes");
+        spec.setContent(R.id.tab1);
+        spec.setIndicator("Detalhes");
+        host.addTab(spec);
+
+        //TABLE PROMOCOES
+        spec = host.newTabSpec("Promoções");
+        spec.setContent(R.id.tab2);
+        spec.setIndicator("Promoções");
+        host.addTab(spec);
+
+        //Chamar promoções
+        this.taskExecutor = new AsyncTaskExecutor();
+        this.farmaciaBO = new FarmaciaBO();
+
+        recyclerPromocoes = (RecyclerView) findViewById(R.id.main_recycler_promocoes);
+        recyclerPromocoes.setHasFixedSize(true);
+
+
+        LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerPromocoes.setLayoutManager(llm);
+        showPromocoes();
+
+    }
+
+    private void showPromocoes() {
+        
     }
 
     private void loadImageFromURL(String s) {
