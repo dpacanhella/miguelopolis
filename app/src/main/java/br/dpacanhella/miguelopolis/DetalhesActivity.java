@@ -27,6 +27,7 @@ import java.io.Serializable;
 
 import br.dpacanhella.miguelopolis.adapter.FarmaciasAdapter;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
+import br.dpacanhella.miguelopolis.data.model.Promocao;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -154,7 +155,7 @@ public class DetalhesActivity extends AppCompatActivity {
     }
 
     private void showPromocoes() {
-        
+
     }
 
     private void loadImageFromURL(String s) {

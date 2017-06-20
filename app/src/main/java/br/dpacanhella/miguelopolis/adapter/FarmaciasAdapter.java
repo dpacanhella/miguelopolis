@@ -3,6 +3,7 @@ package br.dpacanhella.miguelopolis.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import com.github.rahatarmanahmed.cpv.CircularProgressView;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
@@ -23,6 +25,7 @@ import br.dpacanhella.miguelopolis.DetalhesActivity;
 import br.dpacanhella.miguelopolis.R;
 import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.model.FarmaciaDetalhes;
+import br.dpacanhella.miguelopolis.data.model.Promocao;
 import butterknife.Bind;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -105,6 +108,8 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
         intent.putExtra("telefone", farm.getTelefone());
         intent.putExtra("imagem", farm.getImagem());
 
+        //Parei aqui
+
         c.startActivity(intent);
     }
 
@@ -151,4 +156,5 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
     public interface FarmaciaListenner {
         public void onItemListSelected(Farmacia farmacia);
     }
+
 }

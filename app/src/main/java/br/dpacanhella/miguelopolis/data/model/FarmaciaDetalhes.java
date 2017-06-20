@@ -1,5 +1,8 @@
 package br.dpacanhella.miguelopolis.data.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import lombok.Data;
 
 /**
@@ -22,5 +25,7 @@ public class FarmaciaDetalhes {
     private String imagem;
 
     private Boolean plantao;
+
+    private List<Promocao> promocoes = new ArrayList<Promocao>();
 
 }
