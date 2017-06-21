@@ -26,6 +26,6 @@ public class FarmaciaDetalhes {
 
     private Boolean plantao;
 
-    private List<Promocao> promocoes = new ArrayList<Promocao>();
+    private List<Promocao> promocoes;
 
 }

@@ -16,6 +16,7 @@ import com.github.rahatarmanahmed.cpv.CircularProgressView;
 
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,14 +102,22 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
 
     private void showDetalhes(Context c, FarmaciaDetalhes farm) {
         Intent intent = new Intent(c, DetalhesActivity.class);
-        //serializar
+
         intent.putExtra("endereco", farm.getEndereco());
         intent.putExtra("nomeProprietario", farm.getNomeProprietario());
         intent.putExtra("razao", farm.getRazao());
         intent.putExtra("telefone", farm.getTelefone());
         intent.putExtra("imagem", farm.getImagem());
 
-        //Parei aqui
+        List<Promocao> promocoes = farm.getPromocoes();
+
+        ArrayList list = new ArrayList();
+
+        for (Promocao promocao : promocoes) {
+            list.add(new Promocao(promocao.getId(), promocao.getImagemProduto(), promocao.getNomeProduto(), promocao.getPrecoInicial(), promocao.getPrecoFinal()));
+        }
+
+        intent.putParcelableArrayListExtra("promocoes", list);
 
         c.startActivity(intent);
     }

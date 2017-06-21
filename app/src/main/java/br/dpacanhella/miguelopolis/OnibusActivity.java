@@ -1,6 +1,14 @@
 package br.dpacanhella.miguelopolis;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -114,6 +122,24 @@ public class OnibusActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
+        //Notificação
+        Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        long[] vibrate = { 0, 100, 200, 300 };
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(OnibusActivity.this, 0, getIntent(), 0);
+        Notification noti = new Notification.Builder(OnibusActivity.this).setTicker("Farma Migue").setContentTitle("Farma Migue")
+                .setContentText("Atenção: O plantão foi alterado")
+                .setSmallIcon(R.mipmap.icon_medicamentos)
+                .setLargeIcon(((BitmapDrawable) getApplicationContext().getResources().getDrawable(R.mipmap.icon_medicamentos)).getBitmap())
+                .setSound(alarmSound)
+                .setVibrate(vibrate)
+                .set
+                .setContentIntent(pendingIntent).getNotification();
+
+        noti.flags = Notification.FLAG_AUTO_CANCEL;
+
+        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        nm.notify(0, noti);
 
     }
 }
