@@ -123,23 +123,22 @@ public class OnibusActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         //Notificação
-        Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        long[] vibrate = { 0, 100, 200, 300 };
-
-        PendingIntent pendingIntent = PendingIntent.getActivity(OnibusActivity.this, 0, getIntent(), 0);
-        Notification noti = new Notification.Builder(OnibusActivity.this).setTicker("Farma Migue").setContentTitle("Farma Migue")
-                .setContentText("Atenção: O plantão foi alterado")
-                .setSmallIcon(R.mipmap.icon_medicamentos)
-                .setLargeIcon(((BitmapDrawable) getApplicationContext().getResources().getDrawable(R.mipmap.icon_medicamentos)).getBitmap())
-                .setSound(alarmSound)
-                .setVibrate(vibrate)
-                .set
-                .setContentIntent(pendingIntent).getNotification();
-
-        noti.flags = Notification.FLAG_AUTO_CANCEL;
-
-        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        nm.notify(0, noti);
+//        Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+//        long[] vibrate = { 0, 100, 200, 300 };
+//
+//        PendingIntent pendingIntent = PendingIntent.getActivity(OnibusActivity.this, 0, getIntent(), 0);
+//        Notification noti = new Notification.Builder(OnibusActivity.this).setTicker("Farma Migue").setContentTitle("Farma Migue")
+//                .setContentText("Atenção: O plantão foi alterado")
+//                .setSmallIcon(R.mipmap.icon_medicamentos)
+//                .setLargeIcon(((BitmapDrawable) getApplicationContext().getResources().getDrawable(R.mipmap.icon_medicamentos)).getBitmap())
+//                .setSound(alarmSound)
+//                .setVibrate(vibrate)
+//                .setContentIntent(pendingIntent).getNotification();
+//
+//        noti.flags = Notification.FLAG_AUTO_CANCEL;
+//
+//        NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+//        nm.notify(0, noti);
 
     }
 }
