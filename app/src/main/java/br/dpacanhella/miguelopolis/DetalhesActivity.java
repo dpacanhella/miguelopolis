@@ -131,6 +131,8 @@ public class DetalhesActivity extends AppCompatActivity {
         host.addTab(spec);
 
         host.getTabWidget().getChildAt(0).setBackgroundColor(Color.parseColor("#097369"));
+        TextView tv = (TextView) host.getCurrentTabView().findViewById(android.R.id.title);
+        tv.setTextColor(Color.parseColor("#ffffff"));
 
         host.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
@@ -155,13 +157,22 @@ public class DetalhesActivity extends AppCompatActivity {
     }
 
     private void setTabColor(TabHost tabhost) {
-        for(int i=0;i<tabhost.getTabWidget().getChildCount();i++)
-            tabhost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#009688")); //unselected
+        for(int i=0;i<tabhost.getTabWidget().getChildCount();i++) {
+            tabhost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#028478"));
+            TextView tv = (TextView) tabhost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
+            tv.setTextColor(Color.parseColor("#000000"));
+        }
 
-        if(tabhost.getCurrentTab()==0)
-            tabhost.getTabWidget().getChildAt(tabhost.getCurrentTab()).setBackgroundColor(Color.parseColor("#097369")); //1st tab selected
-        else
-            tabhost.getTabWidget().getChildAt(tabhost.getCurrentTab()).setBackgroundColor(Color.parseColor("#097369")); //2nd tab selected
+        if(tabhost.getCurrentTab()==0) {
+
+            tabhost.getTabWidget().getChildAt(tabhost.getCurrentTab()).setBackgroundColor(Color.parseColor("#097369"));
+            TextView tv = (TextView) tabhost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
+            tv.setTextColor(Color.parseColor("#ffffff"));
+        }else {
+            tabhost.getTabWidget().getChildAt(tabhost.getCurrentTab()).setBackgroundColor(Color.parseColor("#097369"));
+            TextView tv = (TextView) tabhost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
+            tv.setTextColor(Color.parseColor("#ffffff"));
+        }
     }
 
     private void showPromocoes(final ArrayList<Promocao> promocoes) {

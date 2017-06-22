@@ -40,7 +40,7 @@
                 android:layout_height="38dp"
                 android:layout_below="@+id/tb_main"
                 android:layout_marginTop="55dp"
-                android:background="#009688"></TabWidget>
+                android:background="#028478"></TabWidget>
 
             <FrameLayout
                 android:id="@android:id/tabcontent"
