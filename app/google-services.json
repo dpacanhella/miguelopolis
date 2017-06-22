@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "330484512681-gvqer7h6i74aa5vei9sbb43ic6jq6hc2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.dpacanhella.miguelopolis",
+            "certificate_hash": "96ece0f48b8c0010fbe03b64416d3becdefa187e"
+          }
+        },
+        {
           "client_id": "330484512681-dfg2bt7asvk0ci71l0een250pnukhmdr.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330484512681-dfg2bt7asvk0ci71l0een250pnukhmdr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
