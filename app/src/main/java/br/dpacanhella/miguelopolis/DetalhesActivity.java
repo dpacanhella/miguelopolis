@@ -16,17 +16,13 @@ import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
-import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.Tracker;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import br.dpacanhella.miguelopolis.adapter.FarmaciasAdapter;
 import br.dpacanhella.miguelopolis.adapter.PromocoesAdapter;
-import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
 import br.dpacanhella.miguelopolis.data.model.Promocao;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
@@ -48,8 +44,6 @@ public class DetalhesActivity extends AppCompatActivity {
     private AsyncTaskExecutor taskExecutor;
     private FarmaciaBO farmaciaBO;
 
-    public static GoogleAnalytics analytics;
-    public static Tracker tracker;
     private Toolbar mToolbar;
 
     @Bind(R.id.progress_bar)
@@ -68,14 +62,6 @@ public class DetalhesActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);// Add THIS LINE
         setContentView(R.layout.farmacia_detalhes);
-
-        analytics = GoogleAnalytics.getInstance(this);
-        analytics.setLocalDispatchPeriod(1800);
-
-        tracker = analytics.newTracker("UA-100401477-2");
-        tracker.enableExceptionReporting(true);
-        tracker.enableAdvertisingIdCollection(true);
-        tracker.enableAutoActivityTracking(true);
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
         mToolbar.setTitle("  Farmácia");

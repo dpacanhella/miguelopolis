@@ -10,8 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 
-import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.Tracker;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -37,10 +35,6 @@ import static com.mikepenz.materialdrawer.AccountHeader.*;
 
 public class FarmaciaActivity extends AppCompatActivity {
 
-
-    public static GoogleAnalytics analytics;
-    public static Tracker tracker;
-
     private List<Farmacia> mFarmaciaList;
 
     private RecyclerView recyclerFarmacias;
@@ -55,14 +49,6 @@ public class FarmaciaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        analytics = GoogleAnalytics.getInstance(this);
-        analytics.setLocalDispatchPeriod(1800);
-
-        tracker = analytics.newTracker("UA-100401477-2");
-        tracker.enableExceptionReporting(true);
-        tracker.enableAdvertisingIdCollection(true);
-        tracker.enableAutoActivityTracking(true);
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
         mToolbar.setTitle("  Plantão da semana");

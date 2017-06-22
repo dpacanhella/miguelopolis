@@ -8,8 +8,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.Tracker;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -28,8 +26,6 @@ import butterknife.ButterKnife;
  */
 
 public class HomeActivity extends AppCompatActivity {
-    public static GoogleAnalytics analytics;
-    public static Tracker tracker;
     private Toolbar mToolbar;
     private Drawer result = null;
     Button botaoFarmacia;
@@ -39,14 +35,6 @@ public class HomeActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);// Add THIS LINE
         setContentView(R.layout.home);
-
-        analytics = GoogleAnalytics.getInstance(this);
-        analytics.setLocalDispatchPeriod(1800);
-
-        tracker = analytics.newTracker("UA-100401477-2");
-        tracker.enableExceptionReporting(true);
-        tracker.enableAdvertisingIdCollection(true);
-        tracker.enableAutoActivityTracking(true);
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
         mToolbar.setTitle("  Home");
