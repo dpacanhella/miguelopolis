@@ -16,6 +16,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -43,6 +44,7 @@ public class DetalhesActivity extends AppCompatActivity {
 
     private AsyncTaskExecutor taskExecutor;
     private FarmaciaBO farmaciaBO;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     private Toolbar mToolbar;
 
@@ -68,6 +70,13 @@ public class DetalhesActivity extends AppCompatActivity {
         mToolbar.setLogo(R.drawable.ic_launcher);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "0");
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Detalhes");
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+        mFirebaseAnalytics.logEvent("detalhes_ao_abrir", bundle);
 
         ButterKnife.bind(this);
 
@@ -172,6 +181,11 @@ public class DetalhesActivity extends AppCompatActivity {
             tabhost.getTabWidget().getChildAt(tabhost.getCurrentTab()).setBackgroundColor(Color.parseColor("#097369"));
             TextView tv = (TextView) tabhost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
             tv.setTextColor(Color.parseColor("#ffffff"));
+
+            Bundle bundle = new Bundle();
+            bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "1");
+            bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Promoções");
+            mFirebaseAnalytics.logEvent("promocoes", bundle);
         }
     }
 

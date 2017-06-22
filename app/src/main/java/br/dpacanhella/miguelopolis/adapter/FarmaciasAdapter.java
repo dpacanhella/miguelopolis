@@ -3,6 +3,7 @@ package br.dpacanhella.miguelopolis.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 import org.w3c.dom.Text;
 
@@ -41,6 +43,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
     List<Farmacia> farmaciaList;
     private FarmaciaListenner listener;
     private Farmacia farmacia = null;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     private FarmaciaBO farmaciaBO;
 
@@ -76,10 +79,9 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
                             Log.i("info", "sucesso");
                             FarmaciaDetalhes farm = (FarmaciaDetalhes) response.body();
 
+                            montaResumoAnalytics(farm, v);
+
                             showDetalhes(holder.itemView.getContext(), farm);
-
-//                            AQUI QUERO JOGAR PARA UM OUTRO LAYOUT
-
 
                         }
 
@@ -99,6 +101,24 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
             }
         });
     }
+
+    private void montaResumoAnalytics(FarmaciaDetalhes farmacia, View v) {
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(v.getContext());
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, String.valueOf(farmacia.getId()));
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, farmacia.getRazao());
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+
+
+        if(farmacia.getNomeProprietario().equals("FELIPE/GISELE")){
+            String nomeFormatado = farmacia.getNomeProprietario().replace("FELIPE/GISELE", "FELIPE_GISELE");
+            mFirebaseAnalytics.logEvent(nomeFormatado, bundle);
+        }else {
+
+            mFirebaseAnalytics.logEvent(farmacia.getNomeProprietario(), bundle);
+        }
+    }
+
 
     private void showDetalhes(Context c, FarmaciaDetalhes farm) {
         Intent intent = new Intent(c, DetalhesActivity.class);

@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -28,6 +29,7 @@ public class OnibusActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
     private Drawer result = null;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,13 @@ public class OnibusActivity extends AppCompatActivity {
         mToolbar.setTitle("  Horários");
         mToolbar.setLogo(R.drawable.bus_icon);
         setSupportActionBar(mToolbar);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "0");
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Ônibus");
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+        mFirebaseAnalytics.logEvent("onibus", bundle);
 
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)

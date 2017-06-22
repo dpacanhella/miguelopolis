@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -44,6 +45,7 @@ public class FarmaciaActivity extends AppCompatActivity {
     private FarmaciaBO farmaciaBO;
     private Toolbar mToolbar;
     private Drawer result = null;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,13 @@ public class FarmaciaActivity extends AppCompatActivity {
         mToolbar.setLogo(R.drawable.ic_launcher);
 
         setSupportActionBar(mToolbar);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "0");
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Farmacia");
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+        mFirebaseAnalytics.logEvent("farmacia", bundle);
 
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)

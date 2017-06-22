@@ -8,6 +8,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -30,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
     private Drawer result = null;
     Button botaoFarmacia;
     Button botaoOnibus;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,13 @@ public class HomeActivity extends AppCompatActivity {
         mToolbar.setTitle("  Home");
         mToolbar.setLogo(R.drawable.home);
         setSupportActionBar(mToolbar);
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "0");
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Home");
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+        mFirebaseAnalytics.logEvent("Home", bundle);
 
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
