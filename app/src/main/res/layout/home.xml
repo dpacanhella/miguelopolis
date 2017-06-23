@@ -104,7 +104,40 @@
         android:paddingLeft="16dp"
         android:textSize="16sp"
         android:textAppearance="@string/faw_align_justify"
-        android:text=" - O Aplicativo foi atualizado e agora contém um menu lateral que se encontra no canto superior esquerdo. "/>
+        android:text=" - Foi adicionado uma notificação na troca do plantão. "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="#565656"
+            android:paddingRight="14dp"
+            android:paddingLeft="16dp"
+            android:textSize="16sp"
+            android:textAppearance="@string/faw_align_justify"
+            android:text=" - Inserido o horário de funcionamento na tela de listagem das farmácias. "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="#565656"
+            android:paddingRight="14dp"
+            android:paddingLeft="16dp"
+            android:textSize="16sp"
+            android:textAppearance="@string/faw_align_justify"
+            android:text=" - Na tela de detalhes da farmácia, foi implementado uma aba de promoções localizada ao lado superior direito. "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="#565656"
+            android:paddingRight="14dp"
+            android:paddingLeft="16dp"
+            android:textSize="16sp"
+            android:textAppearance="@string/faw_align_justify"
+            android:text=" - Adicionado o WhatsApp das farmácias. "/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -115,7 +148,7 @@
             android:paddingRight="14dp"
             android:textSize="16sp"
             android:textAppearance="@string/faw_align_justify"
-            android:text=" - Também foi adicionado horários de ônibus da região. "/>
+            android:text=" - Adicionado mais alguns horários de ônibus. "/>
 
 
         <TextView

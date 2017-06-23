@@ -56,12 +56,25 @@
             android:layout_alignLeft="@+id/item_farmacia_text_nomeProprietario"
             android:layout_alignStart="@+id/item_farmacia_text_nomeProprietario" />
 
+    <TextView
+        android:id="@+id/item_farmacia_text_whats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="16dp"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textAlignment="center"
+        android:layout_below="@+id/item_farmacia_text_telefone"
+        android:layout_alignLeft="@+id/item_farmacia_text_nomeProprietario"
+        android:layout_alignStart="@+id/item_farmacia_text_nomeProprietario"
+        android:text="(16) 99213-8882"/>
+
         <View
             android:id="@+id/vw.divider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_below="@+id/item_farmacia_text_nomeProprietario"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="40dp"
             android:background="@color/colorPrimary" />
 
 </RelativeLayout>

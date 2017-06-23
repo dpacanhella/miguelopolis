@@ -26,6 +26,8 @@ public class FarmaciaDetalhes {
 
     private Boolean plantao;
 
+    private String whatsApp;
+
     private List<Promocao> promocoes;
 
 }

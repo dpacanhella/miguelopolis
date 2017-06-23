@@ -1,5 +1,7 @@
 package com.farmacia.service.impl;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,10 +52,18 @@ public class FarmaciaServiceImpl implements FarmaciaService {
 
     @Override
     public List<Farmacia> getAll() {
+        List<Farmacia> listaVazia = new ArrayList<Farmacia>();
         
-        List<Farmacia> novasFarmacias = farmaciaRepository.findAllByOrderByPlantaoDescIdAsc();
+        Farmacia  plantao = farmaciaRepository.findByPlantao(true);
+        List<Farmacia> todasFarmácias = farmaciaRepository.findByPlantaoFalse(false);
         
-        return novasFarmacias;
+        Collections.shuffle(todasFarmácias);
+        
+        listaVazia.add(plantao);
+        listaVazia.addAll(todasFarmácias);
+        todasFarmácias.add(plantao);
+        
+        return listaVazia;
     }
 
     @Override

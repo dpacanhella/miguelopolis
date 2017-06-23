@@ -20,5 +20,6 @@ public class FarmaciaDTO {
     private String endereco;
     private String imagem;
     private Boolean plantao;
+    private String whatsApp;
     private List<PromocaoDTO> promocoes;
 }

@@ -54,7 +54,7 @@
         android:orientation="vertical"
         android:layout_below="@+id/tb_main"
         android:paddingLeft="16dp"
-        android:paddingTop="20dp"
+        android:paddingTop="10dp"
         android:weightSum="1">
 
         <TextView
@@ -107,13 +107,22 @@
             android:paddingRight="16dp"
             android:textSize="16sp" />
 
+        <TextView
+            android:id="@+id/whatsApp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000"
+            android:paddingRight="16dp"
+            android:textSize="16sp" />
+
         <Button
             android:id="@+id/btnCall"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/button"
             android:text="Ligue agora"
             android:textStyle="bold"></Button>

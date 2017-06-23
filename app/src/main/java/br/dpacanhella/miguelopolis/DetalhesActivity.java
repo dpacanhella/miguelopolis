@@ -48,6 +48,8 @@ public class DetalhesActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
 
+    Serializable id;
+
     @Bind(R.id.progress_bar)
     CircularProgressView mProgressBar;
 
@@ -59,6 +61,7 @@ public class DetalhesActivity extends AppCompatActivity {
     TextView lblObservacao;
     ImageView imageView;
     Button botaoLigar;
+    TextView txtWhatApp;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -80,12 +83,14 @@ public class DetalhesActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
+        id = getIntent().getSerializableExtra("id");
         Serializable endereco = getIntent().getSerializableExtra("endereco");
         Serializable nomeProprietario = getIntent().getSerializableExtra("nomeProprietario");
         Serializable razao = getIntent().getSerializableExtra("razao");
         Serializable imagem = getIntent().getSerializableExtra("imagem");
         final Serializable telefone = getIntent().getSerializableExtra("telefone");
         ArrayList<Promocao> promocoes = getIntent().getParcelableArrayListExtra("promocoes");
+        Serializable whatApp = getIntent().getSerializableExtra("whatsApp");
 
         txtNomeProprietario = (TextView) findViewById(R.id.proprietario);
         txtEndereco = (TextView) findViewById(R.id.endereco);
@@ -95,14 +100,16 @@ public class DetalhesActivity extends AppCompatActivity {
         botaoLigar = (Button) findViewById(R.id.btnCall);
         txtObservacao = (TextView) findViewById(R.id.observacao);
         lblObservacao = (TextView) findViewById(R.id.lblObservacao);
-
+        txtWhatApp = (TextView) findViewById(R.id.whatsApp);
 
         txtNomeProprietario.setText(nomeProprietario.toString());
         String lblTelefone = "Telefone: (16) ";
         String lblEndereco = "Endereço: ";
+        String lblWhats = "WhatsApp: (16) ";
         txtEndereco.setText(lblEndereco + endereco.toString());
         txtRazao.setText(razao.toString());
         txtTelefone.setText(lblTelefone + telefone.toString());
+        txtWhatApp.setText(lblWhats + whatApp.toString());
 
         if (telefone.equals("3835 5555")) {
             txtObservacao.setText("- O plantão da Morifarma é realizado na Drograria Total - Centro");
@@ -185,7 +192,29 @@ public class DetalhesActivity extends AppCompatActivity {
             Bundle bundle = new Bundle();
             bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "1");
             bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Promoções");
-            mFirebaseAnalytics.logEvent("promocoes", bundle);
+
+            if(id.toString() == "1"){
+                mFirebaseAnalytics.logEvent("promocoes_seizi", bundle);
+            }else if(id.toString() == "2"){
+                mFirebaseAnalytics.logEvent("promocoes_luizinho", bundle);
+            }else if(id.toString() == "3"){
+                mFirebaseAnalytics.logEvent("promocoes_pimentel", bundle);
+            }else if(id.toString() == "4"){
+                mFirebaseAnalytics.logEvent("promocoes_edinho", bundle);
+            }else if(id.toString() == "5"){
+                mFirebaseAnalytics.logEvent("promocoes_fabio", bundle);
+            }else if(id.toString() == "6"){
+                mFirebaseAnalytics.logEvent("promocoes_luizinho2", bundle);
+            }else if(id.toString() == "7"){
+                mFirebaseAnalytics.logEvent("promocoes_humberto", bundle);
+            }else if(id.toString() == "8"){
+                mFirebaseAnalytics.logEvent("promocoes_patricia", bundle);
+            }else if(id.toString() == "9"){
+                mFirebaseAnalytics.logEvent("promocoes_marcia", bundle);
+            } else{
+                mFirebaseAnalytics.logEvent("promocoes_felipe_gisele", bundle);
+            }
+
         }
     }
 

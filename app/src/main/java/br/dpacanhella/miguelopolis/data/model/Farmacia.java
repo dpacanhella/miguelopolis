@@ -18,6 +18,8 @@ public class Farmacia {
 
     private String endereco;
 
+    private String whatsApp;
+
     private Boolean plantao;
 
     public int getId() {
@@ -42,6 +44,14 @@ public class Farmacia {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    public String getWhatsApp() {
+        return whatsApp;
+    }
+
+    public void setWhatsApp(String whatsApp) {
+        this.whatsApp = whatsApp;
     }
 
     public String getNomeProprietario() {

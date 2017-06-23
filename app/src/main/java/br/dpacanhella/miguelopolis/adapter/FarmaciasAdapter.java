@@ -110,10 +110,14 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
         bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
 
 
+
+
         if(farmacia.getNomeProprietario().equals("FELIPE/GISELE")){
             String nomeFormatado = farmacia.getNomeProprietario().replace("FELIPE/GISELE", "FELIPE_GISELE");
             mFirebaseAnalytics.logEvent(nomeFormatado, bundle);
-        }else {
+        } else if(farmacia.getId() == 6) {
+            mFirebaseAnalytics.logEvent(farmacia.getNomeProprietario() + "2", bundle);
+        } else{
 
             mFirebaseAnalytics.logEvent(farmacia.getNomeProprietario(), bundle);
         }
@@ -123,11 +127,13 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
     private void showDetalhes(Context c, FarmaciaDetalhes farm) {
         Intent intent = new Intent(c, DetalhesActivity.class);
 
+        intent.putExtra("id", farm.getId());
         intent.putExtra("endereco", farm.getEndereco());
         intent.putExtra("nomeProprietario", farm.getNomeProprietario());
         intent.putExtra("razao", farm.getRazao());
         intent.putExtra("telefone", farm.getTelefone());
         intent.putExtra("imagem", farm.getImagem());
+        intent.putExtra("whatsApp", farm.getWhatsApp());
 
         List<Promocao> promocoes = farm.getPromocoes();
 
@@ -154,6 +160,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
         private TextView txtTelefone;
         private ImageView image;
         private TextView txtHorario;
+        private TextView whatsApp;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -163,6 +170,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
             image = (ImageView) itemView.findViewById(R.id.item_image_view);
             txtTelefone = (TextView) itemView.findViewById(R.id.item_farmacia_text_telefone);
             txtHorario = (TextView) itemView.findViewById(R.id.item_farmacia_text_horario);
+            whatsApp = (TextView) itemView.findViewById(R.id.item_farmacia_text_whats);
         }
 
         public void populate(Farmacia farmacia) {
@@ -171,6 +179,9 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
             txtNomeProprietario.setText(farmacia.getNomeProprietario());
             String lblTelefone = "Telefone: (16) ";
             txtTelefone.setText(lblTelefone + farmacia.getTelefone());
+
+            String lblWhats = "WhatsApp: (16) ";
+            whatsApp.setText(lblWhats + farmacia.getWhatsApp());
 
             if(farmacia.getPlantao()){
                 itemView.setBackgroundColor(Color.parseColor("#ffffff"));

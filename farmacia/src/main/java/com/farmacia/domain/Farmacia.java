@@ -42,6 +42,9 @@ public class Farmacia {
     @Column(name = "FARM_LINK_IMAGEM")
     private String imagem;
     
+    @Column(name = "FARM_WHATS")
+    private String whatsApp;
+    
     @Column(name = "FARM_PLANTAO")
     private Boolean plantao;
     
