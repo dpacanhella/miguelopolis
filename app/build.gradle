@@ -12,8 +12,8 @@ android {
         applicationId "br.dpacanhella.miguelopolis"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 6
-        versionName "4.2"
+        versionCode 7
+        versionName "4.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         buildConfigField STRING, API_URL, '"http://45.55.209.136:8080/"'
     }
