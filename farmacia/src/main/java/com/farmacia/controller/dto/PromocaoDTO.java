@@ -16,4 +16,5 @@ public class PromocaoDTO {
     private String nomeProduto;
     private String precoInicial;
     private String precoFinal;
+    private FarmaciaDTO farmaciaDTO;
 }

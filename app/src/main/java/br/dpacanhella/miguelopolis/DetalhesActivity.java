@@ -68,12 +68,6 @@ public class DetalhesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);// Add THIS LINE
         setContentView(R.layout.farmacia_detalhes);
 
-        mToolbar = (Toolbar) findViewById(R.id.tb_main);
-        mToolbar.setTitle("  Farmácia");
-        mToolbar.setLogo(R.drawable.ic_launcher);
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "0");
@@ -101,6 +95,12 @@ public class DetalhesActivity extends AppCompatActivity {
         txtObservacao = (TextView) findViewById(R.id.observacao);
         lblObservacao = (TextView) findViewById(R.id.lblObservacao);
         txtWhatApp = (TextView) findViewById(R.id.whatsApp);
+
+        mToolbar = (Toolbar) findViewById(R.id.tb_main);
+        mToolbar.setTitle(razao.toString());
+        mToolbar.setLogo(R.drawable.ic_launcher);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         txtNomeProprietario.setText(nomeProprietario.toString());
         String lblTelefone = "Telefone: (16) ";

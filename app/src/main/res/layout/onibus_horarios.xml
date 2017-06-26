@@ -149,7 +149,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="11:15  -  11:30  -  18:00"
+        android:text="09:30  -  11:30  -  18:00"
         android:textAlignment="center"
         android:textColor="#000"
         android:textSize="16sp" />

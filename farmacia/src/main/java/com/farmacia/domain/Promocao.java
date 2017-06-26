@@ -2,7 +2,6 @@ package com.farmacia.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -37,6 +36,6 @@ public class Promocao {
     private String precoFinal;
     
     @ManyToOne
-    @JoinColumn(name = "FARMACIA_ID", foreignKey = @ForeignKey(name = "fk_farmacia"))
+    @JoinColumn(name = "FARMACIA_ID")
     private Farmacia farmacia;
 }
