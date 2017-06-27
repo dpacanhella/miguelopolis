@@ -1,9 +1,15 @@
 package com.farmacia.controller;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.transaction.Transactional;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,7 +19,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.farmacia.controller.dto.PromocaoDTO;
 import com.farmacia.domain.Promocao;
@@ -32,9 +42,13 @@ public class PromocaoController {
     @Autowired
     private PromocaoMapper promocaoMapper;
     
-    @PostMapping
-    public PromocaoDTO salvar(@RequestBody PromocaoDTO promocaoDTO) {
-        Promocao promocao = promocaoService.salvar(promocaoMapper.toEntity(promocaoDTO));
+    
+    @RequestMapping(method = RequestMethod.POST)
+    @Transactional
+    public PromocaoDTO salvar(@RequestBody PromocaoDTO promocaoDTO, @RequestParam("file") @Valid @NotNull @NotBlank MultipartFile file, HttpServletResponse response) throws FileNotFoundException, IOException {
+        response.setHeader("X-FRAME-OPTIONS", "SAMEORIGIN");
+        
+        Promocao promocao = promocaoService.salvar(promocaoDTO, file);
 
         return promocaoMapper.toDTO(promocao);
     }

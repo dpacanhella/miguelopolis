@@ -35,6 +35,9 @@ public class Promocao {
     @Column(name = "PROM_PRECO_FINAL")
     private String precoFinal;
     
+    @Column(name = "PROM_IMAGE_64")
+    private String image64;
+    
     @ManyToOne
     @JoinColumn(name = "FARMACIA_ID")
     private Farmacia farmacia;

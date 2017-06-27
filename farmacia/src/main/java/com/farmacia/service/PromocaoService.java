@@ -1,13 +1,17 @@
 package com.farmacia.service;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import com.farmacia.controller.dto.PromocaoDTO;
 import com.farmacia.domain.Promocao;
 
 public interface PromocaoService {
 
-    Promocao salvar(Promocao entity);
+    Promocao salvar(PromocaoDTO entity, MultipartFile file) throws FileNotFoundException, IOException;
 
     List<Promocao> getAll(Integer id);
 

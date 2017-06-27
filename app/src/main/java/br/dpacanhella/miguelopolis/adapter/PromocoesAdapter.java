@@ -1,10 +1,13 @@
 package br.dpacanhella.miguelopolis.adapter;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.SpannableStringBuilder;
 import android.text.style.UnderlineSpan;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,7 +79,18 @@ public class PromocoesAdapter extends RecyclerView.Adapter<PromocoesAdapter.View
 
             txtValorFinal.setText(promocao.getPrecoFinal());
 
+
+
             loadImageFromURL(promocao.getImagemProduto().toString());
+
+
+//            prom
+//
+//            byte[] decodedString = Base64.decode(bytesFoto, Base64.DEFAULT);
+//            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+//
+//            imageView.setImageBitmap(decodedByte);
+
         }
     }
 

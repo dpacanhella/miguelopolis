@@ -146,6 +146,18 @@ public class DetalhesActivity extends AppCompatActivity {
         spec.setIndicator("Promoções");
         host.addTab(spec);
 
+        if(id.toString() == "5"){
+            TextView txtPromMorifarma = (TextView) findViewById(R.id.semPromocoes);
+
+            txtPromMorifarma.setText("As promoções da Morifarma estão cadastradas na Drogaria Total.");
+        }
+
+        if(promocoes.isEmpty() && id.toString() != "5"){
+            TextView txtNotPromocoes = (TextView) findViewById(R.id.semPromocoesCadastradas);
+
+            txtNotPromocoes.setText("Não há promoções cadastradas no momento.");
+        }
+
         host.getTabWidget().getChildAt(0).setBackgroundColor(Color.parseColor("#097369"));
         TextView tv = (TextView) host.getCurrentTabView().findViewById(android.R.id.title);
         tv.setTextColor(Color.parseColor("#ffffff"));
