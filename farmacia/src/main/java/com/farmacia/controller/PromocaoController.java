@@ -4,23 +4,17 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.transaction.Transactional;
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -43,12 +37,11 @@ public class PromocaoController {
     private PromocaoMapper promocaoMapper;
     
     
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(produces="application/json", consumes={"application/json", "multipart/form-data"}, method=RequestMethod.POST)
     @Transactional
-    public PromocaoDTO salvar(@RequestBody PromocaoDTO promocaoDTO, @RequestParam("file") @Valid @NotNull @NotBlank MultipartFile file, HttpServletResponse response) throws FileNotFoundException, IOException {
-        response.setHeader("X-FRAME-OPTIONS", "SAMEORIGIN");
+    public PromocaoDTO salvar(@RequestBody PromocaoDTO dto, @RequestPart("file") MultipartFile file) throws FileNotFoundException, IOException {
         
-        Promocao promocao = promocaoService.salvar(promocaoDTO, file);
+        Promocao promocao = promocaoService.salvar(dto, file);
 
         return promocaoMapper.toDTO(promocao);
     }

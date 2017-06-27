@@ -3,15 +3,11 @@ package com.farmacia.service.impl;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.URLConnection;
 import java.util.List;
 
-import org.apache.tomcat.util.codec.binary.Base64;
-import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,8 +17,6 @@ import com.farmacia.domain.Promocao;
 import com.farmacia.mapper.FarmaciaMapper;
 import com.farmacia.repository.PromocaoRepository;
 import com.farmacia.service.PromocaoService;
-
-import ch.qos.logback.core.util.FileUtil;
 
 @Service
 public class PromocaoServiceImpl implements PromocaoService {
