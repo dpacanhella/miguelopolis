@@ -1,5 +1,6 @@
 package com.farmacia.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,20 +31,21 @@ public class FarmaciaController {
 
     @Scheduled(cron = "0 2 3 ? * SAT")
     // @Scheduled(fixedRate = 2000)
-    public List<FarmaciaDTO> setFarmacias() {
+    public List<FarmaciaDTO> setFarmacias() throws IOException {
         List<Farmacia> entity = farmaciaService.updateAll();
         return farmaciaMapper.toListDTO(entity);
     }
 
     @GetMapping
-    public List<FarmaciaDTO> getAll() {
+    public List<FarmaciaDTO> getAll() throws IOException {
         List<Farmacia> entity = farmaciaService.getAll();
         return farmaciaMapper.toListDTO(entity);
     }
 
     @GetMapping("/{id}")
-    public FarmaciaDTO getById(@PathVariable Integer id) {
+    public FarmaciaDTO getById(@PathVariable Integer id) throws IOException {
         Farmacia entity = farmaciaService.getById(id);
+        
         return farmaciaMapper.toDTO(entity);
     }
 

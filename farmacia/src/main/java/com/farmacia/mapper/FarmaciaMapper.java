@@ -1,9 +1,17 @@
 package com.farmacia.mapper;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Component;
 
 import com.farmacia.controller.dto.FarmaciaDTO;
+import com.farmacia.controller.dto.PromocaoDTO;
 import com.farmacia.domain.Farmacia;
+import com.farmacia.domain.Promocao;
 import com.farmacia.utils.MapperUtils;
 
 @Component
@@ -12,8 +20,32 @@ public class FarmaciaMapper extends BaseMapper<Farmacia, FarmaciaDTO> {
     private MapperUtils<Farmacia, FarmaciaDTO> convert = new MapperUtils<Farmacia, FarmaciaDTO>(Farmacia.class, FarmaciaDTO.class);
     
     @Override
-    public FarmaciaDTO toDTO(Farmacia entity) {
-        return convert.toDTO(entity);
+    public FarmaciaDTO toDTO(Farmacia entity) throws IOException {
+        FarmaciaDTO dto = convert.toDTO(entity);
+        
+        List<PromocaoDTO> listPromocao = new ArrayList<PromocaoDTO>();
+        for (Promocao promocao : entity.getPromocoes()) {
+            PromocaoDTO promDTO = new PromocaoDTO();
+            
+            promDTO.setId(promocao.getId());
+            promDTO.setNomeProduto(promocao.getNomeProduto());
+            promDTO.setPrecoInicial(promocao.getPrecoInicial());
+            promDTO.setPrecoFinal(promocao.getPrecoFinal());
+            promDTO.setImagemProduto(promocao.getImagemProduto());
+            promDTO.setImage64(promocao.getImage64());
+            
+            if (promocao.getImage64() != null) {
+                byte[] readFileToByteArray = FileUtils.readFileToByteArray(new File(promocao.getImage64()));
+                promDTO.setImageByte(readFileToByteArray);
+            }
+            
+            listPromocao.add(promDTO);
+        }
+        
+        dto.setPromocoes(listPromocao);
+        
+        
+        return dto;
     }
 
     @Override

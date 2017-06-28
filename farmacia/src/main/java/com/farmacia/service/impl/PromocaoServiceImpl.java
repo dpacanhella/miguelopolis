@@ -2,7 +2,6 @@ package com.farmacia.service.impl;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URLConnection;
@@ -12,10 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.farmacia.controller.dto.PromocaoDTO;
 import com.farmacia.domain.Farmacia;
 import com.farmacia.domain.Promocao;
-import com.farmacia.mapper.FarmaciaMapper;
 import com.farmacia.repository.FarmaciaRepository;
 import com.farmacia.repository.PromocaoRepository;
 import com.farmacia.service.PromocaoService;
@@ -27,16 +24,13 @@ public class PromocaoServiceImpl implements PromocaoService {
     private PromocaoRepository promocaoRepository;
     
     @Autowired
-    private FarmaciaMapper farmaciaMapper;
-    
-    @Autowired
     private FarmaciaRepository farmaciaRepository; 
 
     @Override
     public Promocao salvar(Integer farmaciaId, String nomeProduto, String descricaoProduto, String precoProduto, MultipartFile file) throws IOException {
 //        String directory = "/home/farmacia/promocoes/";
-//        String directory = "/Users/infra/Documents/promocoes/";    
-        String directory = "/Users/diegoPacanhella/Documents/promocoes/";
+        String directory = "/Users/infra/Documents/promocoes/";    
+//        String directory = "/Users/diegoPacanhella/Documents/promocoes/";
         
         Farmacia farmacia = farmaciaRepository.findById(farmaciaId);
         
@@ -70,13 +64,33 @@ public class PromocaoServiceImpl implements PromocaoService {
     }
 
     @Override
-    public Promocao update(Integer id, PromocaoDTO dto) {
+    public Promocao update(Integer id, String nomeProduto, String descricaoProduto, String precoProduto, MultipartFile file) throws IOException {
+      String directory = "/home/farmacia/promocoes/";
+//      String directory = "/Users/infra/Documents/promocoes/";    
+//      String directory = "/Users/diegoPacanhella/Documents/promocoes/";
+      
         Promocao promocao = promocaoRepository.findById(id);
         
-        promocao.setImagemProduto(dto.getImagemProduto());
-        promocao.setNomeProduto(dto.getNomeProduto());
-        promocao.setPrecoInicial(dto.getPrecoInicial());
-        promocao.setPrecoFinal(dto.getPrecoFinal());
+        if(file != null && file.getBytes().length > 0){
+            InputStream is = new ByteArrayInputStream(file.getBytes());
+            String mimeType = URLConnection.guessContentTypeFromStream(is);
+            if(mimeType != null){
+                mimeType = mimeType.substring(mimeType.indexOf("/") + 1, mimeType.length());
+            }
+            String photo = directory + "promocao_" + promocao.getId() + "." + mimeType;
+            
+            File fileDelete = new File(promocao.getImage64());
+            fileDelete.delete();
+            
+            org.apache.commons.io.FileUtils.writeByteArrayToFile(new File(photo), file.getBytes());
+            promocao.setImage64(photo);
+            promocaoRepository.save(promocao);
+        }
+        
+        
+        promocao.setNomeProduto(nomeProduto);
+        promocao.setPrecoInicial(descricaoProduto);
+        promocao.setPrecoFinal(precoProduto);
         
         promocaoRepository.save(promocao);
         
@@ -86,6 +100,10 @@ public class PromocaoServiceImpl implements PromocaoService {
     @Override
     public void delete(Integer id) {
         Promocao promocao = promocaoRepository.findById(id);
+        
+        File fileDelete = new File(promocao.getImage64());
+        fileDelete.delete();
+        
         promocaoRepository.delete(promocao);
     }
 

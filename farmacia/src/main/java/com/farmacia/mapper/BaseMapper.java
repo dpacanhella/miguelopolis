@@ -1,5 +1,6 @@
 package com.farmacia.mapper;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import org.springframework.data.domain.Pageable;
  */
 public abstract class BaseMapper<E, D> {
     
-    public PageImpl<D> toPage(Page<E> pages, Pageable page) {
+    public PageImpl<D> toPage(Page<E> pages, Pageable page) throws IOException {
         List<D> result = new ArrayList<D>();
         
         for (E entity : pages) {
@@ -24,7 +25,7 @@ public abstract class BaseMapper<E, D> {
         return new PageImpl<D>(result, page, pages.getTotalElements());
     }
     
-    public List<D> toListDTO(List<E> list) {
+    public List<D> toListDTO(List<E> list) throws IOException {
         List<D> result = new ArrayList<D>();
         
         for(E entity : list) {
@@ -44,7 +45,7 @@ public abstract class BaseMapper<E, D> {
         return result;
     }
     
-    public abstract D toDTO(E entity);
+    public abstract D toDTO(E entity) throws IOException;
     
     public abstract E toEntity(D dto);
 }

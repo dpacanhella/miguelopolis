@@ -80,16 +80,14 @@ public class PromocoesAdapter extends RecyclerView.Adapter<PromocoesAdapter.View
             txtValorFinal.setText(promocao.getPrecoFinal());
 
 
+            if(promocao.getId() < 7) {
+                loadImageFromURL(promocao.getImagemProduto().toString());
+            }else{
+                byte[] decodedString = Base64.decode(promocao.getImageByte(), Base64.DEFAULT);
+                Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
 
-            loadImageFromURL(promocao.getImagemProduto().toString());
-
-
-//            prom
-//
-//            byte[] decodedString = Base64.decode(bytesFoto, Base64.DEFAULT);
-//            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-//
-//            imageView.setImageBitmap(decodedByte);
+                imageView.setImageBitmap(decodedByte);
+            }
 
         }
     }

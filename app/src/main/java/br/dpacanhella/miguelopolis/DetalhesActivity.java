@@ -48,7 +48,7 @@ public class DetalhesActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
 
-    Serializable id;
+    Serializable id = null;
 
     @Bind(R.id.progress_bar)
     CircularProgressView mProgressBar;

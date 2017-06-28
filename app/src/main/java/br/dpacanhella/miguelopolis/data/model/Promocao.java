@@ -22,6 +22,7 @@ public class Promocao implements Parcelable{
     private String precoInicial;
     private String precoFinal;
     private String image64;
+    private String imageByte;
 
     protected Promocao(Parcel in) {
         id = in.readInt();
@@ -30,15 +31,17 @@ public class Promocao implements Parcelable{
         precoInicial = in.readString();
         precoFinal = in.readString();
         image64 = in.readString();
+        imageByte = in.readString();
     }
 
-    public Promocao(int id, String imagemProduto, String nomeProduto, String precoInicial, String precoFinal, String image64){
+    public Promocao(int id, String imagemProduto, String nomeProduto, String precoInicial, String precoFinal, String image64, String imageByte){
         this.id = id;
         this.imagemProduto = imagemProduto;
         this.nomeProduto = nomeProduto;
         this.precoInicial = precoInicial;
         this.precoFinal = precoFinal;
         this.image64 = image64;
+        this.imageByte = imageByte;
     }
 
     public static final Creator<Promocao> CREATOR = new Creator<Promocao>() {
@@ -66,5 +69,6 @@ public class Promocao implements Parcelable{
         dest.writeString(precoInicial);
         dest.writeString(precoFinal);
         dest.writeString(image64);
+        dest.writeString(imageByte);
     }
 }

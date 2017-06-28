@@ -1,5 +1,7 @@
 package com.farmacia.controller;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,7 +28,7 @@ public class LoginController {
     private FarmaciaMapper farmaciaMapper;
     
     @GetMapping
-    public FarmaciaDTO login(@RequestParam(required = true) String login, @RequestParam(required = true) String password) {
+    public FarmaciaDTO login(@RequestParam(required = true) String login, @RequestParam(required = true) String password) throws IOException {
         Farmacia farmacia = loginService.logar(login, password);
         
         return farmaciaMapper.toDTO(farmacia);

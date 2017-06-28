@@ -87,7 +87,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
 
                         @Override
                         public void onFailure(Call call, Throwable t) {
-                            Log.i("info", "erro");
+                            Log.i("info", "erro ao consultar detalhes");
                         }
                     };
 
@@ -140,7 +140,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
         ArrayList list = new ArrayList();
 
         for (Promocao promocao : promocoes) {
-            list.add(new Promocao(promocao.getId(), promocao.getImagemProduto(), promocao.getNomeProduto(), promocao.getPrecoInicial(), promocao.getPrecoFinal()));
+            list.add(new Promocao(promocao.getId(), promocao.getImagemProduto(), promocao.getNomeProduto(), promocao.getPrecoInicial(), promocao.getPrecoFinal(), promocao.getImage64(), promocao.getImageByte()));
         }
 
         intent.putParcelableArrayListExtra("promocoes", list);
