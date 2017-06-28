@@ -11,7 +11,7 @@ import com.farmacia.domain.Promocao;
 
 public interface PromocaoService {
 
-    Promocao salvar(PromocaoDTO entity, MultipartFile file) throws FileNotFoundException, IOException;
+//    Promocao salvar(PromocaoDTO entity, MultipartFile file) throws FileNotFoundException, IOException;
 
     List<Promocao> getAll(Integer id);
 
@@ -20,5 +20,7 @@ public interface PromocaoService {
     void delete(Integer id);
 
     Promocao getById(Integer id);
+
+    Promocao salvar(Integer farmaciaId, String nomeProduto, String descricaoProduto, String precoProduto, MultipartFile file) throws IOException;
 
 }

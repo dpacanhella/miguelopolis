@@ -13,8 +13,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.farmacia.controller.dto.PromocaoDTO;
+import com.farmacia.domain.Farmacia;
 import com.farmacia.domain.Promocao;
 import com.farmacia.mapper.FarmaciaMapper;
+import com.farmacia.repository.FarmaciaRepository;
 import com.farmacia.repository.PromocaoRepository;
 import com.farmacia.service.PromocaoService;
 
@@ -26,18 +28,23 @@ public class PromocaoServiceImpl implements PromocaoService {
     
     @Autowired
     private FarmaciaMapper farmaciaMapper;
+    
+    @Autowired
+    private FarmaciaRepository farmaciaRepository; 
 
     @Override
-    public Promocao salvar(PromocaoDTO dto, MultipartFile file) throws FileNotFoundException, IOException {
+    public Promocao salvar(Integer farmaciaId, String nomeProduto, String descricaoProduto, String precoProduto, MultipartFile file) throws IOException {
 //        String directory = "/home/farmacia/promocoes/";
-        String directory = "/Users/infra/Documents/promocoes/";     
+//        String directory = "/Users/infra/Documents/promocoes/";    
+        String directory = "/Users/diegoPacanhella/Documents/promocoes/";
+        
+        Farmacia farmacia = farmaciaRepository.findById(farmaciaId);
         
         Promocao entity = new Promocao();
-        entity.setImagemProduto(dto.getImagemProduto());
-        entity.setNomeProduto(dto.getNomeProduto());
-        entity.setPrecoInicial(dto.getPrecoInicial());
-        entity.setPrecoFinal(dto.getPrecoFinal());
-        entity.setFarmacia(farmaciaMapper.toEntity(dto.getFarmaciaDTO()));
+        entity.setNomeProduto(nomeProduto);
+        entity.setPrecoInicial(descricaoProduto);
+        entity.setPrecoFinal(precoProduto);
+        entity.setFarmacia(farmacia);
         
         Promocao save = promocaoRepository.save(entity);
         
