@@ -1,5 +1,6 @@
 package com.farmacia.service.impl;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,11 @@ public class UtilitarioServiceImpl implements UtilitarioService {
 
     @Override
     public List<Utilitario> getAll() {
-        return utilitarioRepository.findAll();
+        List<Utilitario> utilitarios = utilitarioRepository.findAll();
+        
+        Collections.shuffle(utilitarios);
+        
+        return utilitarios;
     }
 
 }
