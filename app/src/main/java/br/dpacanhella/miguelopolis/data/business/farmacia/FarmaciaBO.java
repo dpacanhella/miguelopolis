@@ -7,6 +7,7 @@ import br.dpacanhella.miguelopolis.data.dao.Farmacia.FarmaciaDao;
 import br.dpacanhella.miguelopolis.data.model.Farmacia;
 import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.model.FarmaciaDetalhes;
+import br.dpacanhella.miguelopolis.data.model.Utilitario;
 import retrofit2.Callback;
 
 /**
@@ -39,5 +40,13 @@ public class FarmaciaBO {
 
         FarmaciaDetalhes farm = new FarmaciaDetalhes();
         return farm;
+    }
+
+    public List<Utilitario> getAllUtilitarios() throws BusinessException {
+        try {
+            return farmaciaDAO.getAllUtilitarios();
+        } catch (DaoException e) {
+            throw new BusinessException(e.getCode(), e.getMessage());
+        }
     }
 }

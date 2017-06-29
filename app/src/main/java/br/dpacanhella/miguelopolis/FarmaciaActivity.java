@@ -77,7 +77,7 @@ public class FarmaciaActivity extends AppCompatActivity {
                     }
                 }).build();
 
-        PrimaryDrawerItem home = new PrimaryDrawerItem().withName("Home").withIdentifier(1).withIcon(R.drawable.home);
+        PrimaryDrawerItem home = new PrimaryDrawerItem().withName("Utilitários").withIdentifier(1).withIcon(R.drawable.home);
         SecondaryDrawerItem farmacias = new SecondaryDrawerItem().withName("Plantão/Farmácias").withIdentifier(123).withIcon(R.drawable.ic_launcher);
         SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454).withIcon(R.drawable.bus_icon);
 
@@ -111,7 +111,7 @@ public class FarmaciaActivity extends AppCompatActivity {
                             }else if(drawerItem.getIdentifier() == 454){
                                 intent = new Intent(FarmaciaActivity.this, OnibusActivity.class);
                             }else if(drawerItem.getIdentifier() == 1){
-                                intent = new Intent(FarmaciaActivity.this, HomeActivity.class);
+                                intent = new Intent(FarmaciaActivity.this, UtilitarioActivity.class);
                             }
                         }
 

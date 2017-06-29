@@ -3,6 +3,7 @@ package com.farmacia.controller;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -75,6 +76,8 @@ public class PromocaoController {
             }
         }
 
+        Collections.shuffle(listDTO);
+        
         return listDTO;
     }
 

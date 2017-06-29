@@ -3,6 +3,7 @@ package com.farmacia.mapper;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -41,6 +42,8 @@ public class FarmaciaMapper extends BaseMapper<Farmacia, FarmaciaDTO> {
             
             listPromocao.add(promDTO);
         }
+        
+        Collections.shuffle(listPromocao);
         
         dto.setPromocoes(listPromocao);
         
