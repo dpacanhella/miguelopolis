@@ -6,6 +6,7 @@
     <color name="sesc_primary">#D32F2F</color>
     <color name="accent">#516A8F</color>
     <color name="secondary_text">#516A8F</color>
+    <color name="materialColor">#d45429</color>
 
     <!-- Material DEFAULT colors -->
     <color name="material_drawer_primary">#2196F3</color>

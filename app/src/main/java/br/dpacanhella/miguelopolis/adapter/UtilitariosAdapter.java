@@ -3,14 +3,20 @@ package br.dpacanhella.miguelopolis.adapter;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.afollestad.materialdialogs.Theme;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.squareup.picasso.Callback;
@@ -21,6 +27,7 @@ import java.util.List;
 import br.dpacanhella.miguelopolis.R;
 import br.dpacanhella.miguelopolis.data.model.Farmacia;
 import br.dpacanhella.miguelopolis.data.model.Utilitario;
+import br.dpacanhella.miguelopolis.interfaces.RecyclerViewOnClickListenerHack;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 
 /**
@@ -31,10 +38,6 @@ public class UtilitariosAdapter extends RecyclerView.Adapter<UtilitariosAdapter.
     List<Utilitario> utilitarioList;
     View view;
     public ImageView image;
-    private LayoutInflater mLayoutInflater;
-    private float scale;
-    private int width;
-    private int height;
 
     public UtilitariosAdapter(List<Utilitario> doctorList) {
         this.utilitarioList = doctorList;
@@ -46,37 +49,20 @@ public class UtilitariosAdapter extends RecyclerView.Adapter<UtilitariosAdapter.
                 .inflate(R.layout.item_utilitarios_card, parent, false);
         UtilitariosAdapter.ViewHolder viewHolder = new UtilitariosAdapter.ViewHolder(view);
 
-        scale = view.getResources().getDisplayMetrics().density;
-        width = view.getResources().getDisplayMetrics().widthPixels - (int)(14 * scale + 0.5f);
-        height = (width / 16) * 9;
-
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.populate(utilitarioList.get(position));
 
-//        myViewHolder.tvModel.setText(mList.get(position).getModel());
-//        myViewHolder.tvBrand.setText(mList.get(position).getBrand());
-//
-//        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-//            myViewHolder.ivCar.setImageResource(mList.get(position).getPhoto());
-//        }
-//        else{
-//            Bitmap bitmap = BitmapFactory.decodeResource( mContext.getResources(), mList.get(position).getPhoto());
-//            bitmap = Bitmap.createScaledBitmap(bitmap, width, height, false);
-//
-//            bitmap = ImageHelper.getRoundedCornerBitmap(mContext, bitmap, 4, width, height, false, false, true, true);
-//            myViewHolder.ivCar.setImageBitmap(bitmap);
-//        }
-//
-//        try{
-//            YoYo.with(Techniques.Tada)
-//                    .duration(700)
-//                    .playOn(myViewHolder.itemView);
-//        }
-//        catch(Exception e){}
+        try{
+            YoYo.with(Techniques.Tada)
+                    .duration(700)
+                    .playOn(holder.itemView);
+        }
+        catch(Exception e){}
+
     }
 
     @Override
@@ -84,7 +70,9 @@ public class UtilitariosAdapter extends RecyclerView.Adapter<UtilitariosAdapter.
         return utilitarioList.size();
     }
 
-    protected class ViewHolder extends RecyclerView.ViewHolder {
+
+
+    protected class ViewHolder extends RecyclerView.ViewHolder{
         public TextView txtName;
         public TextView txtDescricao;
         private TextView txtEndereco;
@@ -99,13 +87,34 @@ public class UtilitariosAdapter extends RecyclerView.Adapter<UtilitariosAdapter.
             txtDescricao = (TextView) itemView.findViewById(R.id.descricao_utilitarios);
             image = (ImageView) itemView.findViewById(R.id.image_utilitarios);
 
-        }public void populate(Utilitario utilitario) {
+        }
+
+        public void populate(final Utilitario utilitario) {
             txtName.setText(utilitario.getNome());
             txtDescricao.setText(utilitario.getDescricao());
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    boolean wrapInScrollView = true;
+
+                    MaterialDialog dialog = new MaterialDialog.Builder(v.getContext())
+                            .title(utilitario.getNome())
+                            .customView(R.layout.custom_view, true)
+                            .positiveText("Fechar")
+                            .positiveColorRes(R.color.materialColor)
+                            .build();
+
+                    //SETANDO VALORES
+//                    TextView model_descricao = (TextView) dialog.getCustomView();
+//                    model_descricao.setText(utilitario.getDescricao());
+
+                    dialog.show();
+                }
+            });
+
             loadImageFromURL(utilitario.getImagem().toString());
         }
-
     }
 
     private void loadImageFromURL(String s) {
@@ -123,4 +132,9 @@ public class UtilitariosAdapter extends RecyclerView.Adapter<UtilitariosAdapter.
                     }
                 });
     }
+
+    public void onClick(View v, int position) {
+        Toast.makeText(v.getContext(), "onClickListener(): "+ position, Toast.LENGTH_SHORT).show();
+    }
+
 }

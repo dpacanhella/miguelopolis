@@ -5,9 +5,10 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="#c9c8c8"
     tools:context=".FarmaciaActivity"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    android:id="@+id/teste0">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/tb_main"
