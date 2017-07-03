@@ -1,13 +1,7 @@
 package br.dpacanhella.miguelopolis.adapter;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.os.Build;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.text.InputType;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,19 +10,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.afollestad.materialdialogs.Theme;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import br.dpacanhella.miguelopolis.R;
-import br.dpacanhella.miguelopolis.data.model.Farmacia;
+import br.dpacanhella.miguelopolis.data.model.FarmaciaDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Utilitario;
-import br.dpacanhella.miguelopolis.interfaces.RecyclerViewOnClickListenerHack;
-import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 
 /**
  * Created by infra on 29/06/17.
@@ -38,6 +30,7 @@ public class UtilitariosAdapter extends RecyclerView.Adapter<UtilitariosAdapter.
     List<Utilitario> utilitarioList;
     View view;
     public ImageView image;
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     public UtilitariosAdapter(List<Utilitario> doctorList) {
         this.utilitarioList = doctorList;
@@ -96,7 +89,7 @@ public class UtilitariosAdapter extends RecyclerView.Adapter<UtilitariosAdapter.
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    boolean wrapInScrollView = true;
+                    montaResumoAnalytics(utilitario, v);
 
                     MaterialDialog dialog = new MaterialDialog.Builder(v.getContext())
                             .title(utilitario.getNome())
@@ -105,9 +98,18 @@ public class UtilitariosAdapter extends RecyclerView.Adapter<UtilitariosAdapter.
                             .positiveColorRes(R.color.materialColor)
                             .build();
 
-                    //SETANDO VALORES
-//                    TextView model_descricao = (TextView) dialog.getCustomView();
-//                    model_descricao.setText(utilitario.getDescricao());
+                    TextView txtDescricao = (TextView) dialog.findViewById(R.id.model_descricao);
+                    txtDescricao.setText(utilitario.getDescricao());
+
+                    TextView txtEndereco = (TextView) dialog.findViewById(R.id.model_endereco);
+                    txtEndereco.setText(utilitario.getEndereco());
+
+                    TextView txtTelefone = (TextView) dialog.findViewById(R.id.model_telefone);
+                    String lblTelefone = "(016) ";
+                    txtTelefone.setText(lblTelefone + utilitario.getTelefone());
+
+                    TextView txtWhatsApp = (TextView) dialog.findViewById(R.id.model_whats);
+                    txtWhatsApp.setText(lblTelefone + utilitario.getCelular());
 
                     dialog.show();
                 }
@@ -115,6 +117,16 @@ public class UtilitariosAdapter extends RecyclerView.Adapter<UtilitariosAdapter.
 
             loadImageFromURL(utilitario.getImagem().toString());
         }
+    }
+
+    private void montaResumoAnalytics(Utilitario utilitario, View v) {
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(v.getContext());
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, String.valueOf(utilitario.getId()));
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, utilitario.getNome());
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+
+        mFirebaseAnalytics.logEvent(utilitario.getNome(), bundle);
     }
 
     private void loadImageFromURL(String s) {

@@ -80,6 +80,7 @@ public class FarmaciaActivity extends AppCompatActivity {
         PrimaryDrawerItem home = new PrimaryDrawerItem().withName("Utilitários").withIdentifier(1).withIcon(R.drawable.home);
         SecondaryDrawerItem farmacias = new SecondaryDrawerItem().withName("Plantão/Farmácias").withIdentifier(123).withIcon(R.drawable.ic_launcher);
         SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454).withIcon(R.drawable.bus_icon);
+        SecondaryDrawerItem bares_restaurantes = new SecondaryDrawerItem().withName("Bares/Restaurantes").withIdentifier(896).withIcon(R.drawable.icon_restaurante);
 
         result = new DrawerBuilder()
                 .withActivity(this)
@@ -95,7 +96,9 @@ public class FarmaciaActivity extends AppCompatActivity {
                         new DividerDrawerItem(),
                         farmacias,
                         new DividerDrawerItem(),
-                        horariosOnibus
+                        horariosOnibus,
+                        new DividerDrawerItem(),
+                        bares_restaurantes
 
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -112,6 +115,8 @@ public class FarmaciaActivity extends AppCompatActivity {
                                 intent = new Intent(FarmaciaActivity.this, OnibusActivity.class);
                             }else if(drawerItem.getIdentifier() == 1){
                                 intent = new Intent(FarmaciaActivity.this, UtilitarioActivity.class);
+                            }else if(drawerItem.getIdentifier() == 896){
+                                intent = new Intent(FarmaciaActivity.this, RestauranteActivity.class);
                             }
                         }
 

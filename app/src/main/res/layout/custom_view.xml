@@ -6,16 +6,16 @@
 
     <TextView
         android:id="@+id/model_descricao"
-        android:layout_marginTop="4dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#80000000"
         android:textSize="14sp" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="Endereço"
         android:textColor="#000000"
         android:textSize="18sp" />
@@ -41,7 +41,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#80000000"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:autoLink="phone"
+        android:clickable="true"
+        android:textColorLink="@color/md_blue_600"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -56,5 +59,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#80000000"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        android:autoLink="phone"
+        android:clickable="true"
+        android:textColorLink="@color/md_blue_600"/>
 </LinearLayout>

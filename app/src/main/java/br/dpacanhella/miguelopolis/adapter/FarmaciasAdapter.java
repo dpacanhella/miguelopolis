@@ -109,9 +109,6 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, farmacia.getRazao());
         bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
 
-
-
-
         if(farmacia.getNomeProprietario().equals("FELIPE/GISELE")){
             String nomeFormatado = farmacia.getNomeProprietario().replace("FELIPE/GISELE", "FELIPE_GISELE");
             mFirebaseAnalytics.logEvent(nomeFormatado, bundle);
