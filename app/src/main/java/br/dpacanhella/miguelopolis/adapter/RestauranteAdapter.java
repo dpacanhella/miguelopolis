@@ -20,6 +20,7 @@ import java.util.List;
 
 import br.dpacanhella.miguelopolis.DetalhesActivity;
 import br.dpacanhella.miguelopolis.R;
+import br.dpacanhella.miguelopolis.RestauranteDetalhesActivity;
 import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
 import br.dpacanhella.miguelopolis.data.model.Cardapio;
@@ -99,7 +100,7 @@ public class RestauranteAdapter extends RecyclerView.Adapter<RestauranteAdapter.
     }
 
     private void showDetalhes(Context c, RestauranteDetalhes rest) {
-        Intent intent = new Intent(c, RestauranteDetalhes.class);
+        Intent intent = new Intent(c, RestauranteDetalhesActivity.class);
 
         intent.putExtra("id", rest.getId());
         intent.putExtra("nome", rest.getNome());
