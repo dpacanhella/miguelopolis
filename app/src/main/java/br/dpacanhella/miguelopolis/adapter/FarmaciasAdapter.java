@@ -29,6 +29,7 @@ import br.dpacanhella.miguelopolis.R;
 import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.model.FarmaciaDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Promocao;
+import br.dpacanhella.miguelopolis.data.model.Restaurante;
 import butterknife.Bind;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -51,6 +52,8 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
         this.farmaciaList = doctorList;
         this.listener = listener;
     }
+
+
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

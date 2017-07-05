@@ -1,6 +1,7 @@
 package com.farmacia.controller;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,8 @@ public class RestauranteController {
     @GetMapping
     public List<RestauranteDTO> getAll() throws IOException {
         List<Restaurante> entity = restauranteService.getAll();
+        
+        Collections.shuffle(entity);
         return restauranteMapper.toListDTO(entity);
     }
     

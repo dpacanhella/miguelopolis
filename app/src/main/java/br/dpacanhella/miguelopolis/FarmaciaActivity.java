@@ -129,7 +129,7 @@ public class FarmaciaActivity extends AppCompatActivity {
                 })
                 .build();
 
-        result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
+//        result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
 
 
         this.taskExecutor = new AsyncTaskExecutor();

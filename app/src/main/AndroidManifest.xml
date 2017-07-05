@@ -51,6 +51,11 @@
             android:screenOrientation="portrait"
             android:parentActivityName=".UtilitarioActivity"
             />
+
+        <activity android:name=".RestauranteDetalhesActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".RestauranteActivity"
+            />
     </application>
 
 </manifest>

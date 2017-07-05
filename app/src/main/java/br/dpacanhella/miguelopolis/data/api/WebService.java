@@ -4,6 +4,8 @@ import java.util.List;
 
 import br.dpacanhella.miguelopolis.data.model.Farmacia;
 import br.dpacanhella.miguelopolis.data.model.FarmaciaDetalhes;
+import br.dpacanhella.miguelopolis.data.model.Restaurante;
+import br.dpacanhella.miguelopolis.data.model.RestauranteDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Utilitario;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -23,5 +25,11 @@ public interface WebService {
 
     @GET("utilitarios")
     Call<List<Utilitario>> getAllUtilitarios();
+
+    @GET("restaurantes")
+    Call<List<Restaurante>> getAllRestaurantes();
+
+    @GET("restaurantes/{id}")
+    Call<RestauranteDetalhes> getByIdRestaurantes(@Path("id") int id);
 
 }
