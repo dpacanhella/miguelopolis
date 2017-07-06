@@ -15,6 +15,8 @@
     card_view:cardPreventCornerOverlap="false"
     card_view:cardMaxElevation="3dp"
     card_view:cardCornerRadius="4dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
     >
 
     <RelativeLayout
