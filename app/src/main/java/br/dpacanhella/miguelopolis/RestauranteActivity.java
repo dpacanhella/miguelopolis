@@ -151,10 +151,7 @@ public class RestauranteActivity extends AppCompatActivity {
         this.farmaciaBO = new FarmaciaBO();
 
         recyclerRestaurantes = (RecyclerView) findViewById(R.id.main_recycler_restaurantes);
-//        recyclerRestaurantes.setHasFixedSize(true);
         mRestauranteList = new ArrayList<>();
-
-
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
         recyclerRestaurantes.setLayoutManager(mLayoutManager);

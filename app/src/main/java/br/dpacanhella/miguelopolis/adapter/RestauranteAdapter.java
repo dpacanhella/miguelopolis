@@ -107,6 +107,9 @@ public class RestauranteAdapter extends RecyclerView.Adapter<RestauranteAdapter.
         intent.putExtra("nomeProprietario", rest.getNomeProprietario());
         intent.putExtra("descricao", rest.getDescricao());
         intent.putExtra("descricao2", rest.getDescricao2());
+        intent.putExtra("descricao3", rest.getDescricao3());
+        intent.putExtra("descricao4", rest.getDescricao4());
+        intent.putExtra("descricao5", rest.getDescricao5());
         intent.putExtra("endereco", rest.getEndereco());
         intent.putExtra("imagemLogo", rest.getImagemLogo());
         intent.putExtra("imagem1", rest.getImagem1());

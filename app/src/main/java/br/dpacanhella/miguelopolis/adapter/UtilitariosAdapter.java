@@ -48,14 +48,6 @@ public class UtilitariosAdapter extends RecyclerView.Adapter<UtilitariosAdapter.
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.populate(utilitarioList.get(position));
-
-        try{
-            YoYo.with(Techniques.Tada)
-                    .duration(700)
-                    .playOn(holder.itemView);
-        }
-        catch(Exception e){}
-
     }
 
     @Override
@@ -68,10 +60,6 @@ public class UtilitariosAdapter extends RecyclerView.Adapter<UtilitariosAdapter.
     protected class ViewHolder extends RecyclerView.ViewHolder{
         public TextView txtName;
         public TextView txtDescricao;
-        private TextView txtEndereco;
-        private TextView txtTelefone;
-        private TextView txtCelular;
-
 
         public ViewHolder(View itemView) {
             super(itemView);

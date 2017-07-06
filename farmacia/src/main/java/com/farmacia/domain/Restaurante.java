@@ -48,6 +48,15 @@ public class Restaurante {
     @Column(name = "RES_DESCRICAO2")
     private String descricao2;
     
+    @Column(name = "RES_DESCRICAO3")
+    private String descricao3;
+    
+    @Column(name = "RES_DESCRICAO4")
+    private String descricao4;
+    
+    @Column(name = "RES_DESCRICAO5")
+    private String descricao5;
+    
     @Column(name = "RES_IMAGEM_LOGO")
     private String imagemLogo;
     

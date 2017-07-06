@@ -21,6 +21,9 @@ public class RestauranteDTO {
     private String whatsapp;
     private String descricao;
     private String descricao2;
+    private String descricao3;
+    private String descricao4;
+    private String descricao5;
     private String imagemLogo;
     private String imagemEstabelecimento;
     private String imagem1;
