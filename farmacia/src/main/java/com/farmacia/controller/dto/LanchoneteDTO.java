@@ -1,5 +1,6 @@
 package com.farmacia.controller.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -11,7 +12,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class RestauranteDTO {
+public class LanchoneteDTO {
     
     private Integer id;
     private String nome;
@@ -19,15 +20,8 @@ public class RestauranteDTO {
     private String endereco;
     private String telefone;
     private String whatsapp;
-    private String descricao;
-    private String descricao2;
-    private String descricao3;
-    private String descricao4;
-    private String descricao5;
-    private String imagemLogo;
     private String imagemEstabelecimento;
-    private String imagem1;
-    private String imagem2;
-    private List<CardapioRestauranteDTO> cardapios;
+    private String imagemLogo;
+    private List<CardapioLanchoneteDTO> cardapios = new ArrayList<CardapioLanchoneteDTO>();
 
 }

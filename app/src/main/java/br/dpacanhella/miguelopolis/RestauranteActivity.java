@@ -98,6 +98,7 @@ public class RestauranteActivity extends AppCompatActivity {
         SecondaryDrawerItem farmacias = new SecondaryDrawerItem().withName("Plantão/Farmácias").withIdentifier(123).withIcon(R.drawable.ic_launcher);
         SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454).withIcon(R.drawable.bus_icon);
         SecondaryDrawerItem bares_restaurantes = new SecondaryDrawerItem().withName("Bares/Restaurantes").withIdentifier(896).withIcon(R.drawable.icon_restaurante);
+        SecondaryDrawerItem lanchonetes = new SecondaryDrawerItem().withName("Salgadarias/Lanchonetes").withIdentifier(222).withIcon(R.drawable.icon_fast);
 
         result = new DrawerBuilder()
                 .withActivity(this)
@@ -115,7 +116,9 @@ public class RestauranteActivity extends AppCompatActivity {
                         new DividerDrawerItem(),
                         horariosOnibus,
                         new DividerDrawerItem(),
-                        bares_restaurantes
+                        bares_restaurantes,
+                        new DividerDrawerItem(),
+                        lanchonetes
 
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -134,6 +137,8 @@ public class RestauranteActivity extends AppCompatActivity {
                                 intent = new Intent(RestauranteActivity.this, UtilitarioActivity.class);
                             }else if(drawerItem.getIdentifier() == 896){
                                 intent = new Intent(RestauranteActivity.this, RestauranteActivity.class);
+                            }else if(drawerItem.getIdentifier() == 222){
+                                intent = new Intent(RestauranteActivity.this, LanchoneteActivity.class);
                             }
                         }
 

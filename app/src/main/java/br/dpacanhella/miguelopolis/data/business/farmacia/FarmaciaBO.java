@@ -7,6 +7,8 @@ import br.dpacanhella.miguelopolis.data.dao.Farmacia.FarmaciaDao;
 import br.dpacanhella.miguelopolis.data.model.Farmacia;
 import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.model.FarmaciaDetalhes;
+import br.dpacanhella.miguelopolis.data.model.Lanchonete;
+import br.dpacanhella.miguelopolis.data.model.LanchoneteDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Restaurante;
 import br.dpacanhella.miguelopolis.data.model.RestauranteDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Utilitario;
@@ -70,5 +72,25 @@ public class FarmaciaBO {
 
         RestauranteDetalhes restaurante = new RestauranteDetalhes();
         return restaurante;
+    }
+
+    public List<Lanchonete> getAllLanchonetes() throws BusinessException {
+        try {
+            return farmaciaDAO.getAllLanchonetes();
+        } catch (DaoException e) {
+            throw new BusinessException(e.getCode(), e.getMessage());
+        }
+    }
+
+    public LanchoneteDetalhes getByIdLanchonetes(int id, Callback callback) throws BusinessException {
+        try {
+            farmaciaDAO.getByIdLanchonetes(id, callback);
+        }catch (DaoException e){
+            throw new BusinessException(e.getCode(), e.getMessage());
+
+        }
+
+        LanchoneteDetalhes lanchonete = new LanchoneteDetalhes();
+        return lanchonete;
     }
 }

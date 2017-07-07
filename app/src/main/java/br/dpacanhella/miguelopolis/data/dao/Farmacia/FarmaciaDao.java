@@ -7,6 +7,7 @@ import br.dpacanhella.miguelopolis.data.api.WebServiceClient;
 import br.dpacanhella.miguelopolis.data.model.Farmacia;
 import br.dpacanhella.miguelopolis.data.api.WebService;
 import br.dpacanhella.miguelopolis.data.dao.DaoException;
+import br.dpacanhella.miguelopolis.data.model.Lanchonete;
 import br.dpacanhella.miguelopolis.data.model.Restaurante;
 import br.dpacanhella.miguelopolis.data.model.Utilitario;
 import retrofit2.Call;
@@ -75,5 +76,23 @@ public class FarmaciaDao {
 
     public void getByIdRestaurante(int id, Callback callback) throws DaoException {
         wsClient.getByIdRestaurantes(id).enqueue(callback);
+    }
+
+    public List<Lanchonete> getAllLanchonetes() throws DaoException {
+        try {
+            Call<List<Lanchonete>> call = wsClient.getAllLanchonetes();
+            Response<List<Lanchonete>> response = call.execute();
+            if (response.isSuccessful()) {
+                return response.body();
+            } else {
+                throw new DaoException(response.code(), response.message());
+            }
+        } catch (IOException e) {
+            throw new DaoException(DaoException.API_CALL_ERROR, e.getMessage());
+        }
+    }
+
+    public void getByIdLanchonetes(int id, Callback callback) throws DaoException {
+        wsClient.getByIdLanchonetes(id).enqueue(callback);
     }
 }

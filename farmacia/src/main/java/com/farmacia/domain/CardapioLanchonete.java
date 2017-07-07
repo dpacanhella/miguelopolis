@@ -15,8 +15,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "cardapio_restaurante")
-public class Cardapio {
+@Table(name = "cardapio_lanchonete")
+public class CardapioLanchonete {
     
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -30,7 +30,7 @@ public class Cardapio {
     private String imagem;
     
     @ManyToOne
-    @JoinColumn(name = "RES_CODIGO")
-    private Restaurante restaurante;
+    @JoinColumn(name = "LAN_CODIGO")
+    private Lanchonete lanchonete;
 
 }

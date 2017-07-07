@@ -70,6 +70,6 @@ public class Restaurante {
     private String imagem2;
     
     @OneToMany(mappedBy = "restaurante", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Cardapio> cardapios = new ArrayList<Cardapio>();
+    private List<CardapioRestaurante> cardapios = new ArrayList<CardapioRestaurante>();
 
 }

@@ -4,6 +4,8 @@ import java.util.List;
 
 import br.dpacanhella.miguelopolis.data.model.Farmacia;
 import br.dpacanhella.miguelopolis.data.model.FarmaciaDetalhes;
+import br.dpacanhella.miguelopolis.data.model.Lanchonete;
+import br.dpacanhella.miguelopolis.data.model.LanchoneteDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Restaurante;
 import br.dpacanhella.miguelopolis.data.model.RestauranteDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Utilitario;
@@ -31,5 +33,11 @@ public interface WebService {
 
     @GET("restaurantes/{id}")
     Call<RestauranteDetalhes> getByIdRestaurantes(@Path("id") int id);
+
+    @GET("lanchonetes")
+    Call<List<Lanchonete>> getAllLanchonetes();
+
+    @GET("lanchonetes/{id}")
+    Call<LanchoneteDetalhes> getByIdLanchonetes(@Path("id") int id);
 
 }

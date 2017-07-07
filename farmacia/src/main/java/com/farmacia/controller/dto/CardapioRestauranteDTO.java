@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CardapioDTO {
+public class CardapioRestauranteDTO {
     
     private Integer id;
     private String descricao;
