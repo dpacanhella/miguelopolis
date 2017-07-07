@@ -104,7 +104,7 @@ public class OnibusActivity extends AppCompatActivity {
                                 intent = new Intent(OnibusActivity.this, UtilitarioActivity.class);
                             }else if(drawerItem.getIdentifier() == 896){
                                 intent = new Intent(OnibusActivity.this, RestauranteActivity.class);
-                            }else if(drawerItem.getIdentifier() == 896){
+                            }else if(drawerItem.getIdentifier() == 222){
                                 intent = new Intent(OnibusActivity.this, LanchoneteActivity.class);
                             }
                         }

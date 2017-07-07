@@ -120,7 +120,7 @@ public class FarmaciaActivity extends AppCompatActivity {
                                 intent = new Intent(FarmaciaActivity.this, UtilitarioActivity.class);
                             }else if(drawerItem.getIdentifier() == 896){
                                 intent = new Intent(FarmaciaActivity.this, RestauranteActivity.class);
-                            }else if(drawerItem.getIdentifier() == 896){
+                            }else if(drawerItem.getIdentifier() == 222){
                                 intent = new Intent(FarmaciaActivity.this, LanchoneteActivity.class);
                             }
                         }
