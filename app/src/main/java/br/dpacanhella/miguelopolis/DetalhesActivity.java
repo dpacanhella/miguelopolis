@@ -68,13 +68,6 @@ public class DetalhesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);// Add THIS LINE
         setContentView(R.layout.farmacia_detalhes);
 
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-        Bundle bundle = new Bundle();
-        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "0");
-        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Detalhes");
-        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
-        mFirebaseAnalytics.logEvent("detalhes_ao_abrir", bundle);
-
         ButterKnife.bind(this);
 
         id = getIntent().getSerializableExtra("id");
@@ -119,6 +112,22 @@ public class DetalhesActivity extends AppCompatActivity {
         }
 
         loadImageFromURL(imagem.toString());
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, String.valueOf(id));
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, razao.toString());
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+
+        if(nomeProprietario.toString().equals("FELIPE/GISELE")){
+            String nomeFormatado = nomeProprietario.toString().replace("FELIPE/GISELE", "FELIPE_GISELE");
+            mFirebaseAnalytics.logEvent(nomeFormatado, bundle);
+        } else if(id.toString() == "6") {
+            mFirebaseAnalytics.logEvent(nomeProprietario.toString() + "2", bundle);
+        } else{
+
+            mFirebaseAnalytics.logEvent(nomeProprietario.toString(), bundle);
+        }
 
         botaoLigar.setOnClickListener(new View.OnClickListener() {
             @Override

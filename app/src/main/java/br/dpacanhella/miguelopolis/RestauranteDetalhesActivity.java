@@ -74,13 +74,6 @@ public class RestauranteDetalhesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);// Add THIS LINE
         setContentView(R.layout.restaurantes_detalhes);
 
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-        Bundle bundle = new Bundle();
-        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "0");
-        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Detalhes Restaurantes");
-        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
-        mFirebaseAnalytics.logEvent("detalhes_restaurantes", bundle);
-
         ButterKnife.bind(this);
 
         id = getIntent().getSerializableExtra("id");
@@ -150,6 +143,13 @@ public class RestauranteDetalhesActivity extends AppCompatActivity {
         loadImageFromURLEstabelecimento(imagemEstabelecimento.toString());
         loadImageFromURLImagem1(imagem1.toString());
         loadImageFromURLImagem2(imagem2.toString());
+
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "0");
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Detalhes Restaurantes");
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+        mFirebaseAnalytics.logEvent("detalhes_" + nome.toString(), bundle);
 
         botaoLigar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -222,13 +222,23 @@ public class RestauranteDetalhesActivity extends AppCompatActivity {
             tabhost.getTabWidget().getChildAt(tabhost.getCurrentTab()).setBackgroundColor(Color.parseColor("#097369"));
             TextView tv = (TextView) tabhost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
             tv.setTextColor(Color.parseColor("#ffffff"));
-        }else {
+        }else if(tabhost.getCurrentTab()==1){
             tabhost.getTabWidget().getChildAt(tabhost.getCurrentTab()).setBackgroundColor(Color.parseColor("#097369"));
             TextView tv = (TextView) tabhost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
             tv.setTextColor(Color.parseColor("#ffffff"));
 
             Bundle bundle = new Bundle();
             bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "1");
+            bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Almoço/Eventos");
+            mFirebaseAnalytics.logEvent("almoco/evento_"+nome, bundle);
+
+        }else {
+            tabhost.getTabWidget().getChildAt(tabhost.getCurrentTab()).setBackgroundColor(Color.parseColor("#097369"));
+            TextView tv = (TextView) tabhost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
+            tv.setTextColor(Color.parseColor("#ffffff"));
+
+            Bundle bundle = new Bundle();
+            bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "2");
             bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Cardápios");
             mFirebaseAnalytics.logEvent("cardápio_"+nome, bundle);
 
