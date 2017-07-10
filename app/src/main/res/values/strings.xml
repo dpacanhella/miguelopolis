@@ -2,6 +2,7 @@
     <string name="app_name">Guia Miguelópolis</string>
     <string name="getAll_farmacias_error">Erro ao obter lista de farmácias</string>
     <string name="getAll_promocao_error">Erro ao obter lista de promoções</string>
+    <string name="getAll_cardapios_error">Erro ao obter lista de cardápios</string>
     <string name="getAll_utilitarios_error">Erro ao obter utilitários</string>
     <string name="getAll_restaurantes_error">Erro ao obter restaurantes</string>
     <string name="getAll_lanchonetes_error">Erro ao obter lanchonetes</string>

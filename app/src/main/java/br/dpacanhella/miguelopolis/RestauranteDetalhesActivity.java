@@ -240,7 +240,7 @@ public class RestauranteDetalhesActivity extends AppCompatActivity {
             Bundle bundle = new Bundle();
             bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "2");
             bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Cardápios");
-            mFirebaseAnalytics.logEvent("cardápio_"+nome, bundle);
+            mFirebaseAnalytics.logEvent("cardápio_" + nome.toString(), bundle);
 
         }
     }
@@ -309,7 +309,7 @@ public class RestauranteDetalhesActivity extends AppCompatActivity {
                 } else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(RestauranteDetalhesActivity.this, R.style.DialogTheme);
                     builder.setTitle(R.string.dialog_title_error)
-                            .setMessage(R.string.getAll_promocao_error)
+                            .setMessage(R.string.getAll_cardapios_error)
                             .setPositiveButton(R.string.label_ok, null);
                     builder.show();
                 }

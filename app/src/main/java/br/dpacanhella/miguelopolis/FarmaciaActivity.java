@@ -81,7 +81,7 @@ public class FarmaciaActivity extends AppCompatActivity {
         SecondaryDrawerItem farmacias = new SecondaryDrawerItem().withName("Plantão/Farmácias").withIdentifier(123).withIcon(R.drawable.ic_launcher);
         SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454).withIcon(R.drawable.bus_icon);
         SecondaryDrawerItem bares_restaurantes = new SecondaryDrawerItem().withName("Bares/Restaurantes").withIdentifier(896).withIcon(R.drawable.icon_restaurante);
-        SecondaryDrawerItem lanchonetes = new SecondaryDrawerItem().withName("Salgadarias/Lanchonetes").withIdentifier(222).withIcon(R.drawable.icon_fast);
+        SecondaryDrawerItem lanchonetes = new SecondaryDrawerItem().withName("Lanchonetes/Salgadarias").withIdentifier(222).withIcon(R.drawable.icon_fast);
 
         result = new DrawerBuilder()
                 .withActivity(this)

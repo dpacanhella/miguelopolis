@@ -51,7 +51,7 @@ public class CardapioAdapter extends RecyclerView.Adapter<CardapioAdapter.ViewHo
         public ViewHolder(View itemView) {
             super(itemView);
 
-            imageView = (ImageView) itemView.findViewById(R.id.imageView_restaurante);
+            imageView = (ImageView) itemView.findViewById(R.id.imageView_cardapio);
         }
 
         public void populate(Cardapio cardapio) {

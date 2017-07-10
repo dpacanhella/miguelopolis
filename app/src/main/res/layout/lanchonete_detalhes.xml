@@ -99,7 +99,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/restaurante_telefone"
+                            android:id="@+id/lanchonete_telefone"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
