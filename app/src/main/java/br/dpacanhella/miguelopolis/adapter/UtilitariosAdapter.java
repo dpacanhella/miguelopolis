@@ -113,8 +113,8 @@ public class UtilitariosAdapter extends RecyclerView.Adapter<UtilitariosAdapter.
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, String.valueOf(utilitario.getId()));
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, utilitario.getNome());
         bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
-
-        mFirebaseAnalytics.logEvent(utilitario.getNome(), bundle);
+        String nomeFormatado = utilitario.getNome().replaceAll(" ", "_");
+        mFirebaseAnalytics.logEvent(nomeFormatado, bundle);
     }
 
     private void loadImageFromURL(String s) {

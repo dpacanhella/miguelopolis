@@ -144,15 +144,15 @@ public class DetalhesActivity extends AppCompatActivity {
 
 
         //TAB DETALHES
-        TabHost.TabSpec spec = host.newTabSpec("Detalhes");
+        TabHost.TabSpec spec = host.newTabSpec("Promoções");
         spec.setContent(R.id.tab1);
-        spec.setIndicator("Detalhes");
+        spec.setIndicator("Promoções");
         host.addTab(spec);
 
         //TABLE PROMOCOES
-        spec = host.newTabSpec("Promoções");
+        spec = host.newTabSpec("Detalhes");
         spec.setContent(R.id.tab2);
-        spec.setIndicator("Promoções");
+        spec.setIndicator("Detalhes");
         host.addTab(spec);
 
         if(id.toString() == "5"){
@@ -212,28 +212,28 @@ public class DetalhesActivity extends AppCompatActivity {
 
             Bundle bundle = new Bundle();
             bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "1");
-            bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Promoções");
+            bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Detalhes");
 
             if(id.toString() == "1"){
-                mFirebaseAnalytics.logEvent("promocoes_seizi", bundle);
+                mFirebaseAnalytics.logEvent("detalhes_seizi", bundle);
             }else if(id.toString() == "2"){
-                mFirebaseAnalytics.logEvent("promocoes_luizinho", bundle);
+                mFirebaseAnalytics.logEvent("detalhes_luizinho", bundle);
             }else if(id.toString() == "3"){
-                mFirebaseAnalytics.logEvent("promocoes_pimentel", bundle);
+                mFirebaseAnalytics.logEvent("detalhes_pimentel", bundle);
             }else if(id.toString() == "4"){
-                mFirebaseAnalytics.logEvent("promocoes_edinho", bundle);
+                mFirebaseAnalytics.logEvent("detalhes_edinho", bundle);
             }else if(id.toString() == "5"){
-                mFirebaseAnalytics.logEvent("promocoes_fabio", bundle);
+                mFirebaseAnalytics.logEvent("detalhes_fabio", bundle);
             }else if(id.toString() == "6"){
-                mFirebaseAnalytics.logEvent("promocoes_luizinho2", bundle);
+                mFirebaseAnalytics.logEvent("detalhes_luizinho2", bundle);
             }else if(id.toString() == "7"){
-                mFirebaseAnalytics.logEvent("promocoes_humberto", bundle);
+                mFirebaseAnalytics.logEvent("detalhes_humberto", bundle);
             }else if(id.toString() == "8"){
-                mFirebaseAnalytics.logEvent("promocoes_patricia", bundle);
+                mFirebaseAnalytics.logEvent("detalhes_patricia", bundle);
             }else if(id.toString() == "9"){
-                mFirebaseAnalytics.logEvent("promocoes_marcia", bundle);
+                mFirebaseAnalytics.logEvent("detalhes_marcia", bundle);
             } else{
-                mFirebaseAnalytics.logEvent("promocoes_felipe_gisele", bundle);
+                mFirebaseAnalytics.logEvent("detalhes_felipe_gisele", bundle);
             }
 
         }

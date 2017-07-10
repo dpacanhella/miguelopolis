@@ -63,7 +63,7 @@ public class FarmaciaActivity extends AppCompatActivity {
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "0");
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Farmacia");
         bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
-        mFirebaseAnalytics.logEvent("farmacia", bundle);
+        mFirebaseAnalytics.logEvent("farmacias", bundle);
 
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)

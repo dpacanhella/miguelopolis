@@ -45,7 +45,6 @@ import butterknife.ButterKnife;
 public class UtilitarioActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private Drawer result = null;
-    private FirebaseAnalytics mFirebaseAnalytics;
 
     private List<Utilitario> mUtilitariosList;
 
@@ -67,13 +66,6 @@ public class UtilitarioActivity extends AppCompatActivity {
         mToolbar.setTitle("  Utilitários");
         mToolbar.setLogo(R.drawable.home);
         setSupportActionBar(mToolbar);
-
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-        Bundle bundle = new Bundle();
-        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "0");
-        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Utilitários");
-        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
-        mFirebaseAnalytics.logEvent("Utilitários", bundle);
 
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
