@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Login</key>
+	<dict>
+		<key>Time Out</key>
+		<integer>3600</integer>
+	</dict>
+	<key>database</key>
+	<dict>
+		<key>Encrypt</key>
+		<false/>
+	</dict>
+	<key>restful</key>
+	<dict>
+		<key>Prod URL</key>
+		<string>http://45.55.209.136:8080</string>
+		<key>Homolog URL</key>
+		<string>http://45.55.209.136:8080</string>
+		<key>Build For Production</key>
+		<true/>
+		<key>Service Debbuger</key>
+		<true/>
+	</dict>
+</dict>
+</plist>
