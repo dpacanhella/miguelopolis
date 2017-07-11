@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.farmacia.domain.Utilitario;
+import com.farmacia.domain.TipoAnuncio;
 
 @Repository
-public interface UtilitarioRepository extends JpaRepository<Utilitario, Long>{
+public interface TipoAnuncioRepository extends JpaRepository<TipoAnuncio, Long>{
 
-    List<Utilitario> findByTipoAnuncio(String tipoAnuncio);
+    List<TipoAnuncio> findAllByOrderByIdAsc();
 
 }

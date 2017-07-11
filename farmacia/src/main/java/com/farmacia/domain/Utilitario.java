@@ -38,5 +38,8 @@ public class Utilitario {
     
     @Column(name = "UTI_LINK_IMAGEM")
     private String imagem;
+    
+    @Column(name = "UTI_TIPO_ANUNCIO")
+    private String tipoAnuncio;
 
 }

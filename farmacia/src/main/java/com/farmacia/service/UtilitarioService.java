@@ -8,4 +8,6 @@ public interface UtilitarioService {
 
     List<Utilitario> getAll();
 
+    List<Utilitario> getByTipoAnuncio(String tipoAnuncio);
+
 }

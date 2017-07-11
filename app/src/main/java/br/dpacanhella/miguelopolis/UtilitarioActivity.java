@@ -27,10 +27,12 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import java.util.List;
 
 import br.dpacanhella.miguelopolis.adapter.FarmaciasAdapter;
+import br.dpacanhella.miguelopolis.adapter.TipoAnuncioAdapter;
 import br.dpacanhella.miguelopolis.adapter.UtilitariosAdapter;
 import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
 import br.dpacanhella.miguelopolis.data.model.Farmacia;
+import br.dpacanhella.miguelopolis.data.model.TipoAnuncio;
 import br.dpacanhella.miguelopolis.data.model.Utilitario;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
@@ -48,8 +50,8 @@ public class UtilitarioActivity extends AppCompatActivity {
 
     private List<Utilitario> mUtilitariosList;
 
-    private RecyclerView recyclerUtilitarios;
-    private UtilitariosAdapter utilitariosAdapter;
+    private RecyclerView recyclerTipos;
+    private TipoAnuncioAdapter anunciosAdapter;
 
     private AsyncTaskExecutor taskExecutor;
     private FarmaciaBO farmaciaBO;
@@ -143,34 +145,34 @@ public class UtilitarioActivity extends AppCompatActivity {
         this.taskExecutor = new AsyncTaskExecutor();
         this.farmaciaBO = new FarmaciaBO();
 
-        recyclerUtilitarios = (RecyclerView) findViewById(R.id.main_recycler_utilitarios);
-        recyclerUtilitarios.setHasFixedSize(true);
+        recyclerTipos = (RecyclerView) findViewById(R.id.main_recycler_tipos);
+        recyclerTipos.setHasFixedSize(true);
 
 
         LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerUtilitarios.setLayoutManager(llm);
-        showUtilitarios();
+        recyclerTipos.setLayoutManager(llm);
+        showTipos();
 
     }
 
-    private void showUtilitarios() {
-        taskExecutor.startExecutor(new AppAsyncTask<List<Utilitario>>() {
+    private void showTipos() {
+        taskExecutor.startExecutor(new AppAsyncTask<List<TipoAnuncio>>() {
             @Override
-            public AsyncTaskResult<List<Utilitario>> onStart() {
+            public AsyncTaskResult<List<TipoAnuncio>> onStart() {
                 try {
-                    return new AsyncTaskResult<>(farmaciaBO.getAllUtilitarios());
+                    return new AsyncTaskResult<>(farmaciaBO.getAllAnuncios());
                 } catch (BusinessException e) {
                     return new AsyncTaskResult<>(e);
                 }
             }
 
             @Override
-            public void onFinish(AsyncTaskResult<List<Utilitario>> result) {
+            public void onFinish(AsyncTaskResult<List<TipoAnuncio>> result) {
                 if (result.error() == null) {
-                    utilitariosAdapter = new UtilitariosAdapter(result.response());
-                    recyclerUtilitarios.setLayoutManager(new LinearLayoutManager(UtilitarioActivity.this));
-                    recyclerUtilitarios.setAdapter(utilitariosAdapter);
+                    anunciosAdapter = new TipoAnuncioAdapter(result.response());
+                    recyclerTipos.setLayoutManager(new LinearLayoutManager(UtilitarioActivity.this));
+                    recyclerTipos.setAdapter(anunciosAdapter);
                     mProgressBar.setVisibility(View.GONE);
                 } else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(UtilitarioActivity.this, R.style.DialogTheme);

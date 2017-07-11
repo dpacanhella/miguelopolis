@@ -1,5 +1,6 @@
 package com.farmacia.service.impl;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -22,6 +23,21 @@ public class UtilitarioServiceImpl implements UtilitarioService {
         
         Collections.shuffle(utilitarios);
         
+        return utilitarios;
+    }
+
+    @Override
+    public List<Utilitario> getByTipoAnuncio(String tipoAnuncio) {
+        
+        List<Utilitario> utilitarios = new ArrayList<Utilitario>();
+        
+        if(tipoAnuncio.equals("TODOS")) {
+            utilitarios = utilitarioRepository.findAll();
+        }else{
+            utilitarios = utilitarioRepository.findByTipoAnuncio(tipoAnuncio);
+        }
+        
+        Collections.shuffle(utilitarios);
         return utilitarios;
     }
 

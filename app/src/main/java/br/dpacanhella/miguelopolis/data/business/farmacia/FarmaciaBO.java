@@ -1,5 +1,6 @@
 package br.dpacanhella.miguelopolis.data.business.farmacia;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.dpacanhella.miguelopolis.data.dao.DaoException;
@@ -11,6 +12,7 @@ import br.dpacanhella.miguelopolis.data.model.Lanchonete;
 import br.dpacanhella.miguelopolis.data.model.LanchoneteDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Restaurante;
 import br.dpacanhella.miguelopolis.data.model.RestauranteDetalhes;
+import br.dpacanhella.miguelopolis.data.model.TipoAnuncio;
 import br.dpacanhella.miguelopolis.data.model.Utilitario;
 import retrofit2.Callback;
 
@@ -46,12 +48,15 @@ public class FarmaciaBO {
         return farm;
     }
 
-    public List<Utilitario> getAllUtilitarios() throws BusinessException {
+    public List<Utilitario> getAllUtilitarios(String anuncio, Callback callback) throws BusinessException {
         try {
-            return farmaciaDAO.getAllUtilitarios();
+            farmaciaDAO.getAllUtilitarios(anuncio, callback);
         } catch (DaoException e) {
             throw new BusinessException(e.getCode(), e.getMessage());
         }
+
+        List<Utilitario> utilitarios = new ArrayList<Utilitario>();
+        return utilitarios;
     }
 
     public List<Restaurante> getAllRestaurantes() throws BusinessException {
@@ -92,5 +97,13 @@ public class FarmaciaBO {
 
         LanchoneteDetalhes lanchonete = new LanchoneteDetalhes();
         return lanchonete;
+    }
+
+    public List<TipoAnuncio> getAllAnuncios() throws BusinessException {
+        try {
+            return farmaciaDAO.getAllAnuncios();
+        } catch (DaoException e) {
+            throw new BusinessException(e.getCode(), e.getMessage());
+        }
     }
 }

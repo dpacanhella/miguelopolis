@@ -9,15 +9,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UtilitarioDTO {
+public class TipoAnuncioDTO {
     
     private Integer id;
-    private String nome;
     private String descricao;
-    private String endereco;
-    private String telefone;
-    private String celular;
-    private String imagem;
-    private String tipoAnuncio;
 
 }

@@ -66,6 +66,11 @@
             android:screenOrientation="portrait"
             android:parentActivityName=".LanchoneteActivity"
             />
+
+        <activity android:name=".ItemUtilitarioActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".UtilitarioActivity"
+            />
     </application>
 
 </manifest>
