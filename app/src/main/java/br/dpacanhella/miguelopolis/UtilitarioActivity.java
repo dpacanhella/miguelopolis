@@ -13,6 +13,7 @@ import android.view.View;
 
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -63,6 +64,8 @@ public class UtilitarioActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);// Add THIS LINE
         setContentView(R.layout.activity_utilitarios);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("TODOS");
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
         mToolbar.setTitle("  Utilitários");
