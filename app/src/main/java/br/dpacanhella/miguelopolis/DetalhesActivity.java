@@ -90,7 +90,7 @@ public class DetalhesActivity extends AppCompatActivity {
         txtWhatApp = (TextView) findViewById(R.id.whatsApp);
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
-        mToolbar.setTitle(razao.toString());
+        mToolbar.setTitle("  " + razao.toString());
         mToolbar.setLogo(R.drawable.ic_launcher);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

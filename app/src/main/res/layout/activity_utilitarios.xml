@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e2e2e2"
+    android:background="#ffffff"
     tools:context=".FarmaciaActivity"
     android:fitsSystemWindows="true"
     android:id="@+id/teste0">
@@ -20,6 +20,17 @@
         android:layout_gravity="right"
         android:minHeight="?attr/actionBarSize" />
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_recycler_tipos"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tb_main"
+        android:layout_marginRight="3dp"
+        android:layout_marginLeft="3dp"
+        android:background="#ffffff"
+        android:layout_alignBottom="@+id/progress_bar_utilitarios" />
+
     <com.github.rahatarmanahmed.cpv.CircularProgressView
         android:id="@+id/progress_bar_utilitarios"
         android:layout_width="50dp"
@@ -28,16 +39,6 @@
         app:cpv_animAutostart="true"
         app:cpv_color="@color/sesc_primary"
         app:cpv_indeterminate="true" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/main_recycler_tipos"
-        android:scrollbars="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tb_main"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>
 

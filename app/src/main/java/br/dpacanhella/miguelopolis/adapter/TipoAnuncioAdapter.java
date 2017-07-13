@@ -114,15 +114,19 @@ public class TipoAnuncioAdapter extends RecyclerView.Adapter<TipoAnuncioAdapter.
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView txtName;
+        private TextView txtQtdeAnuncio;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             txtName = (TextView) itemView.findViewById(R.id.item_tipo_utilitario);
+            txtQtdeAnuncio = (TextView) itemView.findViewById(R.id.qtde_item_utilitario);
         }
 
         public void populate(TipoAnuncio tipoAnuncio) {
             txtName.setText(tipoAnuncio.getDescricao());
+            String qtdeAnuncio = Integer.toString(tipoAnuncio.getQtdeUtilitario());
+            txtQtdeAnuncio.setText(qtdeAnuncio);
         }
     }
 }

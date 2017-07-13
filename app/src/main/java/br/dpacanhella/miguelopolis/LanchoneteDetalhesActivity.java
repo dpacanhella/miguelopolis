@@ -88,7 +88,7 @@ public class LanchoneteDetalhesActivity extends AppCompatActivity {
         botaoLigar = (Button) findViewById(R.id.lanchonete_btnCall);
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main_lanchonete);
-        mToolbar.setTitle(nome.toString());
+        mToolbar.setTitle("  " + nome.toString());
         mToolbar.setLogo(R.drawable.icon_fast);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

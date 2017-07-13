@@ -13,5 +13,6 @@ public class TipoAnuncioDTO {
     
     private Integer id;
     private String descricao;
+    private Integer qtdeUtilitario;
 
 }

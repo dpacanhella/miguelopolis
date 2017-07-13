@@ -9,20 +9,37 @@
         android:id="@+id/item_tipo_utilitario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
         android:paddingRight="16dp"
         android:textColor="#000000"
         android:textStyle="bold"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp" />
 
+
+    <TextView
+        android:id="@+id/qtde_item_utilitario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="16dp"
+        android:textColor="#8f8f8f"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="16dp" />
 
     <View
         android:id="@+id/vw.divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="30dp"
-        android:background="@color/colorPrimary" />
+        android:background="@color/primary"
+        android:layout_alignLeft="@+id/item_tipo_utilitario"
+        android:layout_alignStart="@+id/item_tipo_utilitario" />
 
 </RelativeLayout>

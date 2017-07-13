@@ -135,7 +135,7 @@ public class RestauranteDetalhesActivity extends AppCompatActivity {
         txtWhatApp.setText(lblWhats + whatApp.toString());
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main_restaurante);
-        mToolbar.setTitle(lblRestaurante + nome.toString());
+        mToolbar.setTitle("  " + lblRestaurante + nome.toString());
         mToolbar.setLogo(R.drawable.icon_restaurante);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

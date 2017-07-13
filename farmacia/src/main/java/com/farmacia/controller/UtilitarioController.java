@@ -1,6 +1,7 @@
 package com.farmacia.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -16,7 +17,6 @@ import com.farmacia.controller.dto.TipoAnuncioDTO;
 import com.farmacia.controller.dto.UtilitarioDTO;
 import com.farmacia.domain.TipoAnuncio;
 import com.farmacia.domain.Utilitario;
-import com.farmacia.mapper.TipoAnuncioMapper;
 import com.farmacia.mapper.UtilitarioMapper;
 import com.farmacia.service.TipoAnuncioService;
 import com.farmacia.service.UtilitarioService;
@@ -34,9 +34,6 @@ public class UtilitarioController {
     private UtilitarioMapper utilitarioMapper;
     
     @Autowired
-    private TipoAnuncioMapper tipoAnuncioMapper;
-    
-    @Autowired
     private TipoAnuncioService tipoAnuncioService;
     
     //Buscar por tipo do anúncio
@@ -49,7 +46,20 @@ public class UtilitarioController {
     @GetMapping("/anuncios")
     public List<TipoAnuncioDTO> getAnuncios() throws IOException{
         List<TipoAnuncio> entity = tipoAnuncioService.getAll();
-        return tipoAnuncioMapper.toListDTO(entity);
+        List<TipoAnuncioDTO> anunciosDTO = new ArrayList<TipoAnuncioDTO>();
+        
+        
+        for (TipoAnuncio anuncio : entity) {
+            TipoAnuncioDTO anuncioDTO = new TipoAnuncioDTO();
+            List<Utilitario> utilitarios = utilitarioService.getByTipoAnuncio(anuncio.getDescricao());
+            
+            anuncioDTO.setQtdeUtilitario(utilitarios.size());
+            anuncioDTO.setDescricao(anuncio.getDescricao());
+            anuncioDTO.setId(anuncio.getId());
+            anunciosDTO.add(anuncioDTO);
+        }
+        
+        return anunciosDTO;
     }
 
 }
