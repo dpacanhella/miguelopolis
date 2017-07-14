@@ -75,6 +75,8 @@
         android:layout_height="1dp"
         android:layout_below="@+id/item_farmacia_text_nomeProprietario"
         android:layout_marginTop="40dp"
-        android:background="@color/colorPrimary" />
+        android:background="@color/colorPrimary"
+        android:layout_alignLeft="@+id/item_farmacia_text_whats"
+        android:layout_alignStart="@+id/item_farmacia_text_whats" />
 
 </RelativeLayout>

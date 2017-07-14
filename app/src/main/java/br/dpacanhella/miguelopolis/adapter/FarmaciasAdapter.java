@@ -3,8 +3,6 @@ package br.dpacanhella.miguelopolis.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,24 +11,19 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.github.rahatarmanahmed.cpv.CircularProgressView;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
-import org.w3c.dom.Text;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
-import br.dpacanhella.miguelopolis.data.model.Farmacia;
 import br.dpacanhella.miguelopolis.DetalhesActivity;
 import br.dpacanhella.miguelopolis.R;
 import br.dpacanhella.miguelopolis.data.business.BusinessException;
+import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
+import br.dpacanhella.miguelopolis.data.model.Farmacia;
 import br.dpacanhella.miguelopolis.data.model.FarmaciaDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Promocao;
-import br.dpacanhella.miguelopolis.data.model.Restaurante;
-import butterknife.Bind;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -42,18 +35,15 @@ import retrofit2.Response;
 public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.ViewHolder> {
 
     List<Farmacia> farmaciaList;
-    private FarmaciaListenner listener;
     private Farmacia farmacia = null;
     private FirebaseAnalytics mFirebaseAnalytics;
 
     private FarmaciaBO farmaciaBO;
+    MaterialDialog dialog;
 
-    public FarmaciasAdapter(List<Farmacia> doctorList, FarmaciaListenner listener) {
+    public FarmaciasAdapter(List<Farmacia> doctorList) {
         this.farmaciaList = doctorList;
-        this.listener = listener;
     }
-
-
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -72,8 +62,6 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
             public void onClick(final View v) {
                 try {
                     farmacia = farmaciaList.get(position);
-
-
                     farmaciaBO = new FarmaciaBO();
 
                     Callback callback = new Callback() {
@@ -82,7 +70,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
                             Log.i("info", "sucesso");
                             FarmaciaDetalhes farm = (FarmaciaDetalhes) response.body();
 
-                            montaResumoAnalytics(farm, v);
+                            dialog.dismiss();
 
                             showDetalhes(holder.itemView.getContext(), farm);
 
@@ -94,8 +82,14 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
                         }
                     };
 
-                    int id = farmacia.getId();
-                    FarmaciaDetalhes farmacia = farmaciaBO.getById(id, callback);
+                    dialog = new MaterialDialog.Builder(holder.itemView.getContext())
+                            .title("Aguarde")
+                            .content("Carregando...")
+                            .progress(true, 0)
+                            .cancelable(false)
+                            .show();
+
+                    int id = farmacia.getId();farmaciaBO.getById(id, callback);
 
                 } catch (BusinessException e) {
                     e.printStackTrace();
@@ -104,25 +98,6 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
             }
         });
     }
-
-    private void montaResumoAnalytics(FarmaciaDetalhes farmacia, View v) {
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(v.getContext());
-        Bundle bundle = new Bundle();
-        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, String.valueOf(farmacia.getId()));
-        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, farmacia.getRazao());
-        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
-
-        if(farmacia.getNomeProprietario().equals("FELIPE/GISELE")){
-            String nomeFormatado = farmacia.getNomeProprietario().replace("FELIPE/GISELE", "FELIPE_GISELE");
-            mFirebaseAnalytics.logEvent(nomeFormatado, bundle);
-        } else if(farmacia.getId() == 6) {
-            mFirebaseAnalytics.logEvent(farmacia.getNomeProprietario() + "2", bundle);
-        } else{
-
-            mFirebaseAnalytics.logEvent(farmacia.getNomeProprietario(), bundle);
-        }
-    }
-
 
     private void showDetalhes(Context c, FarmaciaDetalhes farm) {
         Intent intent = new Intent(c, DetalhesActivity.class);
@@ -188,13 +163,8 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
                 txtName.setTextColor(Color.parseColor("#ff0000"));
                 txtHorario.setText("Aberto das 08h00 às 22h00");
             }else{
-                itemView.setBackgroundColor(Color.parseColor("#c4c4c4"));
+                itemView.setBackgroundColor(Color.parseColor("#d3d3d3"));
             }
         }
     }
-
-    public interface FarmaciaListenner {
-        public void onItemListSelected(Farmacia farmacia);
-    }
-
 }

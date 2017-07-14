@@ -65,7 +65,7 @@ public class CardapioAdapter extends RecyclerView.Adapter<CardapioAdapter.ViewHo
                 .into(imageView, new Callback() {
                     @Override
                     public void onSuccess() {
-//                        mProgressBar.setVisibility(View.GONE);
+
                     }
 
                     @Override

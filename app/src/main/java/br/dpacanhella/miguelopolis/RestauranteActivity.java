@@ -164,8 +164,6 @@ public class RestauranteActivity extends AppCompatActivity {
         recyclerRestaurantes.setItemAnimator(new DefaultItemAnimator());
 
         showRestaurantes();
-
-
     }
 
     private void showRestaurantes() {

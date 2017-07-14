@@ -42,7 +42,10 @@ public class RestauranteDetalhesActivity extends AppCompatActivity {
 
     @Bind(R.id.progress_bar_restaurante)
     CircularProgressView mProgressBar;
+
     private FirebaseAnalytics mFirebaseAnalytics;
+
+
 
     TabHost tabHos;
     private RecyclerView recyclerCardapios;

@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 
+import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -31,6 +32,7 @@ import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskResult;
+import butterknife.Bind;
 
 import static com.mikepenz.materialdrawer.AccountHeader.*;
 
@@ -164,7 +166,7 @@ public class FarmaciaActivity extends AppCompatActivity {
             @Override
             public void onFinish(AsyncTaskResult<List<Farmacia>> result) {
                 if (result.error() == null) {
-                    farmaciaAdapter = new FarmaciasAdapter(result.response(), null);
+                    farmaciaAdapter = new FarmaciasAdapter(result.response());
                     recyclerFarmacias.setLayoutManager(new LinearLayoutManager(FarmaciaActivity.this));
                     recyclerFarmacias.setAdapter(farmaciaAdapter);
                 } else {

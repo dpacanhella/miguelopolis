@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -22,15 +23,21 @@ import com.squareup.picasso.Picasso;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 import br.dpacanhella.miguelopolis.adapter.PromocoesAdapter;
+import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
+import br.dpacanhella.miguelopolis.data.model.FarmaciaDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Promocao;
+import br.dpacanhella.miguelopolis.data.model.Utilitario;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskResult;
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Response;
 
 /**
  * Created by diegoPacanhella on 20/05/17.
@@ -125,7 +132,6 @@ public class DetalhesActivity extends AppCompatActivity {
         } else if(id.toString() == "6") {
             mFirebaseAnalytics.logEvent(nomeProprietario.toString() + "2", bundle);
         } else{
-
             mFirebaseAnalytics.logEvent(nomeProprietario.toString(), bundle);
         }
 

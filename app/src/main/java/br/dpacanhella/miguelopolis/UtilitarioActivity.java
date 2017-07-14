@@ -2,7 +2,6 @@ package br.dpacanhella.miguelopolis;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,10 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.TextView;
 
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -28,12 +25,9 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 import java.util.List;
 
-import br.dpacanhella.miguelopolis.adapter.FarmaciasAdapter;
 import br.dpacanhella.miguelopolis.adapter.TipoAnuncioAdapter;
-import br.dpacanhella.miguelopolis.adapter.UtilitariosAdapter;
 import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
-import br.dpacanhella.miguelopolis.data.model.Farmacia;
 import br.dpacanhella.miguelopolis.data.model.TipoAnuncio;
 import br.dpacanhella.miguelopolis.data.model.Utilitario;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
@@ -49,8 +43,6 @@ import butterknife.ButterKnife;
 public class UtilitarioActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private Drawer result = null;
-
-    private List<Utilitario> mUtilitariosList;
 
     private RecyclerView recyclerTipos;
     private TipoAnuncioAdapter anunciosAdapter;

@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -44,6 +45,7 @@ public class RestauranteAdapter extends RecyclerView.Adapter<RestauranteAdapter.
     private ImageView imageLogo;
     private FarmaciaBO farmaciaBO;
     View view;
+    MaterialDialog dialog;
 
     public RestauranteAdapter(List<Restaurante> doctorList) {
         this.restauranteList = doctorList;
@@ -78,6 +80,8 @@ public class RestauranteAdapter extends RecyclerView.Adapter<RestauranteAdapter.
 
                             montaResumoAnalytics(rest, v);
 
+                            dialog.dismiss();
+
                             showDetalhes(holder.itemView.getContext(), rest);
 
                         }
@@ -87,6 +91,13 @@ public class RestauranteAdapter extends RecyclerView.Adapter<RestauranteAdapter.
                             Log.i("info", "erro ao consultar detalhes do restaurante");
                         }
                     };
+
+                    dialog = new MaterialDialog.Builder(holder.itemView.getContext())
+                            .title("Aguarde")
+                            .content("Carregando...")
+                            .progress(true, 0)
+                            .cancelable(false)
+                            .show();
 
                     int id = restaurante.getId();
                     RestauranteDetalhes restaurante = farmaciaBO.getByIdRestaurante(id, callback);

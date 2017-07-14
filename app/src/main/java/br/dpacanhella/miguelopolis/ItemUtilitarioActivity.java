@@ -15,9 +15,11 @@ import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 import br.dpacanhella.miguelopolis.adapter.PromocoesAdapter;
 import br.dpacanhella.miguelopolis.adapter.UtilitariosAdapter;
+import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
 import br.dpacanhella.miguelopolis.data.model.Promocao;
 import br.dpacanhella.miguelopolis.data.model.Utilitario;
@@ -26,6 +28,9 @@ import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskResult;
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by infra on 11/07/17.
@@ -38,6 +43,7 @@ public class ItemUtilitarioActivity extends AppCompatActivity {
     private AsyncTaskExecutor taskExecutor;
     private FarmaciaBO farmaciaBO;
     private Toolbar mToolbar;
+    List<Utilitario> utilitarios = null;
 
     @Bind(R.id.progress_bar_item_utilitarios)
     CircularProgressView mProgressBar;
@@ -49,7 +55,8 @@ public class ItemUtilitarioActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        ArrayList<Utilitario> utilitarios = getIntent().getParcelableArrayListExtra("utilitarios");
+        this.farmaciaBO = new FarmaciaBO();
+        final Serializable anuncio = getIntent().getSerializableExtra("anuncio");
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main_item_utilitarios);
         mToolbar.setTitle("  Utilitários");
@@ -58,7 +65,7 @@ public class ItemUtilitarioActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         this.taskExecutor = new AsyncTaskExecutor();
-        this.farmaciaBO = new FarmaciaBO();
+
 
         recyclerUtilitarios = (RecyclerView) findViewById(R.id.main_recycler_item_utilitarios);
         recyclerUtilitarios.setHasFixedSize(true);
@@ -68,7 +75,27 @@ public class ItemUtilitarioActivity extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerUtilitarios.setLayoutManager(llm);
 
-        showUtilitarios(utilitarios);
+        final Callback callback = new Callback() {
+            @Override
+            public void onResponse(Call call, Response response) {
+                Log.i("info", "sucesso");
+                utilitarios = (List<Utilitario>) response.body();
+
+                showUtilitarios((ArrayList<Utilitario>) utilitarios);
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+                Log.i("info", "erro ao consultar utilitarios por tipo");
+            }
+        };
+
+        try {
+            farmaciaBO.getAllUtilitarios(anuncio.toString(), callback);
+        } catch (BusinessException e) {
+            e.printStackTrace();
+        }
+
 
     }
 

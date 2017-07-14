@@ -2,8 +2,8 @@ package br.dpacanhella.miguelopolis.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,34 +11,22 @@ import android.widget.TextView;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import br.dpacanhella.miguelopolis.DetalhesActivity;
 import br.dpacanhella.miguelopolis.ItemUtilitarioActivity;
 import br.dpacanhella.miguelopolis.R;
-import br.dpacanhella.miguelopolis.data.business.BusinessException;
-import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
-import br.dpacanhella.miguelopolis.data.model.Farmacia;
-import br.dpacanhella.miguelopolis.data.model.FarmaciaDetalhes;
-import br.dpacanhella.miguelopolis.data.model.Promocao;
 import br.dpacanhella.miguelopolis.data.model.TipoAnuncio;
-import br.dpacanhella.miguelopolis.data.model.Utilitario;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * Created by infra on 11/07/17.
  */
 
-public class TipoAnuncioAdapter extends RecyclerView.Adapter<TipoAnuncioAdapter.ViewHolder>{
+public class TipoAnuncioAdapter extends RecyclerView.Adapter<TipoAnuncioAdapter.ViewHolder> {
 
     List<TipoAnuncio> tipoAnuncioList;
     private TipoAnuncio tipoAnuncio = null;
     private FirebaseAnalytics mFirebaseAnalytics;
-
-    private FarmaciaBO farmaciaBO;
+    View view;
 
     public TipoAnuncioAdapter(List<TipoAnuncio> doctorList) {
         this.tipoAnuncioList = doctorList;
@@ -46,7 +34,7 @@ public class TipoAnuncioAdapter extends RecyclerView.Adapter<TipoAnuncioAdapter.
 
     @Override
     public TipoAnuncioAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
+        view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_tipos_utilitarios, parent, false);
         TipoAnuncioAdapter.ViewHolder viewHolder = new TipoAnuncioAdapter.ViewHolder(view);
         return viewHolder;
@@ -59,50 +47,33 @@ public class TipoAnuncioAdapter extends RecyclerView.Adapter<TipoAnuncioAdapter.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    tipoAnuncio = tipoAnuncioList.get(position);
+                tipoAnuncio = tipoAnuncioList.get(position);
 
 
-                    farmaciaBO = new FarmaciaBO();
+                String anuncio = tipoAnuncio.getDescricao();
 
-                    Callback callback = new Callback() {
-                        @Override
-                        public void onResponse(Call call, Response response) {
-                            Log.i("info", "sucesso");
-                            List<Utilitario>  utilitarios = (List<Utilitario>) response.body();
+                montaResumoAnalytics(anuncio);
 
-
-                            showDetalhes(holder.itemView.getContext(), utilitarios);
-
-                        }
-
-                        @Override
-                        public void onFailure(Call call, Throwable t) {
-                            Log.i("info", "erro ao consultar utilitarios por tipo");
-                        }
-                    };
-
-                    String anuncio = tipoAnuncio.getDescricao();
-                    farmaciaBO.getAllUtilitarios(anuncio, callback);
-
-                } catch (BusinessException e) {
-                    e.printStackTrace();
-                }
+                showDetalhes(holder.itemView.getContext(), anuncio);
 
 
             }
         });
     }
 
-    private void showDetalhes(Context context, List<Utilitario> utilitarios) {
+    private void montaResumoAnalytics(String anuncio) {
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(view.getContext());
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "1");
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, anuncio);
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+        mFirebaseAnalytics.logEvent("Anuncio_"+ anuncio, bundle);
+    }
+
+    private void showDetalhes(Context context, String anuncio) {
         Intent intent = new Intent(context, ItemUtilitarioActivity.class);
-        ArrayList list = new ArrayList();
 
-        for (Utilitario uti: utilitarios) {
-            list.add(new Utilitario(uti.getId(), uti.getNome(), uti.getDescricao(), uti.getEndereco(), uti.getTelefone(), uti.getCelular(), uti.getImagem()));
-        }
-
-        intent.putParcelableArrayListExtra("utilitarios", list);
+        intent.putExtra("anuncio", anuncio);
 
         context.startActivity(intent);
     }
