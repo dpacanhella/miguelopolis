@@ -22,7 +22,6 @@ import br.dpacanhella.miguelopolis.data.model.Promocao;
 public class CardapioAdapter extends RecyclerView.Adapter<CardapioAdapter.ViewHolder> {
 
     List<Cardapio> cardapioList;
-    ImageView imageView;
     View view;
 
     public CardapioAdapter(List<Cardapio> doctorList) {
@@ -48,6 +47,8 @@ public class CardapioAdapter extends RecyclerView.Adapter<CardapioAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        ImageView imageView;
+
         public ViewHolder(View itemView) {
             super(itemView);
 
@@ -55,23 +56,19 @@ public class CardapioAdapter extends RecyclerView.Adapter<CardapioAdapter.ViewHo
         }
 
         public void populate(Cardapio cardapio) {
-            loadImageFromURL(cardapio.getImagem().toString());
+            Picasso.with(view.getContext()).load(cardapio.getImagem().toString())
+                    .error(R.mipmap.ic_launcher)
+                    .into(imageView, new Callback() {
+                        @Override
+                        public void onSuccess() {
+
+                        }
+
+                        @Override
+                        public void onError() {
+
+                        }
+                    });
         }
-    }
-
-    private void loadImageFromURL(String s) {
-        Picasso.with(view.getContext()).load(s)
-                .error(R.mipmap.ic_launcher)
-                .into(imageView, new Callback() {
-                    @Override
-                    public void onSuccess() {
-
-                    }
-
-                    @Override
-                    public void onError() {
-
-                    }
-                });
     }
 }

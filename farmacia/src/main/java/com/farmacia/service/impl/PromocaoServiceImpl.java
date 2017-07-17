@@ -29,8 +29,8 @@ public class PromocaoServiceImpl implements PromocaoService {
     @Override
     public Promocao salvar(Integer farmaciaId, String nomeProduto, String descricaoProduto, String precoProduto, MultipartFile file) throws IOException {
 //        String directory = "/home/farmacia/promocoes/";
-        String directory = "/Users/infra/Documents/promocoes/";    
-//        String directory = "/Users/diegoPacanhella/Documents/promocoes/";
+//        String directory = "/Users/infra/Documents/promocoes/";    
+        String directory = "/Users/diegoPacanhella/Documents/promocoes/";
         
         Farmacia farmacia = farmaciaRepository.findById(farmaciaId);
         
