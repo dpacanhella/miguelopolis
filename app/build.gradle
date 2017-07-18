@@ -15,7 +15,7 @@ android {
         versionCode 7
         versionName "4.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        buildConfigField STRING, API_URL, '"http://192.168.1.5:8080/"'
+        buildConfigField STRING, API_URL, '"http://192.168.7.100:8080/"'
     }
     buildTypes {
         release {

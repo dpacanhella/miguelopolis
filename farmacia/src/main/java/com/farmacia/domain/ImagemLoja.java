@@ -6,7 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -15,26 +15,22 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "usuarios")
-public class Usuario {
-    
+@Table(name = "imagens_lojas")
+public class ImagemLoja {
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "USU_CODIGO")
+    @Column(name = "IMG_CODIGO")
     private Integer id;
     
-    @Column(name = "USO_LOGIN")
-    private String login;
+    @Column(name = "IMG_IMAGEM")
+    private String imagemProduto;
     
-    @Column(name = "USO_SENHA")
-    private String senha;
+    @Column(name = "IMG_DESCRICAO")
+    private String descricaoProduto;
     
-    @OneToOne
-    @JoinColumn(name = "FARMA_CODIGO")
-    private Farmacia farmacia;
-    
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "LOJA_CODIGO")
     private Loja loja;
-
 }
+
