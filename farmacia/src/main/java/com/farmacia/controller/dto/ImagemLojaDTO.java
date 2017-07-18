@@ -14,6 +14,7 @@ public class ImagemLojaDTO {
     private Integer id;
     private String descricaoProduto;
     private String imagemProduto;
+    private LojaDTO lojaDTO;
     private byte[] imageByte;
 
 }

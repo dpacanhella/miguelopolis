@@ -2,8 +2,6 @@ package com.farmacia.controller.dto;
 
 import java.util.List;
 
-import com.farmacia.domain.ImagemLoja;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +21,6 @@ public class LojaDTO {
     private String celular;
     private String imagemEstabelecimento;
     private String imagemLogo;
-    private List<ImagemLoja> imagensLojas;
+    private List<ImagemLojaDTO> imagensLojas;
 
 }
