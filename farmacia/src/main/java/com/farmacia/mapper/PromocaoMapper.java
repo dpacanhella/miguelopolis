@@ -23,7 +23,7 @@ public class PromocaoMapper extends BaseMapper<Promocao, PromocaoDTO> {
         dto.setNomeProduto(entity.getNomeProduto());
         dto.setPrecoInicial(entity.getPrecoInicial());
         dto.setPrecoFinal(entity.getPrecoFinal());
-        dto.setFarmaciaDTO(farmaciaMapper.toDTO(entity.getFarmacia()));
+//        dto.setFarmaciaDTO(farmaciaMapper.toDTO(entity.getFarmacia()));
         dto.setImage64(entity.getImage64());
         
         return dto;

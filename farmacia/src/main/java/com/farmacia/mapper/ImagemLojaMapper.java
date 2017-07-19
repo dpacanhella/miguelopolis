@@ -19,7 +19,7 @@ public class ImagemLojaMapper extends BaseMapper<ImagemLoja, ImagemLojaDTO> {
         ImagemLojaDTO dto = new ImagemLojaDTO();
 
         dto.setId(entity.getId());
-        dto.setLojaDTO(lojaMapper.toDTO(entity.getLoja()));
+//        dto.setLojaDTO(lojaMapper.toDTO(entity.getLoja()));
         dto.setDescricaoProduto(entity.getDescricaoProduto());
         dto.setImagemProduto(entity.getImagemProduto());
 
