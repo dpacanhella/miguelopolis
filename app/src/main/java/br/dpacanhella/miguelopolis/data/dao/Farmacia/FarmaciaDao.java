@@ -3,14 +3,14 @@ package br.dpacanhella.miguelopolis.data.dao.Farmacia;
 import java.io.IOException;
 import java.util.List;
 
-import br.dpacanhella.miguelopolis.data.api.WebServiceClient;
-import br.dpacanhella.miguelopolis.data.model.Farmacia;
 import br.dpacanhella.miguelopolis.data.api.WebService;
+import br.dpacanhella.miguelopolis.data.api.WebServiceClient;
 import br.dpacanhella.miguelopolis.data.dao.DaoException;
+import br.dpacanhella.miguelopolis.data.model.Farmacia;
 import br.dpacanhella.miguelopolis.data.model.Lanchonete;
+import br.dpacanhella.miguelopolis.data.model.Loja;
 import br.dpacanhella.miguelopolis.data.model.Restaurante;
 import br.dpacanhella.miguelopolis.data.model.TipoAnuncio;
-import br.dpacanhella.miguelopolis.data.model.Utilitario;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -99,5 +99,23 @@ public class FarmaciaDao {
         } catch (IOException e) {
             throw new DaoException(DaoException.API_CALL_ERROR, e.getMessage());
         }
+    }
+
+    public List<Loja> getAllLojas() throws DaoException {
+        try {
+            Call<List<Loja>> call = wsClient.getAllLojas();
+            Response<List<Loja>> response = call.execute();
+            if (response.isSuccessful()) {
+                return response.body();
+            } else {
+                throw new DaoException(response.code(), response.message());
+            }
+        } catch (IOException e) {
+            throw new DaoException(DaoException.API_CALL_ERROR, e.getMessage());
+        }
+    }
+
+    public void getByIdLLojas(int id, Callback callback) throws DaoException {
+        wsClient.getByIdLojas(id).enqueue(callback);
     }
 }

@@ -10,6 +10,8 @@ import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.model.FarmaciaDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Lanchonete;
 import br.dpacanhella.miguelopolis.data.model.LanchoneteDetalhes;
+import br.dpacanhella.miguelopolis.data.model.Loja;
+import br.dpacanhella.miguelopolis.data.model.LojaDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Restaurante;
 import br.dpacanhella.miguelopolis.data.model.RestauranteDetalhes;
 import br.dpacanhella.miguelopolis.data.model.TipoAnuncio;
@@ -105,5 +107,26 @@ public class FarmaciaBO {
         } catch (DaoException e) {
             throw new BusinessException(e.getCode(), e.getMessage());
         }
+    }
+
+
+    public List<Loja> getAllLojas() throws BusinessException {
+        try {
+            return farmaciaDAO.getAllLojas();
+        } catch (DaoException e) {
+            throw new BusinessException(e.getCode(), e.getMessage());
+        }
+    }
+
+    public LojaDetalhes getByIdLojas(int id, Callback callback) throws BusinessException {
+        try {
+            farmaciaDAO.getByIdLLojas(id, callback);
+        }catch (DaoException e){
+            throw new BusinessException(e.getCode(), e.getMessage());
+
+        }
+
+        LojaDetalhes loja = new LojaDetalhes();
+        return loja;
     }
 }

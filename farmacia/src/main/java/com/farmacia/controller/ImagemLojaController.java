@@ -65,8 +65,8 @@ public class ImagemLojaController {
         List<ImagemLojaDTO> listDTO = imgLojaMapper.toListDTO(entity);
 
         for (ImagemLojaDTO imagemLojaDTO : listDTO) {
-            if (imagemLojaDTO.getImagemProduto() != null) {
-                byte[] readFileToByteArray = FileUtils.readFileToByteArray(new File(imagemLojaDTO.getImagemProduto()));
+            if (imagemLojaDTO.getImagem() != null) {
+                byte[] readFileToByteArray = FileUtils.readFileToByteArray(new File(imagemLojaDTO.getImagem()));
                 imagemLojaDTO.setImageByte(readFileToByteArray);
             }
         }

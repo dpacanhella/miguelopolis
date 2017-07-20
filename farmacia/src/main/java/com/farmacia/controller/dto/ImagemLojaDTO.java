@@ -12,8 +12,8 @@ import lombok.Setter;
 public class ImagemLojaDTO {
     
     private Integer id;
-    private String descricaoProduto;
-    private String imagemProduto;
+    private String descricao;
+    private String imagem;
     private LojaDTO lojaDTO;
     private byte[] imageByte;
 

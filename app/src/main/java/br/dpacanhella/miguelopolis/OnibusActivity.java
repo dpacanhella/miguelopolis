@@ -66,6 +66,7 @@ public class OnibusActivity extends AppCompatActivity {
         SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454).withIcon(R.drawable.bus_icon);
         SecondaryDrawerItem bares_restaurantes = new SecondaryDrawerItem().withName("Bares/Restaurantes").withIdentifier(896).withIcon(R.drawable.icon_restaurante);
         SecondaryDrawerItem lanchonetes = new SecondaryDrawerItem().withName("Lanchonetes/Salgadarias").withIdentifier(222).withIcon(R.drawable.icon_fast);
+        SecondaryDrawerItem lojas = new SecondaryDrawerItem().withName("Lojas").withIdentifier(987).withIcon(R.drawable.icon_loja);
 
         result = new DrawerBuilder()
                 .withActivity(this)
@@ -85,7 +86,9 @@ public class OnibusActivity extends AppCompatActivity {
                         new DividerDrawerItem(),
                         bares_restaurantes,
                         new DividerDrawerItem(),
-                        lanchonetes
+                        lanchonetes,
+                        new DividerDrawerItem(),
+                        lojas
 
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -106,6 +109,8 @@ public class OnibusActivity extends AppCompatActivity {
                                 intent = new Intent(OnibusActivity.this, RestauranteActivity.class);
                             }else if(drawerItem.getIdentifier() == 222){
                                 intent = new Intent(OnibusActivity.this, LanchoneteActivity.class);
+                            }else if(drawerItem.getIdentifier() == 987){
+                                intent = new Intent(OnibusActivity.this, LojaActivity.class);
                             }
                         }
 

@@ -29,7 +29,6 @@ import br.dpacanhella.miguelopolis.adapter.TipoAnuncioAdapter;
 import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
 import br.dpacanhella.miguelopolis.data.model.TipoAnuncio;
-import br.dpacanhella.miguelopolis.data.model.Utilitario;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskResult;
@@ -83,6 +82,7 @@ public class UtilitarioActivity extends AppCompatActivity {
         SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454).withIcon(R.drawable.bus_icon);
         SecondaryDrawerItem bares_restaurantes = new SecondaryDrawerItem().withName("Bares/Restaurantes").withIdentifier(896).withIcon(R.drawable.icon_restaurante);
         SecondaryDrawerItem lanchonetes = new SecondaryDrawerItem().withName("Lanchonetes/Salgadarias").withIdentifier(222).withIcon(R.drawable.icon_fast);
+        SecondaryDrawerItem lojas = new SecondaryDrawerItem().withName("Lojas").withIdentifier(987).withIcon(R.drawable.icon_loja);
 
         result = new DrawerBuilder()
                 .withActivity(this)
@@ -102,7 +102,9 @@ public class UtilitarioActivity extends AppCompatActivity {
                         new DividerDrawerItem(),
                         bares_restaurantes,
                         new DividerDrawerItem(),
-                        lanchonetes
+                        lanchonetes,
+                        new DividerDrawerItem(),
+                        lojas
 
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -123,6 +125,9 @@ public class UtilitarioActivity extends AppCompatActivity {
                                 intent = new Intent(UtilitarioActivity.this, RestauranteActivity.class);
                             }else if(drawerItem.getIdentifier() == 222){
                                 intent = new Intent(UtilitarioActivity.this, LanchoneteActivity.class);
+                            }
+                            else if(drawerItem.getIdentifier() == 987){
+                                intent = new Intent(UtilitarioActivity.this, LojaActivity.class);
                             }
 
                         }

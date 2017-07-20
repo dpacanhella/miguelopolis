@@ -35,18 +35,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".DetalhesActivity"
             android:screenOrientation="portrait"
             android:parentActivityName=".FarmaciaActivity"
             />
+
         <activity android:name=".OnibusActivity"
             android:screenOrientation="portrait"
             android:parentActivityName=".UtilitarioActivity"
             />
+
+        <activity android:name=".LojaActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".UtilitarioActivity"
+            />
+
+        <activity android:name=".LojaDetalhesActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".LojaActivity"
+            />
+
         <activity android:name=".FarmaciaActivity"
             android:screenOrientation="portrait"
         android:parentActivityName=".UtilitarioActivity"
         />
+
         <activity android:name=".RestauranteActivity"
             android:screenOrientation="portrait"
             android:parentActivityName=".UtilitarioActivity"

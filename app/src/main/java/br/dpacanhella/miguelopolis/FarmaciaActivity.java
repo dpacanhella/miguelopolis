@@ -10,7 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 
-import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -25,16 +24,15 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 import java.util.List;
 
-import br.dpacanhella.miguelopolis.data.model.Farmacia;
 import br.dpacanhella.miguelopolis.adapter.FarmaciasAdapter;
 import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
+import br.dpacanhella.miguelopolis.data.model.Farmacia;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskResult;
-import butterknife.Bind;
 
-import static com.mikepenz.materialdrawer.AccountHeader.*;
+import static com.mikepenz.materialdrawer.AccountHeader.OnAccountHeaderListener;
 
 public class FarmaciaActivity extends AppCompatActivity {
 
@@ -84,6 +82,7 @@ public class FarmaciaActivity extends AppCompatActivity {
         SecondaryDrawerItem horariosOnibus = new SecondaryDrawerItem().withName("Horários de ônibus").withIdentifier(454).withIcon(R.drawable.bus_icon);
         SecondaryDrawerItem bares_restaurantes = new SecondaryDrawerItem().withName("Bares/Restaurantes").withIdentifier(896).withIcon(R.drawable.icon_restaurante);
         SecondaryDrawerItem lanchonetes = new SecondaryDrawerItem().withName("Lanchonetes/Salgadarias").withIdentifier(222).withIcon(R.drawable.icon_fast);
+        SecondaryDrawerItem lojas = new SecondaryDrawerItem().withName("Lojas").withIdentifier(987).withIcon(R.drawable.icon_loja);
 
         result = new DrawerBuilder()
                 .withActivity(this)
@@ -103,7 +102,10 @@ public class FarmaciaActivity extends AppCompatActivity {
                         new DividerDrawerItem(),
                         bares_restaurantes,
                         new DividerDrawerItem(),
-                        lanchonetes
+                        lanchonetes,
+                        new DividerDrawerItem(),
+                        lojas
+
 
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -124,6 +126,8 @@ public class FarmaciaActivity extends AppCompatActivity {
                                 intent = new Intent(FarmaciaActivity.this, RestauranteActivity.class);
                             }else if(drawerItem.getIdentifier() == 222){
                                 intent = new Intent(FarmaciaActivity.this, LanchoneteActivity.class);
+                            }else if(drawerItem.getIdentifier() == 987){
+                                intent = new Intent(FarmaciaActivity.this, LojaActivity.class);
                             }
                         }
 

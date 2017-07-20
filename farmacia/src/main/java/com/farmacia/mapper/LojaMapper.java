@@ -28,8 +28,8 @@ public class LojaMapper extends BaseMapper<Loja, LojaDTO> {
             ImagemLojaDTO imgDTO = new ImagemLojaDTO();
 
             imgDTO.setId(img.getId());
-            imgDTO.setDescricaoProduto(img.getDescricaoProduto());
-            imgDTO.setImagemProduto(img.getImagemProduto());
+            imgDTO.setDescricao(img.getDescricaoProduto());
+            imgDTO.setImagem(img.getImagemProduto());
 
             if (img.getImagemProduto() != null) {
                 byte[] readFileToByteArray = FileUtils.readFileToByteArray(new File(img.getImagemProduto()));

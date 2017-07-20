@@ -6,6 +6,8 @@ import br.dpacanhella.miguelopolis.data.model.Farmacia;
 import br.dpacanhella.miguelopolis.data.model.FarmaciaDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Lanchonete;
 import br.dpacanhella.miguelopolis.data.model.LanchoneteDetalhes;
+import br.dpacanhella.miguelopolis.data.model.Loja;
+import br.dpacanhella.miguelopolis.data.model.LojaDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Restaurante;
 import br.dpacanhella.miguelopolis.data.model.RestauranteDetalhes;
 import br.dpacanhella.miguelopolis.data.model.TipoAnuncio;
@@ -43,4 +45,12 @@ public interface WebService {
 
     @GET("utilitarios/anuncios")
     Call<List<TipoAnuncio>> getAllAnuncios();
+
+    @GET("lojas")
+    Call<List<Loja>> getAllLojas();
+
+    @GET("lojas/{id}")
+    Call<LojaDetalhes> getByIdLojas(@Path("id") int id);
+
+
 }
