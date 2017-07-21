@@ -15,6 +15,7 @@ import com.farmacia.controller.dto.RetornoLoginDTO;
 import com.farmacia.domain.Farmacia;
 import com.farmacia.domain.Loja;
 import com.farmacia.domain.Usuario;
+import com.farmacia.exception.FarmaciaException;
 import com.farmacia.repository.FarmaciaRepository;
 import com.farmacia.repository.LoginRepository;
 import com.farmacia.repository.LojaRepository;
@@ -62,8 +63,12 @@ public class LoginController {
                     dto.setTipo("TIPO_LOJA");
                     dto.setNome("Fotos/Promoções");
                 }
-            }
+            } 
 
+        }
+        
+        if (farmacia == null && loja == null){
+                throw FarmaciaException.LOGIN_NOT_FOUND;
         }
 
         return dto;
