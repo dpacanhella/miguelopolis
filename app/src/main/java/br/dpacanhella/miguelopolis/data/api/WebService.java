@@ -52,5 +52,4 @@ public interface WebService {
     @GET("lojas/{id}")
     Call<LojaDetalhes> getByIdLojas(@Path("id") int id);
 
-
 }

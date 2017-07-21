@@ -68,7 +68,6 @@ public class RestauranteActivity extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
         mToolbar.setTitle("  Bares/Restaurantes");
-        mToolbar.setLogo(R.drawable.icon_restaurante);
         setSupportActionBar(mToolbar);
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);

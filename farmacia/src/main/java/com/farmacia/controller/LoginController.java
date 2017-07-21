@@ -56,9 +56,11 @@ public class LoginController {
                 if (farmacia != null) {
                     dto.setId(farmacia.getId());
                     dto.setTipo("TIPO_FARMACIA");
+                    dto.setNome("Promoções");
                 } else if (loja != null) {
                     dto.setId(loja.getId());
                     dto.setTipo("TIPO_LOJA");
+                    dto.setNome("Fotos/Promoções");
                 }
             }
 

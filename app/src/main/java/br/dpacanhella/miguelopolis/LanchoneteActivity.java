@@ -68,7 +68,6 @@ public class LanchoneteActivity extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main_lanchonete);
         mToolbar.setTitle("  Lanchonetes/Salgadarias");
-        mToolbar.setLogo(R.drawable.icon_fast);
         setSupportActionBar(mToolbar);
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);

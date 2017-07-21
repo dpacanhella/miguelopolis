@@ -38,7 +38,6 @@ public class OnibusActivity extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
         mToolbar.setTitle("  Horários");
-        mToolbar.setLogo(R.drawable.bus_icon);
         setSupportActionBar(mToolbar);
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);

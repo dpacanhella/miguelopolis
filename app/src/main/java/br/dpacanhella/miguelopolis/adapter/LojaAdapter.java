@@ -1,6 +1,10 @@
 package br.dpacanhella.miguelopolis.adapter;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +16,18 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import br.dpacanhella.miguelopolis.LojaDetalhesActivity;
 import br.dpacanhella.miguelopolis.R;
+import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
+import br.dpacanhella.miguelopolis.data.model.ImagemLoja;
 import br.dpacanhella.miguelopolis.data.model.Loja;
+import br.dpacanhella.miguelopolis.data.model.LojaDetalhes;
+import retrofit2.Call;
+import retrofit2.Response;
 
 /**
  * Created by infra on 20/07/17.
@@ -45,8 +56,88 @@ public class LojaAdapter extends RecyclerView.Adapter<LojaAdapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(LojaAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.populate(lojaList.get(position));
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+                try {
+                    loja = lojaList.get(position);
+
+                    farmaciaBO = new FarmaciaBO();
+
+                    retrofit2.Callback callback = new retrofit2.Callback() {
+                        @Override
+                        public void onResponse(Call call, Response response) {
+                            Log.i("info", "sucesso");
+                            LojaDetalhes loj = (LojaDetalhes) response.body();
+
+                            montaResumoAnalytics(loj, v);
+
+                            dialog.dismiss();
+
+                            showDetalhes(holder.itemView.getContext(), loj);
+
+                        }
+
+                        @Override
+                        public void onFailure(Call call, Throwable t) {
+                            Log.i("info", "erro ao consultar detalhes");
+                        }
+                    };
+
+
+                    dialog = new MaterialDialog.Builder(holder.itemView.getContext())
+                            .title("Aguarde")
+                            .content("Carregando...")
+                            .progress(true, 0)
+                            .cancelable(false)
+                            .show();
+
+                    int id = loja.getId();
+                    LojaDetalhes lojaDetalhes = farmaciaBO.getByIdLojas(id, callback);
+
+                } catch (BusinessException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private void showDetalhes(Context c, LojaDetalhes loj) {
+        Intent intent = new Intent(c, LojaDetalhesActivity.class);
+
+        intent.putExtra("id", loj.getId());
+        intent.putExtra("nome", loj.getNome());
+        intent.putExtra("descricao", loj.getDescricao());
+        intent.putExtra("endereco", loj.getEndereco());
+        intent.putExtra("imagemEstabelecimento", loj.getImagemEstabelecimento());
+        intent.putExtra("telefone", loj.getTelefone());
+        intent.putExtra("whatsApp", loj.getCelular());
+
+        List<ImagemLoja> imagens = loj.getImagensLojas();
+
+        ArrayList list = new ArrayList();
+
+        for (ImagemLoja imagem : imagens) {
+            list.add(new ImagemLoja(imagem.getId(), imagem.getDescricao(), imagem.getImagem(), imagem.getImageByte()));
+        }
+
+        intent.putParcelableArrayListExtra("imagens", list);
+
+        c.startActivity(intent);
+
+    }
+
+    private void montaResumoAnalytics(LojaDetalhes loj, View v) {
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(v.getContext());
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, String.valueOf(loj.getId()));
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, loj.getNome());
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+        String nomeFormatado = loj.getNome().replaceAll(" ", "_");
+        mFirebaseAnalytics.logEvent(nomeFormatado, bundle);
     }
 
     @Override

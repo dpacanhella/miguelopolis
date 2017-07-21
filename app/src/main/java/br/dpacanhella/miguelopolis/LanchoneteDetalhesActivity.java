@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import br.dpacanhella.miguelopolis.adapter.CardapioAdapter;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
 import br.dpacanhella.miguelopolis.data.model.Cardapio;
-import br.dpacanhella.miguelopolis.data.model.Promocao;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskResult;
@@ -89,7 +88,6 @@ public class LanchoneteDetalhesActivity extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main_lanchonete);
         mToolbar.setTitle("  " + nome.toString());
-        mToolbar.setLogo(R.drawable.icon_fast);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

@@ -13,5 +13,6 @@ public class RetornoLoginDTO {
     
     private Integer id;
     private String tipo;
+    private String nome;
 
 }

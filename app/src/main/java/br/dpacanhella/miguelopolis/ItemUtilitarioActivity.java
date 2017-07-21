@@ -8,20 +8,16 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
-import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.dpacanhella.miguelopolis.adapter.PromocoesAdapter;
 import br.dpacanhella.miguelopolis.adapter.UtilitariosAdapter;
 import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
-import br.dpacanhella.miguelopolis.data.model.Promocao;
 import br.dpacanhella.miguelopolis.data.model.Utilitario;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
@@ -60,7 +56,6 @@ public class ItemUtilitarioActivity extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main_item_utilitarios);
         mToolbar.setTitle("  Utilitários");
-        mToolbar.setLogo(R.drawable.home);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

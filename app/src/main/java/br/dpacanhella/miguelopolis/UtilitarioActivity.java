@@ -61,7 +61,6 @@ public class UtilitarioActivity extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
         mToolbar.setTitle("  Utilitários");
-        mToolbar.setLogo(R.drawable.home);
         setSupportActionBar(mToolbar);
 
         AccountHeader headerResult = new AccountHeaderBuilder()

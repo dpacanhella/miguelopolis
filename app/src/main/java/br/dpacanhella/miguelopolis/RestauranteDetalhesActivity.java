@@ -24,10 +24,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import br.dpacanhella.miguelopolis.adapter.CardapioAdapter;
-import br.dpacanhella.miguelopolis.adapter.PromocoesAdapter;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
 import br.dpacanhella.miguelopolis.data.model.Cardapio;
-import br.dpacanhella.miguelopolis.data.model.Promocao;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskResult;
@@ -139,7 +137,6 @@ public class RestauranteDetalhesActivity extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main_restaurante);
         mToolbar.setTitle("  " + lblRestaurante + nome.toString());
-        mToolbar.setLogo(R.drawable.icon_restaurante);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

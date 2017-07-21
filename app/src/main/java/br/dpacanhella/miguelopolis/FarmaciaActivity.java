@@ -54,7 +54,6 @@ public class FarmaciaActivity extends AppCompatActivity {
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
         mToolbar.setTitle("  Plantão da semana");
-        mToolbar.setLogo(R.drawable.ic_launcher);
 
         setSupportActionBar(mToolbar);
 

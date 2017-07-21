@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 
+import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -31,6 +32,7 @@ import br.dpacanhella.miguelopolis.data.model.Loja;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskResult;
+import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
@@ -50,6 +52,9 @@ public class LojaActivity extends AppCompatActivity{
     private Drawer result = null;
     private FirebaseAnalytics mFirebaseAnalytics;
 
+    @Bind(R.id.progress_bar_item_lojas)
+    CircularProgressView mProgressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,7 +62,6 @@ public class LojaActivity extends AppCompatActivity{
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main_item_lojas);
         mToolbar.setTitle("  Lojas");
-        mToolbar.setLogo(R.drawable.icon_loja);
         setSupportActionBar(mToolbar);
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
@@ -175,6 +179,7 @@ public class LojaActivity extends AppCompatActivity{
                     lojaAdapter = new LojaAdapter(result.response());
                     recyclerLojas.setLayoutManager(new LinearLayoutManager(LojaActivity.this));
                     recyclerLojas.setAdapter(lojaAdapter);
+                    mProgressBar.setVisibility(View.GONE);
                 } else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(LojaActivity.this, R.style.DialogTheme);
                     builder.setTitle(R.string.dialog_title_error)
