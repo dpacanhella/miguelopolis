@@ -81,12 +81,13 @@
 
                         <ImageView
                             android:id="@+id/restaurante_imagem_estabelecimento"
-                            android:layout_width="340dp"
-                            android:layout_height="180dp"
-                            android:layout_marginRight="16dp"
+                            android:layout_width="344dp"
+                            android:layout_height="154dp"
+                            android:layout_gravity="center"
                             android:layout_marginTop="10dp"
-                            android:layout_weight="0.61"
+                            android:layout_weight="0.48"
                             android:adjustViewBounds="true"
+                            android:paddingRight="16dp"
                             android:scaleType="fitXY" />
 
                         <TextView
@@ -143,10 +144,11 @@
 
                         <TextView
                             android:id="@+id/restaurante_descricao2"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
                             android:paddingRight="16dp"
+                            android:paddingLeft="16dp"
                             android:textAlignment="center"
                             android:textColor="#1048d4"
                             android:textSize="16sp"
@@ -155,10 +157,11 @@
 
                         <TextView
                             android:id="@+id/restaurante_descricao3"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:layout_marginTop="10dp"
                             android:paddingRight="16dp"
+                            android:paddingLeft="16dp"
                             android:textAlignment="center"
                             android:textColor="#000000"
                             android:textSize="18sp"
@@ -181,6 +184,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
                             android:paddingRight="16dp"
+                            android:paddingLeft="16dp"
                             android:textAlignment="center"
                             android:textColor="#000000"
                             android:textSize="14sp" />

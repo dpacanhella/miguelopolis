@@ -15,10 +15,9 @@ import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -209,18 +208,10 @@ public class LojaDetalhesActivity extends AppCompatActivity {
     }
 
     private void loadImageFromURL(String s) {
-        Picasso.with(LojaDetalhesActivity.this).load(s)
-                .error(R.mipmap.ic_launcher)
-                .into(imageView, new Callback() {
-                    @Override
-                    public void onSuccess() {
-                        mProgressBar.setVisibility(View.GONE);
-                    }
-
-                    @Override
-                    public void onError() {
-
-                    }
-                });
+        Glide.with(this)
+                .load(s)
+                .placeholder(R.drawable.imageplaceholder)
+                .error(R.drawable.imagenotfound)
+                .into(imageView);
     }
 }

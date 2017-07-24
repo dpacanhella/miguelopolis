@@ -2,11 +2,7 @@ package br.dpacanhella.miguelopolis.adapter;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
-import android.text.Html;
-import android.text.SpannableStringBuilder;
-import android.text.style.UnderlineSpan;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,14 +10,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-import br.dpacanhella.miguelopolis.DetalhesActivity;
 import br.dpacanhella.miguelopolis.R;
-import br.dpacanhella.miguelopolis.data.model.Farmacia;
 import br.dpacanhella.miguelopolis.data.model.Promocao;
 
 /**
@@ -93,18 +86,10 @@ public class PromocoesAdapter extends RecyclerView.Adapter<PromocoesAdapter.View
     }
 
     private void loadImageFromURL(String s) {
-        Picasso.with(view.getContext()).load(s)
-                .error(R.mipmap.ic_launcher)
-                .into(imageView, new Callback() {
-                    @Override
-                    public void onSuccess() {
-
-                    }
-
-                    @Override
-                    public void onError() {
-
-                    }
-                });
+        Glide.with(view.getContext())
+                .load(s)
+                .placeholder(R.drawable.imageplaceholder)
+                .error(R.drawable.imagenotfound)
+                .into(imageView);
     }
 }

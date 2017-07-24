@@ -12,18 +12,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.bumptech.glide.Glide;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import br.dpacanhella.miguelopolis.LojaDetalhesActivity;
 import br.dpacanhella.miguelopolis.R;
 import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
-import br.dpacanhella.miguelopolis.data.model.ImagemLoja;
 import br.dpacanhella.miguelopolis.data.model.Loja;
 import br.dpacanhella.miguelopolis.data.model.LojaDetalhes;
 import retrofit2.Call;
@@ -108,23 +105,23 @@ public class LojaAdapter extends RecyclerView.Adapter<LojaAdapter.ViewHolder>{
     private void showDetalhes(Context c, LojaDetalhes loj) {
         Intent intent = new Intent(c, LojaDetalhesActivity.class);
 
-        intent.putExtra("id", loj.getId());
-        intent.putExtra("nome", loj.getNome());
-        intent.putExtra("descricao", loj.getDescricao());
-        intent.putExtra("endereco", loj.getEndereco());
-        intent.putExtra("imagemEstabelecimento", loj.getImagemEstabelecimento());
-        intent.putExtra("telefone", loj.getTelefone());
-        intent.putExtra("whatsApp", loj.getCelular());
-
-        List<ImagemLoja> imagens = loj.getImagensLojas();
-
-        ArrayList list = new ArrayList();
-
-        for (ImagemLoja imagem : imagens) {
-            list.add(new ImagemLoja(imagem.getId(), imagem.getDescricao(), imagem.getImagem(), imagem.getImageByte()));
-        }
-
-        intent.putParcelableArrayListExtra("imagens", list);
+//        intent.putExtra("id", loj.getId());
+//        intent.putExtra("nome", loj.getNome());
+//        intent.putExtra("descricao", loj.getDescricao());
+//        intent.putExtra("endereco", loj.getEndereco());
+//        intent.putExtra("imagemEstabelecimento", loj.getImagemEstabelecimento());
+//        intent.putExtra("telefone", loj.getTelefone());
+//        intent.putExtra("whatsApp", loj.getCelular());
+//
+//        List<ImagemLoja> imagens = loj.getImagensLojas();
+//
+//        ArrayList list = new ArrayList();
+//
+//        for (ImagemLoja imagem : imagens) {
+//            list.add(new ImagemLoja(imagem.getId(), imagem.getDescricao(), imagem.getImagem(), imagem.getImageByte()));
+//        }
+//
+//        intent.putParcelableArrayListExtra("imagens", list);
 
         c.startActivity(intent);
 
@@ -168,18 +165,10 @@ public class LojaAdapter extends RecyclerView.Adapter<LojaAdapter.ViewHolder>{
     }
 
     private void loadImageFromURL(String s) {
-        Picasso.with(view.getContext()).load(s)
-                .error(R.mipmap.ic_launcher)
-                .into(imageLogo, new Callback() {
-                    @Override
-                    public void onSuccess() {
-
-                    }
-
-                    @Override
-                    public void onError() {
-
-                    }
-                });
+        Glide.with(view.getContext())
+                .load(s)
+                .placeholder(R.drawable.imageplaceholder)
+                .error(R.drawable.imagenotfound)
+                .into(imageLogo);
     }
 }

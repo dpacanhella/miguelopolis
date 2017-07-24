@@ -10,16 +10,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
+import com.bumptech.glide.Glide;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import br.dpacanhella.miguelopolis.R;
-import br.dpacanhella.miguelopolis.data.model.FarmaciaDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Utilitario;
 
 /**
@@ -118,19 +114,11 @@ public class UtilitariosAdapter extends RecyclerView.Adapter<UtilitariosAdapter.
     }
 
     private void loadImageFromURL(String s) {
-        Picasso.with(view.getContext()).load(s)
-                .error(R.mipmap.ic_launcher)
-                .into(image, new Callback() {
-                    @Override
-                    public void onSuccess() {
-
-                    }
-
-                    @Override
-                    public void onError() {
-
-                    }
-                });
+        Glide.with(view.getContext())
+                .load(s)
+                .placeholder(R.drawable.imageplaceholder)
+                .error(R.drawable.imagenotfound)
+                .into(image);
     }
 
     public void onClick(View v, int position) {

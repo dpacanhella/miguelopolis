@@ -12,23 +12,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.bumptech.glide.Glide;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import br.dpacanhella.miguelopolis.LanchoneteDetalhesActivity;
 import br.dpacanhella.miguelopolis.R;
-import br.dpacanhella.miguelopolis.RestauranteDetalhesActivity;
 import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
 import br.dpacanhella.miguelopolis.data.model.Cardapio;
-import br.dpacanhella.miguelopolis.data.model.FarmaciaDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Lanchonete;
 import br.dpacanhella.miguelopolis.data.model.LanchoneteDetalhes;
-import br.dpacanhella.miguelopolis.data.model.Restaurante;
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -169,18 +165,10 @@ public class LanchoneteAdapter extends RecyclerView.Adapter<LanchoneteAdapter.Vi
     }
 
     private void loadImageFromURL(String s) {
-        Picasso.with(view.getContext()).load(s)
-                .error(R.mipmap.ic_launcher)
-                .into(imageLogo, new Callback() {
-                    @Override
-                    public void onSuccess() {
-
-                    }
-
-                    @Override
-                    public void onError() {
-
-                    }
-                });
+        Glide.with(view.getContext())
+                .load(s)
+                .placeholder(R.drawable.imageplaceholder)
+                .error(R.drawable.imagenotfound)
+                .into(imageLogo);
     }
 }
