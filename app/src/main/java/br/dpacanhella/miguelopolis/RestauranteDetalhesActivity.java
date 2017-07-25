@@ -181,6 +181,11 @@ public class RestauranteDetalhesActivity extends AppCompatActivity {
         spec.setIndicator("Cardápio");
         host.addTab(spec);
 
+        if(cardapios.isEmpty()){
+            TextView txtNotPromocoes = (TextView) findViewById(R.id.semCardapiosCadastrados);
+
+            txtNotPromocoes.setText("Não há cardápio cadastrado no momento.");
+        }
 
         host.getTabWidget().getChildAt(0).setBackgroundColor(Color.parseColor("#097369"));
         TextView tv = (TextView) host.getCurrentTabView().findViewById(android.R.id.title);

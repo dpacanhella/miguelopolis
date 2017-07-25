@@ -144,6 +144,19 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tb_main_loja_detalhes"
                         android:scrollbars="vertical" />
+
+                    <TextView
+                        android:id="@+id/semImagensCadastradas"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:textAlignment="center"
+                        android:textColor="#ff0000"
+                        android:textStyle="bold"
+                        android:paddingLeft="16dp"
+                        android:layout_centerInParent="true"
+                        android:paddingRight="16dp"
+                        android:textSize="16sp" />
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>

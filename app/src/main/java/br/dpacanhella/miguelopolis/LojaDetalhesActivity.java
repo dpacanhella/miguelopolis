@@ -124,6 +124,11 @@ public class LojaDetalhesActivity extends AppCompatActivity {
         spec.setIndicator("Fotos");
         host.addTab(spec);
 
+        if(detalhes.getImagensLojas().isEmpty()){
+            TextView txtNotPromocoes = (TextView) findViewById(R.id.semImagensCadastradas);
+
+            txtNotPromocoes.setText("Não há imagens cadastradas no momento.");
+        }
 
         host.getTabWidget().getChildAt(0).setBackgroundColor(Color.parseColor("#097369"));
         TextView tv = (TextView) host.getCurrentTabView().findViewById(android.R.id.title);
