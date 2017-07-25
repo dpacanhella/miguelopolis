@@ -1,0 +1,18 @@
+//
+//  Localizable.strings
+//  redspark - base structure
+//  miguelopolis
+//
+//  Created by Marcos Vinícius Fernandes on 7/5/17.
+//  Copyright © 2017 pacanhella. All rights reserved.
+//
+
+error_service = "Não foi possível chegar ao servidor";
+error_json = "Erro ao converter objeto";
+invalid_user = "Usuário inválido, verifique seu usuário e senha e tente novamente";
+
+/* Menu */
+menu_utilitarios = "Utilitários";
+menu_farmacias = "Plantão/Farmácias";
+menu_onibus = "Horários de ônibus";
+menu_bares = "Bares/Restaurantes";

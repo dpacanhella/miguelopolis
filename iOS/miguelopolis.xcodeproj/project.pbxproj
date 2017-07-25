@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4FAF6AD31F0D6A4C00201D36 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4FAF6AD21F0D6A4C00201D36 /* Podfile */; };
+		4FAF6AD71F0D6A4C00201D36 /* StringIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF6AD61F0D6A4C00201D36 /* StringIdentifier.swift */; };
+		4FAF6AD91F0D6A4C00201D36 /* CollectionViewIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF6AD81F0D6A4C00201D36 /* CollectionViewIdentifier.swift */; };
+		4FAF6ADB1F0D6A4C00201D36 /* ControllerIndentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF6ADA1F0D6A4C00201D36 /* ControllerIndentifier.swift */; };
+		4FAF6ADD1F0D6A4C00201D36 /* ImageIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF6ADC1F0D6A4C00201D36 /* ImageIdentifier.swift */; };
+		4FAF6ADF1F0D6A4C00201D36 /* NibIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF6ADE1F0D6A4C00201D36 /* NibIdentifier.swift */; };
+		4FAF6AE11F0D6A4C00201D36 /* TableViewIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF6AE01F0D6A4C00201D36 /* TableViewIdentifier.swift */; };
+		4FAF6AE31F0D6A4C00201D36 /* UserDefaultsIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF6AE21F0D6A4C00201D36 /* UserDefaultsIdentifiers.swift */; };
+		4FAF6AE71F0D6A4C00201D36 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF6AE61F0D6A4C00201D36 /* ContainerViewController.swift */; };
+		4FAF6AEC1F0D6A4C00201D36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FAF6AEA1F0D6A4C00201D36 /* Main.storyboard */; };
+		4FAF6AEF1F0D6A4C00201D36 /* Resources.README in Resources */ = {isa = PBXBuildFile; fileRef = 4FAF6AEE1F0D6A4C00201D36 /* Resources.README */; };
+		4FAF6AF21F0D6A4C00201D36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF6AF11F0D6A4C00201D36 /* AppDelegate.swift */; };
+		4FAF6AF41F0D6A4C00201D36 /* AppConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FAF6AF31F0D6A4C00201D36 /* AppConfig.plist */; };
+		4FAF6AF61F0D6A4C00201D36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FAF6AF51F0D6A4C00201D36 /* Localizable.strings */; };
+		4FAF6AF81F0D6A4C00201D36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FAF6AF71F0D6A4C00201D36 /* Assets.xcassets */; };
+		4FAF6AFB1F0D6A4C00201D36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FAF6AF91F0D6A4C00201D36 /* LaunchScreen.storyboard */; };
+		4FAF6B031F0D6EE800201D36 /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF6B021F0D6EE800201D36 /* SlideMenuViewController.swift */; };
+		4FF182EB1F0D7CDE00BBC361 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF182EA1F0D7CDE00BBC361 /* MenuItem.swift */; };
+		4FF182EE1F0D804800BBC361 /* SlideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF182ED1F0D804800BBC361 /* SlideMenuCell.swift */; };
+		4FF182F01F0D80E500BBC361 /* MigueColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF182EF1F0D80E500BBC361 /* MigueColors.swift */; };
+		4FF182F31F0D824100BBC361 /* SlideMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF182F21F0D824100BBC361 /* SlideMenuCell.xib */; };
+		4FF182F51F0D94AA00BBC361 /* FarmaciaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FF182F41F0D94AA00BBC361 /* FarmaciaCell.xib */; };
+		4FF182F71F0D95F800BBC361 /* FarmaciaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF182F61F0D95F800BBC361 /* FarmaciaCell.swift */; };
+		4FF182F91F0D972B00BBC361 /* Farmacia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF182F81F0D972B00BBC361 /* Farmacia.swift */; };
+		4FF182FB1F0D983600BBC361 /* Promocao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF182FA1F0D983600BBC361 /* Promocao.swift */; };
+		4FF182FE1F0D98E300BBC361 /* FarmaciaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF182FD1F0D98E300BBC361 /* FarmaciaService.swift */; };
+		4FF183011F0D992800BBC361 /* FarmaciaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF183001F0D992800BBC361 /* FarmaciaViewController.swift */; };
+		4FF183041F0D9A4000BBC361 /* FarmaciaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF183031F0D9A4000BBC361 /* FarmaciaManager.swift */; };
+		878F79297F05D0C988567105 /* Pods_miguelopolis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D635CD7828F6F0C959914DD /* Pods_miguelopolis.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4D635CD7828F6F0C959914DD /* Pods_miguelopolis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_miguelopolis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FAF6ACF1F0D6A4C00201D36 /* miguelopolis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miguelopolis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FAF6AD21F0D6A4C00201D36 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		4FAF6AD61F0D6A4C00201D36 /* StringIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringIdentifier.swift; sourceTree = "<group>"; };
+		4FAF6AD81F0D6A4C00201D36 /* CollectionViewIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewIdentifier.swift; sourceTree = "<group>"; };
+		4FAF6ADA1F0D6A4C00201D36 /* ControllerIndentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerIndentifier.swift; sourceTree = "<group>"; };
+		4FAF6ADC1F0D6A4C00201D36 /* ImageIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageIdentifier.swift; sourceTree = "<group>"; };
+		4FAF6ADE1F0D6A4C00201D36 /* NibIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibIdentifier.swift; sourceTree = "<group>"; };
+		4FAF6AE01F0D6A4C00201D36 /* TableViewIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewIdentifier.swift; sourceTree = "<group>"; };
+		4FAF6AE21F0D6A4C00201D36 /* UserDefaultsIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsIdentifiers.swift; sourceTree = "<group>"; };
+		4FAF6AE61F0D6A4C00201D36 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		4FAF6AEB1F0D6A4C00201D36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4FAF6AEE1F0D6A4C00201D36 /* Resources.README */ = {isa = PBXFileReference; lastKnownFileType = text; path = Resources.README; sourceTree = "<group>"; };
+		4FAF6AF11F0D6A4C00201D36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4FAF6AF31F0D6A4C00201D36 /* AppConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppConfig.plist; sourceTree = "<group>"; };
+		4FAF6AF51F0D6A4C00201D36 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		4FAF6AF71F0D6A4C00201D36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4FAF6AFA1F0D6A4C00201D36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4FAF6AFC1F0D6A4C00201D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FAF6B021F0D6EE800201D36 /* SlideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuViewController.swift; sourceTree = "<group>"; };
+		4FF182EA1F0D7CDE00BBC361 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		4FF182ED1F0D804800BBC361 /* SlideMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuCell.swift; sourceTree = "<group>"; };
+		4FF182EF1F0D80E500BBC361 /* MigueColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MigueColors.swift; sourceTree = "<group>"; };
+		4FF182F21F0D824100BBC361 /* SlideMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideMenuCell.xib; sourceTree = "<group>"; };
+		4FF182F41F0D94AA00BBC361 /* FarmaciaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FarmaciaCell.xib; sourceTree = "<group>"; };
+		4FF182F61F0D95F800BBC361 /* FarmaciaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FarmaciaCell.swift; sourceTree = "<group>"; };
+		4FF182F81F0D972B00BBC361 /* Farmacia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Farmacia.swift; sourceTree = "<group>"; };
+		4FF182FA1F0D983600BBC361 /* Promocao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promocao.swift; sourceTree = "<group>"; };
+		4FF182FD1F0D98E300BBC361 /* FarmaciaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FarmaciaService.swift; sourceTree = "<group>"; };
+		4FF183001F0D992800BBC361 /* FarmaciaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FarmaciaViewController.swift; sourceTree = "<group>"; };
+		4FF183031F0D9A4000BBC361 /* FarmaciaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FarmaciaManager.swift; sourceTree = "<group>"; };
+		729B8E7730846BACD9A62CF0 /* Pods-miguelopolis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miguelopolis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-miguelopolis/Pods-miguelopolis.debug.xcconfig"; sourceTree = "<group>"; };
+		C799D7C9634F09BD736C864C /* Pods-miguelopolis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-miguelopolis.release.xcconfig"; path = "Pods/Target Support Files/Pods-miguelopolis/Pods-miguelopolis.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4FAF6ACC1F0D6A4C00201D36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				878F79297F05D0C988567105 /* Pods_miguelopolis.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03A355521E64292F9E6DDFC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				729B8E7730846BACD9A62CF0 /* Pods-miguelopolis.debug.xcconfig */,
+				C799D7C9634F09BD736C864C /* Pods-miguelopolis.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4FAF6AC61F0D6A4C00201D36 = {
+			isa = PBXGroup;
+			children = (
+				4FAF6AD11F0D6A4C00201D36 /* miguelopolis */,
+				4FAF6AD01F0D6A4C00201D36 /* Products */,
+				03A355521E64292F9E6DDFC2 /* Pods */,
+				DC961025FC908D1C4474F263 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4FAF6AD01F0D6A4C00201D36 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4FAF6ACF1F0D6A4C00201D36 /* miguelopolis.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4FAF6AD11F0D6A4C00201D36 /* miguelopolis */ = {
+			isa = PBXGroup;
+			children = (
+				4FAF6AD21F0D6A4C00201D36 /* Podfile */,
+				4FAF6AF71F0D6A4C00201D36 /* Assets.xcassets */,
+				4FAF6AF91F0D6A4C00201D36 /* LaunchScreen.storyboard */,
+				4FAF6AFC1F0D6A4C00201D36 /* Info.plist */,
+				4FF183021F0D9A3500BBC361 /* Managers */,
+				4FF182E91F0D7CC600BBC361 /* Enums */,
+				4FF182FC1F0D98CF00BBC361 /* Restfull Services */,
+				4FAF6AD41F0D6A4C00201D36 /* Models */,
+				4FF182EC1F0D802400BBC361 /* Cells */,
+				4FAF6AE41F0D6A4C00201D36 /* Controllers */,
+				4FAF6AE81F0D6A4C00201D36 /* Views */,
+				4FAF6AED1F0D6A4C00201D36 /* Resources */,
+				4FAF6AF01F0D6A4C00201D36 /* Support Files */,
+				4FF182EF1F0D80E500BBC361 /* MigueColors.swift */,
+			);
+			path = miguelopolis;
+			sourceTree = "<group>";
+		};
+		4FAF6AD41F0D6A4C00201D36 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4FAF6AD51F0D6A4C00201D36 /* Assets Custom Identifiers */,
+				4FF182F81F0D972B00BBC361 /* Farmacia.swift */,
+				4FF182FA1F0D983600BBC361 /* Promocao.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4FAF6AD51F0D6A4C00201D36 /* Assets Custom Identifiers */ = {
+			isa = PBXGroup;
+			children = (
+				4FAF6AD61F0D6A4C00201D36 /* StringIdentifier.swift */,
+				4FAF6AD81F0D6A4C00201D36 /* CollectionViewIdentifier.swift */,
+				4FAF6ADA1F0D6A4C00201D36 /* ControllerIndentifier.swift */,
+				4FAF6ADC1F0D6A4C00201D36 /* ImageIdentifier.swift */,
+				4FAF6ADE1F0D6A4C00201D36 /* NibIdentifier.swift */,
+				4FAF6AE01F0D6A4C00201D36 /* TableViewIdentifier.swift */,
+				4FAF6AE21F0D6A4C00201D36 /* UserDefaultsIdentifiers.swift */,
+			);
+			name = "Assets Custom Identifiers";
+			sourceTree = "<group>";
+		};
+		4FAF6AE41F0D6A4C00201D36 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4FF182FF1F0D991D00BBC361 /* Farmacia */,
+				4FAF6AE51F0D6A4C00201D36 /* Main */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		4FAF6AE51F0D6A4C00201D36 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				4FAF6AE61F0D6A4C00201D36 /* ContainerViewController.swift */,
+				4FAF6B021F0D6EE800201D36 /* SlideMenuViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		4FAF6AE81F0D6A4C00201D36 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4FF182F11F0D822700BBC361 /* Cells */,
+				4FAF6AE91F0D6A4C00201D36 /* Storyboards */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		4FAF6AE91F0D6A4C00201D36 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4FAF6AEA1F0D6A4C00201D36 /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		4FAF6AED1F0D6A4C00201D36 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4FAF6AEE1F0D6A4C00201D36 /* Resources.README */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4FAF6AF01F0D6A4C00201D36 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4FAF6AF11F0D6A4C00201D36 /* AppDelegate.swift */,
+				4FAF6AF31F0D6A4C00201D36 /* AppConfig.plist */,
+				4FAF6AF51F0D6A4C00201D36 /* Localizable.strings */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		4FF182E91F0D7CC600BBC361 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				4FF182EA1F0D7CDE00BBC361 /* MenuItem.swift */,
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
+		4FF182EC1F0D802400BBC361 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4FF182ED1F0D804800BBC361 /* SlideMenuCell.swift */,
+				4FF182F61F0D95F800BBC361 /* FarmaciaCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		4FF182F11F0D822700BBC361 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4FF182F21F0D824100BBC361 /* SlideMenuCell.xib */,
+				4FF182F41F0D94AA00BBC361 /* FarmaciaCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		4FF182FC1F0D98CF00BBC361 /* Restfull Services */ = {
+			isa = PBXGroup;
+			children = (
+				4FF182FD1F0D98E300BBC361 /* FarmaciaService.swift */,
+			);
+			name = "Restfull Services";
+			sourceTree = "<group>";
+		};
+		4FF182FF1F0D991D00BBC361 /* Farmacia */ = {
+			isa = PBXGroup;
+			children = (
+				4FF183001F0D992800BBC361 /* FarmaciaViewController.swift */,
+			);
+			name = Farmacia;
+			sourceTree = "<group>";
+		};
+		4FF183021F0D9A3500BBC361 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4FF183031F0D9A4000BBC361 /* FarmaciaManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		DC961025FC908D1C4474F263 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D635CD7828F6F0C959914DD /* Pods_miguelopolis.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4FAF6ACE1F0D6A4C00201D36 /* miguelopolis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FAF6AFF1F0D6A4C00201D36 /* Build configuration list for PBXNativeTarget "miguelopolis" */;
+			buildPhases = (
+				33F59065EFC7C0AD998AE46B /* [CP] Check Pods Manifest.lock */,
+				4FAF6ACB1F0D6A4C00201D36 /* Sources */,
+				4FAF6ACC1F0D6A4C00201D36 /* Frameworks */,
+				4FAF6ACD1F0D6A4C00201D36 /* Resources */,
+				BA98C5F44BC6F13ACCF5E061 /* [CP] Embed Pods Frameworks */,
+				A24991E57870FDCD048F3555 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = miguelopolis;
+			productName = miguelopolis;
+			productReference = 4FAF6ACF1F0D6A4C00201D36 /* miguelopolis.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4FAF6AC71F0D6A4C00201D36 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = pacanhella;
+				TargetAttributes = {
+					4FAF6ACE1F0D6A4C00201D36 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = LJFZ2Z6BD8;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4FAF6ACA1F0D6A4C00201D36 /* Build configuration list for PBXProject "miguelopolis" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4FAF6AC61F0D6A4C00201D36;
+			productRefGroup = 4FAF6AD01F0D6A4C00201D36 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4FAF6ACE1F0D6A4C00201D36 /* miguelopolis */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4FAF6ACD1F0D6A4C00201D36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FF182F31F0D824100BBC361 /* SlideMenuCell.xib in Resources */,
+				4FAF6AF61F0D6A4C00201D36 /* Localizable.strings in Resources */,
+				4FAF6AF41F0D6A4C00201D36 /* AppConfig.plist in Resources */,
+				4FAF6AD31F0D6A4C00201D36 /* Podfile in Resources */,
+				4FAF6AEF1F0D6A4C00201D36 /* Resources.README in Resources */,
+				4FF182F51F0D94AA00BBC361 /* FarmaciaCell.xib in Resources */,
+				4FAF6AFB1F0D6A4C00201D36 /* LaunchScreen.storyboard in Resources */,
+				4FAF6AF81F0D6A4C00201D36 /* Assets.xcassets in Resources */,
+				4FAF6AEC1F0D6A4C00201D36 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		33F59065EFC7C0AD998AE46B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A24991E57870FDCD048F3555 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-miguelopolis/Pods-miguelopolis-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA98C5F44BC6F13ACCF5E061 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-miguelopolis/Pods-miguelopolis-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4FAF6ACB1F0D6A4C00201D36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FAF6AE31F0D6A4C00201D36 /* UserDefaultsIdentifiers.swift in Sources */,
+				4FF182F01F0D80E500BBC361 /* MigueColors.swift in Sources */,
+				4FAF6AD71F0D6A4C00201D36 /* StringIdentifier.swift in Sources */,
+				4FAF6AD91F0D6A4C00201D36 /* CollectionViewIdentifier.swift in Sources */,
+				4FF182FE1F0D98E300BBC361 /* FarmaciaService.swift in Sources */,
+				4FAF6AF21F0D6A4C00201D36 /* AppDelegate.swift in Sources */,
+				4FAF6AE11F0D6A4C00201D36 /* TableViewIdentifier.swift in Sources */,
+				4FAF6B031F0D6EE800201D36 /* SlideMenuViewController.swift in Sources */,
+				4FAF6ADD1F0D6A4C00201D36 /* ImageIdentifier.swift in Sources */,
+				4FF182F91F0D972B00BBC361 /* Farmacia.swift in Sources */,
+				4FF182FB1F0D983600BBC361 /* Promocao.swift in Sources */,
+				4FAF6ADB1F0D6A4C00201D36 /* ControllerIndentifier.swift in Sources */,
+				4FF182EE1F0D804800BBC361 /* SlideMenuCell.swift in Sources */,
+				4FF182EB1F0D7CDE00BBC361 /* MenuItem.swift in Sources */,
+				4FF183041F0D9A4000BBC361 /* FarmaciaManager.swift in Sources */,
+				4FF182F71F0D95F800BBC361 /* FarmaciaCell.swift in Sources */,
+				4FAF6AE71F0D6A4C00201D36 /* ContainerViewController.swift in Sources */,
+				4FF183011F0D992800BBC361 /* FarmaciaViewController.swift in Sources */,
+				4FAF6ADF1F0D6A4C00201D36 /* NibIdentifier.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4FAF6AEA1F0D6A4C00201D36 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FAF6AEB1F0D6A4C00201D36 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4FAF6AF91F0D6A4C00201D36 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FAF6AFA1F0D6A4C00201D36 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4FAF6AFD1F0D6A4C00201D36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4FAF6AFE1F0D6A4C00201D36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4FAF6B001F0D6A4C00201D36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 729B8E7730846BACD9A62CF0 /* Pods-miguelopolis.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LJFZ2Z6BD8;
+				INFOPLIST_FILE = miguelopolis/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.dpacanhella.miguelopolis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4FAF6B011F0D6A4C00201D36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C799D7C9634F09BD736C864C /* Pods-miguelopolis.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LJFZ2Z6BD8;
+				INFOPLIST_FILE = miguelopolis/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.dpacanhella.miguelopolis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FAF6ACA1F0D6A4C00201D36 /* Build configuration list for PBXProject "miguelopolis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FAF6AFD1F0D6A4C00201D36 /* Debug */,
+				4FAF6AFE1F0D6A4C00201D36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4FAF6AFF1F0D6A4C00201D36 /* Build configuration list for PBXNativeTarget "miguelopolis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4FAF6B001F0D6A4C00201D36 /* Debug */,
+				4FAF6B011F0D6A4C00201D36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4FAF6AC71F0D6A4C00201D36 /* Project object */;
+}
