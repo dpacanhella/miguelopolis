@@ -43,8 +43,6 @@ public class RestauranteDetalhesActivity extends AppCompatActivity {
 
     private FirebaseAnalytics mFirebaseAnalytics;
 
-
-
     TabHost tabHos;
     private RecyclerView recyclerCardapios;
     private CardapioAdapter cardapioAdapter;
@@ -77,9 +75,16 @@ public class RestauranteDetalhesActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        Bundle bundle = new Bundle();
+        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "0");
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Detalhes Restaurantes");
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+
         id = getIntent().getSerializableExtra("id");
         final Serializable nome = getIntent().getSerializableExtra("nome");
         Serializable descricao = getIntent().getSerializableExtra("descricao");
+        final Serializable proprietario = getIntent().getSerializableExtra("nomeProprietario");
         Serializable descricao2 = getIntent().getSerializableExtra("descricao2");
         Serializable descricao3 = getIntent().getSerializableExtra("descricao3");
         Serializable descricao4 = getIntent().getSerializableExtra("descricao4");
@@ -144,13 +149,6 @@ public class RestauranteDetalhesActivity extends AppCompatActivity {
         loadImageFromURLImagem1(imagem1.toString());
         loadImageFromURLImagem2(imagem2.toString());
 
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-        Bundle bundle = new Bundle();
-        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "0");
-        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Detalhes Restaurantes");
-        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
-        mFirebaseAnalytics.logEvent("detalhes_" + nome.toString(), bundle);
-
         botaoLigar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -191,7 +189,7 @@ public class RestauranteDetalhesActivity extends AppCompatActivity {
         host.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {
-                setTabColor(host, nome.toString());
+                setTabColor(host, proprietario.toString());
             }
         });
 
@@ -210,7 +208,7 @@ public class RestauranteDetalhesActivity extends AppCompatActivity {
 
     }
 
-    private void setTabColor(TabHost tabhost, String nome) {
+    private void setTabColor(TabHost tabhost, String proprietario) {
         for(int i=0;i<tabhost.getTabWidget().getChildCount();i++) {
             tabhost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#028478"));
             TextView tv = (TextView) tabhost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
@@ -230,7 +228,7 @@ public class RestauranteDetalhesActivity extends AppCompatActivity {
             Bundle bundle = new Bundle();
             bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "1");
             bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Almoço/Eventos");
-            mFirebaseAnalytics.logEvent("almoco/evento_"+nome, bundle);
+            mFirebaseAnalytics.logEvent("almoco_evento_" + proprietario, bundle);
 
         }else {
             tabhost.getTabWidget().getChildAt(tabhost.getCurrentTab()).setBackgroundColor(Color.parseColor("#097369"));
@@ -240,7 +238,7 @@ public class RestauranteDetalhesActivity extends AppCompatActivity {
             Bundle bundle = new Bundle();
             bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "2");
             bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Cardápios");
-            mFirebaseAnalytics.logEvent("cardápio_" + nome.toString(), bundle);
+            mFirebaseAnalytics.logEvent("cardapio_" + proprietario, bundle);
 
         }
     }

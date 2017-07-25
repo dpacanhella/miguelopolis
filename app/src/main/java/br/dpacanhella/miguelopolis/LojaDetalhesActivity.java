@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import br.dpacanhella.miguelopolis.adapter.ImagemAdapter;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
 import br.dpacanhella.miguelopolis.data.model.ImagemLoja;
+import br.dpacanhella.miguelopolis.data.model.LojaDetalhes;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskResult;
@@ -67,14 +68,7 @@ public class LojaDetalhesActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        id = getIntent().getSerializableExtra("id");
-        Serializable endereco = getIntent().getSerializableExtra("endereco");
-        final Serializable nome = getIntent().getSerializableExtra("nome");
-        Serializable descricao = getIntent().getSerializableExtra("descricao");
-        Serializable imagem = getIntent().getSerializableExtra("imagemEstabelecimento");
-        final Serializable telefone = getIntent().getSerializableExtra("telefone");
-        ArrayList<ImagemLoja> imagens = getIntent().getParcelableArrayListExtra("imagens");
-        Serializable whatApp = getIntent().getSerializableExtra("whatsApp");
+        final LojaDetalhes detalhes = (LojaDetalhes) getIntent().getExtras().getSerializable("minhaclasse");
 
         txtNome = (TextView) findViewById(R.id.loja_nome);
         txtEndereco = (TextView) findViewById(R.id.loja_endereco);
@@ -85,33 +79,32 @@ public class LojaDetalhesActivity extends AppCompatActivity {
         txtWhatApp = (TextView) findViewById(R.id.loja_whatsApp);
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main_loja_detalhes);
-        mToolbar.setTitle("  " + nome.toString());
+        mToolbar.setTitle("  " + detalhes.getNome().toString());
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        txtNome.setText(nome.toString());
-        String lblTelefone = "Telefone: (16) ";
-        String lblEndereco = "Endereço: ";
-        String lblWhats = "WhatsApp: (16) ";
-        txtEndereco.setText(lblEndereco + endereco.toString());
-        txtDescricao.setText(descricao.toString());
-        txtTelefone.setText(lblTelefone + telefone.toString());
-        txtWhatApp.setText(lblWhats + whatApp.toString());
-
-        loadImageFromURL(imagem.toString());
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "0");
-        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Detalhes Lojas");
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Detalhes Lanchonetes");
         bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
-        mFirebaseAnalytics.logEvent("detalhes_" + nome.toString(), bundle);
+
+        txtNome.setText(detalhes.getNome().toString());
+        String lblTelefone = "Telefone: (16) ";
+        String lblEndereco = "Endereço: ";
+        String lblWhats = "WhatsApp: (16) ";
+        txtEndereco.setText(lblEndereco + detalhes.getEndereco().toString());
+        txtDescricao.setText(detalhes.getDescricao().toString());
+        txtTelefone.setText(lblTelefone + detalhes.getTelefone().toString());
+        txtWhatApp.setText(lblWhats + detalhes.getCelular().toString());
+
+        loadImageFromURL(detalhes.getImagemEstabelecimento().toString());
 
         botaoLigar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                String telefoneLigar = "tel:" + telefone.toString();
+                String telefoneLigar = "tel:" + detalhes.getTelefone().toString();
                 intent.setData(Uri.parse(telefoneLigar));
                 startActivity(intent);
             }
@@ -139,7 +132,7 @@ public class LojaDetalhesActivity extends AppCompatActivity {
         host.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {
-                setTabColor(host, nome.toString());
+                setTabColor(host, detalhes.getNome().toString());
             }
         });
 
@@ -154,7 +147,7 @@ public class LojaDetalhesActivity extends AppCompatActivity {
         LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerImagens.setLayoutManager(llm);
-        showImagens(imagens);
+        showImagens((ArrayList<ImagemLoja>) detalhes.getImagensLojas());
     }
 
     private void showImagens(final ArrayList<ImagemLoja> imagens) {
@@ -202,7 +195,8 @@ public class LojaDetalhesActivity extends AppCompatActivity {
             Bundle bundle = new Bundle();
             bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "1");
             bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Imagens");
-            mFirebaseAnalytics.logEvent("imagem_loja" + nome.toString(), bundle);
+            String nomeFormatado = nome.replaceAll(" ", "_");
+            mFirebaseAnalytics.logEvent("imagem_loja_" + nomeFormatado, bundle);
 
         }
     }

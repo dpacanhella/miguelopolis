@@ -1,150 +1,152 @@
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb_main_loja_detalhes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize" />
+
+    <com.github.rahatarmanahmed.cpv.CircularProgressView
+        android:id="@+id/progress_bar_loja_detalhes"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        app:cpv_animAutostart="true"
+        app:cpv_color="@color/sesc_primary"
+        app:cpv_indeterminate="true" />
+
+    <TabHost
+        android:id="@+id/tabHost_loja"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#fff"
->
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/tb_main_loja_detalhes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:minHeight="?attr/actionBarSize" />
-
-        <com.github.rahatarmanahmed.cpv.CircularProgressView
-            android:id="@+id/progress_bar_loja_detalhes"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_centerInParent="true"
-            app:cpv_animAutostart="true"
-            app:cpv_color="@color/sesc_primary"
-            app:cpv_indeterminate="true" />
-
-        <TabHost
-            android:id="@+id/tabHost_loja"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true">
+            android:orientation="vertical">
 
-            <LinearLayout
+            <TabWidget
+                android:id="@android:id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="38dp"
+                android:layout_below="@+id/tb_main"
+                android:layout_marginTop="55dp"
+                android:background="#028478"></TabWidget>
 
-                <TabWidget
-                    android:id="@android:id/tabs"
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/tab1_loja"
                     android:layout_width="match_parent"
-                    android:layout_height="38dp"
-                    android:layout_below="@+id/tb_main"
-                    android:layout_marginTop="55dp"
-                    android:background="#028478"></TabWidget>
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tb_main_loja_detalhes"
+                    android:orientation="vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="10dp"
+                    android:weightSum="1">
 
-                <FrameLayout
-                    android:id="@android:id/tabcontent"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/loja_nome"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingRight="16dp"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
-                    <LinearLayout
-                        android:id="@+id/tab1_loja"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_below="@+id/tb_main_loja_detalhes"
-                        android:orientation="vertical"
+                    <TextView
+                        android:id="@+id/loja_descricao"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:paddingRight="16dp"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+
+
+                    <ImageView
+                        android:id="@+id/loja_imagem_estabelecimento"
+                        android:layout_width="355dp"
+                        android:layout_height="154dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:paddingRight="16dp"
                         android:paddingLeft="16dp"
-                        android:paddingTop="10dp"
-                        android:weightSum="1">
+                        android:layout_weight="0.48"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY" />
 
-                        <TextView
-                            android:id="@+id/loja_nome"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:paddingRight="16dp"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/loja_endereco"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingRight="16dp"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
 
-                        <TextView
-                            android:id="@+id/loja_descricao"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:paddingRight="16dp"
-                            android:textAlignment="center"
-                            android:textColor="#000000"
-                            android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/loja_telefone"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingRight="16dp"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
 
+                    <TextView
+                        android:id="@+id/loja_whatsApp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:paddingRight="16dp"
+                        android:textColor="#000000"
+                        android:textSize="16sp" />
 
-                        <ImageView
-                            android:id="@+id/loja_imagem_estabelecimento"
-                            android:layout_width="340dp"
-                            android:layout_height="180dp"
-                            android:layout_marginRight="16dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_weight="0.61"
-                            android:adjustViewBounds="true"
-                            android:scaleType="fitXY" />
+                    <Button
+                        android:id="@+id/loja_btnCall"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/button"
+                        android:text="Ligue agora"
+                        android:textStyle="bold"></Button>
 
-                        <TextView
-                            android:id="@+id/loja_endereco"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:paddingRight="16dp"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
+                </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/loja_telefone"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:paddingRight="16dp"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
+                <LinearLayout
+                    android:id="@+id/tab2_loja"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#fff"
+                    android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/loja_whatsApp"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:paddingRight="16dp"
-                            android:textColor="#000000"
-                            android:textSize="16sp" />
-
-                        <Button
-                            android:id="@+id/loja_btnCall"
-                            android:layout_width="150dp"
-                            android:layout_height="50dp"
-                            android:layout_centerInParent="true"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="20dp"
-                            android:background="@drawable/button"
-                            android:text="Ligue agora"
-                            android:textStyle="bold"></Button>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/tab2_loja"
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/main_recycler_imagens_loja"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#fff"
-                        android:orientation="vertical">
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tb_main_loja_detalhes"
+                        android:scrollbars="vertical" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
 
-                        <android.support.v7.widget.RecyclerView
-                            android:id="@+id/main_recycler_imagens_loja"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/tb_main_loja_detalhes"
-                            android:scrollbars="vertical" />
-                    </LinearLayout>
-                </FrameLayout>
-            </LinearLayout>
-        </TabHost>
-
-    </RelativeLayout>
+</RelativeLayout>

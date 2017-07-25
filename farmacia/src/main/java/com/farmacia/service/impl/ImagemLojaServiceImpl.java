@@ -28,8 +28,8 @@ public class ImagemLojaServiceImpl implements ImagemLojaService {
 
     @Override
     public ImagemLoja salvar(Integer lojaId, String descricaoImagem, MultipartFile file) throws IOException {
-        // String directory = "/home/farmacia/imagemLoja/";
-        String directory = "/Users/infra/Documents/imagemLoja/";
+         String directory = "/home/farmacia/imagemLoja/";
+//        String directory = "/Users/infra/Documents/imagemLoja/";
         // String directory = "/Users/diegoPacanhella/Documents/imagemLoja/";
 
         Loja loja = lojaRepository.findById(lojaId);
@@ -57,8 +57,8 @@ public class ImagemLojaServiceImpl implements ImagemLojaService {
 
     @Override
     public ImagemLoja update(Integer id, String descricaoImagem, MultipartFile file) throws IOException {
-        // String directory = "/home/farmacia/imagemLoja/";
-        String directory = "/Users/infra/Documents/imagemLoja/";
+         String directory = "/home/farmacia/imagemLoja/";
+//        String directory = "/Users/infra/Documents/imagemLoja/";
         // String directory = "/Users/diegoPacanhella/Documents/imagemLoja/";
 
         ImagemLoja imgLoja = imgLojaRepository.findById(id);

@@ -105,23 +105,7 @@ public class LojaAdapter extends RecyclerView.Adapter<LojaAdapter.ViewHolder>{
     private void showDetalhes(Context c, LojaDetalhes loj) {
         Intent intent = new Intent(c, LojaDetalhesActivity.class);
 
-//        intent.putExtra("id", loj.getId());
-//        intent.putExtra("nome", loj.getNome());
-//        intent.putExtra("descricao", loj.getDescricao());
-//        intent.putExtra("endereco", loj.getEndereco());
-//        intent.putExtra("imagemEstabelecimento", loj.getImagemEstabelecimento());
-//        intent.putExtra("telefone", loj.getTelefone());
-//        intent.putExtra("whatsApp", loj.getCelular());
-//
-//        List<ImagemLoja> imagens = loj.getImagensLojas();
-//
-//        ArrayList list = new ArrayList();
-//
-//        for (ImagemLoja imagem : imagens) {
-//            list.add(new ImagemLoja(imagem.getId(), imagem.getDescricao(), imagem.getImagem(), imagem.getImageByte()));
-//        }
-//
-//        intent.putParcelableArrayListExtra("imagens", list);
+        intent.putExtra("minhaclasse", loj);
 
         c.startActivity(intent);
 

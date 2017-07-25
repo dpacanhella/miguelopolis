@@ -106,7 +106,6 @@ public class LanchoneteDetalhesActivity extends AppCompatActivity {
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "0");
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Detalhes Lanchonetes");
         bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
-        mFirebaseAnalytics.logEvent("detalhes_" + nome.toString(), bundle);
 
         botaoLigar.setOnClickListener(new View.OnClickListener() {
             @Override

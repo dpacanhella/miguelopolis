@@ -143,8 +143,8 @@ public class RestauranteAdapter extends RecyclerView.Adapter<RestauranteAdapter.
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, String.valueOf(restaurante.getId()));
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, restaurante.getNome());
         bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
-
-        mFirebaseAnalytics.logEvent(restaurante.getNome(), bundle);
+        String nomeFormatado = restaurante.getNome().replaceAll(" ", "_");
+        mFirebaseAnalytics.logEvent(nomeFormatado, bundle);
     }
 
     @Override

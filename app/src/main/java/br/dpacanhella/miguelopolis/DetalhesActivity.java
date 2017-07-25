@@ -120,7 +120,7 @@ public class DetalhesActivity extends AppCompatActivity {
         if(nomeProprietario.toString().equals("FELIPE/GISELE")){
             String nomeFormatado = nomeProprietario.toString().replace("FELIPE/GISELE", "FELIPE_GISELE");
             mFirebaseAnalytics.logEvent(nomeFormatado, bundle);
-        } else if(id.toString() == "6") {
+        } else if(id.toString().equals("6")) {
             mFirebaseAnalytics.logEvent(nomeProprietario.toString() + "2", bundle);
         } else{
             mFirebaseAnalytics.logEvent(nomeProprietario.toString(), bundle);
@@ -211,23 +211,23 @@ public class DetalhesActivity extends AppCompatActivity {
             bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "1");
             bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Detalhes");
 
-            if(id.toString() == "1"){
+            if(id.toString().equals("1")){
                 mFirebaseAnalytics.logEvent("detalhes_seizi", bundle);
-            }else if(id.toString() == "2"){
+            }else if(id.toString().equals("2")){
                 mFirebaseAnalytics.logEvent("detalhes_luizinho", bundle);
-            }else if(id.toString() == "3"){
+            }else if(id.toString().equals("3")){
                 mFirebaseAnalytics.logEvent("detalhes_pimentel", bundle);
-            }else if(id.toString() == "4"){
+            }else if(id.toString().equals("4")){
                 mFirebaseAnalytics.logEvent("detalhes_edinho", bundle);
-            }else if(id.toString() == "5"){
+            }else if(id.toString().equals("5")){
                 mFirebaseAnalytics.logEvent("detalhes_fabio", bundle);
-            }else if(id.toString() == "6"){
+            }else if(id.toString().equals("6")){
                 mFirebaseAnalytics.logEvent("detalhes_luizinho2", bundle);
-            }else if(id.toString() == "7"){
+            }else if(id.toString().equals("7")){
                 mFirebaseAnalytics.logEvent("detalhes_humberto", bundle);
-            }else if(id.toString() == "8"){
+            }else if(id.toString().equals("8")){
                 mFirebaseAnalytics.logEvent("detalhes_patricia", bundle);
-            }else if(id.toString() == "9"){
+            }else if(id.toString().equals("9")){
                 mFirebaseAnalytics.logEvent("detalhes_marcia", bundle);
             } else{
                 mFirebaseAnalytics.logEvent("detalhes_felipe_gisele", bundle);

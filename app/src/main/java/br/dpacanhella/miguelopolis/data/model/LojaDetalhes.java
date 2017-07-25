@@ -1,5 +1,6 @@
 package br.dpacanhella.miguelopolis.data.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import lombok.Data;
@@ -9,7 +10,7 @@ import lombok.Data;
  */
 
 @Data
-public class LojaDetalhes {
+public class LojaDetalhes implements Serializable{
 
     private int id;
     private String nome;
