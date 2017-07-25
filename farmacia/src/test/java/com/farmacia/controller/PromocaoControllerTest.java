@@ -3,6 +3,7 @@ package com.farmacia.controller;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,6 +22,7 @@ import com.farmacia.repository.FarmaciaRepository;
 import com.farmacia.repository.PromocaoRepository;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@Ignore
 public class PromocaoControllerTest extends FarmaciaApplicationTests {
     
     @Autowired
