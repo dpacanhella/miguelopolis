@@ -1,0 +1,6 @@
+framework module RSWidgets {
+  umbrella header "RSWidgets-umbrella.h"
+
+  export *
+  module * { export * }
+}

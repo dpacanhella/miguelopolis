@@ -1,0 +1,6 @@
+framework module RSStarterKit {
+  umbrella header "RSStarterKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
