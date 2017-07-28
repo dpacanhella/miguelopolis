@@ -1,12 +1,10 @@
 package com.farmacia.mapper;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Component;
 
 import com.farmacia.controller.dto.FarmaciaDTO;
@@ -35,10 +33,10 @@ public class FarmaciaMapper extends BaseMapper<Farmacia, FarmaciaDTO> {
             promDTO.setImagemProduto(promocao.getImagemProduto());
             promDTO.setImage64(promocao.getImage64());
             
-            if (promocao.getImage64() != null) {
-                byte[] readFileToByteArray = FileUtils.readFileToByteArray(new File(promocao.getImage64()));
-                promDTO.setImageByte(readFileToByteArray);
-            }
+//            if (promocao.getImage64() != null) {
+//                byte[] readFileToByteArray = FileUtils.readFileToByteArray(new File(promocao.getImage64()));
+//                promDTO.setImageByte(readFileToByteArray);
+//            }
             
             listPromocao.add(promDTO);
         }

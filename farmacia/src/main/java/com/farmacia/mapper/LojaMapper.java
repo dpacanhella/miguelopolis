@@ -1,11 +1,9 @@
 package com.farmacia.mapper;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Component;
 
 import com.farmacia.controller.dto.ImagemLojaDTO;
@@ -31,10 +29,10 @@ public class LojaMapper extends BaseMapper<Loja, LojaDTO> {
             imgDTO.setDescricao(img.getDescricaoProduto());
             imgDTO.setImagem(img.getImagemProduto());
 
-            if (img.getImagemProduto() != null) {
-                byte[] readFileToByteArray = FileUtils.readFileToByteArray(new File(img.getImagemProduto()));
-                imgDTO.setImageByte(readFileToByteArray);
-            }
+//            if (img.getImagemProduto() != null) {
+//                byte[] readFileToByteArray = FileUtils.readFileToByteArray(new File(img.getImagemProduto()));
+//                imgDTO.setImageByte(readFileToByteArray);
+//            }
             listImagems.add(imgDTO);
         }
 

@@ -28,7 +28,7 @@ public class PromocaoServiceImpl implements PromocaoService {
 
     @Override
     public Promocao salvar(Integer farmaciaId, String nomeProduto, String descricaoProduto, String precoProduto, MultipartFile file) throws IOException {
-        String directory = "/home/farmacia/promocoes/";
+        String directory = "http://45.55.209.136/assets/promocoes/";
 //        String directory = "/Users/infra/Documents/promocoes/";    
 //        String directory = "/Users/diegoPacanhella/Documents/promocoes/";
         
@@ -51,8 +51,11 @@ public class PromocaoServiceImpl implements PromocaoService {
             String photo = directory + "promocao_" + save.getId() + "." + mimeType;
             org.apache.commons.io.FileUtils.writeByteArrayToFile(new File(photo), file.getBytes());
             entity.setImage64(photo);
+            entity.setImagemProduto("/home/farmacia/promocoes/" + photo);
             promocaoRepository.save(entity);
         }
+        
+        
         
         return save;
     }
@@ -65,7 +68,7 @@ public class PromocaoServiceImpl implements PromocaoService {
 
     @Override
     public Promocao update(Integer id, String nomeProduto, String descricaoProduto, String precoProduto, MultipartFile file) throws IOException {
-      String directory = "/home/farmacia/promocoes/";
+      String directory = "http://45.55.209.136/assets/promocoes/";
 //      String directory = "/Users/infra/Documents/promocoes/";    
 //      String directory = "/Users/diegoPacanhella/Documents/promocoes/";
       
@@ -84,6 +87,7 @@ public class PromocaoServiceImpl implements PromocaoService {
             
             org.apache.commons.io.FileUtils.writeByteArrayToFile(new File(photo), file.getBytes());
             promocao.setImage64(photo);
+            promocao.setImagemProduto("/home/farmacia/promocoes/" + photo);
             promocaoRepository.save(promocao);
         }
         
@@ -101,7 +105,7 @@ public class PromocaoServiceImpl implements PromocaoService {
     public void delete(Integer id) {
         Promocao promocao = promocaoRepository.findById(id);
         
-        File fileDelete = new File(promocao.getImage64());
+        File fileDelete = new File(promocao.getImagemProduto());
         fileDelete.delete();
         
         promocaoRepository.delete(promocao);

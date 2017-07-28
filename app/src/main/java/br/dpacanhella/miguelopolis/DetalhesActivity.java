@@ -24,6 +24,7 @@ import java.util.ArrayList;
 
 import br.dpacanhella.miguelopolis.adapter.PromocoesAdapter;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
+import br.dpacanhella.miguelopolis.data.model.FarmaciaDetalhes;
 import br.dpacanhella.miguelopolis.data.model.Promocao;
 import br.dpacanhella.miguelopolis.util.task.AppAsyncTask;
 import br.dpacanhella.miguelopolis.util.task.AsyncTaskExecutor;
@@ -69,14 +70,16 @@ public class DetalhesActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        id = getIntent().getSerializableExtra("id");
-        Serializable endereco = getIntent().getSerializableExtra("endereco");
-        Serializable nomeProprietario = getIntent().getSerializableExtra("nomeProprietario");
-        Serializable razao = getIntent().getSerializableExtra("razao");
-        Serializable imagem = getIntent().getSerializableExtra("imagem");
-        final Serializable telefone = getIntent().getSerializableExtra("telefone");
-        ArrayList<Promocao> promocoes = getIntent().getParcelableArrayListExtra("promocoes");
-        Serializable whatApp = getIntent().getSerializableExtra("whatsApp");
+//        id = getIntent().getSerializableExtra("id");
+//        Serializable endereco = getIntent().getSerializableExtra("endereco");
+//        Serializable nomeProprietario = getIntent().getSerializableExtra("nomeProprietario");
+//        Serializable razao = getIntent().getSerializableExtra("razao");
+//        Serializable imagem = getIntent().getSerializableExtra("imagem");
+//        final Serializable telefone = getIntent().getSerializableExtra("telefone");
+//        ArrayList<Promocao> promocoes = getIntent().getParcelableArrayListExtra("promocoes");
+//        Serializable whatApp = getIntent().getSerializableExtra("whatsApp");
+
+        final FarmaciaDetalhes detalhes = (FarmaciaDetalhes) getIntent().getExtras().getSerializable("minhaclasse");
 
         txtNomeProprietario = (TextView) findViewById(R.id.proprietario);
         txtEndereco = (TextView) findViewById(R.id.endereco);
@@ -89,48 +92,48 @@ public class DetalhesActivity extends AppCompatActivity {
         txtWhatApp = (TextView) findViewById(R.id.whatsApp);
 
         mToolbar = (Toolbar) findViewById(R.id.tb_main);
-        mToolbar.setTitle("  " + razao.toString());
+        mToolbar.setTitle("  " + detalhes.getRazao());
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        txtNomeProprietario.setText(nomeProprietario.toString());
+        txtNomeProprietario.setText(detalhes.getNomeProprietario());
         String lblTelefone = "Telefone: (16) ";
         String lblEndereco = "Endereço: ";
         String lblWhats = "WhatsApp: (16) ";
-        txtEndereco.setText(lblEndereco + endereco.toString());
-        txtRazao.setText(razao.toString());
-        txtTelefone.setText(lblTelefone + telefone.toString());
-        txtWhatApp.setText(lblWhats + whatApp.toString());
+        txtEndereco.setText(lblEndereco + detalhes.getEndereco());
+        txtRazao.setText(detalhes.getRazao().toString());
+        txtTelefone.setText(lblTelefone + detalhes.getTelefone());
+        txtWhatApp.setText(lblWhats + detalhes.getWhatsApp());
 
-        if (telefone.equals("3835 5555")) {
+        if (detalhes.getTelefone().equals("3835 5555")) {
             txtObservacao.setText("- O plantão da Morifarma é realizado na Drograria Total - Centro");
         } else {
             txtObservacao.setVisibility(View.GONE);
             lblObservacao.setVisibility(View.GONE);
         }
 
-        loadImageFromURL(imagem.toString());
+        loadImageFromURL(detalhes.getImagem());
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, String.valueOf(id));
-        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, razao.toString());
+        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, detalhes.getRazao());
         bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
 
-        if(nomeProprietario.toString().equals("FELIPE/GISELE")){
-            String nomeFormatado = nomeProprietario.toString().replace("FELIPE/GISELE", "FELIPE_GISELE");
+        if(detalhes.getNomeProprietario().equals("FELIPE/GISELE")){
+            String nomeFormatado = detalhes.getNomeProprietario().replace("FELIPE/GISELE", "FELIPE_GISELE");
             mFirebaseAnalytics.logEvent(nomeFormatado, bundle);
-        } else if(id.toString().equals("6")) {
-            mFirebaseAnalytics.logEvent(nomeProprietario.toString() + "2", bundle);
+        } else if(detalhes.getId() == 6) {
+            mFirebaseAnalytics.logEvent(detalhes.getNomeProprietario() + "2", bundle);
         } else{
-            mFirebaseAnalytics.logEvent(nomeProprietario.toString(), bundle);
+            mFirebaseAnalytics.logEvent(detalhes.getNomeProprietario(), bundle);
         }
 
         botaoLigar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                String telefoneLigar = "tel:" + telefone.toString();
+                String telefoneLigar = "tel:" + detalhes.getTelefone().toString();
                 intent.setData(Uri.parse(telefoneLigar));
                 startActivity(intent);
             }
@@ -152,13 +155,13 @@ public class DetalhesActivity extends AppCompatActivity {
         spec.setIndicator("Detalhes");
         host.addTab(spec);
 
-        if(id.toString() == "5"){
+        if(detalhes.getId() == 5){
             TextView txtPromMorifarma = (TextView) findViewById(R.id.semPromocoes);
 
             txtPromMorifarma.setText("As promoções da Morifarma estão cadastradas na Drogaria Total.");
         }
 
-        if(promocoes.isEmpty() && id.toString() != "5"){
+        if(detalhes.getPromocoes().isEmpty() && detalhes.getId() != 5){
             TextView txtNotPromocoes = (TextView) findViewById(R.id.semPromocoesCadastradas);
 
             txtNotPromocoes.setText("Não há promoções cadastradas no momento.");
@@ -171,7 +174,7 @@ public class DetalhesActivity extends AppCompatActivity {
         host.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             @Override
             public void onTabChanged(String tabId) {
-                setTabColor(host);
+                setTabColor(host, detalhes);
             }
         });
         
@@ -186,11 +189,11 @@ public class DetalhesActivity extends AppCompatActivity {
         LinearLayoutManager llm = new LinearLayoutManager(getApplicationContext());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerPromocoes.setLayoutManager(llm);
-        showPromocoes(promocoes);
+        showPromocoes((ArrayList<Promocao>) detalhes.getPromocoes());
 
     }
 
-    private void setTabColor(TabHost tabhost) {
+    private void setTabColor(TabHost tabhost, FarmaciaDetalhes detalhes) {
         for(int i=0;i<tabhost.getTabWidget().getChildCount();i++) {
             tabhost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#028478"));
             TextView tv = (TextView) tabhost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
@@ -211,23 +214,23 @@ public class DetalhesActivity extends AppCompatActivity {
             bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "1");
             bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Detalhes");
 
-            if(id.toString().equals("1")){
+            if(detalhes.getId() == 1){
                 mFirebaseAnalytics.logEvent("detalhes_seizi", bundle);
-            }else if(id.toString().equals("2")){
+            }else if(detalhes.getId() == 2){
                 mFirebaseAnalytics.logEvent("detalhes_luizinho", bundle);
-            }else if(id.toString().equals("3")){
+            }else if(detalhes.getId() == 3){
                 mFirebaseAnalytics.logEvent("detalhes_pimentel", bundle);
-            }else if(id.toString().equals("4")){
+            }else if(detalhes.getId() == 4){
                 mFirebaseAnalytics.logEvent("detalhes_edinho", bundle);
-            }else if(id.toString().equals("5")){
+            }else if(detalhes.getId() == 5){
                 mFirebaseAnalytics.logEvent("detalhes_fabio", bundle);
-            }else if(id.toString().equals("6")){
+            }else if(detalhes.getId() == 6){
                 mFirebaseAnalytics.logEvent("detalhes_luizinho2", bundle);
-            }else if(id.toString().equals("7")){
+            }else if(detalhes.getId() == 7){
                 mFirebaseAnalytics.logEvent("detalhes_humberto", bundle);
-            }else if(id.toString().equals("8")){
+            }else if(detalhes.getId() == 8){
                 mFirebaseAnalytics.logEvent("detalhes_patricia", bundle);
-            }else if(id.toString().equals("9")){
+            }else if(detalhes.getId() == 9){
                 mFirebaseAnalytics.logEvent("detalhes_marcia", bundle);
             } else{
                 mFirebaseAnalytics.logEvent("detalhes_felipe_gisele", bundle);

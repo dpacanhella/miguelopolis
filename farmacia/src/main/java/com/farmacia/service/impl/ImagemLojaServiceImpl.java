@@ -28,7 +28,7 @@ public class ImagemLojaServiceImpl implements ImagemLojaService {
 
     @Override
     public ImagemLoja salvar(Integer lojaId, String descricaoImagem, MultipartFile file) throws IOException {
-         String directory = "/home/farmacia/imagemLoja/";
+         String directory = "http://45.55.209.136/assets/imagens/";
 //        String directory = "/Users/infra/Documents/imagemLoja/";
         // String directory = "/Users/diegoPacanhella/Documents/imagemLoja/";
 
@@ -57,7 +57,7 @@ public class ImagemLojaServiceImpl implements ImagemLojaService {
 
     @Override
     public ImagemLoja update(Integer id, String descricaoImagem, MultipartFile file) throws IOException {
-         String directory = "/home/farmacia/imagemLoja/";
+         String directory = "http://45.55.209.136/assets/imagens/";
 //        String directory = "/Users/infra/Documents/imagemLoja/";
         // String directory = "/Users/diegoPacanhella/Documents/imagemLoja/";
 
@@ -102,7 +102,7 @@ public class ImagemLojaServiceImpl implements ImagemLojaService {
     public void delete(Integer id) {
         ImagemLoja imagLoja = imgLojaRepository.findById(id);
         
-        File fileDelete = new File(imagLoja.getImagemProduto());
+        File fileDelete = new File("/home/farmacia/imagemLoja/" + "imagem_" + imagLoja.getId());
         fileDelete.delete();
         
         imgLojaRepository.delete(imagLoja);

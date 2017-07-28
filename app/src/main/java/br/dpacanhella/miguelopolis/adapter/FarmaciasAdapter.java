@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import br.dpacanhella.miguelopolis.DetalhesActivity;
@@ -23,7 +22,6 @@ import br.dpacanhella.miguelopolis.data.business.BusinessException;
 import br.dpacanhella.miguelopolis.data.business.farmacia.FarmaciaBO;
 import br.dpacanhella.miguelopolis.data.model.Farmacia;
 import br.dpacanhella.miguelopolis.data.model.FarmaciaDetalhes;
-import br.dpacanhella.miguelopolis.data.model.Promocao;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -102,23 +100,7 @@ public class FarmaciasAdapter extends RecyclerView.Adapter<FarmaciasAdapter.View
     private void showDetalhes(Context c, FarmaciaDetalhes farm) {
         Intent intent = new Intent(c, DetalhesActivity.class);
 
-        intent.putExtra("id", farm.getId());
-        intent.putExtra("endereco", farm.getEndereco());
-        intent.putExtra("nomeProprietario", farm.getNomeProprietario());
-        intent.putExtra("razao", farm.getRazao());
-        intent.putExtra("telefone", farm.getTelefone());
-        intent.putExtra("imagem", farm.getImagem());
-        intent.putExtra("whatsApp", farm.getWhatsApp());
-
-        List<Promocao> promocoes = farm.getPromocoes();
-
-        ArrayList list = new ArrayList();
-
-        for (Promocao promocao : promocoes) {
-            list.add(new Promocao(promocao.getId(), promocao.getImagemProduto(), promocao.getNomeProduto(), promocao.getPrecoInicial(), promocao.getPrecoFinal(), promocao.getImage64(), promocao.getImageByte()));
-        }
-
-        intent.putParcelableArrayListExtra("promocoes", list);
+        intent.putExtra("minhaclasse", farm);
 
         c.startActivity(intent);
     }
