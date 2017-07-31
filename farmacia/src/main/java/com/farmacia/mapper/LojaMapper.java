@@ -28,11 +28,8 @@ public class LojaMapper extends BaseMapper<Loja, LojaDTO> {
             imgDTO.setId(img.getId());
             imgDTO.setDescricao(img.getDescricaoProduto());
             imgDTO.setImagem(img.getImagemProduto());
-
-//            if (img.getImagemProduto() != null) {
-//                byte[] readFileToByteArray = FileUtils.readFileToByteArray(new File(img.getImagemProduto()));
-//                imgDTO.setImageByte(readFileToByteArray);
-//            }
+            imgDTO.setImage64("http://45.55.209.136/assets/imagens/" + img.getImage64());
+            
             listImagems.add(imgDTO);
         }
 

@@ -19,6 +19,5 @@ public class Promocao implements Serializable {
     private String precoInicial;
     private String precoFinal;
     private String image64;
-    private String imageByte;
 
 }

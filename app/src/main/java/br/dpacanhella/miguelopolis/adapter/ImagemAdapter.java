@@ -1,14 +1,13 @@
 package br.dpacanhella.miguelopolis.adapter;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
-import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,10 +60,11 @@ public class ImagemAdapter extends RecyclerView.Adapter<ImagemAdapter.ViewHolder
         public void populate(ImagemLoja imagemLoja) {
             txtDescricao.setText(imagemLoja.getDescricao());
 
-            byte[] decodedString = Base64.decode(imagemLoja.getImageByte(), Base64.DEFAULT);
-            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-
-            imageView.setImageBitmap(decodedByte);
+            Glide.with(view.getContext())
+                    .load(imagemLoja.getImage64())
+                    .placeholder(R.drawable.imageplaceholder)
+                    .error(R.drawable.imagenotfound)
+                    .into(imageView);
         }
     }
 }

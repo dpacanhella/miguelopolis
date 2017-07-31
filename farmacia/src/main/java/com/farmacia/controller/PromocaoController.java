@@ -1,6 +1,5 @@
 package com.farmacia.controller;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Collections;
@@ -8,7 +7,6 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -68,13 +66,6 @@ public class PromocaoController {
         List<Promocao> entity = promocaoService.getAll(id);
 
         List<PromocaoDTO> listDTO = promocaoMapper.toListDTO(entity);
-
-        for (PromocaoDTO promocaoDTO : listDTO) {
-            if (promocaoDTO.getImage64() != null) {
-                byte[] readFileToByteArray = FileUtils.readFileToByteArray(new File(promocaoDTO.getImage64()));
-                promocaoDTO.setImageByte(readFileToByteArray);
-            }
-        }
 
         Collections.shuffle(listDTO);
         

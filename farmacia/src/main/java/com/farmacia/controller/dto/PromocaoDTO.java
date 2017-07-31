@@ -18,5 +18,4 @@ public class PromocaoDTO {
     private String precoFinal;
     private FarmaciaDTO farmaciaDTO;
     private String image64;
-    private byte[] imageByte;
 }

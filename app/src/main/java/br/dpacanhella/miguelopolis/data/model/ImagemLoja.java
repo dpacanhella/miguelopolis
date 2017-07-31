@@ -14,6 +14,6 @@ public class ImagemLoja implements Serializable{
     private int id;
     private String descricao;
     private String imagem;
-    private String imageByte;
+    private String image64;
 
 }

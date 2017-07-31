@@ -22,6 +22,7 @@ public class ImagemLojaMapper extends BaseMapper<ImagemLoja, ImagemLojaDTO> {
 //        dto.setLojaDTO(lojaMapper.toDTO(entity.getLoja()));
         dto.setDescricao(entity.getDescricaoProduto());
         dto.setImagem(entity.getImagemProduto());
+        dto.setImage64(entity.getImage64());
 
         return dto;
     }
@@ -33,6 +34,7 @@ public class ImagemLojaMapper extends BaseMapper<ImagemLoja, ImagemLojaDTO> {
         entity.setId(dto.getId());
         entity.setDescricaoProduto(dto.getDescricao());
         entity.setImagemProduto(dto.getImagem());
+        entity.setImage64(dto.getImage64());
         entity.setLoja(lojaMapper.toEntity(dto.getLojaDTO()));
 
         return entity;

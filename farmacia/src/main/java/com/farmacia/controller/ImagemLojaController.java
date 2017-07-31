@@ -1,13 +1,12 @@
 package com.farmacia.controller;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -62,13 +61,16 @@ public class ImagemLojaController {
     public List<ImagemLojaDTO> getAll(@PathVariable Integer id) throws IOException {
         List<ImagemLoja> entity = imgLojaService.getAll(id);
 
-        List<ImagemLojaDTO> listDTO = imgLojaMapper.toListDTO(entity);
+        List<ImagemLojaDTO> listDTO = new ArrayList<ImagemLojaDTO>();
+        for (ImagemLoja img : entity) {
+            ImagemLojaDTO imgDTO = new ImagemLojaDTO();
 
-        for (ImagemLojaDTO imagemLojaDTO : listDTO) {
-            if (imagemLojaDTO.getImagem() != null) {
-                byte[] readFileToByteArray = FileUtils.readFileToByteArray(new File(imagemLojaDTO.getImagem()));
-                imagemLojaDTO.setImageByte(readFileToByteArray);
-            }
+            imgDTO.setId(img.getId());
+            imgDTO.setDescricao(img.getDescricaoProduto());
+            imgDTO.setImagem(img.getImagemProduto());
+            imgDTO.setImage64(img.getImage64());
+            
+            listDTO.add(imgDTO);
         }
         
         return listDTO;

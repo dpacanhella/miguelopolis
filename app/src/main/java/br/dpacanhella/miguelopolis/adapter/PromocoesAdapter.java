@@ -1,9 +1,6 @@
 package br.dpacanhella.miguelopolis.adapter;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
-import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +21,6 @@ import br.dpacanhella.miguelopolis.data.model.Promocao;
 public class PromocoesAdapter extends RecyclerView.Adapter<PromocoesAdapter.ViewHolder> {
 
     List<Promocao> promocaoList;
-    ImageView imageView;
     View view;
 
     @Override
@@ -54,6 +50,7 @@ public class PromocoesAdapter extends RecyclerView.Adapter<PromocoesAdapter.View
         private TextView txtNomeProduto;
         private TextView txtDescricao;
         private TextView txtValorFinal;
+        ImageView imageView;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -74,22 +71,20 @@ public class PromocoesAdapter extends RecyclerView.Adapter<PromocoesAdapter.View
 
 
             if(promocao.getId() < 7) {
-                loadImageFromURL(promocao.getImagemProduto().toString());
+                Glide.with(view.getContext())
+                        .load(promocao.getImagemProduto().toString())
+                        .placeholder(R.drawable.imageplaceholder)
+                        .error(R.drawable.imagenotfound)
+                        .into(imageView);
             }else{
-                byte[] decodedString = Base64.decode(promocao.getImageByte(), Base64.DEFAULT);
-                Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-
-                imageView.setImageBitmap(decodedByte);
+                Glide.with(view.getContext())
+                        .load(promocao.getImage64())
+                        .placeholder(R.drawable.imageplaceholder)
+                        .error(R.drawable.imagenotfound)
+                        .into(imageView);
             }
 
         }
     }
 
-    private void loadImageFromURL(String s) {
-        Glide.with(view.getContext())
-                .load(s)
-                .placeholder(R.drawable.imageplaceholder)
-                .error(R.drawable.imagenotfound)
-                .into(imageView);
-    }
 }

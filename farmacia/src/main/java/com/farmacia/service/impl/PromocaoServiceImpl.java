@@ -28,9 +28,7 @@ public class PromocaoServiceImpl implements PromocaoService {
 
     @Override
     public Promocao salvar(Integer farmaciaId, String nomeProduto, String descricaoProduto, String precoProduto, MultipartFile file) throws IOException {
-        String directory = "http://45.55.209.136/assets/promocoes/";
-//        String directory = "/Users/infra/Documents/promocoes/";    
-//        String directory = "/Users/diegoPacanhella/Documents/promocoes/";
+        String directory = "/home/farmacia/promocoes/";
         
         Farmacia farmacia = farmaciaRepository.findById(farmaciaId);
         
@@ -48,14 +46,14 @@ public class PromocaoServiceImpl implements PromocaoService {
             if(mimeType != null){
                 mimeType = mimeType.substring(mimeType.indexOf("/") + 1, mimeType.length());
             }
-            String photo = directory + "promocao_" + save.getId() + "." + mimeType;
+            String nomeImagem = "promocao_" + save.getId() + "." + mimeType;
+            
+            String photo = directory + nomeImagem;
             org.apache.commons.io.FileUtils.writeByteArrayToFile(new File(photo), file.getBytes());
             entity.setImage64(photo);
-            entity.setImagemProduto("/home/farmacia/promocoes/" + photo);
+            entity.setImagemProduto(nomeImagem);
             promocaoRepository.save(entity);
         }
-        
-        
         
         return save;
     }
@@ -68,9 +66,7 @@ public class PromocaoServiceImpl implements PromocaoService {
 
     @Override
     public Promocao update(Integer id, String nomeProduto, String descricaoProduto, String precoProduto, MultipartFile file) throws IOException {
-      String directory = "http://45.55.209.136/assets/promocoes/";
-//      String directory = "/Users/infra/Documents/promocoes/";    
-//      String directory = "/Users/diegoPacanhella/Documents/promocoes/";
+      String directory = "/home/farmacia/promocoes/";
       
         Promocao promocao = promocaoRepository.findById(id);
         
@@ -80,14 +76,16 @@ public class PromocaoServiceImpl implements PromocaoService {
             if(mimeType != null){
                 mimeType = mimeType.substring(mimeType.indexOf("/") + 1, mimeType.length());
             }
-            String photo = directory + "promocao_" + promocao.getId() + "." + mimeType;
+            String nomeImagem = "promocao_" + promocao.getId() + "." + mimeType;
+            
+            String photo = directory + nomeImagem;
             
             File fileDelete = new File(promocao.getImage64());
             fileDelete.delete();
             
             org.apache.commons.io.FileUtils.writeByteArrayToFile(new File(photo), file.getBytes());
             promocao.setImage64(photo);
-            promocao.setImagemProduto("/home/farmacia/promocoes/" + photo);
+            promocao.setImagemProduto(nomeImagem);
             promocaoRepository.save(promocao);
         }
         
@@ -105,7 +103,7 @@ public class PromocaoServiceImpl implements PromocaoService {
     public void delete(Integer id) {
         Promocao promocao = promocaoRepository.findById(id);
         
-        File fileDelete = new File(promocao.getImagemProduto());
+        File fileDelete = new File(promocao.getImage64());
         fileDelete.delete();
         
         promocaoRepository.delete(promocao);

@@ -29,6 +29,9 @@ public class ImagemLoja {
     @Column(name = "IMG_DESCRICAO")
     private String descricaoProduto;
     
+    @Column(name = "IMG_IMAGE_64")
+    private String image64;
+    
     @ManyToOne
     @JoinColumn(name = "LOJA_CODIGO")
     private Loja loja;

@@ -28,9 +28,7 @@ public class ImagemLojaServiceImpl implements ImagemLojaService {
 
     @Override
     public ImagemLoja salvar(Integer lojaId, String descricaoImagem, MultipartFile file) throws IOException {
-         String directory = "http://45.55.209.136/assets/imagens/";
-//        String directory = "/Users/infra/Documents/imagemLoja/";
-        // String directory = "/Users/diegoPacanhella/Documents/imagemLoja/";
+         String directory = "/home/farmacia/imagemLoja/";
 
         Loja loja = lojaRepository.findById(lojaId);
 
@@ -46,9 +44,13 @@ public class ImagemLojaServiceImpl implements ImagemLojaService {
             if (mimeType != null) {
                 mimeType = mimeType.substring(mimeType.indexOf("/") + 1, mimeType.length());
             }
-            String photo = directory + "imagem_" + save.getId() + "." + mimeType;
+            String nomeImagem = "imagem_" + save.getId() + "." + mimeType;
+            
+            String photo = directory + nomeImagem;
+            
             org.apache.commons.io.FileUtils.writeByteArrayToFile(new File(photo), file.getBytes());
             entity.setImagemProduto(photo);
+            entity.setImage64(nomeImagem);
             imgLojaRepository.save(entity);
         }
 
@@ -57,9 +59,7 @@ public class ImagemLojaServiceImpl implements ImagemLojaService {
 
     @Override
     public ImagemLoja update(Integer id, String descricaoImagem, MultipartFile file) throws IOException {
-         String directory = "http://45.55.209.136/assets/imagens/";
-//        String directory = "/Users/infra/Documents/imagemLoja/";
-        // String directory = "/Users/diegoPacanhella/Documents/imagemLoja/";
+         String directory = "/home/farmacia/imagemLoja/";
 
         ImagemLoja imgLoja = imgLojaRepository.findById(id);
 
@@ -69,13 +69,16 @@ public class ImagemLojaServiceImpl implements ImagemLojaService {
             if (mimeType != null) {
                 mimeType = mimeType.substring(mimeType.indexOf("/") + 1, mimeType.length());
             }
-            String photo = directory + "imagem_" + imgLoja.getId() + "." + mimeType;
+            String nomeImagem = "imagem_" + imgLoja.getId() + "." + mimeType;
+            
+            String photo = directory + nomeImagem;
 
             File fileDelete = new File(imgLoja.getImagemProduto());
             fileDelete.delete();
 
             org.apache.commons.io.FileUtils.writeByteArrayToFile(new File(photo), file.getBytes());
             imgLoja.setImagemProduto(photo);
+            imgLoja.setImage64(nomeImagem);
             imgLojaRepository.save(imgLoja);
         }
 
@@ -102,7 +105,7 @@ public class ImagemLojaServiceImpl implements ImagemLojaService {
     public void delete(Integer id) {
         ImagemLoja imagLoja = imgLojaRepository.findById(id);
         
-        File fileDelete = new File("/home/farmacia/imagemLoja/" + "imagem_" + imagLoja.getId());
+        File fileDelete = new File(imagLoja.getImagemProduto());
         fileDelete.delete();
         
         imgLojaRepository.delete(imagLoja);
