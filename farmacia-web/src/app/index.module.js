@@ -20,6 +20,6 @@
 
 	angular.module('inspinia.templates', []);
 
-	angular.module('inspinia.vendors', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ui.router', 'ui.bootstrap', 'rs.datagrid', 'toastr', 'angularFileUpload']);
+	angular.module('inspinia.vendors', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ui.router', 'ui.bootstrap', 'rs.datagrid', 'toastr', 'angularFileUpload', 'oitozero.ngSweetAlert']);
 	
 	angular.module('inspinia.scripts', ['inspinia.services', 'inspinia.factories', 'inspinia.directives', 'inspinia.filters', 'inspinia.controllers', 'inspinia.constants', 'inspinia.configs', 'inspinia.templates']);
