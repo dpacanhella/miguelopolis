@@ -1,22 +1,29 @@
-'use strict'
+/**
+ *  Welcome to your gulpfile!
+ *  The gulp tasks are splitted in several files in the gulp directory
+ *  because putting all here was really too long
+ */
+
+'use strict';
 
 var gulp = require('gulp');
-var concat = require('gulp-concat');
-var sass = require('gulp-sass');
+var wrench = require('wrench');
 
-gulp.task('sass', function () {
-  return gulp.src('./scss/style.scss')
-  .pipe(sass().on('error', sass.logError))
-  .pipe(concat('style.css'))
-  .pipe(gulp.dest('./public/css'))
-  .pipe(sass({outputStyle: 'compressed'}))
-  .pipe(concat('style.min.css'))
-  .pipe(gulp.dest('./public/css'));
+/**
+ *  This will load all js or coffee files in the gulp directory
+ *  in order to load all gulp tasks
+ */
+wrench.readdirSyncRecursive('./gulp').filter(function(file) {
+  return (/\.(js|coffee)$/i).test(file);
+}).map(function(file) {
+  require('./gulp/' + file);
 });
 
-// Watching SCSS files
-gulp.task('sass:watch', function () {
-  gulp.watch('./scss/**/*.scss', ['sass']);
-});
 
-gulp.task('default', ['sass:watch']);
+/**
+ *  Default task clean temporaries directories and launch the
+ *  main optimization build task
+ */
+gulp.task('default', ['clean'], function () {
+  gulp.start('build');
+});

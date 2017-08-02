@@ -1,0 +1,14 @@
+{
+  "form": {
+    "OBRIGATORIO": "Campo obrigatório",
+    "SALVAR": "Salvar",
+    "CANCELAR": "Cancelar",
+    "ADICIONAR": "Adicionar",
+    "ALTERAR": "Alterar",
+    "VOLTAR": "Voltar",
+    "FECHAR": "Fechar"
+  },
+  "exception": {
+    "wrongCredentials": "Usuário ou senha inválidos"
+  }
+}
