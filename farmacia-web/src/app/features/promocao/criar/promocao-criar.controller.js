@@ -24,6 +24,29 @@ angular.module('inspinia.controllers')
     })
 
     vm.uploader = uploader;
+    vm.uploader.filters.push({
+      name: 'imageFilter',
+      fn: function(item) {
+          var type = '|' + item.type.slice(item.type.lastIndexOf('/') + 1) + '|';
+          if('|jpg|png|jpeg|'.indexOf(type) !== -1){
+              return true;
+          }else{
+              toastr.error('Por favor selecione imagens (jpg,png,jpeg) e com no máximo 400 KB');
+              console.log(vm.uploader);
+              return false;
+          }
+      }
+    }, {
+        name: 'sizeFilter',
+        fn: function(item) {
+            if (item.size > 409600) {
+                toastr.error('Por favor selecione imagens (jpg,png,jpeg) e com no máximo 400 KB');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    });
 
     //////////////////////////////////
     // Mocks

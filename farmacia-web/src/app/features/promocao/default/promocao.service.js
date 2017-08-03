@@ -19,5 +19,5 @@ angular.module('inspinia.services')
           method: 'DELETE'
         });
       }
-  }
+    }
 });
