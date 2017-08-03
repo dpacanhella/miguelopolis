@@ -69,6 +69,15 @@ angular.module('inspinia.controllers')
           title: 'Preço',
           index: 'precoFinal'
         }, {
+          title: 'Foto do produto',
+          index: 'imagem',
+          sort: false,
+          isHtml: true,
+          class: 'text-center',
+          render: function(row) {
+            return "<img src="+row.imagemProduto+ " height='70' width='70' />"
+          }
+        },{
           title: 'Ação',
           index: 'acao',
           class: 'text-center',
