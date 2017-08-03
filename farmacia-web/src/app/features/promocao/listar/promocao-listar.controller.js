@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('inspinia.controllers')
-  .controller('PromocaoListarController', function ($scope, promocoes, toastr, SweetAlert, SWEET_ALERT_CONFIRM_DEFAULTS, PromocaoService) {
+  .controller('PromocaoListarController', function ($scope, $rootScope, promocoes, toastr, SweetAlert, SWEET_ALERT_CONFIRM_DEFAULTS, PromocaoService) {
 
     var vm = this;
 
@@ -31,9 +31,16 @@ angular.module('inspinia.controllers')
           } else {
             toastr.error('Erro ao excluir promoção!');
           }
-          return vm.refresh();
+          getPromocoesFarmacia($rootScope.farmacia.id);
         });
       }
+    };
+
+    var getPromocoesFarmacia = function(id) {
+      return PromocaoService.getPromocoesByFarmacia(id).then(function(response) {
+        vm.promocoes = response;
+        return vm.refresh();
+      });
     };
 
     vm.options = {
