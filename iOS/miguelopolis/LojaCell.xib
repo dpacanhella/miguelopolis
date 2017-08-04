@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="loja_cell" id="9pd-WP-eNL" customClass="LojaCell" customModule="miguelopolis" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7fJ-IN-QOh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2W-pG-8iX">
+                        <rect key="frame" x="5" y="93" width="315" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPe-NV-PP4">
+                        <rect key="frame" x="5" y="117" width="315" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.51947053108808294" green="0.51947053108808294" blue="0.51947053108808294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4O-Wz-jis">
+                        <rect key="frame" x="0.0" y="91" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.49200534326424872" green="0.49200534326424872" blue="0.49200534326424872" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rPe-NV-PP4" secondAttribute="trailing" id="4Pv-8Q-VbJ"/>
+                <constraint firstItem="rPe-NV-PP4" firstAttribute="top" secondItem="L4O-Wz-jis" secondAttribute="bottom" constant="25" id="8e1-FV-PBT"/>
+                <constraint firstItem="a2W-pG-8iX" firstAttribute="leading" secondItem="9pd-WP-eNL" secondAttribute="leading" constant="5" id="8oL-KJ-sBc"/>
+                <constraint firstItem="rPe-NV-PP4" firstAttribute="top" secondItem="a2W-pG-8iX" secondAttribute="bottom" constant="3" id="FKX-a3-XVp"/>
+                <constraint firstItem="a2W-pG-8iX" firstAttribute="top" secondItem="7fJ-IN-QOh" secondAttribute="bottom" constant="3" id="aiA-rl-BFs"/>
+                <constraint firstItem="L4O-Wz-jis" firstAttribute="top" secondItem="7fJ-IN-QOh" secondAttribute="bottom" constant="1" id="b01-rR-SJ4"/>
+                <constraint firstItem="7fJ-IN-QOh" firstAttribute="leading" secondItem="9pd-WP-eNL" secondAttribute="leading" id="fff-Ne-qKt"/>
+                <constraint firstAttribute="bottom" secondItem="rPe-NV-PP4" secondAttribute="bottom" constant="3" id="fiS-1G-apJ"/>
+                <constraint firstItem="L4O-Wz-jis" firstAttribute="leading" secondItem="9pd-WP-eNL" secondAttribute="leading" id="gXO-du-za6"/>
+                <constraint firstItem="rPe-NV-PP4" firstAttribute="leading" secondItem="9pd-WP-eNL" secondAttribute="leading" constant="5" id="iKX-WB-250"/>
+                <constraint firstItem="7fJ-IN-QOh" firstAttribute="top" secondItem="9pd-WP-eNL" secondAttribute="top" id="jlZ-ZG-LHy"/>
+                <constraint firstAttribute="trailing" secondItem="7fJ-IN-QOh" secondAttribute="trailing" id="tzW-4z-ldA"/>
+                <constraint firstAttribute="trailing" secondItem="a2W-pG-8iX" secondAttribute="trailing" id="weh-yd-stu"/>
+                <constraint firstAttribute="trailing" secondItem="L4O-Wz-jis" secondAttribute="trailing" id="zRq-af-DTh"/>
+            </constraints>
+            <size key="customSize" width="388" height="162"/>
+            <connections>
+                <outlet property="imageLogo" destination="7fJ-IN-QOh" id="MKG-MN-OCD"/>
+                <outlet property="labelDescricao" destination="rPe-NV-PP4" id="1ch-pd-7bo"/>
+                <outlet property="labelNome" destination="a2W-pG-8iX" id="yWW-IA-qnL"/>
+            </connections>
+            <point key="canvasLocation" x="-118" y="-77.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

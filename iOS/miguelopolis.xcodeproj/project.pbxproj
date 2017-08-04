@@ -26,6 +26,11 @@
 		35E0E96A1F34B895002E09BB /* LanchoneteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E0E9691F34B895002E09BB /* LanchoneteViewController.swift */; };
 		35E0E96C1F34B98E002E09BB /* LanchoneteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E0E96B1F34B98E002E09BB /* LanchoneteCell.xib */; };
 		35E0E96E1F34E31E002E09BB /* Loja.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E0E96D1F34E31E002E09BB /* Loja.swift */; };
+		35E0E9701F34EA84002E09BB /* LojaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E0E96F1F34EA84002E09BB /* LojaViewController.swift */; };
+		35E0E9741F34EAEB002E09BB /* LojaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35E0E9731F34EAEB002E09BB /* LojaCell.xib */; };
+		35E0E9761F34ECC6002E09BB /* LojaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E0E9751F34ECC6002E09BB /* LojaCell.swift */; };
+		35E0E9781F34ED48002E09BB /* LojaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E0E9771F34ED48002E09BB /* LojaManager.swift */; };
+		35E0E97A1F34ED63002E09BB /* LojaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E0E9791F34ED63002E09BB /* LojaService.swift */; };
 		4FAF6AD31F0D6A4C00201D36 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4FAF6AD21F0D6A4C00201D36 /* Podfile */; };
 		4FAF6AD71F0D6A4C00201D36 /* StringIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF6AD61F0D6A4C00201D36 /* StringIdentifier.swift */; };
 		4FAF6AD91F0D6A4C00201D36 /* CollectionViewIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF6AD81F0D6A4C00201D36 /* CollectionViewIdentifier.swift */; };
@@ -77,6 +82,11 @@
 		35E0E9691F34B895002E09BB /* LanchoneteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanchoneteViewController.swift; sourceTree = "<group>"; };
 		35E0E96B1F34B98E002E09BB /* LanchoneteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LanchoneteCell.xib; sourceTree = "<group>"; };
 		35E0E96D1F34E31E002E09BB /* Loja.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loja.swift; sourceTree = "<group>"; };
+		35E0E96F1F34EA84002E09BB /* LojaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LojaViewController.swift; sourceTree = "<group>"; };
+		35E0E9731F34EAEB002E09BB /* LojaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LojaCell.xib; sourceTree = "<group>"; };
+		35E0E9751F34ECC6002E09BB /* LojaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LojaCell.swift; sourceTree = "<group>"; };
+		35E0E9771F34ED48002E09BB /* LojaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LojaManager.swift; sourceTree = "<group>"; };
+		35E0E9791F34ED63002E09BB /* LojaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LojaService.swift; sourceTree = "<group>"; };
 		4D635CD7828F6F0C959914DD /* Pods_miguelopolis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_miguelopolis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FAF6ACF1F0D6A4C00201D36 /* miguelopolis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miguelopolis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FAF6AD21F0D6A4C00201D36 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
@@ -269,6 +279,7 @@
 				356F349D1F324FB200517FF4 /* TipoAnuncioCell.swift */,
 				356F34B71F3369D900517FF4 /* RestauranteCell.swift */,
 				35E0E9671F34B851002E09BB /* LanchoneteCell.swift */,
+				35E0E9751F34ECC6002E09BB /* LojaCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -281,6 +292,7 @@
 				356F34A71F32571300517FF4 /* TipoAnuncioCell.xib */,
 				356F34B31F33684000517FF4 /* RestauranteCell.xib */,
 				35E0E96B1F34B98E002E09BB /* LanchoneteCell.xib */,
+				35E0E9731F34EAEB002E09BB /* LojaCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -292,6 +304,7 @@
 				356F349F1F32547400517FF4 /* TipoAnuncioService.swift */,
 				356F34AF1F33679000517FF4 /* RestauranteService.swift */,
 				35E0E9651F34B0BB002E09BB /* LanchoneteService.swift */,
+				35E0E9791F34ED63002E09BB /* LojaService.swift */,
 			);
 			name = "Restfull Services";
 			sourceTree = "<group>";
@@ -303,6 +316,7 @@
 				356F34A91F325BCD00517FF4 /* TipoAnuncioViewController.swift */,
 				356F34B51F33689E00517FF4 /* BarViewController.swift */,
 				35E0E9691F34B895002E09BB /* LanchoneteViewController.swift */,
+				35E0E96F1F34EA84002E09BB /* LojaViewController.swift */,
 			);
 			name = Farmacia;
 			sourceTree = "<group>";
@@ -314,6 +328,7 @@
 				356F34A11F32551E00517FF4 /* TipoAnuncioManager.swift */,
 				356F34AD1F33676300517FF4 /* RestauranteManager.swift */,
 				35E0E9611F34AF40002E09BB /* LanchoneteManager.swift */,
+				35E0E9771F34ED48002E09BB /* LojaManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -394,6 +409,7 @@
 				4FAF6AF61F0D6A4C00201D36 /* Localizable.strings in Resources */,
 				4FAF6AF41F0D6A4C00201D36 /* AppConfig.plist in Resources */,
 				356F34A81F32571300517FF4 /* TipoAnuncioCell.xib in Resources */,
+				35E0E9741F34EAEB002E09BB /* LojaCell.xib in Resources */,
 				4FAF6AD31F0D6A4C00201D36 /* Podfile in Resources */,
 				4FAF6AEF1F0D6A4C00201D36 /* Resources.README in Resources */,
 				4FF182F51F0D94AA00BBC361 /* FarmaciaCell.xib in Resources */,
@@ -489,6 +505,7 @@
 				356F34AE1F33676300517FF4 /* RestauranteManager.swift in Sources */,
 				356F34B61F33689E00517FF4 /* BarViewController.swift in Sources */,
 				35E0E9661F34B0BB002E09BB /* LanchoneteService.swift in Sources */,
+				35E0E9781F34ED48002E09BB /* LojaManager.swift in Sources */,
 				4FF182F01F0D80E500BBC361 /* MigueColors.swift in Sources */,
 				4FAF6AD71F0D6A4C00201D36 /* StringIdentifier.swift in Sources */,
 				4FAF6AD91F0D6A4C00201D36 /* CollectionViewIdentifier.swift in Sources */,
@@ -496,6 +513,7 @@
 				35E0E9621F34AF40002E09BB /* LanchoneteManager.swift in Sources */,
 				4FF182FE1F0D98E300BBC361 /* FarmaciaService.swift in Sources */,
 				35E0E9681F34B851002E09BB /* LanchoneteCell.swift in Sources */,
+				35E0E9701F34EA84002E09BB /* LojaViewController.swift in Sources */,
 				4FAF6AF21F0D6A4C00201D36 /* AppDelegate.swift in Sources */,
 				356F349E1F324FB200517FF4 /* TipoAnuncioCell.swift in Sources */,
 				4FAF6AE11F0D6A4C00201D36 /* TableViewIdentifier.swift in Sources */,
@@ -513,7 +531,9 @@
 				35E0E96E1F34E31E002E09BB /* Loja.swift in Sources */,
 				4FF182F71F0D95F800BBC361 /* FarmaciaCell.swift in Sources */,
 				356F34B01F33679000517FF4 /* RestauranteService.swift in Sources */,
+				35E0E97A1F34ED63002E09BB /* LojaService.swift in Sources */,
 				356F34AA1F325BCD00517FF4 /* TipoAnuncioViewController.swift in Sources */,
+				35E0E9761F34ECC6002E09BB /* LojaCell.swift in Sources */,
 				4FAF6AE71F0D6A4C00201D36 /* ContainerViewController.swift in Sources */,
 				356F349C1F324E8A00517FF4 /* TipoAnuncio.swift in Sources */,
 				4FF183011F0D992800BBC361 /* FarmaciaViewController.swift in Sources */,

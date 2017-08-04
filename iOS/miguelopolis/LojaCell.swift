@@ -1,5 +1,5 @@
 //
-//  LanchoneteCell.swift
+//  LojaCell.swift
 //  miguelopolis
 //
 //  Created by infra on 04/08/17.
@@ -9,12 +9,13 @@
 import Foundation
 import UIKit
 
-class LanchoneteCell: UICollectionViewCell {
-
+class LojaCell: UICollectionViewCell {
     
-    @IBOutlet weak var labelNome: UILabel!
+    
     @IBOutlet weak var imageLogo: UIImageView!
-    @IBOutlet weak var lableTelefone: UILabel!
+    @IBOutlet weak var labelNome: UILabel!
+    @IBOutlet weak var labelDescricao: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib();
@@ -27,12 +28,12 @@ class LanchoneteCell: UICollectionViewCell {
         
     }
     
-    func setLanchonetes(lanchonete: Lanchonete) -> Void {
-        labelNome.text = lanchonete.nome
-        lableTelefone.text = String(format:"(16) %@",lanchonete.whatsapp!)
+    func setLojas(loja: Loja) -> Void {
+        labelNome.text =  loja.nome
+        labelDescricao.text = loja.descricao
         imageLogo.roundCorners([.topLeft, .topRight], radius: 5)
         
-        let url = URL(string: lanchonete.imagemLogo!)
+        let url = URL(string: loja.imagemLogo!)
         
         DispatchQueue.global().async {
             let data = try? Data(contentsOf: url!)

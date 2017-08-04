@@ -13,12 +13,12 @@ struct Loja {
     
     var id: Int?
     var nome: String?
-    var nomeProprietario: String?
+    var descricao: String?
     var telefone: String?
     var endereco: String?
     var imagemLogo: String?
     var imagemEstabelecimento: String?
-    var whatsapp: String?
+    var celular: String?
     
 }
 
@@ -31,11 +31,11 @@ extension Loja: Mappable {
     mutating func mapping(map: Map) {
         id    <- map["id"]
         nome  <- map["nome"]
-        nomeProprietario    <- map["nomeProprietario"]
+        descricao    <- map["descricao"]
         telefone    <- map["telefone"]
         endereco    <- map["endereco"]
         imagemLogo    <- map["imagemLogo"]
-        whatsapp    <- map["whatsapp"]
+        celular    <- map["celular"]
         imagemEstabelecimento    <- map["imagemEstabelecimento"]
     }
 }

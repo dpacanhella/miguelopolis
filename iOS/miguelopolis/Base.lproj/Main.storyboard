@@ -583,7 +583,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pY-f5-N87" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1943.4375" y="-800"/>
+            <point key="canvasLocation" x="1028" y="-556"/>
         </scene>
         <!--Bares/Restaurantes-->
         <scene sceneID="rbl-Pi-etU">
@@ -642,7 +642,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7lW-dg-5ME" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="288.80000000000001" y="791.15442278860576"/>
+            <point key="canvasLocation" x="289" y="695"/>
         </scene>
         <!--Lanchonetes/Salgadarias-->
         <scene sceneID="w2u-IL-ezH">
@@ -701,12 +701,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWo-I3-cyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1111" y="659"/>
+            <point key="canvasLocation" x="1028" y="695"/>
         </scene>
         <!--Lojas-->
         <scene sceneID="ZL4-VP-pj5">
             <objects>
-                <viewController storyboardIdentifier="LojasViewController" id="S45-6Z-Wbc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LojasViewController" id="S45-6Z-Wbc" customClass="LojaViewController" customModule="miguelopolis" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="snx-KU-L3Z"/>
                         <viewControllerLayoutGuide type="bottom" id="rws-2G-uPy"/>
@@ -715,29 +715,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lojas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILi-bd-kY9">
-                                <rect key="frame" x="41" y="96" width="283" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="DXE-ch-gVz"/>
-                                    <constraint firstAttribute="height" constant="21" id="TxX-Oa-Qxp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3fo-xe-kRa">
+                                <rect key="frame" x="16" y="72" width="343" height="571"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zH7-v6-Iz4">
+                                    <size key="itemSize" width="280" height="120"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rAg-tU-d5P">
+                                        <rect key="frame" x="31.5" y="0.0" width="280" height="120"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ILi-bd-kY9" firstAttribute="leading" secondItem="A3J-bA-2q3" secondAttribute="leadingMargin" constant="25" id="7g6-hT-YUP"/>
-                            <constraint firstItem="ILi-bd-kY9" firstAttribute="top" secondItem="snx-KU-L3Z" secondAttribute="bottom" constant="32" id="7o9-4H-6bF"/>
+                            <constraint firstItem="3fo-xe-kRa" firstAttribute="leading" secondItem="A3J-bA-2q3" secondAttribute="leading" constant="16" id="2cO-Cm-BgN"/>
+                            <constraint firstItem="rws-2G-uPy" firstAttribute="top" secondItem="3fo-xe-kRa" secondAttribute="bottom" constant="24" id="MQo-cb-6qn"/>
+                            <constraint firstItem="3fo-xe-kRa" firstAttribute="top" secondItem="snx-KU-L3Z" secondAttribute="bottom" constant="8" id="oWc-49-zrd"/>
+                            <constraint firstAttribute="trailing" secondItem="3fo-xe-kRa" secondAttribute="trailing" constant="16" id="zCf-Ny-vuk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lojas" id="P2g-fQ-X98"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <connections>
+                        <outlet property="collectionView" destination="3fo-xe-kRa" id="KR5-Lq-fWb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aGF-wo-pNk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1110" y="1373"/>
+            <point key="canvasLocation" x="1781.5999999999999" y="694.90254872563719"/>
         </scene>
     </scenes>
     <resources>
