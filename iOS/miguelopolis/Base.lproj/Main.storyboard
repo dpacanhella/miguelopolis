@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UcR-8M-vvG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UcR-8M-vvG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="height" constant="157" id="7cy-Qr-Ol9"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pht-uH-9B0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pht-uH-9B0">
                                 <rect key="frame" x="0.0" y="157" width="300" height="510"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -91,12 +91,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1qA-1l-eW7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-474" y="-21"/>
+            <point key="canvasLocation" x="-521" y="44"/>
         </scene>
         <!--Utilitários-->
         <scene sceneID="duu-7c-tT5">
             <objects>
-                <viewController storyboardIdentifier="UtilitariosViewController" id="nIq-Dg-19O" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TipoAnunciosViewController" id="nIq-Dg-19O" customClass="TipoAnuncioViewController" customModule="miguelopolis" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5DO-d7-1mh"/>
                         <viewControllerLayoutGuide type="bottom" id="0UH-qj-yC0"/>
@@ -105,29 +105,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Utilitarios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IoO-Wz-Swa">
-                                <rect key="frame" x="41" y="96" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="42" id="0rE-Ee-e9l"/>
-                                    <constraint firstAttribute="height" constant="21" id="UDC-ps-cbP"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dzS-OO-iIf">
+                                <rect key="frame" x="0.0" y="74" width="375" height="593"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IoO-Wz-Swa" firstAttribute="top" secondItem="5DO-d7-1mh" secondAttribute="bottom" constant="32" id="gI9-Ep-KdI"/>
-                            <constraint firstItem="IoO-Wz-Swa" firstAttribute="leading" secondItem="0FX-p7-wUq" secondAttribute="leadingMargin" constant="25" id="p4l-xJ-4yJ"/>
+                            <constraint firstAttribute="trailing" secondItem="dzS-OO-iIf" secondAttribute="trailing" id="7RA-Gt-THK"/>
+                            <constraint firstItem="dzS-OO-iIf" firstAttribute="leading" secondItem="0FX-p7-wUq" secondAttribute="leading" id="90O-6M-ASh"/>
+                            <constraint firstItem="dzS-OO-iIf" firstAttribute="top" secondItem="5DO-d7-1mh" secondAttribute="bottom" constant="10" id="KRM-u3-eux"/>
+                            <constraint firstItem="0UH-qj-yC0" firstAttribute="top" secondItem="dzS-OO-iIf" secondAttribute="bottom" id="ZbR-ys-kmz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Utilitários" id="F8z-ph-k9f"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="dzS-OO-iIf" id="qGT-NU-2dA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g16-ZO-dCY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="370" y="-27"/>
+            <point key="canvasLocation" x="288.80000000000001" y="-680.5097451274363"/>
         </scene>
         <!--Plantão da semana-->
         <scene sceneID="Hnm-9J-Bzh">
@@ -190,9 +189,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zeD-aA-cff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="368.80000000000001" y="636.4317841079461"/>
+            <point key="canvasLocation" x="289" y="44"/>
         </scene>
-        <!--Ônibus-->
+        <!--Horários-->
         <scene sceneID="UyM-eq-jyN">
             <objects>
                 <viewController storyboardIdentifier="OnibusViewController" id="utj-qd-YXU" sceneMemberID="viewController">
@@ -201,37 +200,395 @@
                         <viewControllerLayoutGuide type="bottom" id="24I-b7-ON0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JDh-4N-z7V">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Onibus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbS-VW-KUn">
-                                <rect key="frame" x="41" y="96" width="219" height="21"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZH2-Uh-Bq3">
+                                <rect key="frame" x="-4" y="76" width="392" height="1924"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mo9-hs-BOb">
+                                        <rect key="frame" x="0.0" y="16" width="392" height="1691"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Segunda à sábado)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwd-jE-2d8">
+                                                <rect key="frame" x="16" y="27" width="360" height="15"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:00  -  07:00  -  08:30  -  10:30    12:00  -  14:00  -  15:00  -  16:00    18:00  -  20:00.  Escolas: 06:00  -  18:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="966-aj-9qx">
+                                                <rect key="frame" x="16" y="45" width="360" height="76.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ituverava - Miguelópolis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oI3-xP-Mob">
+                                                <rect key="frame" x="16" y="153" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Segunda à sábado)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8E-yC-fDx">
+                                                <rect key="frame" x="16" y="180" width="360" height="15"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:00  -  07:00  -  08:30  -  10:30    12:00  -  13:10  -  15:00  -  17:00     19:00  -  21:30.  Escolas: 13:00  -  22:40" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ck-PO-6fH">
+                                                <rect key="frame" x="16" y="198" width="360" height="77"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miguelópolis - Ituverava" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtD-L2-NNX">
+                                                <rect key="frame" x="16" y="0.0" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miguelópolis - Ituverava" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Guh-j4-npc">
+                                                <rect key="frame" x="16" y="307" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Domingos e feriados)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xs5-Bt-mGh">
+                                                <rect key="frame" x="16" y="334" width="360" height="15"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:00  -  08:30  -  12:00  -  14:00    16:00  -  18:00  -  20:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3D-uS-ZDN">
+                                                <rect key="frame" x="16" y="352" width="360" height="39"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ituverava - Miguelópolis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUc-3X-Dq5">
+                                                <rect key="frame" x="16" y="423" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Domingos e feriados)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7M-vC-6Eu">
+                                                <rect key="frame" x="16" y="450" width="360" height="15"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07:00  -  10:30  -  13:10  -  15:00   17:00  -  19:00  -  21:30" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOE-vI-CTp">
+                                                <rect key="frame" x="16" y="468" width="360" height="39"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miguelópolis - Guaíra" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmy-dj-U7A">
+                                                <rect key="frame" x="16" y="539" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:30  -  11:30  -  18:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yx-Ti-K2k">
+                                                <rect key="frame" x="16" y="566" width="360" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guaíra - Miguelópolis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EOR-Nv-NzR">
+                                                <rect key="frame" x="16" y="618" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:20  -  14:40  -  17:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsg-lw-cCY">
+                                                <rect key="frame" x="16" y="645" width="360" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLx-hK-RNK">
+                                                <rect key="frame" x="16" y="724" width="360" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miguelópolis - Uberaba" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxk-pU-Jme">
+                                                <rect key="frame" x="16" y="855" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miguelópolis - Barretos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubZ-Dk-GfC">
+                                                <rect key="frame" x="16" y="697" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:00 (Não corre as quartas-feiras)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeW-Vw-MFW">
+                                                <rect key="frame" x="16" y="803" width="360" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:50  -  07:55  -  10:55  -  13:10    14:20  -  16:00  -  17:50  -  21:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uA2-UR-EXU">
+                                                <rect key="frame" x="16" y="1274" width="360" height="39"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Barretos - Miguelópolis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbM-oc-L2u">
+                                                <rect key="frame" x="16" y="776" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uberaba - Miguelópolis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZi-KF-nVP">
+                                                <rect key="frame" x="16" y="934" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:00  -  17:50 (São Bento)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWm-oe-NTV">
+                                                <rect key="frame" x="16" y="882" width="360" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:45  -  15:30 (São Bento)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcn-WB-TiS">
+                                                <rect key="frame" x="16" y="961" width="360" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miguelópolis - São Paulo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbW-ny-9Da">
+                                                <rect key="frame" x="16" y="1345" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ituverava - Igarapava/Uberaba" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iMP-5A-Dus">
+                                                <rect key="frame" x="16" y="1247" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ituverava - Ribeirão Preto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q84-Uj-Mci">
+                                                <rect key="frame" x="16" y="1013" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:30  -  06:40  -  07:05  -  08:10   11:00  -  13:35  -  16:30  -  18:35    19:30  -  22:25" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bL3-aN-kKY">
+                                                <rect key="frame" x="16" y="1040" width="360" height="58"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ribeirão Preto - Ituverava" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZ7-8R-6wq">
+                                                <rect key="frame" x="16" y="1130" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ituverava - Franca" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gd-w8-ELw">
+                                                <rect key="frame" x="16" y="1443" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:50  -  08:45  -  16:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SI3-wA-sVn">
+                                                <rect key="frame" x="16" y="1470" width="360" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Observação" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v54-1I-AlK">
+                                                <rect key="frame" x="16" y="1522" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horários sujeitos à alterações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNx-Ak-oII">
+                                                <rect key="frame" x="16" y="1549" width="360" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone rodoviárioas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tb-BX-VOl">
+                                                <rect key="frame" x="16" y="1601" width="360" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvJ-WN-mDw">
+                                                <rect key="frame" x="16" y="1628" width="360" height="191"/>
+                                                <string key="text">Miguelópolis: (16) 3835-1351 Ituverava: (16) 3729-2563 Franca: (16) 3723-9300 Igarapava: (16) 3172-2049 Uberaba: (34) 3336-1458 Ribeirão Preto: (16) 3512-9849 Guaíra: (17) 3332-0477 Barretos: (17) 3322-2044 São Joaquim da Barra: (16) 3728-5422 SJ. Rio Preto: (17) 3233-8683</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEXTA: 22:00     SÁBADO E DOMINGO: 07:20  -  22:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4q-0w-mIB">
+                                                <rect key="frame" x="16" y="1372" width="360" height="39"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:20  -  06:50  -  09:00 -  10:30    12:00  -  13:30  -  15:15  -  16:10    18:00  -  21:00" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xz-89-NVk">
+                                                <rect key="frame" x="16" y="1157" width="360" height="58"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="P4q-0w-mIB" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="0Po-5T-1CE"/>
+                                            <constraint firstAttribute="trailing" secondItem="v54-1I-AlK" secondAttribute="trailing" constant="16" id="13K-o4-pxG"/>
+                                            <constraint firstAttribute="trailing" secondItem="xs5-Bt-mGh" secondAttribute="trailing" constant="16" id="1iQ-Zu-f7v"/>
+                                            <constraint firstAttribute="trailing" secondItem="TWm-oe-NTV" secondAttribute="trailing" constant="16" id="2mZ-w6-RYY"/>
+                                            <constraint firstAttribute="trailing" secondItem="PZ7-8R-6wq" secondAttribute="trailing" constant="16" id="3DV-gF-v1b"/>
+                                            <constraint firstItem="nbM-oc-L2u" firstAttribute="top" secondItem="dLx-hK-RNK" secondAttribute="bottom" constant="32" id="3lK-A6-hfy"/>
+                                            <constraint firstItem="bL3-aN-kKY" firstAttribute="top" secondItem="Q84-Uj-Mci" secondAttribute="bottom" constant="3" id="4QV-Eh-hCS"/>
+                                            <constraint firstItem="TWm-oe-NTV" firstAttribute="top" secondItem="Sxk-pU-Jme" secondAttribute="bottom" constant="3" id="4Ti-co-b0Y"/>
+                                            <constraint firstItem="EOR-Nv-NzR" firstAttribute="top" secondItem="2Yx-Ti-K2k" secondAttribute="bottom" constant="32" id="5N3-GT-iPI"/>
+                                            <constraint firstAttribute="trailing" secondItem="Sxk-pU-Jme" secondAttribute="trailing" constant="16" id="5Wh-Xo-kRx"/>
+                                            <constraint firstItem="Guh-j4-npc" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="5Z8-88-cc1"/>
+                                            <constraint firstAttribute="trailing" secondItem="1gd-w8-ELw" secondAttribute="trailing" constant="16" id="6BK-mC-dJz"/>
+                                            <constraint firstItem="vmy-dj-U7A" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="71x-5U-LEI"/>
+                                            <constraint firstItem="2Ck-PO-6fH" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="74M-i9-9Ih"/>
+                                            <constraint firstAttribute="trailing" secondItem="iMP-5A-Dus" secondAttribute="trailing" constant="16" id="79b-7f-bnb"/>
+                                            <constraint firstItem="Guh-j4-npc" firstAttribute="top" secondItem="2Ck-PO-6fH" secondAttribute="bottom" constant="32" id="8jS-Si-5iA"/>
+                                            <constraint firstAttribute="trailing" secondItem="6tb-BX-VOl" secondAttribute="trailing" constant="16" id="8nL-xX-b0r"/>
+                                            <constraint firstAttribute="trailing" secondItem="Guh-j4-npc" secondAttribute="trailing" constant="16" id="8tB-PC-sy6"/>
+                                            <constraint firstItem="rbW-ny-9Da" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="99g-2O-8FW"/>
+                                            <constraint firstItem="ubZ-Dk-GfC" firstAttribute="top" secondItem="dsg-lw-cCY" secondAttribute="bottom" constant="32" id="Agt-qB-pwO"/>
+                                            <constraint firstItem="iMP-5A-Dus" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="B8y-kl-QVw"/>
+                                            <constraint firstItem="1gd-w8-ELw" firstAttribute="top" secondItem="P4q-0w-mIB" secondAttribute="bottom" constant="32" id="BJM-kG-3pJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="2Yx-Ti-K2k" secondAttribute="trailing" constant="16" id="BpR-8i-xqq"/>
+                                            <constraint firstItem="eZi-KF-nVP" firstAttribute="top" secondItem="TWm-oe-NTV" secondAttribute="bottom" constant="32" id="BtQ-hS-rgc"/>
+                                            <constraint firstAttribute="trailing" secondItem="hNx-Ak-oII" secondAttribute="trailing" constant="16" id="CUt-8V-LQr"/>
+                                            <constraint firstItem="6tb-BX-VOl" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="DKJ-KO-foK"/>
+                                            <constraint firstItem="uA2-UR-EXU" firstAttribute="top" secondItem="iMP-5A-Dus" secondAttribute="bottom" constant="3" id="E0a-jy-Aag"/>
+                                            <constraint firstItem="ubZ-Dk-GfC" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="E3a-l9-avw"/>
+                                            <constraint firstItem="Sxk-pU-Jme" firstAttribute="top" secondItem="PeW-Vw-MFW" secondAttribute="bottom" constant="32" id="Far-Cn-4Mp"/>
+                                            <constraint firstAttribute="trailing" secondItem="bL3-aN-kKY" secondAttribute="trailing" constant="16" id="GSo-qA-gKD"/>
+                                            <constraint firstAttribute="trailing" secondItem="dLx-hK-RNK" secondAttribute="trailing" constant="16" id="H3N-9Q-B6z"/>
+                                            <constraint firstItem="dsg-lw-cCY" firstAttribute="top" secondItem="EOR-Nv-NzR" secondAttribute="bottom" constant="3" id="Hf1-rf-rfO"/>
+                                            <constraint firstItem="6tb-BX-VOl" firstAttribute="top" secondItem="hNx-Ak-oII" secondAttribute="bottom" constant="32" id="I5q-np-AVz"/>
+                                            <constraint firstItem="3xz-89-NVk" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="Iar-eG-3uK"/>
+                                            <constraint firstItem="oI3-xP-Mob" firstAttribute="top" secondItem="966-aj-9qx" secondAttribute="bottom" constant="32" id="JTA-Ag-Kuu"/>
+                                            <constraint firstItem="966-aj-9qx" firstAttribute="top" secondItem="Gwd-jE-2d8" secondAttribute="bottom" constant="3" id="Jws-Oe-X8c"/>
+                                            <constraint firstAttribute="trailing" secondItem="bOE-vI-CTp" secondAttribute="trailing" constant="16" id="KRb-iW-u9z"/>
+                                            <constraint firstItem="q3D-uS-ZDN" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="KbI-dl-pUK"/>
+                                            <constraint firstItem="3xz-89-NVk" firstAttribute="top" secondItem="PZ7-8R-6wq" secondAttribute="bottom" constant="3" id="L8T-3g-PeH"/>
+                                            <constraint firstItem="oI3-xP-Mob" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="M2h-Va-egR"/>
+                                            <constraint firstAttribute="trailing" secondItem="gtD-L2-NNX" secondAttribute="trailing" constant="16" id="NCD-9v-Vib"/>
+                                            <constraint firstAttribute="height" constant="1691" id="PtP-28-4WZ"/>
+                                            <constraint firstItem="966-aj-9qx" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="QEG-jx-3QW"/>
+                                            <constraint firstItem="iMP-5A-Dus" firstAttribute="top" secondItem="3xz-89-NVk" secondAttribute="bottom" constant="32" id="QGz-FP-X4E"/>
+                                            <constraint firstAttribute="trailing" secondItem="nbM-oc-L2u" secondAttribute="trailing" constant="16" id="RhE-os-H5D"/>
+                                            <constraint firstItem="BUc-3X-Dq5" firstAttribute="top" secondItem="q3D-uS-ZDN" secondAttribute="bottom" constant="32" id="Rmd-sm-CQF"/>
+                                            <constraint firstAttribute="trailing" secondItem="oI3-xP-Mob" secondAttribute="trailing" constant="16" id="S4A-Mh-A9V"/>
+                                            <constraint firstAttribute="trailing" secondItem="uA2-UR-EXU" secondAttribute="trailing" constant="16" id="SAi-Uj-gk4"/>
+                                            <constraint firstItem="gcn-WB-TiS" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="SBQ-Vw-oIK"/>
+                                            <constraint firstItem="q3D-uS-ZDN" firstAttribute="top" secondItem="xs5-Bt-mGh" secondAttribute="bottom" constant="3" id="Sph-Ao-Hrr"/>
+                                            <constraint firstItem="vmy-dj-U7A" firstAttribute="top" secondItem="bOE-vI-CTp" secondAttribute="bottom" constant="32" id="Sqm-fa-B2I"/>
+                                            <constraint firstItem="nbM-oc-L2u" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="Tbc-pg-wT9"/>
+                                            <constraint firstItem="BUc-3X-Dq5" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="Tjw-mr-8Hu"/>
+                                            <constraint firstItem="Q84-Uj-Mci" firstAttribute="top" secondItem="gcn-WB-TiS" secondAttribute="bottom" constant="32" id="Tti-xn-8gj"/>
+                                            <constraint firstItem="PeW-Vw-MFW" firstAttribute="top" secondItem="nbM-oc-L2u" secondAttribute="bottom" constant="3" id="ULN-CX-CLv"/>
+                                            <constraint firstAttribute="trailing" secondItem="3xz-89-NVk" secondAttribute="trailing" constant="16" id="UYW-Ud-bQj"/>
+                                            <constraint firstItem="2Yx-Ti-K2k" firstAttribute="top" secondItem="vmy-dj-U7A" secondAttribute="bottom" constant="3" id="VLx-HP-LCj"/>
+                                            <constraint firstAttribute="trailing" secondItem="BUc-3X-Dq5" secondAttribute="trailing" constant="16" id="VfL-WV-Mfi"/>
+                                            <constraint firstItem="hNx-Ak-oII" firstAttribute="top" secondItem="v54-1I-AlK" secondAttribute="bottom" constant="3" id="XIi-gb-EjT"/>
+                                            <constraint firstItem="xs5-Bt-mGh" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="XXh-91-7Ww"/>
+                                            <constraint firstItem="kvJ-WN-mDw" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="Ztj-Bn-FoL"/>
+                                            <constraint firstAttribute="trailing" secondItem="2Ck-PO-6fH" secondAttribute="trailing" constant="16" id="Zxr-ZU-ajW"/>
+                                            <constraint firstItem="M7M-vC-6Eu" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="a8A-jA-qKX"/>
+                                            <constraint firstItem="v54-1I-AlK" firstAttribute="top" secondItem="SI3-wA-sVn" secondAttribute="bottom" constant="32" id="aeG-qR-ftJ"/>
+                                            <constraint firstItem="SI3-wA-sVn" firstAttribute="top" secondItem="1gd-w8-ELw" secondAttribute="bottom" constant="3" id="cWl-24-96d"/>
+                                            <constraint firstItem="kvJ-WN-mDw" firstAttribute="top" secondItem="6tb-BX-VOl" secondAttribute="bottom" constant="3" id="cbH-M3-t5Q"/>
+                                            <constraint firstItem="gtD-L2-NNX" firstAttribute="top" secondItem="Mo9-hs-BOb" secondAttribute="top" id="d65-T5-O1g"/>
+                                            <constraint firstItem="hNx-Ak-oII" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="dPg-Oz-6Q7"/>
+                                            <constraint firstItem="PZ7-8R-6wq" firstAttribute="top" secondItem="bL3-aN-kKY" secondAttribute="bottom" constant="32" id="eJS-Ke-Ibi"/>
+                                            <constraint firstItem="2Yx-Ti-K2k" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="eUV-3n-eLw"/>
+                                            <constraint firstItem="dsg-lw-cCY" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="eZg-7g-SCT"/>
+                                            <constraint firstItem="Gwd-jE-2d8" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="ebO-iS-Dbi"/>
+                                            <constraint firstAttribute="trailing" secondItem="ubZ-Dk-GfC" secondAttribute="trailing" constant="16" id="f8E-cQ-pAu"/>
+                                            <constraint firstItem="bOE-vI-CTp" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="fKy-0b-7Bi"/>
+                                            <constraint firstItem="xs5-Bt-mGh" firstAttribute="top" secondItem="Guh-j4-npc" secondAttribute="bottom" constant="3" id="gd8-nx-q7H"/>
+                                            <constraint firstAttribute="trailing" secondItem="gcn-WB-TiS" secondAttribute="trailing" constant="16" id="gdb-Ek-Qxu"/>
+                                            <constraint firstItem="gcn-WB-TiS" firstAttribute="top" secondItem="eZi-KF-nVP" secondAttribute="bottom" constant="3" id="gtg-xH-Hpx"/>
+                                            <constraint firstAttribute="trailing" secondItem="P4q-0w-mIB" secondAttribute="trailing" constant="16" id="h24-FJ-ZbF"/>
+                                            <constraint firstAttribute="trailing" secondItem="rbW-ny-9Da" secondAttribute="trailing" constant="16" id="hCE-Nh-Mej"/>
+                                            <constraint firstItem="uA2-UR-EXU" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="iAu-xx-5CT"/>
+                                            <constraint firstItem="2Ck-PO-6fH" firstAttribute="top" secondItem="U8E-yC-fDx" secondAttribute="bottom" constant="3" id="iMN-1C-B0r"/>
+                                            <constraint firstAttribute="trailing" secondItem="M7M-vC-6Eu" secondAttribute="trailing" constant="16" id="jAe-wH-W7k"/>
+                                            <constraint firstItem="P4q-0w-mIB" firstAttribute="top" secondItem="rbW-ny-9Da" secondAttribute="bottom" constant="3" id="jsZ-s6-Ify"/>
+                                            <constraint firstItem="eZi-KF-nVP" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="kyc-3y-oMV"/>
+                                            <constraint firstItem="PeW-Vw-MFW" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="m1L-Je-IwM"/>
+                                            <constraint firstAttribute="trailing" secondItem="966-aj-9qx" secondAttribute="trailing" constant="16" id="mJD-il-Lza"/>
+                                            <constraint firstAttribute="trailing" secondItem="SI3-wA-sVn" secondAttribute="trailing" constant="16" id="mWz-Cy-QfW"/>
+                                            <constraint firstItem="EOR-Nv-NzR" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="n7U-6Y-nRq"/>
+                                            <constraint firstItem="U8E-yC-fDx" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="o1B-B6-PO1"/>
+                                            <constraint firstItem="M7M-vC-6Eu" firstAttribute="top" secondItem="BUc-3X-Dq5" secondAttribute="bottom" constant="3" id="owH-ch-gMt"/>
+                                            <constraint firstAttribute="trailing" secondItem="EOR-Nv-NzR" secondAttribute="trailing" constant="16" id="pIJ-oM-vFv"/>
+                                            <constraint firstAttribute="trailing" secondItem="Gwd-jE-2d8" secondAttribute="trailing" constant="16" id="rTc-Cv-YwX"/>
+                                            <constraint firstItem="dLx-hK-RNK" firstAttribute="top" secondItem="ubZ-Dk-GfC" secondAttribute="bottom" constant="3" id="rdZ-l6-RrB"/>
+                                            <constraint firstItem="Gwd-jE-2d8" firstAttribute="top" secondItem="gtD-L2-NNX" secondAttribute="bottom" constant="3" id="rdx-9R-pTa"/>
+                                            <constraint firstItem="PZ7-8R-6wq" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="rxS-Ny-0az"/>
+                                            <constraint firstItem="rbW-ny-9Da" firstAttribute="top" secondItem="uA2-UR-EXU" secondAttribute="bottom" constant="32" id="sG5-Pc-DWz"/>
+                                            <constraint firstAttribute="trailing" secondItem="Q84-Uj-Mci" secondAttribute="trailing" constant="16" id="spf-98-jLv"/>
+                                            <constraint firstItem="SI3-wA-sVn" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="t6u-Q3-K5p"/>
+                                            <constraint firstItem="gtD-L2-NNX" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="tbj-Ep-7c7"/>
+                                            <constraint firstAttribute="trailing" secondItem="eZi-KF-nVP" secondAttribute="trailing" constant="16" id="uYq-1F-oK1"/>
+                                            <constraint firstItem="bL3-aN-kKY" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="v6p-YL-3Yy"/>
+                                            <constraint firstAttribute="trailing" secondItem="U8E-yC-fDx" secondAttribute="trailing" constant="16" id="vhi-GZ-ge1"/>
+                                            <constraint firstItem="Sxk-pU-Jme" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="vqx-Yh-Kdn"/>
+                                            <constraint firstAttribute="trailing" secondItem="q3D-uS-ZDN" secondAttribute="trailing" constant="16" id="waQ-vN-0IQ"/>
+                                            <constraint firstItem="TWm-oe-NTV" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="wkU-qS-F3D"/>
+                                            <constraint firstAttribute="trailing" secondItem="kvJ-WN-mDw" secondAttribute="trailing" constant="16" id="wyl-TK-bEn"/>
+                                            <constraint firstItem="Q84-Uj-Mci" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="xX8-o6-yxo"/>
+                                            <constraint firstAttribute="trailing" secondItem="PeW-Vw-MFW" secondAttribute="trailing" constant="16" id="y72-XO-92U"/>
+                                            <constraint firstItem="v54-1I-AlK" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="yAh-7p-1C8"/>
+                                            <constraint firstItem="bOE-vI-CTp" firstAttribute="top" secondItem="M7M-vC-6Eu" secondAttribute="bottom" constant="3" id="yhs-Ir-rjr"/>
+                                            <constraint firstAttribute="trailing" secondItem="dsg-lw-cCY" secondAttribute="trailing" constant="16" id="ywQ-tx-nDK"/>
+                                            <constraint firstItem="1gd-w8-ELw" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="zXD-1D-iwt"/>
+                                            <constraint firstAttribute="trailing" secondItem="vmy-dj-U7A" secondAttribute="trailing" constant="16" id="za0-H6-u5X"/>
+                                            <constraint firstItem="dLx-hK-RNK" firstAttribute="leading" secondItem="Mo9-hs-BOb" secondAttribute="leading" constant="16" id="zr6-1Z-IwK"/>
+                                            <constraint firstItem="U8E-yC-fDx" firstAttribute="top" secondItem="oI3-xP-Mob" secondAttribute="bottom" constant="3" id="zsB-6e-m3X"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="9vE-cE-qah"/>
-                                    <constraint firstAttribute="width" constant="42" id="a2F-Ue-8Y3"/>
+                                    <constraint firstItem="Mo9-hs-BOb" firstAttribute="centerX" secondItem="ZH2-Uh-Bq3" secondAttribute="centerX" id="RiR-LM-IIb"/>
+                                    <constraint firstItem="Mo9-hs-BOb" firstAttribute="top" secondItem="ZH2-Uh-Bq3" secondAttribute="top" constant="16" id="YmO-ZY-LDs"/>
+                                    <constraint firstItem="Mo9-hs-BOb" firstAttribute="trailing" secondItem="ZH2-Uh-Bq3" secondAttribute="trailingMargin" constant="8" id="n41-ux-heH"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mo9-hs-BOb" secondAttribute="bottom" constant="169" id="rl6-ps-deV"/>
+                                    <constraint firstItem="Mo9-hs-BOb" firstAttribute="leading" secondItem="ZH2-Uh-Bq3" secondAttribute="leading" id="yCg-WT-k1D"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SbS-VW-KUn" firstAttribute="top" secondItem="UgC-cK-wex" secondAttribute="bottom" constant="32" id="AKd-Gq-XW0"/>
-                            <constraint firstItem="SbS-VW-KUn" firstAttribute="leading" secondItem="JDh-4N-z7V" secondAttribute="leadingMargin" constant="25" id="y2p-Pm-mFt"/>
+                            <constraint firstItem="ZH2-Uh-Bq3" firstAttribute="bottom" secondItem="24I-b7-ON0" secondAttribute="top" id="X3y-yJ-oiv"/>
+                            <constraint firstItem="ZH2-Uh-Bq3" firstAttribute="top" secondItem="UgC-cK-wex" secondAttribute="bottom" constant="12" id="m9s-uK-2e1"/>
+                            <constraint firstItem="ZH2-Uh-Bq3" firstAttribute="leading" secondItem="JDh-4N-z7V" secondAttribute="leadingMargin" constant="-20" id="sU8-0n-ZPh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZH2-Uh-Bq3" secondAttribute="trailing" constant="-29" id="tme-jw-oHt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Ônibus" id="wqG-PB-aMA"/>
+                    <navigationItem key="navigationItem" title="Horários" id="wqG-PB-aMA"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="2000"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pY-f5-N87" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="368.80000000000001" y="-727.28635682158927"/>
+            <point key="canvasLocation" x="1943.4375" y="-800"/>
         </scene>
         <!--Bares/Restaurantes-->
         <scene sceneID="rbl-Pi-etU">
             <objects>
-                <viewController storyboardIdentifier="BaresViewController" id="8nQ-69-rg0" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BaresViewController" id="8nQ-69-rg0" customClass="BarViewController" customModule="miguelopolis" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VeK-4F-Zdj"/>
                         <viewControllerLayoutGuide type="bottom" id="RkH-e2-owI"/>
@@ -240,11 +597,129 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bares restaurantes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vo5-Ar-Gah">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Qrm-QL-Ryf">
+                                <rect key="frame" x="16" y="72" width="343" height="571"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1JH-dr-HxS">
+                                    <size key="itemSize" width="130" height="210"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="1WZ-GK-EtG">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="210"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="210"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Urq-xY-QLq">
+                                        <rect key="frame" x="213" y="0.0" width="130" height="210"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="210"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qrm-QL-Ryf" firstAttribute="leading" secondItem="F5S-Lk-2qI" secondAttribute="leading" constant="16" id="3F4-Vz-3jO"/>
+                            <constraint firstAttribute="trailing" secondItem="Qrm-QL-Ryf" secondAttribute="trailing" constant="16" id="TaL-8F-zH5"/>
+                            <constraint firstItem="Qrm-QL-Ryf" firstAttribute="top" secondItem="VeK-4F-Zdj" secondAttribute="bottom" constant="8" id="XGj-Jp-tpr"/>
+                            <constraint firstItem="RkH-e2-owI" firstAttribute="top" secondItem="Qrm-QL-Ryf" secondAttribute="bottom" constant="24" id="tbJ-7u-Bdr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bares/Restaurantes" id="TLJ-CK-slt"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Qrm-QL-Ryf" id="9gY-AX-0X8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7lW-dg-5ME" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="288.80000000000001" y="791.15442278860576"/>
+        </scene>
+        <!--Lanchonetes/Salgadarias-->
+        <scene sceneID="w2u-IL-ezH">
+            <objects>
+                <viewController storyboardIdentifier="LanchonetesViewController" id="gQO-uc-jAC" customClass="LanchoneteViewController" customModule="miguelopolis" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8PT-O2-H8P"/>
+                        <viewControllerLayoutGuide type="bottom" id="mgx-8M-7fq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hlg-IC-IUw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1QK-Zy-pXg">
+                                <rect key="frame" x="16" y="72" width="343" height="571"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2v1-Hk-6tn">
+                                    <size key="itemSize" width="130" height="210"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4AD-aB-9hQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="210"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="210"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ngB-ox-voe">
+                                        <rect key="frame" x="213" y="0.0" width="130" height="210"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="210"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1QK-Zy-pXg" firstAttribute="leading" secondItem="hlg-IC-IUw" secondAttribute="leading" constant="16" id="PWM-Qj-HSq"/>
+                            <constraint firstItem="1QK-Zy-pXg" firstAttribute="top" secondItem="8PT-O2-H8P" secondAttribute="bottom" constant="8" id="Qsb-xq-ssF"/>
+                            <constraint firstItem="mgx-8M-7fq" firstAttribute="top" secondItem="1QK-Zy-pXg" secondAttribute="bottom" constant="24" id="bfw-Jf-UPQ"/>
+                            <constraint firstAttribute="trailing" secondItem="1QK-Zy-pXg" secondAttribute="trailing" constant="16" id="dFn-hf-avv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Lanchonetes/Salgadarias" id="B4A-9u-Tlq"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <connections>
+                        <outlet property="collectionView" destination="1QK-Zy-pXg" id="oGV-aj-tT0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWo-I3-cyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1111" y="659"/>
+        </scene>
+        <!--Lojas-->
+        <scene sceneID="ZL4-VP-pj5">
+            <objects>
+                <viewController storyboardIdentifier="LojasViewController" id="S45-6Z-Wbc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="snx-KU-L3Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="rws-2G-uPy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A3J-bA-2q3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lojas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILi-bd-kY9">
                                 <rect key="frame" x="41" y="96" width="283" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Dv8-b2-lNP"/>
-                                    <constraint firstAttribute="width" constant="42" id="qbN-92-OeX"/>
+                                    <constraint firstAttribute="width" constant="42" id="DXE-ch-gVz"/>
+                                    <constraint firstAttribute="height" constant="21" id="TxX-Oa-Qxp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -253,16 +728,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Vo5-Ar-Gah" firstAttribute="leading" secondItem="F5S-Lk-2qI" secondAttribute="leadingMargin" constant="25" id="G5A-cr-dM9"/>
-                            <constraint firstItem="Vo5-Ar-Gah" firstAttribute="top" secondItem="VeK-4F-Zdj" secondAttribute="bottom" constant="32" id="KUV-YO-97z"/>
+                            <constraint firstItem="ILi-bd-kY9" firstAttribute="leading" secondItem="A3J-bA-2q3" secondAttribute="leadingMargin" constant="25" id="7g6-hT-YUP"/>
+                            <constraint firstItem="ILi-bd-kY9" firstAttribute="top" secondItem="snx-KU-L3Z" secondAttribute="bottom" constant="32" id="7o9-4H-6bF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Bares/Restaurantes" id="TLJ-CK-slt"/>
+                    <navigationItem key="navigationItem" title="Lojas" id="P2g-fQ-X98"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7lW-dg-5ME" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aGF-wo-pNk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="368.80000000000001" y="-1397.4512743628186"/>
+            <point key="canvasLocation" x="1110" y="1373"/>
         </scene>
     </scenes>
     <resources>

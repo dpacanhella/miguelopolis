@@ -17,9 +17,9 @@ protocol MenuItemProtocol {
 
 enum MenuItem: Int, MenuItemProtocol {
     
-    case utilitarios = 0, farmacias, onibus, bares
+    case utilitarios = 0, farmacias, onibus, bares, lanchonetes, lojas
     
-    static let count = 4
+    static let count = 6
     
     func title() -> String {
         switch self {
@@ -31,6 +31,10 @@ enum MenuItem: Int, MenuItemProtocol {
             return String(withCustomIdentifier: StringIdentifier.menuOnibus)
         case .bares:
             return String(withCustomIdentifier: StringIdentifier.menuBares)
+        case .lanchonetes:
+            return String(withCustomIdentifier: StringIdentifier.menuLanchonetes)
+        case .lojas:
+            return String(withCustomIdentifier: StringIdentifier.menuLojas)
         }
     }
     
@@ -46,6 +50,10 @@ enum MenuItem: Int, MenuItemProtocol {
             image = ImageIdentifier.menuOnibus.getImage()
         case .bares:
             image = ImageIdentifier.menuBares.getImage()
+        case .lanchonetes:
+            image = ImageIdentifier.menuLanchonetes.getImage()
+        case .lojas:
+            image = ImageIdentifier.menuLojas.getImage()
         }
         
         image = image.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
@@ -55,13 +63,17 @@ enum MenuItem: Int, MenuItemProtocol {
     func controllerIdentifier() -> ControllerIdentifier {
         switch self {
         case .utilitarios:
-            return .utilitariosViewController
+            return .tipoAnunciosViewController
         case .farmacias:
             return .farmaciasViewController
         case .onibus:
             return .onibusViewController
         case .bares:
             return .baresViewController
+        case .lanchonetes:
+            return .lanchonetesViewController
+        case .lojas:
+            return .lojasViewController
         }
     }
     

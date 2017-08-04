@@ -13,5 +13,6 @@ public class Lanchonete {
     private String nome;
     private String telefone;
     private String imagemLogo;
+    private String whatsapp;
 
 }

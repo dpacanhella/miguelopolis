@@ -22,6 +22,8 @@ enum ImageIdentifier: String, RSCustomIdentifier {
     case menuFarmacias = "menu_farmacias"
     case menuOnibus = "menu_onibus"
     case menuBares = "menu_bares"
+    case menuLanchonetes = "menu_restaurantes"
+    case menuLojas = "menu_lojas"
     
 }
 
