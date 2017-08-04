@@ -2,14 +2,18 @@
 
 # dependencies
 node_modules
+bower_components
 
 # testing
 coverage
 
 # production
 build
+builds
+dist
 
 # misc
 .DS_Store
 .env
+.tmp
 npm-debug.log

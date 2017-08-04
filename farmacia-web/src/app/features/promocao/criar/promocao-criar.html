@@ -1,0 +1,57 @@
+<div class="wrapper wrapper-content animated fadeIn">
+    <div class="page-header">
+        <div class="container">
+            <h1 ng-if="!vm.isEdition">Cadastro de promoção</h1>
+            <h1 ng-if="vm.isEdition">Edição de promoção</h1>
+        </div>
+    </div>
+    <div class="container">
+        <form name="vm.form" class="form-horizontal" novalidate>
+
+            <!-- NOME DO PRODUTO -->
+            <div class="control-group" ng-class="{'has-error': vm.form.nomeProduto.$invalid && vm.form.$submitted}">
+                <label for="nomeProduto" class="control-label"><span>Nome do produto</span> *</label>
+                <div class="controls">
+                    <input class="form-control" type="text" maxlength="30" style="width:350px;" name="nomeProduto" id="nomeProduto" required ng-model="vm.promocao.nomeProduto">
+                    <p class="mg-top10 error" ng-if="vm.form.nomeProduto.$error.required && vm.form.$submitted">Campo obrigatório</p>
+                </div>
+            </div>
+
+            <!-- DESCRIÇÃO -->
+            <div class="control-group" ng-class="{'has-error': vm.form.descricaoProduto.$invalid && vm.form.$submitted}">
+                <label for="descricaoProduto" class="control-label"><span>Descrição</span> *</label>
+                <div class="controls">
+                    <input class="form-control" type="text" maxlength="30" style="width:350px;" name="descricaoProduto" id="descricaoProduto" required ng-model="vm.promocao.descricaoProduto">
+                    <p class="mg-top10 error" ng-if="vm.form.descricaoProduto.$error.required && vm.form.$submitted" class="help-block">Campo obrigatório</p>
+                </div>
+            </div>
+
+            <!-- PREÇO DO PRODUTO -->
+            <div class="control-group" ng-class="{'has-error': vm.form.precoProduto.$invalid && vm.form.$submitted}">
+                <label for="precoProduto" class="control-label"><span>Preço</span> *</label>
+                <div class="controls">
+                    <input class="form-control" type="currency" ui-number-mask placeholder="0,00" maxlength="8" style="width:350px;" name="precoProduto" id="precoProduto" required ng-model="vm.promocao.precoProduto">
+                    <p class="mg-top10 error" ng-if="vm.form.precoProduto.$error.required && vm.form.$submitted" class="help-block">Campo obrigatório</p>
+                </div>
+            </div>
+
+            <!-- FOTO DO PRODUTO -->
+            <div class="control-group" ng-class="{'error': vm.form.fotoProduto.$required && vm.form.$submitted}">
+                <label for="fotoProduto" class="control-label"><span>Foto do produto</span> *</label>
+                <div class="controls">
+                    <input class="form-control" style="width:350px;" type="file" name="fotoProduto" required nv-file-select uploader="vm.uploader"/>
+                    <p class="mg-top10 error" ng-if="vm.form.fotoProduto.$error.required && vm.form.$submitted" class="help-block">Campo obrigatório</p>
+                </div>
+            </div>
+
+            </br>
+            <!-- BUTTONS -->
+            <div class="control-group">
+                <div class="controls">
+                    <button type="button" class="btn input-small" ui-sref="promocao.listar">Cancelar </button>
+                    <button type="button" ng-click="vm.salvar()" class="btn btn-primary input-small">Salvar </button>
+                </div>
+            </div>
+
+        </form>
+    </div>
