@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="lanchonete_cell" id="VBZ-ER-HIe" customClass="LanchoneteCell" customModule="miguelopolis" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="180"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RCd-ao-gRE">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="131"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Restaurante" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2J-RK-eRz">
+                        <rect key="frame" x="5" y="141" width="95" height="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4Z-Yu-suH">
+                        <rect key="frame" x="5" y="163" width="95" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="RCd-ao-gRE" firstAttribute="top" secondItem="VBZ-ER-HIe" secondAttribute="top" id="6xG-ub-KJq"/>
+                <constraint firstItem="RCd-ao-gRE" firstAttribute="leading" secondItem="VBZ-ER-HIe" secondAttribute="leading" id="A6h-JE-7FL"/>
+                <constraint firstItem="m2J-RK-eRz" firstAttribute="leading" secondItem="VBZ-ER-HIe" secondAttribute="leading" constant="5" id="K85-At-CTH"/>
+                <constraint firstItem="t4Z-Yu-suH" firstAttribute="top" secondItem="m2J-RK-eRz" secondAttribute="bottom" constant="5" id="YOD-E2-QYQ"/>
+                <constraint firstItem="t4Z-Yu-suH" firstAttribute="leading" secondItem="VBZ-ER-HIe" secondAttribute="leading" constant="5" id="d3h-hB-8sv"/>
+                <constraint firstAttribute="trailing" secondItem="RCd-ao-gRE" secondAttribute="trailing" id="eSe-pp-5Kp"/>
+                <constraint firstAttribute="trailing" secondItem="t4Z-Yu-suH" secondAttribute="trailing" id="ffN-uv-JXu"/>
+                <constraint firstItem="m2J-RK-eRz" firstAttribute="top" secondItem="RCd-ao-gRE" secondAttribute="bottom" constant="10" id="qEB-1g-ptL"/>
+                <constraint firstAttribute="trailing" secondItem="m2J-RK-eRz" secondAttribute="trailing" id="qZW-ql-GY4"/>
+                <constraint firstAttribute="bottom" secondItem="t4Z-Yu-suH" secondAttribute="bottom" constant="5" id="qnv-4Q-qDR"/>
+            </constraints>
+            <size key="customSize" width="150" height="230"/>
+            <connections>
+                <outlet property="imageLogo" destination="RCd-ao-gRE" id="ycW-cH-cwH"/>
+                <outlet property="labelNome" destination="m2J-RK-eRz" id="0Wf-DH-930"/>
+                <outlet property="lableTelefone" destination="t4Z-Yu-suH" id="R05-k3-BPC"/>
+            </connections>
+            <point key="canvasLocation" x="-214" y="-447"/>
+        </collectionViewCell>
+    </objects>
+</document>

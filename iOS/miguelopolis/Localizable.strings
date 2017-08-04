@@ -16,3 +16,5 @@ menu_utilitarios = "Utilitários";
 menu_farmacias = "Plantão/Farmácias";
 menu_onibus = "Horários de ônibus";
 menu_bares = "Bares/Restaurantes";
+menu_restaurantes = "Lanchonetes/Salgadarias";
+menu_lojas = "Lojas";

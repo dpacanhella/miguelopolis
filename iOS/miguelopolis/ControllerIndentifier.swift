@@ -13,11 +13,13 @@ import RSStarterKit
 
 enum ControllerIdentifier: String, RSCustomIdentifier {
     
-    case utilitariosViewController = "UtilitariosViewController"
+    case tipoAnunciosViewController = "TipoAnunciosViewController"
     case farmaciasViewController = "FarmaciasViewController"
     case onibusViewController = "OnibusViewController"
     case baresViewController = "BaresViewController"
     case slideMenuViewController = "SlideMenuViewController"
+    case lanchonetesViewController = "LanchonetesViewController"
+    case lojasViewController = "LojasViewController"
     
 }
 

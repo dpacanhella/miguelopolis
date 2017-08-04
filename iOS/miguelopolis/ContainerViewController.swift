@@ -22,7 +22,7 @@ class ContainerViewController: SlideMenuController {
             self.leftViewController = controller
         }
         
-        replaceMainControllerWithIdentifier(identifier: ControllerIdentifier.utilitariosViewController)
+        replaceMainControllerWithIdentifier(identifier: ControllerIdentifier.tipoAnunciosViewController)
         
         
         SlideMenuOptions.leftViewWidth = 250.0

@@ -158,7 +158,7 @@ public class LanchoneteAdapter extends RecyclerView.Adapter<LanchoneteAdapter.Vi
         public void populate(Lanchonete lanchonete) {
             txtNome.setText(lanchonete.getNome());
             String lblTelefone = "(016) ";
-            txtTelefone.setText(lblTelefone + lanchonete.getTelefone());
+            txtTelefone.setText(lblTelefone + lanchonete.getWhatsapp());
 
             loadImageFromURL(lanchonete.getImagemLogo().toString());
         }
