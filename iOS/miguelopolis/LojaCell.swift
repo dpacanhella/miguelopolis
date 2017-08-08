@@ -14,8 +14,7 @@ class LojaCell: UICollectionViewCell {
     
     @IBOutlet weak var imageLogo: UIImageView!
     @IBOutlet weak var labelNome: UILabel!
-    @IBOutlet weak var labelDescricao: UILabel!
-    
+    @IBOutlet weak var labelDescricao: UILabel!    
     
     override func awakeFromNib() {
         super.awakeFromNib();

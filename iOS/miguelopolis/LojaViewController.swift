@@ -62,12 +62,6 @@ extension LojaViewController: UICollectionViewDelegate{
     }
 }
 
-//extension LojaViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//    
-//    }
-//}
-
 extension LojaViewController: UICollectionViewDataSource{
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -75,7 +69,6 @@ extension LojaViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return lojaManager.lojas.count
         
     }
@@ -84,7 +77,6 @@ extension LojaViewController: UICollectionViewDataSource{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "loja_cell", for: indexPath) as! LojaCell
         
         let loja = self.lojaManager.lojas[indexPath.row]
-        
         
         cell.setLojas(loja: loja)
         

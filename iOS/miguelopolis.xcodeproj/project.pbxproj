@@ -19,6 +19,7 @@
 		356F34B41F33684000517FF4 /* RestauranteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 356F34B31F33684000517FF4 /* RestauranteCell.xib */; };
 		356F34B61F33689E00517FF4 /* BarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356F34B51F33689E00517FF4 /* BarViewController.swift */; };
 		356F34B81F3369D900517FF4 /* RestauranteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356F34B71F3369D900517FF4 /* RestauranteCell.swift */; };
+		3599DC831F38D7D4004DE257 /* Utilitarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3599DC821F38D7D4004DE257 /* Utilitarios.swift */; };
 		35E0E9621F34AF40002E09BB /* LanchoneteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E0E9611F34AF40002E09BB /* LanchoneteManager.swift */; };
 		35E0E9641F34AF63002E09BB /* Lanchonete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E0E9631F34AF63002E09BB /* Lanchonete.swift */; };
 		35E0E9661F34B0BB002E09BB /* LanchoneteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E0E9651F34B0BB002E09BB /* LanchoneteService.swift */; };
@@ -75,6 +76,7 @@
 		356F34B31F33684000517FF4 /* RestauranteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestauranteCell.xib; sourceTree = "<group>"; };
 		356F34B51F33689E00517FF4 /* BarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarViewController.swift; sourceTree = "<group>"; };
 		356F34B71F3369D900517FF4 /* RestauranteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestauranteCell.swift; sourceTree = "<group>"; };
+		3599DC821F38D7D4004DE257 /* Utilitarios.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilitarios.swift; sourceTree = "<group>"; };
 		35E0E9611F34AF40002E09BB /* LanchoneteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanchoneteManager.swift; sourceTree = "<group>"; };
 		35E0E9631F34AF63002E09BB /* Lanchonete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lanchonete.swift; sourceTree = "<group>"; };
 		35E0E9651F34B0BB002E09BB /* LanchoneteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanchoneteService.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				356F34AB1F3365FF00517FF4 /* Restaurantes.swift */,
 				35E0E9631F34AF63002E09BB /* Lanchonete.swift */,
 				35E0E96D1F34E31E002E09BB /* Loja.swift */,
+				3599DC821F38D7D4004DE257 /* Utilitarios.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				35E0E9621F34AF40002E09BB /* LanchoneteManager.swift in Sources */,
 				4FF182FE1F0D98E300BBC361 /* FarmaciaService.swift in Sources */,
 				35E0E9681F34B851002E09BB /* LanchoneteCell.swift in Sources */,
+				3599DC831F38D7D4004DE257 /* Utilitarios.swift in Sources */,
 				35E0E9701F34EA84002E09BB /* LojaViewController.swift in Sources */,
 				4FAF6AF21F0D6A4C00201D36 /* AppDelegate.swift in Sources */,
 				356F349E1F324FB200517FF4 /* TipoAnuncioCell.swift in Sources */,
