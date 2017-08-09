@@ -21,6 +21,7 @@ PODS:
   - SVProgressHUD (2.0.4)
 
 DEPENDENCIES:
+  - Kingfisher (~> 3.0)
   - Kingfisher (~> 3.2.1)
   - RSStarterKit
   - RSWidgets
@@ -39,6 +40,6 @@ SPEC CHECKSUMS:
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
 
-PODFILE CHECKSUM: b20de41f72e1502f81d921e91b0ca2b0c7464b70
+PODFILE CHECKSUM: 446f46b3ffdc3b72c6176afaf014be3f61759c62
 
 COCOAPODS: 1.3.0.beta.2

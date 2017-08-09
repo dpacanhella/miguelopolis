@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="utilitario_cell" id="JV6-Ix-Kxj" customClass="UtilitarioCell" customModule="miguelopolis" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7a-DV-J3g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="imageplaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Ad3-Fb-pT8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Py2-Vv-kil">
+                                <rect key="frame" x="3" y="93" width="317" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNA-I4-whS">
+                                <rect key="frame" x="3" y="117" width="317" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.51947053109999997" green="0.51947053109999997" blue="0.51947053109999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Py2-Vv-kil" secondAttribute="trailing" id="4ne-tj-lXB"/>
+                            <constraint firstItem="Py2-Vv-kil" firstAttribute="leading" secondItem="I7a-DV-J3g" secondAttribute="leading" constant="3" id="DiF-nm-exn"/>
+                            <constraint firstItem="eNA-I4-whS" firstAttribute="leading" secondItem="I7a-DV-J3g" secondAttribute="leading" constant="3" id="Fym-GW-5I9"/>
+                            <constraint firstItem="Ad3-Fb-pT8" firstAttribute="top" secondItem="I7a-DV-J3g" secondAttribute="top" id="JiG-4G-YId"/>
+                            <constraint firstItem="Py2-Vv-kil" firstAttribute="top" secondItem="Ad3-Fb-pT8" secondAttribute="bottom" constant="5" id="Jtc-cS-Rsi"/>
+                            <constraint firstAttribute="bottom" secondItem="eNA-I4-whS" secondAttribute="bottom" constant="3" id="aLI-Lw-ZCd"/>
+                            <constraint firstAttribute="trailing" secondItem="Ad3-Fb-pT8" secondAttribute="trailing" id="gO4-3L-ut9"/>
+                            <constraint firstItem="Ad3-Fb-pT8" firstAttribute="leading" secondItem="I7a-DV-J3g" secondAttribute="leading" id="kz2-Mb-sGN"/>
+                            <constraint firstAttribute="trailing" secondItem="eNA-I4-whS" secondAttribute="trailing" id="tRZ-1n-Bgx"/>
+                            <constraint firstItem="eNA-I4-whS" firstAttribute="top" secondItem="Py2-Vv-kil" secondAttribute="bottom" constant="3" id="tbm-Zo-6tq"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="I7a-DV-J3g" secondAttribute="trailing" id="LFe-QZ-sFU"/>
+                <constraint firstAttribute="bottom" secondItem="I7a-DV-J3g" secondAttribute="bottom" id="LfE-eH-HlV"/>
+                <constraint firstItem="I7a-DV-J3g" firstAttribute="top" secondItem="JV6-Ix-Kxj" secondAttribute="top" id="WGG-0X-XUk"/>
+                <constraint firstItem="I7a-DV-J3g" firstAttribute="leading" secondItem="JV6-Ix-Kxj" secondAttribute="leading" id="edw-8h-eLR"/>
+            </constraints>
+            <size key="customSize" width="388" height="162"/>
+            <connections>
+                <outlet property="imageLogo" destination="Ad3-Fb-pT8" id="yrC-06-9cD"/>
+                <outlet property="labelDescricao" destination="eNA-I4-whS" id="qnR-T5-Slf"/>
+                <outlet property="labelNome" destination="Py2-Vv-kil" id="RHR-F7-0xh"/>
+            </connections>
+            <point key="canvasLocation" x="-654" y="-329.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="imageplaceholder" width="200" height="200"/>
+    </resources>
+</document>

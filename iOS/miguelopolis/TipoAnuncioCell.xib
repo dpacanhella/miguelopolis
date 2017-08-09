@@ -12,25 +12,25 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tipoAnuncio_cell" selectionStyle="default" indentationWidth="10" rowHeight="20" id="mIh-m8-Tiq" customClass="TipoAnuncioCell" customModule="miguelopolis" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="380" height="29"/>
+            <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mIh-m8-Tiq" id="NOa-g8-29I">
-                <rect key="frame" x="0.0" y="0.0" width="380" height="29"/>
+                <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ak-Ie-fkV">
-                        <rect key="frame" x="29" y="28" width="351" height="1"/>
+                        <rect key="frame" x="29" y="34" width="351" height="1"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMv-MR-9hr">
-                        <rect key="frame" x="355" y="6" width="9" height="17"/>
+                        <rect key="frame" x="355" y="10" width="9" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRU-Pm-auy">
-                        <rect key="frame" x="29" y="3" width="48" height="20"/>
+                        <rect key="frame" x="29" y="7" width="48" height="20"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="nMv-MR-9hr" secondAttribute="trailing" constant="16" id="0cO-OT-PDz"/>
                     <constraint firstItem="gRU-Pm-auy" firstAttribute="leading" secondItem="NOa-g8-29I" secondAttribute="leading" constant="29" id="9zf-2y-5MJ"/>
-                    <constraint firstItem="gRU-Pm-auy" firstAttribute="top" secondItem="NOa-g8-29I" secondAttribute="top" constant="3" id="hNu-cr-LSR"/>
+                    <constraint firstItem="gRU-Pm-auy" firstAttribute="top" secondItem="NOa-g8-29I" secondAttribute="top" constant="7" id="hNu-cr-LSR"/>
                     <constraint firstItem="nMv-MR-9hr" firstAttribute="bottom" secondItem="gRU-Pm-auy" secondAttribute="bottom" id="zCu-Gq-4iW"/>
                 </constraints>
             </tableViewCellContentView>

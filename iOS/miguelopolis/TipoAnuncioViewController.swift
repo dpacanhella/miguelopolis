@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import SVProgressHUD
+import RSWidgets
+import RSStarterKit
 
 class TipoAnuncioViewController: UIViewController{
     
@@ -60,7 +62,33 @@ class TipoAnuncioViewController: UIViewController{
 extension TipoAnuncioViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        performSegue(withIdentifier: "UtilitariosViewController", sender: self)
+
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        let proximaTela =  segue.destination as! UtilitarioViewController
+        
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            
+            let tipoAnuncio = self.tipoAnuncioManager.tiposAnuncios[indexPath.row]
+            
+            proximaTela.tipoAnuncio = tipoAnuncio
+        }
+    }
+}
+
+
+
+
+//MARK:  - SegueHandlerType
+extension TipoAnuncioViewController: SegueHandlerType {
+    
+    // Control all segues
+    enum SegueIdentifier: String {
+        case utilitarioViewController
+    }
+    
 }
 
 extension TipoAnuncioViewController: UITableViewDataSource{
@@ -84,5 +112,7 @@ extension TipoAnuncioViewController: UITableViewDataSource{
         
         return cell
     }
+    
+    
     
 }

@@ -20,6 +20,7 @@ enum ControllerIdentifier: String, RSCustomIdentifier {
     case slideMenuViewController = "SlideMenuViewController"
     case lanchonetesViewController = "LanchonetesViewController"
     case lojasViewController = "LojasViewController"
+    case utilitariosViewController = "UtilitariosViewController"
     
 }
 
