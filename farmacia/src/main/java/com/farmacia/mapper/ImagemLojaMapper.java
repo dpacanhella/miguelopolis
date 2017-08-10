@@ -22,7 +22,8 @@ public class ImagemLojaMapper extends BaseMapper<ImagemLoja, ImagemLojaDTO> {
 //        dto.setLojaDTO(lojaMapper.toDTO(entity.getLoja()));
         dto.setDescricao(entity.getDescricaoProduto());
         dto.setImagem(entity.getImagemProduto());
-        dto.setImage64(entity.getImage64());
+        dto.setImagem(entity.getImagemProduto());
+        dto.setImage64("http://45.55.209.136/assets/imagens/" + entity.getImage64());
 
         return dto;
     }

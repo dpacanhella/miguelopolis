@@ -23,8 +23,13 @@ public class PromocaoMapper extends BaseMapper<Promocao, PromocaoDTO> {
         dto.setNomeProduto(entity.getNomeProduto());
         dto.setPrecoInicial(entity.getPrecoInicial());
         dto.setPrecoFinal(entity.getPrecoFinal());
-//        dto.setFarmaciaDTO(farmaciaMapper.toDTO(entity.getFarmacia()));
-        dto.setImage64(entity.getImage64());
+        dto.setImagemProduto(entity.getImagemProduto());
+        
+        if(entity.getId() < 7){
+            dto.setImage64(entity.getImagemProduto()); 
+        } else {
+            dto.setImage64("http://45.55.209.136/assets/promocoes/" + entity.getImagemProduto());            
+        }
         
         return dto;
     }

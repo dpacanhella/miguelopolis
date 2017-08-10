@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35299EEB1F3C96BC0057330F /* PromocoesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35299EEA1F3C96BC0057330F /* PromocoesManager.swift */; };
+		35299EED1F3C96ED0057330F /* PromocoesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35299EEC1F3C96ED0057330F /* PromocoesService.swift */; };
+		35299EEF1F3C9F5A0057330F /* PromocaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35299EEE1F3C9F5A0057330F /* PromocaoViewController.swift */; };
+		35299EF11F3CA6740057330F /* PromocaoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35299EF01F3CA6740057330F /* PromocaoCell.xib */; };
+		35299EF31F3CA6AC0057330F /* PromocaoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35299EF21F3CA6AC0057330F /* PromocaoCell.swift */; };
+		35299EF51F3CDAEA0057330F /* DetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35299EF41F3CDAEA0057330F /* DetalhesViewController.swift */; };
 		356F349C1F324E8A00517FF4 /* TipoAnuncio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356F349B1F324E8A00517FF4 /* TipoAnuncio.swift */; };
 		356F349E1F324FB200517FF4 /* TipoAnuncioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356F349D1F324FB200517FF4 /* TipoAnuncioCell.swift */; };
 		356F34A01F32547400517FF4 /* TipoAnuncioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356F349F1F32547400517FF4 /* TipoAnuncioService.swift */; };
@@ -69,6 +75,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35299EEA1F3C96BC0057330F /* PromocoesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromocoesManager.swift; sourceTree = "<group>"; };
+		35299EEC1F3C96ED0057330F /* PromocoesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromocoesService.swift; sourceTree = "<group>"; };
+		35299EEE1F3C9F5A0057330F /* PromocaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromocaoViewController.swift; sourceTree = "<group>"; };
+		35299EF01F3CA6740057330F /* PromocaoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PromocaoCell.xib; sourceTree = "<group>"; };
+		35299EF21F3CA6AC0057330F /* PromocaoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromocaoCell.swift; sourceTree = "<group>"; };
+		35299EF41F3CDAEA0057330F /* DetalhesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhesViewController.swift; sourceTree = "<group>"; };
 		356F349B1F324E8A00517FF4 /* TipoAnuncio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipoAnuncio.swift; sourceTree = "<group>"; };
 		356F349D1F324FB200517FF4 /* TipoAnuncioCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipoAnuncioCell.swift; sourceTree = "<group>"; };
 		356F349F1F32547400517FF4 /* TipoAnuncioService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipoAnuncioService.swift; sourceTree = "<group>"; };
@@ -153,6 +165,15 @@
 				C799D7C9634F09BD736C864C /* Pods-miguelopolis.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		35299EE71F3C938C0057330F /* AbaFarmacia */ = {
+			isa = PBXGroup;
+			children = (
+				35299EEE1F3C9F5A0057330F /* PromocaoViewController.swift */,
+				35299EF41F3CDAEA0057330F /* DetalhesViewController.swift */,
+			);
+			name = AbaFarmacia;
 			sourceTree = "<group>";
 		};
 		4FAF6AC61F0D6A4C00201D36 = {
@@ -294,6 +315,7 @@
 				35E0E9671F34B851002E09BB /* LanchoneteCell.swift */,
 				35E0E9751F34ECC6002E09BB /* LojaCell.swift */,
 				35B289F91F3B461600307C57 /* UtilitarioCell.swift */,
+				35299EF21F3CA6AC0057330F /* PromocaoCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -308,6 +330,7 @@
 				35E0E96B1F34B98E002E09BB /* LanchoneteCell.xib */,
 				35E0E9731F34EAEB002E09BB /* LojaCell.xib */,
 				35B289F71F3B45AE00307C57 /* UtilitarioCell.xib */,
+				35299EF01F3CA6740057330F /* PromocaoCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -321,6 +344,7 @@
 				35E0E9651F34B0BB002E09BB /* LanchoneteService.swift */,
 				35E0E9791F34ED63002E09BB /* LojaService.swift */,
 				35B289FF1F3B4A2200307C57 /* UtilitarioService.swift */,
+				35299EEC1F3C96ED0057330F /* PromocoesService.swift */,
 			);
 			name = "Restfull Services";
 			sourceTree = "<group>";
@@ -328,6 +352,7 @@
 		4FF182FF1F0D991D00BBC361 /* Farmacia */ = {
 			isa = PBXGroup;
 			children = (
+				35299EE71F3C938C0057330F /* AbaFarmacia */,
 				4FF183001F0D992800BBC361 /* FarmaciaViewController.swift */,
 				356F34A91F325BCD00517FF4 /* TipoAnuncioViewController.swift */,
 				356F34B51F33689E00517FF4 /* BarViewController.swift */,
@@ -347,6 +372,7 @@
 				35E0E9611F34AF40002E09BB /* LanchoneteManager.swift */,
 				35E0E9771F34ED48002E09BB /* LojaManager.swift */,
 				35B289FD1F3B49CF00307C57 /* UtilitarioManager.swift */,
+				35299EEA1F3C96BC0057330F /* PromocoesManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -436,6 +462,7 @@
 				35B289F81F3B45AF00307C57 /* UtilitarioCell.xib in Resources */,
 				4FAF6AF81F0D6A4C00201D36 /* Assets.xcassets in Resources */,
 				4FAF6AEC1F0D6A4C00201D36 /* Main.storyboard in Resources */,
+				35299EF11F3CA6740057330F /* PromocaoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,11 +547,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35299EF51F3CDAEA0057330F /* DetalhesViewController.swift in Sources */,
 				4FAF6AE31F0D6A4C00201D36 /* UserDefaultsIdentifiers.swift in Sources */,
 				356F34A01F32547400517FF4 /* TipoAnuncioService.swift in Sources */,
 				356F34AE1F33676300517FF4 /* RestauranteManager.swift in Sources */,
 				356F34B61F33689E00517FF4 /* BarViewController.swift in Sources */,
 				35E0E9661F34B0BB002E09BB /* LanchoneteService.swift in Sources */,
+				35299EEF1F3C9F5A0057330F /* PromocaoViewController.swift in Sources */,
 				35E0E9781F34ED48002E09BB /* LojaManager.swift in Sources */,
 				4FF182F01F0D80E500BBC361 /* MigueColors.swift in Sources */,
 				4FAF6AD71F0D6A4C00201D36 /* StringIdentifier.swift in Sources */,
@@ -536,6 +565,8 @@
 				35B28A001F3B4A2200307C57 /* UtilitarioService.swift in Sources */,
 				35E0E9681F34B851002E09BB /* LanchoneteCell.swift in Sources */,
 				3599DC831F38D7D4004DE257 /* Utilitarios.swift in Sources */,
+				35299EED1F3C96ED0057330F /* PromocoesService.swift in Sources */,
+				35299EEB1F3C96BC0057330F /* PromocoesManager.swift in Sources */,
 				35E0E9701F34EA84002E09BB /* LojaViewController.swift in Sources */,
 				4FAF6AF21F0D6A4C00201D36 /* AppDelegate.swift in Sources */,
 				356F349E1F324FB200517FF4 /* TipoAnuncioCell.swift in Sources */,
@@ -546,6 +577,7 @@
 				356F34B81F3369D900517FF4 /* RestauranteCell.swift in Sources */,
 				4FF182F91F0D972B00BBC361 /* Farmacia.swift in Sources */,
 				35B289FE1F3B49CF00307C57 /* UtilitarioManager.swift in Sources */,
+				35299EF31F3CA6AC0057330F /* PromocaoCell.swift in Sources */,
 				4FF182FB1F0D983600BBC361 /* Promocao.swift in Sources */,
 				4FAF6ADB1F0D6A4C00201D36 /* ControllerIndentifier.swift in Sources */,
 				4FF182EE1F0D804800BBC361 /* SlideMenuCell.swift in Sources */,

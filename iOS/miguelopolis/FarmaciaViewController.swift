@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import SVProgressHUD
+import RSWidgets
+import RSStarterKit
 
 class FarmaciaViewController: UIViewController{
     
@@ -60,6 +62,21 @@ class FarmaciaViewController: UIViewController{
 extension FarmaciaViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        performSegue(withIdentifier: "DetalhesViewController", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        let tabBar =  segue.destination as! UITabBarController
+        let telaPromocoes = tabBar.viewControllers![0] as! PromocaoViewController
+        let telaDetalhes = tabBar.viewControllers![1] as! DetalhesViewController
+        
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            
+            let farmacia = self.farmaciaManager.farmacias[indexPath.row]
+            
+            telaPromocoes.farmacia = farmacia
+            telaDetalhes.farmacia = farmacia
+        }
     }
 }
 
