@@ -28,7 +28,7 @@ public class PromocaoMapper extends BaseMapper<Promocao, PromocaoDTO> {
         if(entity.getId() < 7){
             dto.setImage64(entity.getImagemProduto()); 
         } else {
-            dto.setImage64("http://45.55.209.136/assets/promocoes/" + entity.getImagemProduto());            
+            dto.setImage64("http://guiamiguelopolis.com/assets/promocoes/" + entity.getImagemProduto());            
         }
         
         return dto;

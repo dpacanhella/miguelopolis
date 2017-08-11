@@ -31,7 +31,7 @@ public class FarmaciaMapper extends BaseMapper<Farmacia, FarmaciaDTO> {
             promDTO.setPrecoInicial(promocao.getPrecoInicial());
             promDTO.setPrecoFinal(promocao.getPrecoFinal());
             promDTO.setImagemProduto(promocao.getImagemProduto());
-            promDTO.setImage64("http://45.55.209.136/assets/promocoes/" + promocao.getImagemProduto());
+            promDTO.setImage64("http://guiamiguelopolis.com/assets/promocoes/" + promocao.getImagemProduto());
             
             listPromocao.add(promDTO);
         }
