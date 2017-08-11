@@ -44,10 +44,26 @@ class DetalhesViewController: UIViewController{
         labelTelefone.text = "\(telefone) \(farmacia.telefone!)"
         labelWhats.text = "\(whatsApp) \(farmacia.whatsApp!)"
         
-        btnTelefone.n
-        
         let url = URL(string: farmacia.imagem!)
         imageEstabelecimento.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "imageplaceholder"), options: [.transition(.fade(0.5))])
     
     }
+    
+    @IBAction func btnCall(_ sender: Any) {
+        
+        let descricao = farmacia.telefone!
+        let telefone = descricao.replacingOccurrences(of: " ", with: "")
+
+        if let url = URL(string: "tel:\(telefone)"), UIApplication.shared.canOpenURL(url) {
+            
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+
+    
+    }
+    
 }

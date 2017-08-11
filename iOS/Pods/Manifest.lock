@@ -17,6 +17,9 @@ PODS:
     - RealmSwift
     - SVProgressHUD (~> 2.0.3)
   - RSWidgets (3.10.0)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
   - SlideMenuControllerSwift (3.0.1)
   - SVProgressHUD (2.0.4)
 
@@ -25,6 +28,7 @@ DEPENDENCIES:
   - Kingfisher (~> 3.2.1)
   - RSStarterKit
   - RSWidgets
+  - SDWebImage (~> 4.0)
   - SlideMenuControllerSwift (~> 3.0.0)
 
 SPEC CHECKSUMS:
@@ -37,9 +41,10 @@ SPEC CHECKSUMS:
   RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
   RSStarterKit: 7edc242775d5bd026e0ecd7b0f81923e4d2fa0ab
   RSWidgets: a5595bc96ea43bf9388304d2c72bf047995af615
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
 
-PODFILE CHECKSUM: 446f46b3ffdc3b72c6176afaf014be3f61759c62
+PODFILE CHECKSUM: b36747baa55d94f461afcfd5e8887e5702ef8286
 
 COCOAPODS: 1.3.0.beta.2

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9EC956A679DEB649F6A942499BC3843D'
+               BlueprintIdentifier = '7EB842E5E0AC12F84370845C330056BC'
                BlueprintName = 'RSWidgets'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'RSWidgets.framework'>

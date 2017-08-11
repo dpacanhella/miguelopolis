@@ -13,5 +13,5 @@ target 'miguelopolis' do
     pod 'Kingfisher', '~> 3.2.1'
     pod 'SlideMenuControllerSwift', '~> 3.0.0'
     pod 'Kingfisher', '~> 3.0'
-
+    
 end

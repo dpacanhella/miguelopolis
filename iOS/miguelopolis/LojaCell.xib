@@ -21,34 +21,34 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4O-Wz-jis">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="135"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7fJ-IN-QOh">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2W-pG-8iX">
-                                <rect key="frame" x="3" y="93" width="317" height="21"/>
+                                <rect key="frame" x="3" y="95" width="317" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPe-NV-PP4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPe-NV-PP4">
                                 <rect key="frame" x="3" y="117" width="317" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.51947053108808294" green="0.51947053108808294" blue="0.51947053108808294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="imageplaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="A3I-Iq-2Bx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.98917179399999999" green="0.98917179399999999" blue="0.98917179399999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="a2W-pG-8iX" secondAttribute="trailing" id="4Q3-xR-IRc"/>
-                            <constraint firstItem="7fJ-IN-QOh" firstAttribute="leading" secondItem="L4O-Wz-jis" secondAttribute="leading" id="Fpr-Kk-2cd"/>
+                            <constraint firstItem="A3I-Iq-2Bx" firstAttribute="top" secondItem="L4O-Wz-jis" secondAttribute="top" id="Jhe-pG-mmP"/>
                             <constraint firstItem="rPe-NV-PP4" firstAttribute="leading" secondItem="L4O-Wz-jis" secondAttribute="leading" constant="3" id="NoK-f5-JLx"/>
-                            <constraint firstItem="a2W-pG-8iX" firstAttribute="top" secondItem="7fJ-IN-QOh" secondAttribute="bottom" constant="5" id="UyQ-HA-Xsd"/>
-                            <constraint firstAttribute="trailing" secondItem="7fJ-IN-QOh" secondAttribute="trailing" id="ejL-qL-vIk"/>
+                            <constraint firstAttribute="trailing" secondItem="A3I-Iq-2Bx" secondAttribute="trailing" id="VeT-br-bSl"/>
                             <constraint firstAttribute="bottom" secondItem="rPe-NV-PP4" secondAttribute="bottom" constant="3" id="emM-F7-ZJP"/>
+                            <constraint firstItem="A3I-Iq-2Bx" firstAttribute="leading" secondItem="L4O-Wz-jis" secondAttribute="leading" id="fpe-8W-GYP"/>
                             <constraint firstItem="a2W-pG-8iX" firstAttribute="leading" secondItem="L4O-Wz-jis" secondAttribute="leading" constant="3" id="hIA-ox-svv"/>
-                            <constraint firstItem="7fJ-IN-QOh" firstAttribute="top" secondItem="L4O-Wz-jis" secondAttribute="top" id="qhr-qh-a6h"/>
-                            <constraint firstItem="rPe-NV-PP4" firstAttribute="top" secondItem="a2W-pG-8iX" secondAttribute="bottom" constant="3" id="shp-UA-jg7"/>
+                            <constraint firstItem="rPe-NV-PP4" firstAttribute="top" secondItem="a2W-pG-8iX" secondAttribute="bottom" constant="1" id="shp-UA-jg7"/>
                             <constraint firstAttribute="trailing" secondItem="rPe-NV-PP4" secondAttribute="trailing" id="tgg-As-Oo3"/>
+                            <constraint firstItem="a2W-pG-8iX" firstAttribute="top" secondItem="A3I-Iq-2Bx" secondAttribute="bottom" id="xsD-lc-cQW"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -61,11 +61,14 @@
             </constraints>
             <size key="customSize" width="388" height="162"/>
             <connections>
-                <outlet property="imageLogo" destination="7fJ-IN-QOh" id="MKG-MN-OCD"/>
+                <outlet property="imageLogo" destination="A3I-Iq-2Bx" id="w5g-nR-U0c"/>
                 <outlet property="labelDescricao" destination="rPe-NV-PP4" id="1ch-pd-7bo"/>
                 <outlet property="labelNome" destination="a2W-pG-8iX" id="yWW-IA-qnL"/>
             </connections>
-            <point key="canvasLocation" x="-116" y="-89"/>
+            <point key="canvasLocation" x="-116" y="-89.5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="imageplaceholder" width="200" height="200"/>
+    </resources>
 </document>

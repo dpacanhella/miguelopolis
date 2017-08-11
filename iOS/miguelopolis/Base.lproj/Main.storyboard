@@ -160,7 +160,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="124" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LQo-rK-OkU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LQo-rK-OkU">
                                 <rect key="frame" x="0.0" y="101" width="375" height="566"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -277,9 +277,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxG-QG-BiH">
-                                <rect key="frame" x="32" y="493" width="311" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxG-QG-BiH" customClass="RSButton" customModule="RSWidgets">
+                                <rect key="frame" x="32" y="488" width="311" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Ligue Agora"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnCall:" destination="AxP-bF-vxd" eventType="touchUpInside" id="ZIS-qC-keS"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WhatsApp: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeq-5S-oAX">
                                 <rect key="frame" x="16" y="463" width="343" height="15"/>
@@ -292,7 +301,7 @@
                         <constraints>
                             <constraint firstItem="jnK-xP-RDi" firstAttribute="top" secondItem="TD1-Ii-1Wv" secondAttribute="bottom" constant="10" id="337-nh-CiK"/>
                             <constraint firstAttribute="trailing" secondItem="UOH-XS-yG2" secondAttribute="trailing" constant="16" id="3NE-TU-Qkd"/>
-                            <constraint firstItem="UxG-QG-BiH" firstAttribute="top" secondItem="xeq-5S-oAX" secondAttribute="bottom" constant="15" id="47Q-ZL-7rQ"/>
+                            <constraint firstItem="UxG-QG-BiH" firstAttribute="top" secondItem="xeq-5S-oAX" secondAttribute="bottom" constant="10" id="47Q-ZL-7rQ"/>
                             <constraint firstAttribute="trailing" secondItem="jRL-GV-F5t" secondAttribute="trailing" constant="16" id="7EK-WG-nxY"/>
                             <constraint firstItem="jnK-xP-RDi" firstAttribute="leading" secondItem="1Me-zH-QDV" secondAttribute="leading" constant="16" id="7zR-fd-hsm"/>
                             <constraint firstItem="rN1-FJ-yIx" firstAttribute="leading" secondItem="1Me-zH-QDV" secondAttribute="leading" constant="16" id="8yj-8B-H8b"/>
@@ -315,7 +324,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Detalhes" image="icon_local" id="Ef8-N1-JnI"/>
                     <connections>
-                        <outlet property="btnTelefone" destination="UxG-QG-BiH" id="EyI-l2-CUV"/>
                         <outlet property="imageEstabelecimento" destination="UOH-XS-yG2" id="hSI-th-Wpo"/>
                         <outlet property="labelEndereco" destination="jRL-GV-F5t" id="o3s-B6-SfH"/>
                         <outlet property="labelProprietario" destination="rN1-FJ-yIx" id="Duv-IG-zwp"/>

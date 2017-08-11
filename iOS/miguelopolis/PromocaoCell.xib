@@ -20,11 +20,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uke-N5-Ynp">
-                        <rect key="frame" x="29" y="98" width="351" height="1"/>
+                        <rect key="frame" x="16" y="99" width="364" height="0.0"/>
                         <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gx7-vr-oFt">
-                        <rect key="frame" x="16" y="3" width="109" height="90"/>
+                        <rect key="frame" x="16" y="3" width="109" height="95"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="109" id="YLG-f3-4ng"/>
                         </constraints>
@@ -42,7 +42,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 10,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibs-EG-3fs">
-                        <rect key="frame" x="133" y="71" width="247" height="22"/>
+                        <rect key="frame" x="133" y="72" width="247" height="22"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                         <color key="textColor" red="0.99292701482772827" green="0.4325634241104126" blue="0.020973552018404007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -56,12 +56,12 @@
                     <constraint firstAttribute="trailing" secondItem="uke-N5-Ynp" secondAttribute="trailing" id="BMz-xo-dZn"/>
                     <constraint firstItem="al3-Rt-RJ2" firstAttribute="leading" secondItem="Gx7-vr-oFt" secondAttribute="trailing" constant="8" id="CC0-aJ-uO3"/>
                     <constraint firstItem="uke-N5-Ynp" firstAttribute="top" secondItem="ibs-EG-3fs" secondAttribute="bottom" constant="5" id="GJT-5k-eCB"/>
-                    <constraint firstItem="uke-N5-Ynp" firstAttribute="leading" secondItem="HsY-th-4ld" secondAttribute="leadingMargin" constant="21" id="IKz-ep-2pe"/>
+                    <constraint firstItem="uke-N5-Ynp" firstAttribute="leading" secondItem="HsY-th-4ld" secondAttribute="leadingMargin" constant="8" id="IKz-ep-2pe"/>
                     <constraint firstItem="al3-Rt-RJ2" firstAttribute="top" secondItem="EXg-hL-LVv" secondAttribute="bottom" constant="3" id="OcV-am-4Sa"/>
-                    <constraint firstItem="uke-N5-Ynp" firstAttribute="top" secondItem="Gx7-vr-oFt" secondAttribute="bottom" constant="5" id="W5w-CB-Cat"/>
+                    <constraint firstItem="uke-N5-Ynp" firstAttribute="top" secondItem="Gx7-vr-oFt" secondAttribute="bottom" constant="1" id="W5w-CB-Cat"/>
                     <constraint firstItem="Gx7-vr-oFt" firstAttribute="top" secondItem="HsY-th-4ld" secondAttribute="top" constant="3" id="YJv-CQ-mhQ"/>
                     <constraint firstItem="EXg-hL-LVv" firstAttribute="top" secondItem="HsY-th-4ld" secondAttribute="top" constant="3" id="bF1-md-Qe2"/>
-                    <constraint firstItem="uke-N5-Ynp" firstAttribute="top" secondItem="HsY-th-4ld" secondAttribute="top" constant="98" id="iTU-Jk-kbT"/>
+                    <constraint firstItem="uke-N5-Ynp" firstAttribute="top" secondItem="HsY-th-4ld" secondAttribute="top" constant="99" id="iTU-Jk-kbT"/>
                     <constraint firstItem="Gx7-vr-oFt" firstAttribute="top" secondItem="EXg-hL-LVv" secondAttribute="top" id="mWF-aD-ciV"/>
                     <constraint firstItem="EXg-hL-LVv" firstAttribute="leading" secondItem="Gx7-vr-oFt" secondAttribute="trailing" constant="8" symbolic="YES" id="qnK-gB-JXl"/>
                     <constraint firstItem="ibs-EG-3fs" firstAttribute="leading" secondItem="Gx7-vr-oFt" secondAttribute="trailing" constant="8" id="rNC-xK-J47"/>

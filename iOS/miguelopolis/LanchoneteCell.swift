@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class LanchoneteCell: UICollectionViewCell {
 
@@ -34,12 +35,7 @@ class LanchoneteCell: UICollectionViewCell {
         
         let url = URL(string: lanchonete.imagemLogo!)
         
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!)
-            DispatchQueue.main.async {
-                self.imageLogo.image = UIImage(data: data!)
-            }
-        }
+        imageLogo.kf.setImage(with: url, placeholder: nil, options: [.transition(.fade(0.5))])
         
     }
 }

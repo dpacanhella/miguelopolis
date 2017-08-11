@@ -18,9 +18,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="100" height="180"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RCd-ao-gRE">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="131"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Restaurante" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2J-RK-eRz">
                         <rect key="frame" x="5" y="141" width="95" height="17"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -33,27 +30,33 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="imageplaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="q2B-Z1-WVf">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="136"/>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="RCd-ao-gRE" firstAttribute="top" secondItem="VBZ-ER-HIe" secondAttribute="top" id="6xG-ub-KJq"/>
-                <constraint firstItem="RCd-ao-gRE" firstAttribute="leading" secondItem="VBZ-ER-HIe" secondAttribute="leading" id="A6h-JE-7FL"/>
+                <constraint firstItem="q2B-Z1-WVf" firstAttribute="leading" secondItem="VBZ-ER-HIe" secondAttribute="leading" id="1kQ-ng-I7E"/>
+                <constraint firstAttribute="trailing" secondItem="q2B-Z1-WVf" secondAttribute="trailing" id="4gM-bg-twZ"/>
                 <constraint firstItem="m2J-RK-eRz" firstAttribute="leading" secondItem="VBZ-ER-HIe" secondAttribute="leading" constant="5" id="K85-At-CTH"/>
+                <constraint firstItem="q2B-Z1-WVf" firstAttribute="top" secondItem="VBZ-ER-HIe" secondAttribute="top" id="UoY-zL-6e6"/>
                 <constraint firstItem="t4Z-Yu-suH" firstAttribute="top" secondItem="m2J-RK-eRz" secondAttribute="bottom" constant="5" id="YOD-E2-QYQ"/>
                 <constraint firstItem="t4Z-Yu-suH" firstAttribute="leading" secondItem="VBZ-ER-HIe" secondAttribute="leading" constant="5" id="d3h-hB-8sv"/>
-                <constraint firstAttribute="trailing" secondItem="RCd-ao-gRE" secondAttribute="trailing" id="eSe-pp-5Kp"/>
+                <constraint firstItem="m2J-RK-eRz" firstAttribute="top" secondItem="q2B-Z1-WVf" secondAttribute="bottom" constant="5" id="eEQ-tH-lP3"/>
                 <constraint firstAttribute="trailing" secondItem="t4Z-Yu-suH" secondAttribute="trailing" id="ffN-uv-JXu"/>
-                <constraint firstItem="m2J-RK-eRz" firstAttribute="top" secondItem="RCd-ao-gRE" secondAttribute="bottom" constant="10" id="qEB-1g-ptL"/>
                 <constraint firstAttribute="trailing" secondItem="m2J-RK-eRz" secondAttribute="trailing" id="qZW-ql-GY4"/>
                 <constraint firstAttribute="bottom" secondItem="t4Z-Yu-suH" secondAttribute="bottom" constant="5" id="qnv-4Q-qDR"/>
             </constraints>
             <size key="customSize" width="150" height="230"/>
             <connections>
-                <outlet property="imageLogo" destination="RCd-ao-gRE" id="ycW-cH-cwH"/>
+                <outlet property="imageLogo" destination="q2B-Z1-WVf" id="kiY-nL-AS5"/>
                 <outlet property="labelNome" destination="m2J-RK-eRz" id="0Wf-DH-930"/>
                 <outlet property="lableTelefone" destination="t4Z-Yu-suH" id="R05-k3-BPC"/>
             </connections>
             <point key="canvasLocation" x="-214" y="-447"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="imageplaceholder" width="200" height="200"/>
+    </resources>
 </document>

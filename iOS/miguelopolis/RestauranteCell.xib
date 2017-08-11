@@ -18,9 +18,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="100" height="180"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oix-q5-5P8">
-                        <rect key="frame" x="0.0" y="0.0" width="100" height="131"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Restaurante" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3v-pY-JMp">
                         <rect key="frame" x="5" y="141" width="95" height="17"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
@@ -33,27 +30,33 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="imageplaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Gnh-7n-LY4">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="136"/>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="t50-0P-E5v" firstAttribute="top" secondItem="C3v-pY-JMp" secondAttribute="bottom" constant="5" id="0lA-7l-8vF"/>
+                <constraint firstAttribute="trailing" secondItem="Gnh-7n-LY4" secondAttribute="trailing" id="6yO-T7-NES"/>
                 <constraint firstItem="C3v-pY-JMp" firstAttribute="leading" secondItem="7MF-oT-wHh" secondAttribute="leading" constant="5" id="ABg-69-Fyk"/>
-                <constraint firstItem="Oix-q5-5P8" firstAttribute="leading" secondItem="7MF-oT-wHh" secondAttribute="leading" id="Ek9-9u-AKb"/>
-                <constraint firstItem="Oix-q5-5P8" firstAttribute="top" secondItem="7MF-oT-wHh" secondAttribute="top" id="J5s-Ke-wA1"/>
+                <constraint firstItem="Gnh-7n-LY4" firstAttribute="leading" secondItem="7MF-oT-wHh" secondAttribute="leading" id="Riy-W1-ycb"/>
                 <constraint firstAttribute="trailing" secondItem="t50-0P-E5v" secondAttribute="trailing" id="V76-GK-fhG"/>
                 <constraint firstAttribute="bottom" secondItem="t50-0P-E5v" secondAttribute="bottom" constant="5" id="VMP-k0-C8N"/>
+                <constraint firstItem="C3v-pY-JMp" firstAttribute="top" secondItem="Gnh-7n-LY4" secondAttribute="bottom" constant="5" id="Wa0-W9-AdW"/>
                 <constraint firstAttribute="trailing" secondItem="C3v-pY-JMp" secondAttribute="trailing" id="i1i-Zb-1oe"/>
                 <constraint firstItem="t50-0P-E5v" firstAttribute="leading" secondItem="7MF-oT-wHh" secondAttribute="leading" constant="5" id="kXd-S0-vnv"/>
-                <constraint firstAttribute="trailing" secondItem="Oix-q5-5P8" secondAttribute="trailing" id="oSB-CZ-s9f"/>
-                <constraint firstItem="C3v-pY-JMp" firstAttribute="top" secondItem="Oix-q5-5P8" secondAttribute="bottom" constant="10" id="qGX-TG-hCw"/>
+                <constraint firstItem="Gnh-7n-LY4" firstAttribute="top" secondItem="7MF-oT-wHh" secondAttribute="top" id="y9q-Nb-53g"/>
             </constraints>
             <size key="customSize" width="150" height="230"/>
             <connections>
-                <outlet property="imageLogo" destination="Oix-q5-5P8" id="rJA-Uw-sGu"/>
+                <outlet property="imageLogo" destination="Gnh-7n-LY4" id="f9L-jZ-Ekq"/>
                 <outlet property="labelNome" destination="C3v-pY-JMp" id="VHO-0K-agr"/>
                 <outlet property="lableTelefone" destination="t50-0P-E5v" id="iLC-Dv-GNT"/>
             </connections>
             <point key="canvasLocation" x="-214" y="-447"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="imageplaceholder" width="200" height="200"/>
+    </resources>
 </document>

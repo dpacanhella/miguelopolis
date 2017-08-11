@@ -8,8 +8,10 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 class RestauranteCell: UICollectionViewCell {
+  
     
     @IBOutlet weak var imageLogo: UIImageView!
     @IBOutlet weak var labelNome: UILabel!
@@ -30,16 +32,12 @@ class RestauranteCell: UICollectionViewCell {
         labelNome.text = restaurante.nome
         lableTelefone.text = String(format:"(16) %@",restaurante.telefone!)
         imageLogo.roundCorners([.topLeft, .topRight], radius: 5)
-    
+
         let url = URL(string: restaurante.imagemLogo!)
+
+        imageLogo.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "imageplaceholder"), options: [.transition(.fade(0.5))])
         
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!)
-            DispatchQueue.main.async {
-                self.imageLogo.image = UIImage(data: data!)
-            }
-        }
-        
+
     }
 
 
