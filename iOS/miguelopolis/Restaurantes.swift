@@ -42,7 +42,7 @@ extension Restaurante: Mappable {
         telefone    <- map["telefone"]
         endereco    <- map["endereco"]
         imagemLogo    <- map["imagemLogo"]
-        whatsapp    <- map["whatsApp"]
+        whatsapp    <- map["whatsapp"]
         descricao    <- map["descricao"]
         descricao2    <- map["descricao2"]
         descricao3    <- map["descricao3"]

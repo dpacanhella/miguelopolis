@@ -44,7 +44,11 @@ class UtilitarioViewController: UIViewController{
     func refreshData(){
             
         let descricao = tipoAnuncio.descricao!
-        let novaDescricao = descricao.replacingOccurrences(of: "SERVIÇOS", with: "SERVICOS")
+        var novaDescricao = descricao.replacingOccurrences(of: "SERVIÇOS", with: "SERVICOS")
+        
+        if (descricao == "DISK-GÁS") {
+            novaDescricao = descricao.replacingOccurrences(of: "DISK-GÁS", with: "DISK-GAS")
+        }
         
         SVProgressHUD.show()
         utilitarioService.list(tipoAnuncio: novaDescricao) { (response) in

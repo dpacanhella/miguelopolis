@@ -58,11 +58,50 @@ class BarViewController: UIViewController{
     
 }
 
-extension BarViewController: UICollectionViewDelegate{
-    private func collectionView(_ collectionView: UICollectionView, didSelectRowAt indexPath: IndexPath) {
+extension BarViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "segueRestauranteController", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        let tabBar =  segue.destination as! UITabBarController
+        let telaDetalhes = tabBar.viewControllers![0] as! DetalhesRestauranteViewController
+        let telaEventos = tabBar.viewControllers![1] as! EventoRestauranteViewController
+        let telaCardapios = tabBar.viewControllers![2] as! CardapioRestauranteViewController
         
+        if let indexPath = self.collectionView.indexPathsForSelectedItems?.first!{
+            
+            let restaurante = self.restauranteManager.restaurantes[indexPath.row]
+            
+            telaDetalhes.restaurante = restaurante
+            telaEventos.restaurante = restaurante
+            telaCardapios.restaurante = restaurante
+        }
     }
 }
+
+//extension BarViewController: UICollectionViewDelegate{
+//    private func collectionView(_ collectionView: UICollectionView, didSelectRowAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: "segueRestauranteController", sender: self)
+//    }
+//    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+//        let tabBar =  segue.destination as! UITabBarController
+//        let telaDetalhes = tabBar.viewControllers![0] as! DetalhesRestauranteViewController
+//        let telaEventos = tabBar.viewControllers![1] as! EventoRestauranteViewController
+//        let telaCardapios = tabBar.viewControllers![2] as! CardapioRestauranteViewController
+//        
+//        if let indexPath = self.collectionView.indexPathsForSelectedItems{
+//            
+//            let restaurante = self.restauranteManager.restaurantes[indexPath.row]
+//            
+//            telaDetalhes.restaurante = restaurante
+//            telaEventos.restaurante = restaurante
+//            telaCardapios.restaurante = restaurante
+//        }
+//    }
+//
+//}
 
 extension BarViewController: UICollectionViewDataSource{
     
