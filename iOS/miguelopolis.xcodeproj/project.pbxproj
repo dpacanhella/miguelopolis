@@ -113,7 +113,7 @@
 		35E0E9791F34ED63002E09BB /* LojaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LojaService.swift; sourceTree = "<group>"; };
 		4D635CD7828F6F0C959914DD /* Pods_miguelopolis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_miguelopolis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FAF6ACF1F0D6A4C00201D36 /* miguelopolis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miguelopolis.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4FAF6AD21F0D6A4C00201D36 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
+		4FAF6AD21F0D6A4C00201D36 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4FAF6AD61F0D6A4C00201D36 /* StringIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringIdentifier.swift; sourceTree = "<group>"; };
 		4FAF6AD81F0D6A4C00201D36 /* CollectionViewIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewIdentifier.swift; sourceTree = "<group>"; };
 		4FAF6ADA1F0D6A4C00201D36 /* ControllerIndentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerIndentifier.swift; sourceTree = "<group>"; };

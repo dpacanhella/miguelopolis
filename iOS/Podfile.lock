@@ -4,11 +4,11 @@ PODS:
   - KeychainAccess (3.0.1)
   - Kingfisher (3.2.4)
   - ObjectMapper (2.0.0)
-  - Realm (2.8.3):
-    - Realm/Headers (= 2.8.3)
-  - Realm/Headers (2.8.3)
-  - RealmSwift (2.8.3):
-    - Realm (= 2.8.3)
+  - Realm (2.9.1):
+    - Realm/Headers (= 2.9.1)
+  - Realm/Headers (2.9.1)
+  - RealmSwift (2.9.1):
+    - Realm (= 2.9.1)
   - RSStarterKit (3.10.2):
     - Alamofire (~> 4.0)
     - DCAnimationKit (~> 0.0.6)
@@ -16,10 +16,10 @@ PODS:
     - ObjectMapper (~> 2.0.0)
     - RealmSwift
     - SVProgressHUD (~> 2.0.3)
-  - RSWidgets (3.10.0)
-  - SDWebImage (4.0.0):
-    - SDWebImage/Core (= 4.0.0)
-  - SDWebImage/Core (4.0.0)
+  - RSWidgets (3.10.2)
+  - SDWebImage (4.1.0):
+    - SDWebImage/Core (= 4.1.0)
+  - SDWebImage/Core (4.1.0)
   - SlideMenuControllerSwift (3.0.1)
   - SVProgressHUD (2.0.4)
 
@@ -37,11 +37,11 @@ SPEC CHECKSUMS:
   KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
   Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
   ObjectMapper: aed2570edabbd3c9b26c939e1cabdb6558f933e0
-  Realm: 3601ef091c8c499a31101d8563b991e75546cdce
-  RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
+  Realm: f91fb43bd474c4f731a116ebf7392c75dd015920
+  RealmSwift: 207f12a4a36b696c5183c60a1c06d70234a23e56
   RSStarterKit: 7edc242775d5bd026e0ecd7b0f81923e4d2fa0ab
-  RSWidgets: a5595bc96ea43bf9388304d2c72bf047995af615
-  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  RSWidgets: 48d50e007ccfedf30a7a80845e240a7faa6c0b6d
+  SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
 

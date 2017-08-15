@@ -48,13 +48,13 @@ open class RSButton: UIButton {
     }
     
     // MARK: - Inspectables
-    @IBInspectable open var textStyleType: Int = -1
+    @IBInspectable dynamic open var textStyleType: Int = -1
     
-    @IBInspectable open var backgroundStyleType: Int = -1
+    @IBInspectable dynamic open var backgroundStyleType: Int = -1
     
-    @IBInspectable open var AnimateStyleTransition: Bool = true
+    @IBInspectable dynamic open var AnimateStyleTransition: Bool = true
     
-    @IBInspectable open var spaceBetweenImageAndText: CGFloat = 0 {
+    @IBInspectable dynamic open var spaceBetweenImageAndText: CGFloat = 0 {
         didSet {
             guard let buttonImageView = imageView, let buttonTitle = titleLabel else {
                 return
@@ -83,7 +83,7 @@ open class RSButton: UIButton {
         }
     }
     
-    @IBInspectable open var backgroundImage: UIImage! {
+    @IBInspectable dynamic open var backgroundImage: UIImage! {
         didSet {
             UIGraphicsBeginImageContext(frame.size)
             backgroundImage.draw(in: bounds)
@@ -94,19 +94,19 @@ open class RSButton: UIButton {
         }
     }
     
-    @IBInspectable open var cornerRadius: Int = 0 {
+    @IBInspectable dynamic open var cornerRadius: Int = 0 {
         didSet {
             layer.cornerRadius = CGFloat(cornerRadius)
         }
     }
     
-    @IBInspectable open var borderWidth: Int = 0 {
+    @IBInspectable dynamic open var borderWidth: Int = 0 {
         didSet {
             layer.borderWidth = CGFloat(borderWidth)
         }
     }
     
-    @IBInspectable open var borderColor: UIColor = UIColor.clear {
+    @IBInspectable dynamic open var borderColor: UIColor = UIColor.clear {
         didSet {
             layer.borderColor = borderColor.cgColor
         }

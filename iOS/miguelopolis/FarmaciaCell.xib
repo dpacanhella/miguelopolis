@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="farmacia_cell" selectionStyle="default" indentationWidth="10" rowHeight="124" id="c4E-G7-u8b" customClass="FarmaciaCell" customModule="miguelopolis" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="farmacia_cell" selectionStyle="gray" indentationWidth="10" rowHeight="124" id="c4E-G7-u8b" customClass="FarmaciaCell" customModule="miguelopolis" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="396" height="98"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c4E-G7-u8b" id="NrU-iF-sj0">
-                <rect key="frame" x="0.0" y="0.0" width="396" height="97"/>
+                <rect key="frame" x="0.0" y="0.0" width="396" height="97.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da Farmácia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="hPA-W6-Bqq">

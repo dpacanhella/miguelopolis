@@ -34,23 +34,23 @@ open class RSLabel: UILabel {
         }
     }
     
-    @IBInspectable open var borderWidth: Int = 0 {
+    @IBInspectable dynamic open var borderWidth: Int = 0 {
         didSet {
             layer.borderWidth = CGFloat(borderWidth)
         }
     }
     
-    @IBInspectable open var borderColor: UIColor = UIColor.clear {
+    @IBInspectable dynamic open var borderColor: UIColor = UIColor.clear {
         didSet {
             layer.borderColor = borderColor.cgColor
         }
     }
     
-    @IBInspectable open var backgroundStyleType: Int = -1
+    @IBInspectable dynamic open var backgroundStyleType: Int = -1
     
-    @IBInspectable open var textStyleType: Int = -1
+    @IBInspectable dynamic open var textStyleType: Int = -1
     
-    @IBInspectable open var AnimateStyleTransition: Bool = true
+    @IBInspectable dynamic open var AnimateStyleTransition: Bool = true
 
 }
 

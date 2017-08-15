@@ -36,7 +36,8 @@ class PromocaoCell: UITableViewCell {
         imageProduto.roundCorners([.topLeft, .topRight], radius: 5)
         
         let url = URL(string: promocao.image64!)
-        imageProduto.kf.setImage(with: url, placeholder: nil, options: [.transition(.fade(0.5))])
+
+        imageProduto.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "imageplaceholder"), options: [.transition(.fade(0.5))])
         
     }
 }

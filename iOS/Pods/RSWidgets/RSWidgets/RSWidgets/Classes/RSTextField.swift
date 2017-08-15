@@ -24,33 +24,33 @@ open class RSTextField: UITextField {
     @IBOutlet open var relatedLabel: UILabel?
     @IBInspectable open var isRequired: Bool = false
     
-    @IBInspectable open var lineBottomWidth: Int = 0
+    @IBInspectable dynamic open var lineBottomWidth: Int = 0
     
-    @IBInspectable open var cornerRadius: Int = 0 {
+    @IBInspectable dynamic open var cornerRadius: Int = 0 {
         didSet {
             layer.cornerRadius = CGFloat(cornerRadius)
         }
     }
     
-    @IBInspectable open var borderWidth: Int = 0 {
+    @IBInspectable dynamic open var borderWidth: Int = 0 {
         didSet {
             layer.borderWidth = CGFloat(borderWidth)
         }
     }
     
-    @IBInspectable open var borderColor: UIColor = UIColor.clear {
+    @IBInspectable dynamic open var borderColor: UIColor = UIColor.clear {
         didSet {
             layer.borderColor = borderColor.cgColor
         }
     }
     
-    @IBInspectable open var hintColor: UIColor = UIColor.clear {
+    @IBInspectable dynamic open var hintColor: UIColor = UIColor.clear {
         didSet {
             setValue(hintColor, forKeyPath: "_placeholderLabel.textColor")
         }
     }
     
-    @IBInspectable open var textPadding: Int = 0 {
+    @IBInspectable dynamic open var textPadding: Int = 0 {
         didSet {
             leftView = nil
             rightView = nil
@@ -493,7 +493,13 @@ extension RSTextField {
     
     public static func setupRequired(textFields: [RSTextField], withPrefix: Bool = true, symbol: String = "*") {
         textFields.forEach { (textField) in
-            if textField.isRequired {
+            setupRequired(required: true, textFields: textFields, withPrefix: withPrefix, symbol: symbol)
+        }
+    }
+    
+    public static func setupRequired(required: Bool, textFields: [RSTextField], withPrefix: Bool = true, symbol: String = "*") {
+        textFields.forEach { (textField) in
+            if textField.isRequired == required {
                 if withPrefix {
                     if let relatedLabel = textField.relatedLabel, !relatedLabel.text!.hasPrefix(symbol) {
                         relatedLabel.text = "\(symbol)\(relatedLabel.text!)"

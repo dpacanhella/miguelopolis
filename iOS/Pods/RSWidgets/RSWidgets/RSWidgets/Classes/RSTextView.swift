@@ -11,27 +11,27 @@ import UIKit
 open class RSTextView: UITextView {
 
     
-    @IBInspectable open var lineBottomWidth: Int = 0 
+    @IBInspectable dynamic open var lineBottomWidth: Int = 0
     
-    @IBInspectable open var cornerRadius: Int = 0 {
+    @IBInspectable dynamic open var cornerRadius: Int = 0 {
         didSet {
             layer.cornerRadius = CGFloat(cornerRadius)
         }
     }
     
-    @IBInspectable open var borderWidth: Int = 0 {
+    @IBInspectable dynamic open var borderWidth: Int = 0 {
         didSet {
             layer.borderWidth = CGFloat(borderWidth)
         }
     }
     
-    @IBInspectable open var borderColor: UIColor = UIColor.clear {
+    @IBInspectable dynamic open var borderColor: UIColor = UIColor.clear {
         didSet {
             layer.borderColor = borderColor.cgColor
         }
     }
     
-    @IBInspectable open var hintColor: UIColor = UIColor.clear {
+    @IBInspectable dynamic open var hintColor: UIColor = UIColor.clear {
         didSet {
             setValue(hintColor, forKeyPath: "_placeholderLabel.textColor")
         }

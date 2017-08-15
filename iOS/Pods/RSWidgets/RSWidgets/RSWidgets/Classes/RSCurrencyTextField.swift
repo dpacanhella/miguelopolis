@@ -74,9 +74,14 @@ open class RSCurrencyTextField: RSTextField {
         let digitString = string.components(separatedBy: invalidInputCharacterSet!).joined(separator: "")
         assert(currencyNumberFormatter!.maximumFractionDigits == currencyNumberFormatter!.minimumFractionDigits)
         let fd = currencyNumberFormatter!.minimumFractionDigits
-        let number = NSNumber(floatLiteral: Double(digitString)! / pow(Double(10.0), Double(fd)))
         
-        return number
+        if !digitString.isEmpty {
+            let number = NSNumber(floatLiteral: Double(digitString)! / pow(Double(10.0), Double(fd)))
+            return number
+        }
+        else {
+            return 0
+        }
     }
     
 }
