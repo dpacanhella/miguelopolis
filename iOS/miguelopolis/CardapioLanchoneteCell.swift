@@ -1,20 +1,16 @@
 //
-//  CardapioCell.swift
+//  CardapioLanchoneteCell.swift
 //  miguelopolis
 //
-//  Created by infra on 15/08/17.
+//  Created by infra on 16/08/17.
 //  Copyright © 2017 pacanhella. All rights reserved.
 //
-
 
 import Foundation
 import UIKit
 import Kingfisher
 
 class CardapioCell: UITableViewCell {
-
-    
-    @IBOutlet weak var imgCardapio: UIImageView!
     
     
     override func awakeFromNib() {
@@ -30,8 +26,6 @@ class CardapioCell: UITableViewCell {
     
     func setCardapios(cardapio: Cardapios) -> Void {
         let url = URL(string: cardapio.imagem!)
-        
-        imgCardapio.roundCorners([.topLeft, .topRight], radius: 8)
         
         imgCardapio.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "imageplaceholder"), options: [.transition(.fade(0.5))])
         

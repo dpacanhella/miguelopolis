@@ -59,9 +59,24 @@ class LanchoneteViewController: UIViewController{
 }
 
 extension LanchoneteViewController: UICollectionViewDelegate{
-    private func collectionView(_ collectionView: UICollectionView, didSelectRowAt indexPath: IndexPath) {
-        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "segueLanchoneteController", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        let tabBar =  segue.destination as! UITabBarController
+        let telaDetalhes = tabBar.viewControllers![0] as! DetalhesLanchoneteViewController
+        let telaCardapios = tabBar.viewControllers![1] as! CardapioLanchoneteViewController
+        
+        if let indexPath = self.collectionView.indexPathsForSelectedItems?.first!{
+            
+            let lanchonete = self.lanchoneteManager.lanchonetes[indexPath.row]
+            
+            telaDetalhes.lanchonete = lanchonete
+            telaCardapios.lanchonete = lanchonete
+        }
+    }
+
 }
 
 extension LanchoneteViewController: UICollectionViewDataSource{

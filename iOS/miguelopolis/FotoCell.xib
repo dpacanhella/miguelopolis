@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="foto_cell" selectionStyle="none" indentationWidth="10" rowHeight="185" id="jPu-EW-tB0" customClass="FotoCell" customModule="miguelopolis" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="445"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jPu-EW-tB0" id="LGI-IQ-dKS">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="445"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageplaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="5JB-vh-zQK">
+                        <rect key="frame" x="0.0" y="5" width="300" height="380"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="380" id="2Zg-eB-rbA"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d74-dL-sjm">
+                        <rect key="frame" x="8" y="393" width="300" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="d74-dL-sjm" secondAttribute="trailing" constant="-8" id="4En-v9-vEA"/>
+                    <constraint firstItem="5JB-vh-zQK" firstAttribute="top" secondItem="LGI-IQ-dKS" secondAttribute="top" constant="5" id="Eqw-6m-beF"/>
+                    <constraint firstAttribute="trailing" secondItem="5JB-vh-zQK" secondAttribute="trailing" id="W9q-ey-AYr"/>
+                    <constraint firstItem="5JB-vh-zQK" firstAttribute="leading" secondItem="LGI-IQ-dKS" secondAttribute="leading" id="Z8h-YE-JVR"/>
+                    <constraint firstItem="d74-dL-sjm" firstAttribute="leading" secondItem="LGI-IQ-dKS" secondAttribute="leading" constant="8" id="mya-OJ-ogy"/>
+                    <constraint firstItem="d74-dL-sjm" firstAttribute="top" secondItem="5JB-vh-zQK" secondAttribute="bottom" constant="8" id="vyW-Ql-P6x"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentView" destination="LGI-IQ-dKS" id="uXA-DS-9mt"/>
+                <outlet property="imgFoto" destination="5JB-vh-zQK" id="2sj-Iz-vRb"/>
+                <outlet property="labelDescricao" destination="d74-dL-sjm" id="849-i3-qGI"/>
+            </connections>
+            <point key="canvasLocation" x="-3597" y="-315"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="imageplaceholder" width="200" height="200"/>
+    </resources>
+</document>

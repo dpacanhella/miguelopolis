@@ -57,9 +57,24 @@ class LojaViewController: UIViewController{
 }
 
 extension LojaViewController: UICollectionViewDelegate{
-    private func collectionView(_ collectionView: UICollectionView, didSelectRowAt indexPath: IndexPath) {
-        
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "segueLojaController", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        let tabBar =  segue.destination as! UITabBarController
+        let telaDetalhes = tabBar.viewControllers![0] as! DetalhesLojaViewController
+        let telaFotos = tabBar.viewControllers![1] as! FotoLojaViewController
+        
+        if let indexPath = self.collectionView.indexPathsForSelectedItems?.first!{
+            
+            let loja = self.lojaManager.lojas[indexPath.row]
+            
+            telaDetalhes.loja = loja
+            telaFotos.loja = loja
+        }
+    }
+    
 }
 
 extension LojaViewController: UICollectionViewDataSource{

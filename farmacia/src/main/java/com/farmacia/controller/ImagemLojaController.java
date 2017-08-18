@@ -68,7 +68,7 @@ public class ImagemLojaController {
             imgDTO.setId(img.getId());
             imgDTO.setDescricao(img.getDescricaoProduto());
             imgDTO.setImagem(img.getImagemProduto());
-            imgDTO.setImage64(img.getImage64());
+            imgDTO.setImage64("http://guiamiguelopolis.com/assets/imagens/" + img.getImage64());
             
             listDTO.add(imgDTO);
         }

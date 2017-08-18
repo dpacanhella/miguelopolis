@@ -44,11 +44,7 @@ class UtilitarioViewController: UIViewController{
     func refreshData(){
             
         let descricao = tipoAnuncio.descricao!
-        var novaDescricao = descricao.replacingOccurrences(of: "SERVIÇOS", with: "SERVICOS")
-        
-        if (descricao == "DISK-GÁS") {
-            novaDescricao = descricao.replacingOccurrences(of: "DISK-GÁS", with: "DISK-GAS")
-        }
+        let novaDescricao = descricao.folding(options: .diacriticInsensitive, locale: .current)
         
         SVProgressHUD.show()
         utilitarioService.list(tipoAnuncio: novaDescricao) { (response) in
@@ -65,9 +61,17 @@ class UtilitarioViewController: UIViewController{
 }
 
 extension UtilitarioViewController: UICollectionViewDelegate{
-    private func collectionView(_ collectionView: UICollectionView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let utilitario = self.utilitarioManager.utilitarios[indexPath.row]
+        
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpId") as! PopUpViewController
+        
+        popOverVC.utilitario = utilitario
+        
+        self.present(popOverVC, animated: true, completion: nil)
     }
+    
 }
 
 extension UtilitarioViewController: UICollectionViewDataSource{
