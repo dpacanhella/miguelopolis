@@ -36,6 +36,6 @@ class PopUpViewController: UIViewController {
     }
 
     @IBAction func btnClose(_ sender: Any) {
-        self.view.removeFromSuperview()
+        self.dismiss(animated: true, completion: nil)
     }
 }

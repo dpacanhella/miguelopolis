@@ -21,6 +21,7 @@ class UtilitarioViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        definesPresentationContext = true
         
         setupCollectionView()
         
@@ -65,7 +66,9 @@ extension UtilitarioViewController: UICollectionViewDelegate{
         
         let utilitario = self.utilitarioManager.utilitarios[indexPath.row]
         
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpId") as! PopUpViewController
+        let popOverVC = storyboard?.instantiateViewController(withIdentifier: "sbPopUpId") as! PopUpViewController
+        popOverVC.modalPresentationStyle = .overCurrentContext
+        popOverVC.navigationController?.modalPresentationStyle = .overCurrentContext
         
         popOverVC.utilitario = utilitario
         

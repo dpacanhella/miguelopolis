@@ -31,23 +31,11 @@ class RestauranteCell: UICollectionViewCell {
     func setRestaurantes(restaurante: Restaurante) -> Void {
         labelNome.text = restaurante.nome
         lableTelefone.text = String(format:"(16) %@",restaurante.telefone!)
-        imageLogo.roundCorners([.topLeft, .topRight], radius: 5)
+        self.imageLogo.layer.masksToBounds = true
 
         let url = URL(string: restaurante.imagemLogo!)
 
         imageLogo.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "imageplaceholder"), options: [.transition(.fade(0.5))])
-        
 
-    }
-
-
-}
-
-extension UIImageView {
-    func roundCorners(_ corners:UIRectCorner, radius: CGFloat) {
-        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        let mask = CAShapeLayer()
-        mask.path = path.cgPath
-        self.layer.mask = mask
     }
 }

@@ -31,7 +31,7 @@ class CardapioCell: UITableViewCell {
     func setCardapios(cardapio: Cardapios) -> Void {
         let url = URL(string: cardapio.imagem!)
         
-        imgCardapio.roundCorners([.topLeft, .topRight], radius: 8)
+        self.imgCardapio.layer.masksToBounds = true
         
         imgCardapio.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "imageplaceholder"), options: [.transition(.fade(0.5))])
         

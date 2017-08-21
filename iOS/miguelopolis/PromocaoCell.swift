@@ -33,7 +33,7 @@ class PromocaoCell: UITableViewCell {
         nomeProduto.text =  promocao.nomeProduto
         descricaoProduto.text = promocao.precoInicial
         precoProduto.text = promocao.precoFinal
-        imageProduto.roundCorners([.topLeft, .topRight], radius: 5)
+        self.imageProduto.layer.masksToBounds = true
         
         let url = URL(string: promocao.image64!)
 

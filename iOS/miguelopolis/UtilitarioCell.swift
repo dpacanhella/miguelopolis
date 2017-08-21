@@ -32,7 +32,7 @@ class UtilitarioCell: UICollectionViewCell {
     func setUtilitarios(utilitarios: Utilitarios) -> Void {
         labelNome.text =  utilitarios.nome
         labelDescricao.text = utilitarios.descricao
-        imageLogo.roundCorners([.topLeft, .topRight], radius: 5)
+        self.imageLogo.layer.masksToBounds = true
         
         let url = URL(string: utilitarios.imagem!)
         imageLogo.kf.setImage(with: url, placeholder: nil, options: [.transition(.fade(0.5))])

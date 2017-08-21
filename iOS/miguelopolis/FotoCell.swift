@@ -31,7 +31,7 @@ class FotoCell: UITableViewCell {
     func setFotos(imagem: ImagemLoja) -> Void {
         labelDescricao.text = imagem.descricao!
         
-        imgFoto.roundCorners([.topLeft, .topRight], radius: 8)
+        self.imgFoto.layer.masksToBounds = true
         
         let url = URL(string: imagem.imagem!)
         

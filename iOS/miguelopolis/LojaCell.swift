@@ -31,7 +31,7 @@ class LojaCell: UICollectionViewCell {
     func setLojas(loja: Loja) -> Void {
         labelNome.text =  loja.nome
         labelDescricao.text = loja.descricao
-        imageLogo.roundCorners([.topLeft, .topRight], radius: 5)
+        self.imageLogo.layer.masksToBounds = true
         
         let url = URL(string: loja.imagemLogo!)
         

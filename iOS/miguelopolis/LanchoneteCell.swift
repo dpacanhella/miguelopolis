@@ -31,7 +31,7 @@ class LanchoneteCell: UICollectionViewCell {
     func setLanchonetes(lanchonete: Lanchonete) -> Void {
         labelNome.text = lanchonete.nome
         lableTelefone.text = String(format:"(16) %@",lanchonete.whatsapp!)
-        imageLogo.roundCorners([.topLeft, .topRight], radius: 5)
+        self.imageLogo.layer.masksToBounds = true
         
         let url = URL(string: lanchonete.imagemLogo!)
         
