@@ -14,5 +14,7 @@ target 'miguelopolis' do
     pod 'SlideMenuControllerSwift', '~> 3.0.0'
     pod 'Kingfisher', '~> 3.0'
     pod 'SDWebImage', '~> 4.0'
+    pod 'Firebase/Core'
+    pod 'Firebase/Messaging'
     
 end

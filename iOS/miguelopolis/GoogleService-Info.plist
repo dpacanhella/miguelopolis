@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>330484512681-l4l6u8p9os33ogahunsvj9h0vi6dr41r.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.330484512681-l4l6u8p9os33ogahunsvj9h0vi6dr41r</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDydgP6YdtQi6YLUqAmEs52QUb4pACuGkk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>330484512681</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>br.dpacanhella.guiamiguelopolis</string>
+	<key>PROJECT_ID</key>
+	<string>farma-migue-e795c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>farma-migue-e795c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:330484512681:ios:c92153cf24a064f5</string>
+	<key>DATABASE_URL</key>
+	<string>https://farma-migue-e795c.firebaseio.com</string>
+</dict>
+</plist>

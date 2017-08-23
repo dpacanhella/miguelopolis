@@ -62,6 +62,7 @@
 		35E0E9761F34ECC6002E09BB /* LojaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E0E9751F34ECC6002E09BB /* LojaCell.swift */; };
 		35E0E9781F34ED48002E09BB /* LojaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E0E9771F34ED48002E09BB /* LojaManager.swift */; };
 		35E0E97A1F34ED63002E09BB /* LojaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E0E9791F34ED63002E09BB /* LojaService.swift */; };
+		35E516FA1F4DC88D00075D3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35E516F91F4DC88D00075D3D /* GoogleService-Info.plist */; };
 		4FAF6AD31F0D6A4C00201D36 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4FAF6AD21F0D6A4C00201D36 /* Podfile */; };
 		4FAF6AD71F0D6A4C00201D36 /* StringIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF6AD61F0D6A4C00201D36 /* StringIdentifier.swift */; };
 		4FAF6AD91F0D6A4C00201D36 /* CollectionViewIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAF6AD81F0D6A4C00201D36 /* CollectionViewIdentifier.swift */; };
@@ -149,6 +150,8 @@
 		35E0E9751F34ECC6002E09BB /* LojaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LojaCell.swift; sourceTree = "<group>"; };
 		35E0E9771F34ED48002E09BB /* LojaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LojaManager.swift; sourceTree = "<group>"; };
 		35E0E9791F34ED63002E09BB /* LojaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LojaService.swift; sourceTree = "<group>"; };
+		35E516F81F4C83CF00075D3D /* miguelopolis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = miguelopolis.entitlements; sourceTree = "<group>"; };
+		35E516F91F4DC88D00075D3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4D635CD7828F6F0C959914DD /* Pods_miguelopolis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_miguelopolis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FAF6ACF1F0D6A4C00201D36 /* miguelopolis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = miguelopolis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FAF6AD21F0D6A4C00201D36 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -263,8 +266,10 @@
 		4FAF6AD11F0D6A4C00201D36 /* miguelopolis */ = {
 			isa = PBXGroup;
 			children = (
+				35E516F81F4C83CF00075D3D /* miguelopolis.entitlements */,
 				4FAF6AD21F0D6A4C00201D36 /* Podfile */,
 				4FAF6AF71F0D6A4C00201D36 /* Assets.xcassets */,
+				35E516F91F4DC88D00075D3D /* GoogleService-Info.plist */,
 				4FAF6AF91F0D6A4C00201D36 /* LaunchScreen.storyboard */,
 				4FAF6AFC1F0D6A4C00201D36 /* Info.plist */,
 				4FF183021F0D9A3500BBC361 /* Managers */,
@@ -501,8 +506,16 @@
 				TargetAttributes = {
 					4FAF6ACE1F0D6A4C00201D36 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 9QFZ94279E;
+						DevelopmentTeam = LJFZ2Z6BD8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -540,6 +553,7 @@
 				4FAF6AD31F0D6A4C00201D36 /* Podfile in Resources */,
 				355C8F211F44DF7A00F2B870 /* FotoCell.xib in Resources */,
 				4FAF6AEF1F0D6A4C00201D36 /* Resources.README in Resources */,
+				35E516FA1F4DC88D00075D3D /* GoogleService-Info.plist in Resources */,
 				4FF182F51F0D94AA00BBC361 /* FarmaciaCell.xib in Resources */,
 				4FAF6AFB1F0D6A4C00201D36 /* LaunchScreen.storyboard in Resources */,
 				35B289F81F3B45AF00307C57 /* UtilitarioCell.xib in Resources */,
@@ -594,9 +608,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-miguelopolis/Pods-miguelopolis-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DCAnimationKit/DCAnimationKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RSStarterKit/RSStarterKit.framework",
 				"${BUILT_PRODUCTS_DIR}/RSWidgets/RSWidgets.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -604,14 +620,17 @@
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SlideMenuControllerSwift/SlideMenuControllerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DCAnimationKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSStarterKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSWidgets.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -619,6 +638,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SlideMenuControllerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -821,12 +841,15 @@
 			baseConfigurationReference = 729B8E7730846BACD9A62CF0 /* Pods-miguelopolis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9QFZ94279E;
+				CODE_SIGN_ENTITLEMENTS = miguelopolis/miguelopolis.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LJFZ2Z6BD8;
 				INFOPLIST_FILE = miguelopolis/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.dpacanhella.miguelopolis;
+				PRODUCT_BUNDLE_IDENTIFIER = br.dpacanhella.guiamiguelopolis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -837,12 +860,15 @@
 			baseConfigurationReference = C799D7C9634F09BD736C864C /* Pods-miguelopolis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 9QFZ94279E;
+				CODE_SIGN_ENTITLEMENTS = miguelopolis/miguelopolis.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LJFZ2Z6BD8;
 				INFOPLIST_FILE = miguelopolis/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.dpacanhella.miguelopolis;
+				PRODUCT_BUNDLE_IDENTIFIER = br.dpacanhella.guiamiguelopolis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
